@@ -1,0 +1,99 @@
+{
+  "scope": "Checked spatial resource planning pilot; no production changes, no whole-function correctness claim.",
+  "checks": [
+    {
+      "module": "Rules",
+      "source": "Experiments/ResourcePlanner/Rules.lean",
+      "source_sha256": "cd36d70a4c086f1ad7ac3b8f2287d6e6eec49c8f32e67720c55958e67962fea8",
+      "log": ".lake/resource-planner-rules.log",
+      "log_sha256": "4ea5d7a94a5a7657e6d1da960e267310d1d4c305865bd70d1b86829a05390d4e",
+      "success": true,
+      "service_runtime": "2.060s",
+      "memory_peak": "222.7M (swap: 0B)"
+    },
+    {
+      "module": "Planner",
+      "source": "Experiments/ResourcePlanner/Planner.lean",
+      "source_sha256": "fae647577927ae42dbc9fe64a472a7c86bd62ffa88611869040edca3212b46fc",
+      "log": ".lake/resource-planner-planner-leading.log",
+      "log_sha256": "d1c2381c164c978b4522e88a343cea2b41c45c3b526d96abfc5413ec8031b489",
+      "success": true,
+      "service_runtime": "4.109s",
+      "memory_peak": "230.7M (swap: 0B)"
+    },
+    {
+      "module": "Actual",
+      "source": "Experiments/ResourcePlanner/Actual.lean",
+      "source_sha256": "f2322e540571be5fc95c686343c27f183243bdcffacb84cd61ecabe42e295524",
+      "log": ".lake/resource-planner-actual-leading.log",
+      "log_sha256": "0c8d69bf55f419ecdb5d42ab6ccd99eb46d56d8fdcd384aff710e75e40c3436c",
+      "success": true,
+      "service_runtime": "2.723s",
+      "memory_peak": "224.5M (swap: 0B)"
+    },
+    {
+      "module": "Checks",
+      "source": "Experiments/ResourcePlanner/Checks.lean",
+      "source_sha256": "85ecf4df82c0bc137914f160890e18741e9a0c96c0ab9d102a3216e19a62635d",
+      "log": ".lake/resource-planner-checks-leading.log",
+      "log_sha256": "5d85e991fbbe19c2aa95672d507c716f53e1bafd1acd7a64e27ae5837dc945c3",
+      "success": true,
+      "service_runtime": "3.140s",
+      "memory_peak": "222.8M (swap: 0B)"
+    },
+    {
+      "module": "RootReadiContract",
+      "source": ".lake/resource-planner/RootReadiContract.lean",
+      "source_sha256": "9e1b9ad8e7ecf62bfd995b0a8222d98666b7ad3f24b8b8581b8663432245de53",
+      "log": ".lake/resource-planner/minimal-contract-leading.log",
+      "log_sha256": "9810a5717794e1dfb2fcd9b529e03045d1c4a744fd2b7faf5fe9ed8c56cd7119",
+      "success": true,
+      "service_runtime": "2.257s",
+      "memory_peak": "211.6M (swap: 0B)"
+    }
+  ],
+  "accepted_actual_clients": [
+    "writei_kernel_boundary: actual WiArgs/wiSrc kernel arm plus arbitrary frame, source/destination windows and same-length arbitrary returned destination bytes",
+    "readi_hold_window: exact original rd_hold_win type and minimal instances, without importing original proof"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "rejection_regressions": [
+    "out-of-bounds window",
+    "insufficient fractional ownership for full window",
+    "mismatched returned length",
+    "one owner used for two requests",
+    "fractional destination used for arbitrary write",
+    "malicious solver suggests duplicate source assignment"
+  ],
+  "positive_regressions": [
+    "symbolic offsets and arbitrary frame",
+    "reordered requests and returned resources",
+    "two equivalent fractional source owners",
+    "bottleneck: choices [[0,1],[0]] require assignment [1,0]"
+  ],
+  "explicit_limits": [
+    "one requested window per source atom; adjacent split is valid but rejected, with a separate manual proof",
+    "address/content matching is syntactic or definitional, not alias/range reasoning",
+    "no map keys, fraction splitting, invariant synthesis, or user-arm fault semantics"
+  ],
+  "failure_guard_count": 13,
+  "historical_failed_minimal_audit": ".lake/resource-planner/root-readi-contract.log",
+  "leading_pure_outputs": "Supported: the actual Readi theorem directly exports extent from source facts, without a client extent lemma or internal readi_hold_core wrapper.",
+  "source_freeze": {
+    "Experiments/ResourcePlanner/Rules.lean": "cd36d70a4c086f1ad7ac3b8f2287d6e6eec49c8f32e67720c55958e67962fea8",
+    "Experiments/ResourcePlanner/Actual.lean": "f2322e540571be5fc95c686343c27f183243bdcffacb84cd61ecabe42e295524",
+    "Experiments/ResourcePlanner/Checks.lean": "85ecf4df82c0bc137914f160890e18741e9a0c96c0ab9d102a3216e19a62635d",
+    "Experiments/ResourcePlanner/Planner.lean": "fae647577927ae42dbc9fe64a472a7c86bd62ffa88611869040edca3212b46fc",
+    "Experiments/ResourcePlanner/bad_solver.py": "296f2b499543e0502892d4e240b08da4a9fbcc922daea94073e7982e19a95a51",
+    "Experiments/ResourcePlanner/snapshots.py": "d86c22fca1aed639f798008ba7a6fd63039a87be6ca962952efa215b7da9f206",
+    "Experiments/ResourcePlanner/benchmark.py": "b4966e79b7952ed8f0ae283da8925f2bf11f9c1ab430aa8c959cdf51b3e180bc",
+    "Experiments/ResourcePlanner/Smoke.lean": "03d736809df7501e777e3e30e43093cd4148e5c49bd34aec5c9fe1d4593fa423"
+  },
+  "benchmark_report": "Experiments/ResourcePlanner/benchmark-final.json",
+  "baseline_report": "Experiments/ResourcePlanner/benchmark-initial.json",
+  "baseline_source_snapshots": "Experiments/ResourcePlanner/baseline-source/manifest.json"
+}

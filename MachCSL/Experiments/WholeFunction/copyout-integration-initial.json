@@ -1,0 +1,314 @@
+{
+  "status": "PASS",
+  "baseline_revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+  "baseline_source": "Xv6/ProofCopyout.lean",
+  "baseline_source_sha256": "030515ac5f7c1e9bf5546e49ac3809308a69cfb7c92b3adcc2b72039b791c041",
+  "public_theorem": "Xv6.copyout_proof",
+  "public_type": "Xv6.WALKADDR \u2192 Xv6.VMFAULT \u2192 Xv6.WALK_NOALLOC \u2192 Xv6.MEMMOVE \u2192 Xv6.COPYOUT",
+  "implementation_theorem": "Xv6.WholeFunction.Copyout.compiled_copyout",
+  "linked_type_checks": {
+    "Xv6.Copyout": "Xv6.WALKADDR \u2192 Xv6.VMFAULT \u2192 Xv6.WALK_NOALLOC \u2192 Xv6.MEMMOVE \u2192 Xv6.COPYOUT",
+    "Xv6.CopyoutClosed": "Xv6.COPYOUT"
+  },
+  "scope": "Single capped per-module checks with prebuilt imports; not total infrastructure cost or an end-to-end speedup measurement. No source-length reduction claim.",
+  "check_policy": {
+    "wrapper": "Experiments/check.sh",
+    "max_memory_GiB": 4,
+    "timeout_seconds": 180,
+    "lean_workers": 1,
+    "serialized": true
+  },
+  "baseline": {
+    "snapshot": ".lake/whole-function/UpstreamCopyout.lean",
+    "log": ".lake/whole-function/upstream-copyout.log",
+    "runtime_seconds": 24.367,
+    "cpu_seconds": 24.332,
+    "peak_MiB": 501.0
+  },
+  "fresh_checks": [
+    {
+      "module": "Experiments.WholeFunction.CopyoutComplete",
+      "log": ".lake/whole-function/integration-CopyoutComplete.log",
+      "exit_code": 0,
+      "runtime_seconds": 2.177,
+      "cpu_seconds": 2.179,
+      "peak_MiB": 228.1,
+      "source_sha256": "9c32d4c882cd4513482b5d19a3a78cb1e061d9d7cfc8a3f432f948ed5e3d28fb",
+      "command": [
+        "bash",
+        "Experiments/check.sh",
+        "-o",
+        ".lake/build/lib/lean/Experiments/WholeFunction/CopyoutComplete.olean",
+        "Experiments/WholeFunction/CopyoutComplete.lean"
+      ]
+    },
+    {
+      "module": "Xv6.ProofCopyout",
+      "log": ".lake/whole-function/integration-ProofCopyout.log",
+      "exit_code": 0,
+      "runtime_seconds": 1.854,
+      "cpu_seconds": 1.849,
+      "peak_MiB": 222.2,
+      "source_sha256": "78f18f86c821fe10fa5ac840cb7e973e403fee9e9375734dfa1f3d34ba3b2084",
+      "command": [
+        "bash",
+        "Experiments/check.sh",
+        "-o",
+        ".lake/build/lib/lean/Xv6/ProofCopyout.olean",
+        "Xv6/ProofCopyout.lean"
+      ]
+    },
+    {
+      "module": "Xv6.LinkCopyout",
+      "log": ".lake/whole-function/integration-LinkCopyout.log",
+      "exit_code": 0,
+      "runtime_seconds": 1.864,
+      "cpu_seconds": 1.861,
+      "peak_MiB": 221.9,
+      "source_sha256": "62b8ff9c2aa4fd55c1a002643ed4a43d41c200a7370996ca57a5c1f7e2f59906",
+      "command": [
+        "bash",
+        "Experiments/check.sh",
+        "-o",
+        ".lake/build/lib/lean/Xv6/LinkCopyout.olean",
+        "Xv6/LinkCopyout.lean"
+      ],
+      "source_unchanged_from_baseline": true
+    },
+    {
+      "module": "Xv6.LinkPiperead",
+      "log": ".lake/whole-function/integration-LinkPiperead.log",
+      "exit_code": 0,
+      "runtime_seconds": 2.005,
+      "cpu_seconds": 1.937,
+      "peak_MiB": 244.3,
+      "source_sha256": "c732f849798a668a50763b256f60769020bf1ec1683d006c015201212badeeb3",
+      "command": [
+        "bash",
+        "Experiments/check.sh",
+        "-o",
+        ".lake/build/lib/lean/Xv6/LinkPiperead.olean",
+        "Xv6/LinkPiperead.lean"
+      ],
+      "source_unchanged_from_baseline": true
+    },
+    {
+      "module": "Xv6.LinkKexec",
+      "log": ".lake/whole-function/integration-LinkKexec.log",
+      "exit_code": 0,
+      "runtime_seconds": 3.046,
+      "cpu_seconds": 2.277,
+      "peak_MiB": 485.7,
+      "source_sha256": "650975c187c7abb07a424d234e7ff01a752d7a864af938cc77c5b84704182a45",
+      "command": [
+        "bash",
+        "Experiments/check.sh",
+        "-o",
+        ".lake/build/lib/lean/Xv6/LinkKexec.olean",
+        "Xv6/LinkKexec.lean"
+      ],
+      "source_unchanged_from_baseline": true
+    },
+    {
+      "module": "Xv6.LinkSysFstat",
+      "log": ".lake/whole-function/integration-LinkSysFstat.log",
+      "exit_code": 0,
+      "runtime_seconds": 2.123,
+      "cpu_seconds": 2.054,
+      "peak_MiB": 249.0,
+      "source_sha256": "de951dd35a66d42672dc33219fe64f4dece76c9587e8c6392888cd626a31fdf3",
+      "command": [
+        "bash",
+        "Experiments/check.sh",
+        "-o",
+        ".lake/build/lib/lean/Xv6/LinkSysFstat.olean",
+        "Xv6/LinkSysFstat.lean"
+      ],
+      "source_unchanged_from_baseline": true
+    }
+  ],
+  "audit": {
+    "source": ".lake/whole-function/CopyoutIntegrationAudit.lean",
+    "source_sha256": "6ef515b10e988eba36966953872d82edc050b1db0bfde98e4d39e74879581c8f",
+    "log": ".lake/whole-function/copyout-integration-audit.log",
+    "runtime_seconds": 1.988,
+    "cpu_seconds": 1.984,
+    "peak_MiB": 219.2,
+    "exact_public_types": true,
+    "old_helper_declarations_absent_from_production_import_closure": [
+      "co_ret_1578",
+      "co_ret_1588",
+      "co_ret_1596",
+      "co_ret_155a",
+      "frame14",
+      "wp_prologue14_gen",
+      "wp_epilogue14_gen",
+      "co_bltu_out",
+      "co_bltu_in",
+      "co_sext_4",
+      "coKeep",
+      "coPost",
+      "co_wpre_step",
+      "co_vu_faultLeaf",
+      "co_wmapped_lt",
+      "co_walk_call",
+      "copyout_br_ffffffffffffff84",
+      "copyout_br_fffffffffffffa86",
+      "copyout_page",
+      "copyout_br_fffffffffffff7b6",
+      "copyout_move",
+      "copyout_br_fffffffffffff9ec",
+      "copyout_check",
+      "copyout_iter",
+      "copyout_loop",
+      "co_srli_max"
+    ]
+  },
+  "axioms": {
+    "baseline_count": 46,
+    "production_count": 37,
+    "new": [],
+    "removed": [
+      "Xv6.Kvm.pageAddr_of_valid._native.bv_decide.ax_1_5",
+      "Xv6.UMemL.pteAD_W._native.bv_decide.ax_1_6",
+      "Xv6.UMemL.pteAD_low._native.bv_decide.ax_1_5",
+      "Xv6.UMemL.tfLeaf_not_vu._native.bv_decide.ax_1_8",
+      "Xv6.UPt.pte2pa_uLeaf._native.bv_decide.ax_1_5",
+      "Xv6.UPtAlloc.sextw_small._native.bv_decide.ax_1_5",
+      "Xv6.co_pgdown_toNat._native.bv_decide.ax_1_5",
+      "Xv6.co_vu_faultLeaf._native.bv_decide.ax_1_10",
+      "Xv6.co_vu_faultLeaf._native.bv_decide.ax_1_5"
+    ],
+    "production": [
+      "Classical.choice",
+      "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+      "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+      "MachCSL.add_lsb0._native.bv_decide.ax_1_5",
+      "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+      "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+      "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+      "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+      "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+      "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+      "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+      "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+      "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+      "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+      "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+      "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+      "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+      "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+      "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+      "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+      "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+      "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+      "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+      "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+      "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+      "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+      "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+      "MachCSL.sext_lsb0_13._native.bv_decide.ax_1_5",
+      "MachCSL.sext_lsb0_21._native.bv_decide.ax_1_5",
+      "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+      "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+      "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+      "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+      "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+      "MachCSL.update_bit0_eq._native.bv_decide.ax_1_5",
+      "Quot.sound",
+      "propext"
+    ],
+    "strict_subset": true
+  },
+  "caller_inventory": {
+    "direct_proof_importers": [
+      "Xv6.LinkCopyout"
+    ],
+    "direct_link_importers": [
+      "Xv6.LinkKexec",
+      "Xv6.LinkPiperead",
+      "Xv6.LinkSysChdir",
+      "Xv6.LinkSysChroot",
+      "Xv6.LinkSysFstat",
+      "Xv6.LinkSysLink",
+      "Xv6.LinkSysMkdir",
+      "Xv6.LinkSysMknod",
+      "Xv6.LinkSysOpen",
+      "Xv6.LinkSysUnlink"
+    ],
+    "transitive_importers": [
+      "Xv6.AppLaws",
+      "Xv6.AppUnionLaws",
+      "Xv6.AppUnionProg",
+      "Xv6.BootChain",
+      "Xv6.LinkCopyout",
+      "Xv6.LinkFileread",
+      "Xv6.LinkForkret",
+      "Xv6.LinkForkretParkPaid",
+      "Xv6.LinkKexec",
+      "Xv6.LinkMain",
+      "Xv6.LinkNiAdequacy",
+      "Xv6.LinkPiperead",
+      "Xv6.LinkSysChdir",
+      "Xv6.LinkSysChroot",
+      "Xv6.LinkSysExec",
+      "Xv6.LinkSysFstat",
+      "Xv6.LinkSysLink",
+      "Xv6.LinkSysMkdir",
+      "Xv6.LinkSysMknod",
+      "Xv6.LinkSysOpen",
+      "Xv6.LinkSysRead",
+      "Xv6.LinkSysUnlink",
+      "Xv6.LinkSyscall",
+      "Xv6.LinkSystemAdequacyClosed",
+      "Xv6.LinkUInitUnion",
+      "Xv6.LinkUserretClosed",
+      "Xv6.LinkUsertrap",
+      "Xv6.NiAdequacy",
+      "Xv6.SystemAdequacy",
+      "Xv6.SystemBootEra",
+      "Xv6.UnionBootAdequacy"
+    ],
+    "repository_helper_references": []
+  },
+  "reuse_assessment": {
+    "shared": [
+      "Sail/binary-backed mixed register and stack interpreter and soundness",
+      "FrameCompiler save/return plans",
+      "KernelDispatch call/row dispatch and invariant-based WP",
+      "Residual semantic-cut invariant support",
+      "CopyEffects/CopyContracts/CopyRuns read/write transfer and trace properties"
+    ],
+    "copyin_helpers": [
+      "page chunk size, bounds, rounded address, next cursor and register arithmetic",
+      "fresh faulted leaf facts; context/register/spie preservation and saved registers",
+      "CopyinEntry.run_tail and wp_path"
+    ],
+    "remaining_function_specific": [
+      "14-slot layout, save/return addresses, entry zero/nonzero paths and frame facts",
+      "symbolic intermediate register states and cuts tied to COPYOUT binary rows",
+      "loop endpoint/register predicates and semantic joins for every control-flow edge",
+      "callee argument/readiness/result facts and spatial effect adapters",
+      "WALK_NOALLOC permission probe and PTE_W branch; writable-prefix and failure witnesses",
+      "public COPYOUT resource and return-contract packaging"
+    ],
+    "assessment": "Substantial reusable backend and copy-loop arithmetic, but semantic annotations and proof glue remain hand-authored. No claim of full function proof automation or net LOC reduction."
+  },
+  "reproduce": {
+    "command": "python3 Experiments/WholeFunction/audit-copyout.py",
+    "baseline_ref_option": "--baseline-ref",
+    "default_baseline_revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+    "prerequisite": "Compiled experiment and external imports; use python3 Experiments/WholeFunction/check.py for dependency-ordered focused checks.",
+    "validation": "py_compile passed; --prepare-only generated snapshot and both audit sources byte-for-byte equal to the previously kernel-checked files. Full checks were not rerun for this script-only addition.",
+    "generation_check": {
+      "status": "PASS",
+      "sha256": {
+        "UpstreamCopyout.lean": "030515ac5f7c1e9bf5546e49ac3809308a69cfb7c92b3adcc2b72039b791c041",
+        "CopyoutOriginalAudit.lean": "4b4ae28b6270441cceefd01eb01ddb05c71d109bf11cb879e9b13492c194e037",
+        "CopyoutIntegrationAudit.lean": "6ef515b10e988eba36966953872d82edc050b1db0bfde98e4d39e74879581c8f"
+      },
+      "method": "py_compile; --prepare-only; byte-for-byte SHA256 comparison with previously checked snapshot and audit sources"
+    },
+    "result": ".lake/whole-function/audit-copyout-result.json"
+  }
+}

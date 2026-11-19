@@ -1,0 +1,2605 @@
+{
+  "scope": "Selected affected prerequisites only; cached external imports; no downstream build",
+  "list_only": false,
+  "targets": [
+    "Experiments.WholeFunction.CopyinComplete",
+    "Xv6.ProofCopyin",
+    "Xv6.LinkCopyin"
+  ],
+  "changed_roots": [
+    "Experiments.WholeFunction.CopyinInvariant",
+    "Experiments.WholeFunction.CopyinClosure",
+    "Experiments.WholeFunction.CopyinPrefix",
+    "Experiments.WholeFunction.CopyinHeaderPrefix",
+    "Experiments.WholeFunction.CopyinJoins",
+    "Experiments.WholeFunction.CopyinStart"
+  ],
+  "selected_modules_in_dependency_order": [
+    "Experiments.WholeFunction.CopyinInvariant",
+    "Experiments.WholeFunction.CopyinClosure",
+    "Experiments.WholeFunction.CopyinCallFacts",
+    "Experiments.WholeFunction.CopyinChunkFacts",
+    "Experiments.WholeFunction.CopyinPrefix",
+    "Experiments.WholeFunction.CopyinHeaderPrefix",
+    "Experiments.WholeFunction.CopyinJoins",
+    "Experiments.WholeFunction.CopyinCallClosure",
+    "Experiments.WholeFunction.CopyinStart",
+    "Experiments.WholeFunction.CopyinRegistryClient",
+    "Experiments.WholeFunction.CopyinComplete",
+    "Xv6.ProofCopyin",
+    "Xv6.LinkCopyin"
+  ],
+  "cached_local_modules": [
+    "Experiments.SolverSurvey.SmtSlice",
+    "Experiments.WholeFunction.Binary",
+    "Experiments.WholeFunction.BinaryCopy",
+    "Experiments.WholeFunction.ControlFlow",
+    "Experiments.WholeFunction.CopyArithmetic",
+    "Experiments.WholeFunction.CopyCallRegistry",
+    "Experiments.WholeFunction.CopyCalls",
+    "Experiments.WholeFunction.CopyContracts",
+    "Experiments.WholeFunction.CopyControl",
+    "Experiments.WholeFunction.CopyEffects",
+    "Experiments.WholeFunction.CopyinBoundary",
+    "Experiments.WholeFunction.CopyinDispatch",
+    "Experiments.WholeFunction.CopyinEntry",
+    "Experiments.WholeFunction.CopyinExit",
+    "Experiments.WholeFunction.CopyinModel",
+    "Experiments.WholeFunction.CopyinPageFacts",
+    "Experiments.WholeFunction.CopyinPure",
+    "Experiments.WholeFunction.KernelCallRegistry",
+    "Experiments.WholeFunction.KernelCallSites",
+    "Experiments.WholeFunction.KernelCalls",
+    "Experiments.WholeFunction.KernelDecode",
+    "Experiments.WholeFunction.KernelDispatch",
+    "Experiments.WholeFunction.KernelFull",
+    "Experiments.WholeFunction.KernelGraph",
+    "Experiments.WholeFunction.KernelLinear",
+    "Experiments.WholeFunction.KernelReg",
+    "Experiments.WholeFunction.KernelStackGraph",
+    "Experiments.WholeFunction.KernelSymbolic",
+    "Experiments.WholeFunction.MemoryPrefix",
+    "Experiments.WholeFunction.StackActions",
+    "Experiments.WholeFunction.StackCells",
+    "Experiments.WholeFunction.StackChecks",
+    "Experiments.WholeFunction.StackDecode",
+    "Experiments.WholeFunction.StackReturn",
+    "Experiments.WholeFunction.StackShape",
+    "Experiments.WholeFunction.StackValueWp",
+    "Experiments.WholeFunction.StackValues",
+    "MachCSL.AluFacts",
+    "MachCSL.ArchReset",
+    "MachCSL.Boot",
+    "MachCSL.BootImage",
+    "MachCSL.BootRun",
+    "MachCSL.BvLemmas",
+    "MachCSL.ByteWord",
+    "MachCSL.ByteWordDefs",
+    "MachCSL.BytesFree",
+    "MachCSL.CallConv",
+    "MachCSL.Coherence",
+    "MachCSL.Compat",
+    "MachCSL.Ctx",
+    "MachCSL.CtxBoot",
+    "MachCSL.CtxKeyMint",
+    "MachCSL.CtxLaws",
+    "MachCSL.DecodeBridge",
+    "MachCSL.Dev.DevIds",
+    "MachCSL.Dev.DevLang",
+    "MachCSL.Dev.Fabric",
+    "MachCSL.Dev.Plic",
+    "MachCSL.Dev.Uart",
+    "MachCSL.Dev.Virtio",
+    "MachCSL.DiskImg",
+    "MachCSL.DiskOf",
+    "MachCSL.ExactState",
+    "MachCSL.FetchedDefs",
+    "MachCSL.FrameFilter",
+    "MachCSL.Gpr",
+    "MachCSL.HwConfig",
+    "MachCSL.Instr",
+    "MachCSL.KApply",
+    "MachCSL.KCtx",
+    "MachCSL.KCtxGpr",
+    "MachCSL.KMap",
+    "MachCSL.KNormCache",
+    "MachCSL.KernelElf",
+    "MachCSL.KptInv",
+    "MachCSL.Lang",
+    "MachCSL.Lock",
+    "MachCSL.LockFacts",
+    "MachCSL.LogEntryDefs",
+    "MachCSL.MConf",
+    "MachCSL.ModelFacts",
+    "MachCSL.ObsTrace",
+    "MachCSL.Platform",
+    "MachCSL.PlatformFacts",
+    "MachCSL.PmpXv6Defs",
+    "MachCSL.PtTree",
+    "MachCSL.Pte",
+    "MachCSL.PteClass",
+    "MachCSL.ResourceLifting",
+    "MachCSL.Resources",
+    "MachCSL.SConfAtDefs",
+    "MachCSL.SConfDefs",
+    "MachCSL.SConfPhysDefs",
+    "MachCSL.SimpAttr",
+    "MachCSL.SmodeMemFacts",
+    "MachCSL.Tactics",
+    "MachCSL.Translate",
+    "MachCSL.TranslateAddr",
+    "MachCSL.TsoMem",
+    "MachCSL.WordHist",
+    "MachCSL.WordPointsTo",
+    "MachCSL.Wp",
+    "MachCSL.WpAluFile",
+    "MachCSL.WpAtomic",
+    "MachCSL.WpCsrFacts",
+    "MachCSL.WpCsrS",
+    "MachCSL.WpCycleDefs",
+    "MachCSL.WpGpr",
+    "MachCSL.WpGprDefs",
+    "MachCSL.WpLock",
+    "MachCSL.WpLockSchema",
+    "MachCSL.WpPmp",
+    "MachCSL.WpPmpDefs",
+    "MachCSL.WpPmpXv6",
+    "MachCSL.WpPtWalk",
+    "MachCSL.WpSmode",
+    "MachCSL.WpSmodeAlu2",
+    "MachCSL.WpSmodeAtomic",
+    "MachCSL.WpSmodeAu",
+    "MachCSL.WpSmodeAuDefs",
+    "MachCSL.WpSmodeCsr",
+    "MachCSL.WpSmodeCtl",
+    "MachCSL.WpSmodeCycle",
+    "MachCSL.WpSmodeCycleB32",
+    "MachCSL.WpSmodeCycleBase",
+    "MachCSL.WpSmodeCycleRvc",
+    "MachCSL.WpSmodeFetch",
+    "MachCSL.WpSmodeFetch2",
+    "MachCSL.WpSmodeFetch4",
+    "MachCSL.WpSmodeFetchRvc",
+    "MachCSL.WpSmodeFrame",
+    "MachCSL.WpSmodeFrame6",
+    "MachCSL.WpSmodeFrame8",
+    "MachCSL.WpSmodeIntr",
+    "MachCSL.WpSmodeMemLbu",
+    "MachCSL.WpSmodeMemLd",
+    "MachCSL.WpSmodeMemLw",
+    "MachCSL.WpSmodeMemPhys",
+    "MachCSL.WpSmodeMemSb",
+    "MachCSL.WpSmodeMemSd",
+    "MachCSL.WpSmodeMemSw",
+    "MachCSL.WpSmodeMemTac",
+    "MachCSL.WpSmodePmp",
+    "MachCSL.WpSmodeRegOps",
+    "MachCSL.WpSmodeRules",
+    "MachCSL.WpSmodeSltu",
+    "MachCSL.WpStagesM",
+    "MachCSL.WpStoreFree",
+    "MachCSL.WpTick",
+    "MachCSL.WpTrap",
+    "Xv6.ByteCursor",
+    "Xv6.ChildTok",
+    "Xv6.CodeTactics",
+    "Xv6.CopyLemmas",
+    "Xv6.DiskDefs",
+    "Xv6.Geom",
+    "Xv6.Image",
+    "Xv6.KallocDefs",
+    "Xv6.KallocEv",
+    "Xv6.KernelData",
+    "Xv6.KernelImage",
+    "Xv6.KernelMap",
+    "Xv6.KernelTac",
+    "Xv6.KernelText",
+    "Xv6.KernelTree",
+    "Xv6.KvmDefs",
+    "Xv6.KvmLemmas",
+    "Xv6.LinkAcquire",
+    "Xv6.LinkHolding",
+    "Xv6.LinkIsmapped",
+    "Xv6.LinkKalloc",
+    "Xv6.LinkKfree",
+    "Xv6.LinkMappages",
+    "Xv6.LinkMemmove",
+    "Xv6.LinkMemset",
+    "Xv6.LinkMycpu",
+    "Xv6.LinkPopoff",
+    "Xv6.LinkPushoff",
+    "Xv6.LinkRelease",
+    "Xv6.LinkVmfault",
+    "Xv6.LinkWalk",
+    "Xv6.LinkWalkaddr",
+    "Xv6.PidEv",
+    "Xv6.PipeNames",
+    "Xv6.ProcGeom",
+    "Xv6.ProofAcquire",
+    "Xv6.ProofHolding",
+    "Xv6.ProofIsmapped",
+    "Xv6.ProofKalloc",
+    "Xv6.ProofKfree",
+    "Xv6.ProofMappages",
+    "Xv6.ProofMemmove",
+    "Xv6.ProofMemset",
+    "Xv6.ProofMycpu",
+    "Xv6.ProofPopoff",
+    "Xv6.ProofPushoff",
+    "Xv6.ProofRelease",
+    "Xv6.ProofVmfault",
+    "Xv6.ProofWalk",
+    "Xv6.ProofWalkaddr",
+    "Xv6.PtOwn",
+    "Xv6.PtOwnLemmas",
+    "Xv6.PtRunLemmas",
+    "Xv6.SlotEv",
+    "Xv6.SlotGen",
+    "Xv6.SlotSupply",
+    "Xv6.SpecAcquire",
+    "Xv6.SpecCopyin",
+    "Xv6.SpecCopyinstr",
+    "Xv6.SpecCopyout",
+    "Xv6.SpecHolding",
+    "Xv6.SpecIsmapped",
+    "Xv6.SpecKalloc",
+    "Xv6.SpecKfree",
+    "Xv6.SpecMappages",
+    "Xv6.SpecMemmove",
+    "Xv6.SpecMemset",
+    "Xv6.SpecMycpu",
+    "Xv6.SpecPopoff",
+    "Xv6.SpecPushoff",
+    "Xv6.SpecRelease",
+    "Xv6.SpecUvmclear",
+    "Xv6.SpecVmfault",
+    "Xv6.SpecWalk",
+    "Xv6.SpecWalkaddr",
+    "Xv6.StepLemmas",
+    "Xv6.UMem",
+    "Xv6.UMemLemmas",
+    "Xv6.UPtDefs",
+    "Xv6.UPtFaultLemmas",
+    "Xv6.UPtWalkaddrLemmas",
+    "Xv6.UartTrace",
+    "Xv6.UvmCallSites",
+    "Xv6.UvmallocDefs",
+    "Xv6.VirtioQueue",
+    "Xv6.VmfaultDefs",
+    "Xv6.WalkaddrDefs",
+    "Xv6.ZombEv"
+  ],
+  "source_graph": {
+    "Experiments.WholeFunction.CopyinComplete": {
+      "source": "Experiments/WholeFunction/CopyinComplete.lean",
+      "sha256": "c128e226c6b2a584b5bc004a1ba0976cfb0b3937eb1505aaa1f2c2a897954c07",
+      "imports": [
+        "Experiments.WholeFunction.CopyinRegistryClient"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinRegistryClient": {
+      "source": "Experiments/WholeFunction/CopyinRegistryClient.lean",
+      "sha256": "ef5c3b1e57ad608c5e96475f374fd480db7ad24f78e02470f95c8b9e6a4aff10",
+      "imports": [
+        "Experiments.WholeFunction.KernelCallRegistry",
+        "Experiments.WholeFunction.CopyinCallClosure",
+        "Experiments.WholeFunction.CopyinStart",
+        "Experiments.WholeFunction.CopyinBoundary"
+      ]
+    },
+    "Experiments.WholeFunction.KernelCallRegistry": {
+      "source": "Experiments/WholeFunction/KernelCallRegistry.lean",
+      "sha256": "675d20a98295c13b328a959809b18797a4c5d406faaf6e6c2b07aee0046241d2",
+      "imports": [
+        "Experiments.WholeFunction.KernelCallSites"
+      ]
+    },
+    "Experiments.WholeFunction.KernelCallSites": {
+      "source": "Experiments/WholeFunction/KernelCallSites.lean",
+      "sha256": "fd59cdf735a222e9410f842b7059d5b1d81cd65908a3ce68afa950066c57bee0",
+      "imports": [
+        "Experiments.WholeFunction.KernelDispatch"
+      ]
+    },
+    "Experiments.WholeFunction.KernelDispatch": {
+      "source": "Experiments/WholeFunction/KernelDispatch.lean",
+      "sha256": "093622066918b64309a8152653007bb7bed126beb61316a06839d3a5fc5b23c1",
+      "imports": [
+        "Experiments.WholeFunction.KernelFull"
+      ]
+    },
+    "Experiments.WholeFunction.KernelFull": {
+      "source": "Experiments/WholeFunction/KernelFull.lean",
+      "sha256": "5f3c7af33c041754111b173e6b21dbcef5c993db81ffe768bbcadc4a830b15bf",
+      "imports": [
+        "Experiments.WholeFunction.KernelCalls"
+      ]
+    },
+    "Experiments.WholeFunction.KernelCalls": {
+      "source": "Experiments/WholeFunction/KernelCalls.lean",
+      "sha256": "4367710ea1538b5f2a26cf5d0fc8478b556d231e1a995c6692a123ffa4d1ce4d",
+      "imports": [
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.KernelStackGraph": {
+      "source": "Experiments/WholeFunction/KernelStackGraph.lean",
+      "sha256": "0fe9f46ad42fa26f305212694127422edf327880991ce7e772b43e740257f9be",
+      "imports": [
+        "Experiments.WholeFunction.KernelGraph",
+        "Experiments.WholeFunction.StackDecode"
+      ]
+    },
+    "Experiments.WholeFunction.KernelGraph": {
+      "source": "Experiments/WholeFunction/KernelGraph.lean",
+      "sha256": "1b2a94a04b89a90e20b94e1f01cc7436fcb6bd030efc020ee25550983f6b5c82",
+      "imports": [
+        "Experiments.WholeFunction.KernelDecode"
+      ]
+    },
+    "Experiments.WholeFunction.KernelDecode": {
+      "source": "Experiments/WholeFunction/KernelDecode.lean",
+      "sha256": "36e491c9518a5439c2d1891ec61e762bb50194e7693882b11b3896cb99c9d67b",
+      "imports": [
+        "Experiments.WholeFunction.KernelReg"
+      ]
+    },
+    "Experiments.WholeFunction.KernelReg": {
+      "source": "Experiments/WholeFunction/KernelReg.lean",
+      "sha256": "a7ff132e061344218fdfb91d1f84e455f7295feb9f911b88d63627f87fd0d4c5",
+      "imports": [
+        "Experiments.WholeFunction.Binary",
+        "Experiments.WholeFunction.ControlFlow"
+      ]
+    },
+    "Experiments.WholeFunction.Binary": {
+      "source": "Experiments/WholeFunction/Binary.lean",
+      "sha256": "ad8e6b18cdff6806ae01fffb1c33121af3f814121628cd4efd6eee9ac989043c",
+      "imports": [
+        "Xv6.CodeTactics"
+      ]
+    },
+    "Xv6.CodeTactics": {
+      "source": "Xv6/CodeTactics.lean",
+      "sha256": "ba10c369f83226d93d1a54111cafc85bb0e0fe9c53f006ba3e60599cb3fea223",
+      "imports": [
+        "MachCSL.DecodeBridge",
+        "Xv6.KernelData"
+      ]
+    },
+    "MachCSL.DecodeBridge": {
+      "source": "MachCSL/DecodeBridge.lean",
+      "sha256": "b4e7654bde504ca6f827af7400ebb3121210bf56ca0faec04b6e24c8da8f3c07",
+      "imports": [
+        "MachCSL.MConf"
+      ]
+    },
+    "MachCSL.MConf": {
+      "source": "MachCSL/MConf.lean",
+      "sha256": "bc45c5aba7e1b5f2e24e234933715bb83d23bc0d20d6441bbac701107dc7d59e",
+      "imports": [
+        "MachCSL.WpPmpDefs"
+      ]
+    },
+    "MachCSL.WpPmpDefs": {
+      "source": "MachCSL/WpPmpDefs.lean",
+      "sha256": "3df53c1247097c726416c4fb903137a991156c41acc88355d458da95856e1319",
+      "imports": [
+        "MachCSL.HwConfig"
+      ]
+    },
+    "MachCSL.HwConfig": {
+      "source": "MachCSL/HwConfig.lean",
+      "sha256": "05d954caba2279e158b0a3dfbbcf39ba349e79bef6c15205518136e58e4b6268",
+      "imports": [
+        "MachCSL.Wp"
+      ]
+    },
+    "MachCSL.Wp": {
+      "source": "MachCSL/Wp.lean",
+      "sha256": "cf3628377be28e86215e2a66f200d9c4b4a06dc3c892a3a525178a79ee13b8e0",
+      "imports": [
+        "MachCSL.Ctx",
+        "MachCSL.ResourceLifting",
+        "Iris.ProgramLogic.Lifting"
+      ]
+    },
+    "MachCSL.Ctx": {
+      "source": "MachCSL/Ctx.lean",
+      "sha256": "4ee051d0947095ab6ba9697b2bf2b80585d8725f1274e7cd38e395c8184d6662",
+      "imports": [
+        "MachCSL.Resources"
+      ]
+    },
+    "MachCSL.Resources": {
+      "source": "MachCSL/Resources.lean",
+      "sha256": "384f54cebb73c38f7b2a367c56043c80f4b5bb15b05390cff1793640604070c2",
+      "imports": [
+        "MachCSL.Coherence",
+        "MachCSL.ExactState",
+        "MachCSL.ObsTrace",
+        "MachCSL.LogEntryDefs",
+        "MachCSL.DiskImg",
+        "MachCSL.DiskOf",
+        "Iris.BI.Lib.GenHeap",
+        "Iris.BI.Lib.MonoList",
+        "Iris.Instances.Lib.Invariants",
+        "Iris.BI.Lib.MonoNat",
+        "Iris.Instances.Lib.GhostVar",
+        "Iris.ProgramLogic.WeakestPre",
+        "MachCSL.FrameFilter"
+      ]
+    },
+    "MachCSL.Coherence": {
+      "source": "MachCSL/Coherence.lean",
+      "sha256": "be0135d23ca84e9230f8c18c8be467c14fa3eb14a90584f3cba78fd6a6414458",
+      "imports": [
+        "MachCSL.TsoMem",
+        "Iris.Algebra.Functions",
+        "Iris.BI.Lib.MonoNat"
+      ]
+    },
+    "MachCSL.TsoMem": {
+      "source": "MachCSL/TsoMem.lean",
+      "sha256": "8548f4200d5a4cef7e7008033d795ca334966492dc8dc519c05ac7ab0e7c8f3f",
+      "imports": [
+        "MachCSL.Compat",
+        "LeanRV64D.Defs"
+      ]
+    },
+    "MachCSL.Compat": {
+      "source": "MachCSL/Compat.lean",
+      "sha256": "843f1c7a0c8858a4c8e310f9c4c3d80b50370a54a1e9f9fb8999f48b2a437fa8",
+      "imports": [
+        "Std.Tactic.BVDecide",
+        "Lean.Meta.Tactic.Simp"
+      ]
+    },
+    "MachCSL.ExactState": {
+      "source": "MachCSL/ExactState.lean",
+      "sha256": "417e272ba7d5fc832076260edbce4ecc151b1966940c8d82ebea80dff7e692e5",
+      "imports": [
+        "MachCSL.Lang",
+        "Iris.Algebra.Lib.ExclAuth",
+        "Iris.Instances.Lib.NaInvariants",
+        "Iris.ProgramLogic.WeakestPre"
+      ]
+    },
+    "MachCSL.Lang": {
+      "source": "MachCSL/Lang.lean",
+      "sha256": "74353b0d6ba0fd76c48cdec90aa16e98c32e58219af5b4d4a64a792abbb60cc5",
+      "imports": [
+        "MachCSL.Platform",
+        "MachCSL.BootImage",
+        "MachCSL.ArchReset",
+        "MachCSL.BootRun",
+        "MachCSL.Dev.Fabric",
+        "Iris.ProgramLogic.Language",
+        "LeanRV64D.Step"
+      ]
+    },
+    "MachCSL.Platform": {
+      "source": "MachCSL/Platform.lean",
+      "sha256": "abd10ac579c808f71f10ea7c20df64a02f6a91e09cb4782eba005799138f294a",
+      "imports": [
+        "MachCSL.SimpAttr",
+        "LeanRV64D.Defs",
+        "LeanRV64D.Xv6Extras"
+      ]
+    },
+    "MachCSL.SimpAttr": {
+      "source": "MachCSL/SimpAttr.lean",
+      "sha256": "83bad56aab21cb0fc902cb15ec1b6a41d48c1836caf52fb6a723fa848d5d99e2",
+      "imports": [
+        "MachCSL.Compat",
+        "Lean"
+      ]
+    },
+    "MachCSL.BootImage": {
+      "source": "MachCSL/BootImage.lean",
+      "sha256": "e20b5fddd5c94e0138e50d82287a6daf10d8c4081690421418fe55a6f3f6d1df",
+      "imports": [
+        "MachCSL.TsoMem",
+        "MachCSL.KernelElf"
+      ]
+    },
+    "MachCSL.KernelElf": {
+      "source": "MachCSL/KernelElf.lean",
+      "sha256": "253eb7e3185edbf96a661f1bc6db78916837f8c643c31cf9f84e010188142892",
+      "imports": []
+    },
+    "MachCSL.ArchReset": {
+      "source": "MachCSL/ArchReset.lean",
+      "sha256": "f3922feb85d5b097961011db6e3c600a4881bacb7b6c504456bccc045e737e82",
+      "imports": [
+        "MachCSL.Compat",
+        "LeanRV64D.Model"
+      ]
+    },
+    "MachCSL.BootRun": {
+      "source": "MachCSL/BootRun.lean",
+      "sha256": "12a1b58914e8804cedd74c4423aa7d19cab1849806f8dc3f399510b42ca38929",
+      "imports": [
+        "MachCSL.Compat",
+        "LeanRV64D.Defs"
+      ]
+    },
+    "MachCSL.Dev.Fabric": {
+      "source": "MachCSL/Dev/Fabric.lean",
+      "sha256": "d3e97713e2bb9f68a1f20ba4d0ca808f7ebb1fbdd6d8d7544e18254650f83097",
+      "imports": [
+        "MachCSL.Dev.Uart",
+        "MachCSL.Dev.Plic",
+        "MachCSL.Dev.Virtio"
+      ]
+    },
+    "MachCSL.Dev.Uart": {
+      "source": "MachCSL/Dev/Uart.lean",
+      "sha256": "9a8a1f34c388d6f414deaa6cd2d52d8aa4600d4b956747b77ce69cc883184751",
+      "imports": [
+        "MachCSL.Dev.DevLang"
+      ]
+    },
+    "MachCSL.Dev.DevLang": {
+      "source": "MachCSL/Dev/DevLang.lean",
+      "sha256": "992e0613cf70b255d60537660aeceeec56ac55ea3aa3e4755f3b051895624440",
+      "imports": [
+        "MachCSL.Dev.DevIds",
+        "MachCSL.TsoMem"
+      ]
+    },
+    "MachCSL.Dev.DevIds": {
+      "source": "MachCSL/Dev/DevIds.lean",
+      "sha256": "66a7ec1a1f44353f489a80f7c901649ec682b04ef8aa104573cc0735fc1b2341",
+      "imports": []
+    },
+    "MachCSL.Dev.Plic": {
+      "source": "MachCSL/Dev/Plic.lean",
+      "sha256": "146d923ffbb1a12dd10d3ecf5130506cebcb394a42e41e2d6ee4c8eb202edc41",
+      "imports": [
+        "MachCSL.Dev.DevLang"
+      ]
+    },
+    "MachCSL.Dev.Virtio": {
+      "source": "MachCSL/Dev/Virtio.lean",
+      "sha256": "399dc571c072a937897991fc220f7fd1aed31ae3d6cdd5c1e6c7e5f254eed664",
+      "imports": [
+        "MachCSL.Dev.DevLang"
+      ]
+    },
+    "MachCSL.ObsTrace": {
+      "source": "MachCSL/ObsTrace.lean",
+      "sha256": "7dcefbbfa24f7750d599a9090da08af232355fe3c82d94ea3b39af296b796cdf",
+      "imports": [
+        "MachCSL.Lang"
+      ]
+    },
+    "MachCSL.LogEntryDefs": {
+      "source": "MachCSL/LogEntryDefs.lean",
+      "sha256": "1cccf028979cec15d839a3d1da0e4a2f4924617c03c97ebedb5e932d91e7eda0",
+      "imports": [
+        "MachCSL.Lang"
+      ]
+    },
+    "MachCSL.DiskImg": {
+      "source": "MachCSL/DiskImg.lean",
+      "sha256": "87fd621ff4d34fe22e0a12788b14f2a46f50d12203e0fcdce778e0679dab2438",
+      "imports": [
+        "MachCSL.Dev.Virtio",
+        "Iris.Instances.Lib.GhostMap"
+      ]
+    },
+    "MachCSL.DiskOf": {
+      "source": "MachCSL/DiskOf.lean",
+      "sha256": "30741dd49dc6f5d9488cf5a08d22c6379ba00093296f6563c25fdc40918399b7",
+      "imports": [
+        "MachCSL.Lang"
+      ]
+    },
+    "MachCSL.FrameFilter": {
+      "source": "MachCSL/FrameFilter.lean",
+      "sha256": "e991b7eb240b1be7227e90a3c200a51894ff50e469d5a7dbf14ce10d1e8f8377",
+      "imports": [
+        "MachCSL.Compat",
+        "Iris.ProofMode.Tactics.Frame"
+      ]
+    },
+    "MachCSL.ResourceLifting": {
+      "source": "MachCSL/ResourceLifting.lean",
+      "sha256": "e7cb556952acd175e57c68538a444dd8fbf5c8507a1af1c22c674cfd593e80c0",
+      "imports": [
+        "MachCSL.Resources",
+        "Iris.ProgramLogic.Lifting"
+      ]
+    },
+    "Xv6.KernelData": {
+      "source": "Xv6/KernelData.lean",
+      "sha256": "6e14c28f13673070dbed84235a0d88cd583a1a0f86a03e219008aa9cd0d97b7d",
+      "imports": [
+        "MachCSL.CallConv",
+        "Xv6.KernelText",
+        "MachCSL.Instr"
+      ]
+    },
+    "MachCSL.CallConv": {
+      "source": "MachCSL/CallConv.lean",
+      "sha256": "182e7b003ee25350d13bbd7e9ec634627ab699411088cf2e75b7c5e65464a28b",
+      "imports": [
+        "MachCSL.KCtx"
+      ]
+    },
+    "MachCSL.KCtx": {
+      "source": "MachCSL/KCtx.lean",
+      "sha256": "907832faf4f337c22434f381f0b8fe37d8ba73d44dd9dd132e4d6233ff959e39",
+      "imports": [
+        "MachCSL.Gpr",
+        "MachCSL.Boot",
+        "MachCSL.KptInv",
+        "Iris.BI.Lib.Fixpoint",
+        "MachCSL.SConfDefs"
+      ]
+    },
+    "MachCSL.Gpr": {
+      "source": "MachCSL/Gpr.lean",
+      "sha256": "de748bf0dd4ca8005e4b94c9ef0c8fd29d77fdb5073ee08265b3200e01627232",
+      "imports": [
+        "MachCSL.HwConfig"
+      ]
+    },
+    "MachCSL.Boot": {
+      "source": "MachCSL/Boot.lean",
+      "sha256": "98e984af0ae0e893576d4bfa7a67dcb7385e9cfeefbbfddf9fce38852400b4c1",
+      "imports": [
+        "MachCSL.Resources"
+      ]
+    },
+    "MachCSL.KptInv": {
+      "source": "MachCSL/KptInv.lean",
+      "sha256": "099708d154f9b829b595b9504b5d87b8504026961911cc43cfd065fafb3f0ef3",
+      "imports": [
+        "MachCSL.PtTree",
+        "MachCSL.WordHist",
+        "MachCSL.WordPointsTo",
+        "MachCSL.CtxLaws"
+      ]
+    },
+    "MachCSL.PtTree": {
+      "source": "MachCSL/PtTree.lean",
+      "sha256": "5781775165cfcfec5de77de4dc7e380d4f42f1c33a51aa029a390f5ce71929de",
+      "imports": [
+        "MachCSL.Pte",
+        "LeanRV64D.VmemTlb"
+      ]
+    },
+    "MachCSL.Pte": {
+      "source": "MachCSL/Pte.lean",
+      "sha256": "6186faaa165916e701b8db92b08c96fb20f6b4d9453569930e4673d3f60816b7",
+      "imports": [
+        "MachCSL.Compat",
+        "LeanRV64D.VmemPte"
+      ]
+    },
+    "MachCSL.WordHist": {
+      "source": "MachCSL/WordHist.lean",
+      "sha256": "e44c7e4f16cadded82ebb6ee7b6fb0c9eddd8e900c0fce15454d7a28c9b854b8",
+      "imports": [
+        "MachCSL.WpAtomic"
+      ]
+    },
+    "MachCSL.WpAtomic": {
+      "source": "MachCSL/WpAtomic.lean",
+      "sha256": "c88cd56fc59c4ed8087b73be6782c147dcf094ac499bcc650fae438f1b4c02a4",
+      "imports": [
+        "MachCSL.Wp"
+      ]
+    },
+    "MachCSL.WordPointsTo": {
+      "source": "MachCSL/WordPointsTo.lean",
+      "sha256": "7b869ac8b5cd6360e3ea20f39711bb1158c9c23b8098ebf300c094692cf9c555",
+      "imports": [
+        "MachCSL.KMap"
+      ]
+    },
+    "MachCSL.KMap": {
+      "source": "MachCSL/KMap.lean",
+      "sha256": "4fdc31591b3cd92def104d7ca4063067564184b7ee64032a2d88b235a6464c17",
+      "imports": [
+        "MachCSL.Ctx",
+        "MachCSL.Pte"
+      ]
+    },
+    "MachCSL.CtxLaws": {
+      "source": "MachCSL/CtxLaws.lean",
+      "sha256": "537fb27213bef08f6b42ae4ae758f61cb5bfe7e00a21eda445b135b5a3c5a2ba",
+      "imports": [
+        "MachCSL.Ctx"
+      ]
+    },
+    "MachCSL.SConfDefs": {
+      "source": "MachCSL/SConfDefs.lean",
+      "sha256": "09c349f324099644caff4812e93075c15b4f228877ce5711d40529ed4a2ad3f1",
+      "imports": [
+        "MachCSL.MConf",
+        "MachCSL.PmpXv6Defs"
+      ]
+    },
+    "MachCSL.PmpXv6Defs": {
+      "source": "MachCSL/PmpXv6Defs.lean",
+      "sha256": "a481aed32fc96c3cc5c998842dd6d3f4df6204c1801fed6b298892435934716f",
+      "imports": [
+        "MachCSL.Platform"
+      ]
+    },
+    "Xv6.KernelText": {
+      "source": "Xv6/KernelText.lean",
+      "sha256": "a3a5e043b53050419c85a1369c964a0c161e0cf9e884145c786ec47aa9c6d489",
+      "imports": [
+        "Xv6.KernelTree",
+        "Xv6.KernelMap",
+        "Xv6.KernelTac"
+      ]
+    },
+    "Xv6.KernelTree": {
+      "source": "Xv6/KernelTree.lean",
+      "sha256": "de2f5d37394bd1ee1558a29f6775bcdb25d855b403753669729e502e747ba122",
+      "imports": [
+        "Xv6.KernelImage"
+      ]
+    },
+    "Xv6.KernelImage": {
+      "source": "Xv6/KernelImage.lean",
+      "sha256": "d76a1e1254774c80e7c8c885c5256bf573d61584899fc3175228014da5eafee7",
+      "imports": [
+        "MachCSL.SimpAttr"
+      ]
+    },
+    "Xv6.KernelMap": {
+      "source": "Xv6/KernelMap.lean",
+      "sha256": "acef1f20c3f3efe5f740e80c90d36b5de461bff11a93683a123753f8983305ee",
+      "imports": [
+        "MachCSL.KMap"
+      ]
+    },
+    "Xv6.KernelTac": {
+      "source": "Xv6/KernelTac.lean",
+      "sha256": "e884f2b9a0939afe8afe9e11e8695b7991e11db00eb46e10aeb200fe5d512a51",
+      "imports": [
+        "Lean"
+      ]
+    },
+    "MachCSL.Instr": {
+      "source": "MachCSL/Instr.lean",
+      "sha256": "c1fca34a50d1bf5a8698983fd7c45d6ce0db8875fb817aadf09b5e8c2a58d490",
+      "imports": [
+        "MachCSL.MConf",
+        "MachCSL.KMap"
+      ]
+    },
+    "Experiments.WholeFunction.ControlFlow": {
+      "source": "Experiments/WholeFunction/ControlFlow.lean",
+      "sha256": "3ca88a250d32ead91ec4d48c998275278f2e319558208a63c528e34f4d7ca255",
+      "imports": [
+        "MachCSL.WpSmodeFrame"
+      ]
+    },
+    "MachCSL.WpSmodeFrame": {
+      "source": "MachCSL/WpSmodeFrame.lean",
+      "sha256": "2c79e63a66574c772f5b88b5a7add688307e70a5abdc3e76f0f51deee15994ec",
+      "imports": [
+        "MachCSL.WpSmodeIntr",
+        "MachCSL.WpSmodeRegOps",
+        "MachCSL.KNormCache",
+        "MachCSL.KApply"
+      ]
+    },
+    "MachCSL.WpSmodeIntr": {
+      "source": "MachCSL/WpSmodeIntr.lean",
+      "sha256": "c3628425e4526ed1cd9a1c0295ffed2a47bcfb807ee60ad2e87412b72784834b",
+      "imports": [
+        "MachCSL.WpSmodeRules",
+        "MachCSL.CallConv"
+      ]
+    },
+    "MachCSL.WpSmodeRules": {
+      "source": "MachCSL/WpSmodeRules.lean",
+      "sha256": "261669c05ec893c4342213f9aba5642f0d54a7803d474b8758a4051c3ea2f653",
+      "imports": [
+        "MachCSL.WpSmodeCtl",
+        "MachCSL.WpSmodeCsr",
+        "MachCSL.WpSmodeCycle",
+        "MachCSL.WpAluFile",
+        "MachCSL.WpSmodeMemLbu",
+        "MachCSL.WpSmodeMemLd",
+        "MachCSL.WpSmodeMemLw",
+        "MachCSL.WpSmodeMemSb",
+        "MachCSL.WpSmodeMemSd",
+        "MachCSL.WpSmodeMemSw"
+      ]
+    },
+    "MachCSL.WpSmodeCtl": {
+      "source": "MachCSL/WpSmodeCtl.lean",
+      "sha256": "239d054041b923b8a03fb3bd827e8cee5b08ba5455e2a0ecf77b9898a1c4cf09",
+      "imports": [
+        "MachCSL.KCtxGpr",
+        "MachCSL.AluFacts",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.PlatformFacts",
+        "MachCSL.ModelFacts",
+        "MachCSL.SConfPhysDefs"
+      ]
+    },
+    "MachCSL.KCtxGpr": {
+      "source": "MachCSL/KCtxGpr.lean",
+      "sha256": "e3c66b146d3b33c32e062db7c51922365e480b41a849a8b951772d8334f09d59",
+      "imports": [
+        "MachCSL.KCtx",
+        "MachCSL.WpGpr"
+      ]
+    },
+    "MachCSL.WpGpr": {
+      "source": "MachCSL/WpGpr.lean",
+      "sha256": "6fea1ddaf19a32b5f803773a1179179bc9fa72d605d3713689f94ed00f0bb0da",
+      "imports": [
+        "MachCSL.WpGprDefs"
+      ]
+    },
+    "MachCSL.WpGprDefs": {
+      "source": "MachCSL/WpGprDefs.lean",
+      "sha256": "58a3160459c1ef586360699573d40f5d81312575b9313e38764bb93e2e5e4529",
+      "imports": [
+        "MachCSL.Tactics",
+        "MachCSL.Gpr"
+      ]
+    },
+    "MachCSL.Tactics": {
+      "source": "MachCSL/Tactics.lean",
+      "sha256": "ed124f9a87f6ddd183e1a1203990383ce5422279c4395b69116025e3c809d2c3",
+      "imports": [
+        "MachCSL.HwConfig"
+      ]
+    },
+    "MachCSL.AluFacts": {
+      "source": "MachCSL/AluFacts.lean",
+      "sha256": "2441bd1c332d1f694ab8ce20f9f68f327c5dddf23fc4f5c5d8ba2771d907296e",
+      "imports": [
+        "MachCSL.Tactics",
+        "Std.Tactic.BVDecide"
+      ]
+    },
+    "MachCSL.WpCycleDefs": {
+      "source": "MachCSL/WpCycleDefs.lean",
+      "sha256": "e2832188e685dd0bc7b04c1b0f530d3e1165a06a1d1b020db85a10434921dae6",
+      "imports": [
+        "MachCSL.MConf",
+        "MachCSL.Boot"
+      ]
+    },
+    "MachCSL.PlatformFacts": {
+      "source": "MachCSL/PlatformFacts.lean",
+      "sha256": "4ad2a6fccc0fbfd703b8143eee71ad1b866ebd31b82b8f61f08ad77c69b646f0",
+      "imports": [
+        "MachCSL.Platform",
+        "MachCSL.TsoMem",
+        "LeanRV64D.Pma",
+        "LeanRV64D.ZicsrInsts",
+        "LeanRV64D.Arithmetic",
+        "LeanRV64D.BaseInsts"
+      ]
+    },
+    "MachCSL.ModelFacts": {
+      "source": "MachCSL/ModelFacts.lean",
+      "sha256": "06960fd9c86477983e0429d23b12caac1dd30879c20b67b612fd7d7c0d490cd4",
+      "imports": [
+        "MachCSL.SimpAttr",
+        "LeanRV64D.PlatformConfig"
+      ]
+    },
+    "MachCSL.SConfPhysDefs": {
+      "source": "MachCSL/SConfPhysDefs.lean",
+      "sha256": "4edac24e3eacf7644f32a96728cc1561a1b4f09f5880eb7d603bf59e285674de",
+      "imports": [
+        "MachCSL.SConfDefs"
+      ]
+    },
+    "MachCSL.WpSmodeCsr": {
+      "source": "MachCSL/WpSmodeCsr.lean",
+      "sha256": "7c03828da8d5e37eb312df6459c59cfa0858526d82cf1e210d83f5591faa7676",
+      "imports": [
+        "MachCSL.KCtxGpr",
+        "MachCSL.WpCsrS",
+        "MachCSL.SConfPhysDefs",
+        "MachCSL.WpCsrFacts",
+        "MachCSL.AluFacts",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.ModelFacts"
+      ]
+    },
+    "MachCSL.WpCsrS": {
+      "source": "MachCSL/WpCsrS.lean",
+      "sha256": "ba12d89f38b971f62cec7df8725c0e2ca20089e2a712d4414eeaad1d5f229544",
+      "imports": [
+        "MachCSL.DecodeBridge",
+        "MachCSL.PlatformFacts",
+        "MachCSL.Tactics"
+      ]
+    },
+    "MachCSL.WpCsrFacts": {
+      "source": "MachCSL/WpCsrFacts.lean",
+      "sha256": "289a7e4e093bcbb8d29db85e949801a855ea96903c8ef8539bc523f7696cc1c9",
+      "imports": [
+        "MachCSL.WpPmp"
+      ]
+    },
+    "MachCSL.WpPmp": {
+      "source": "MachCSL/WpPmp.lean",
+      "sha256": "1704f2747e5ca717c7dc16be40883538eb8284739b37034152133e3462b5ac61",
+      "imports": [
+        "MachCSL.Tactics",
+        "MachCSL.WpPmpDefs"
+      ]
+    },
+    "MachCSL.WpSmodeCycle": {
+      "source": "MachCSL/WpSmodeCycle.lean",
+      "sha256": "6bb27bd9f0946563beb4ba953084bc4b9610227cf0afc88cd4e3fd4fae43353f",
+      "imports": [
+        "MachCSL.WpSmodeFetch",
+        "MachCSL.WpSmodeCycleB32",
+        "MachCSL.WpSmodeCycleRvc"
+      ]
+    },
+    "MachCSL.WpSmodeFetch": {
+      "source": "MachCSL/WpSmodeFetch.lean",
+      "sha256": "c79d51afe0a38e51c3d47befa052461e2e4406cfbbc7ef50a98f11fc1c6b159c",
+      "imports": [
+        "MachCSL.WpSmodeCycleBase",
+        "MachCSL.WpSmodeFetch4",
+        "MachCSL.WpSmodeFetch2",
+        "MachCSL.WpSmodeFetchRvc"
+      ]
+    },
+    "MachCSL.WpSmodeCycleBase": {
+      "source": "MachCSL/WpSmodeCycleBase.lean",
+      "sha256": "3706f1bdf98909969bba2283629035f2f30f66d415a60ce5f459ebcf213d28e4",
+      "imports": [
+        "MachCSL.SConfAtDefs",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.KCtx",
+        "MachCSL.Tactics"
+      ]
+    },
+    "MachCSL.SConfAtDefs": {
+      "source": "MachCSL/SConfAtDefs.lean",
+      "sha256": "937b6a8c374452b9b46bcfbeb5eab743360067de94f2c4d2074d9908dd4ac69b",
+      "imports": [
+        "MachCSL.SConfPhysDefs",
+        "MachCSL.KptInv"
+      ]
+    },
+    "MachCSL.WpSmodeFetch4": {
+      "source": "MachCSL/WpSmodeFetch4.lean",
+      "sha256": "5b534e0095f4ef4464338f8bccb0f42f68f5ffab2ae2d42f7c6d95f08f2a08bc",
+      "imports": [
+        "MachCSL.TranslateAddr",
+        "MachCSL.WpSmode",
+        "MachCSL.FetchedDefs",
+        "MachCSL.Instr"
+      ]
+    },
+    "MachCSL.TranslateAddr": {
+      "source": "MachCSL/TranslateAddr.lean",
+      "sha256": "b60458176f6a167b91f28d620570dfc1ae5fb081efbd90ce4750db7c963a6b64",
+      "imports": [
+        "MachCSL.WpPtWalk",
+        "MachCSL.WpSmodePmp"
+      ]
+    },
+    "MachCSL.WpPtWalk": {
+      "source": "MachCSL/WpPtWalk.lean",
+      "sha256": "cd84ce4e644e79dfb8e25e217206481d3e0ef544fed0e3088fe29b1994903faa",
+      "imports": [
+        "MachCSL.SConfAtDefs",
+        "MachCSL.WpPmpXv6",
+        "MachCSL.WpSmodeAuDefs",
+        "MachCSL.ModelFacts"
+      ]
+    },
+    "MachCSL.WpPmpXv6": {
+      "source": "MachCSL/WpPmpXv6.lean",
+      "sha256": "02cdd822a493c8a72881a888d3d52618ed7d0748486a441e2b3457c1b788c8b2",
+      "imports": [
+        "MachCSL.MConf",
+        "MachCSL.PmpXv6Defs",
+        "MachCSL.PlatformFacts",
+        "MachCSL.WpPmp"
+      ]
+    },
+    "MachCSL.WpSmodeAuDefs": {
+      "source": "MachCSL/WpSmodeAuDefs.lean",
+      "sha256": "f4ebfe737097e972a82ab8db6fa292388ab80035c9ac604d843a367886bf3e96",
+      "imports": [
+        "MachCSL.MConf",
+        "MachCSL.Tactics"
+      ]
+    },
+    "MachCSL.WpSmodePmp": {
+      "source": "MachCSL/WpSmodePmp.lean",
+      "sha256": "eeeb06d931f48217b95a786e3d72516e89f8e57427790f9774f0f7989d1b3800",
+      "imports": [
+        "MachCSL.SConfAtDefs",
+        "MachCSL.WpPmpXv6"
+      ]
+    },
+    "MachCSL.WpSmode": {
+      "source": "MachCSL/WpSmode.lean",
+      "sha256": "ae878e3d0df808b4d0b5b20d5f07f0ea2f8b83e8ebc64ea3acf4b0079a9b937e",
+      "imports": [
+        "MachCSL.WpPmpXv6",
+        "MachCSL.SConfPhysDefs",
+        "MachCSL.ModelFacts"
+      ]
+    },
+    "MachCSL.FetchedDefs": {
+      "source": "MachCSL/FetchedDefs.lean",
+      "sha256": "a17d8d4a67443316e52c63689a0d3ef4b339991dcf8717dde56af5e20fc49f4f",
+      "imports": [
+        "MachCSL.Compat",
+        "LeanRV64D.Fetch"
+      ]
+    },
+    "MachCSL.WpSmodeFetch2": {
+      "source": "MachCSL/WpSmodeFetch2.lean",
+      "sha256": "3a718932239e001c0e2384c7a194d014280c4503e920af3030b1b67120d40059",
+      "imports": [
+        "MachCSL.TranslateAddr",
+        "MachCSL.WpSmode",
+        "MachCSL.FetchedDefs",
+        "MachCSL.Instr"
+      ]
+    },
+    "MachCSL.WpSmodeFetchRvc": {
+      "source": "MachCSL/WpSmodeFetchRvc.lean",
+      "sha256": "2cbe0e5382df1f384969da5bc7de181a0c8cedeb68edfbbee12a683b246b9da3",
+      "imports": [
+        "MachCSL.TranslateAddr",
+        "MachCSL.WpSmode",
+        "MachCSL.Instr"
+      ]
+    },
+    "MachCSL.WpSmodeCycleB32": {
+      "source": "MachCSL/WpSmodeCycleB32.lean",
+      "sha256": "583e11e77f7fba39dfbfdd929f5dea02d7afd942602e9af59ad4222abd4d8f85",
+      "imports": [
+        "MachCSL.WpSmodeCycleBase",
+        "MachCSL.WpTrap",
+        "MachCSL.WpTick"
+      ]
+    },
+    "MachCSL.WpTrap": {
+      "source": "MachCSL/WpTrap.lean",
+      "sha256": "cf11779249b84671923840757b7067b348deee3103fe97bbc5c0d2b66d29905d",
+      "imports": [
+        "MachCSL.ModelFacts",
+        "MachCSL.PlatformFacts",
+        "MachCSL.KCtx",
+        "MachCSL.Tactics"
+      ]
+    },
+    "MachCSL.WpTick": {
+      "source": "MachCSL/WpTick.lean",
+      "sha256": "685745eeb37f10e53e821c1980fae9ce63aa863480c5de3755591bfa480be63b",
+      "imports": [
+        "MachCSL.MConf",
+        "MachCSL.PlatformFacts",
+        "MachCSL.ModelFacts",
+        "MachCSL.Tactics"
+      ]
+    },
+    "MachCSL.WpSmodeCycleRvc": {
+      "source": "MachCSL/WpSmodeCycleRvc.lean",
+      "sha256": "e40d71fee60651019a573b22d551ce45672c06a0575e385e33d5f1bb0bf41943",
+      "imports": [
+        "MachCSL.WpSmodeCycleBase",
+        "MachCSL.WpTrap",
+        "MachCSL.WpTick"
+      ]
+    },
+    "MachCSL.WpAluFile": {
+      "source": "MachCSL/WpAluFile.lean",
+      "sha256": "6b7aa9a1fd74215c46a4e20ec45acbff19476b9269b570a2b3c6de7b61e42cb3",
+      "imports": [
+        "MachCSL.KCtxGpr",
+        "MachCSL.AluFacts",
+        "MachCSL.PlatformFacts",
+        "MachCSL.WpCycleDefs"
+      ]
+    },
+    "MachCSL.WpSmodeMemLbu": {
+      "source": "MachCSL/WpSmodeMemLbu.lean",
+      "sha256": "dd7c5cd0f1c6748a8e3fff913c040ba70473cd417355bb0e69cdacc19e15cf27",
+      "imports": [
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.Translate",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.KCtxGpr",
+        "MachCSL.SmodeMemFacts"
+      ]
+    },
+    "MachCSL.WpSmodeMemTac": {
+      "source": "MachCSL/WpSmodeMemTac.lean",
+      "sha256": "506c1618a874a611f6a4bb93195e01145a65a557302b7928a873f5c39b204768",
+      "imports": [
+        "MachCSL.WpSmodeMemPhys"
+      ]
+    },
+    "MachCSL.WpSmodeMemPhys": {
+      "source": "MachCSL/WpSmodeMemPhys.lean",
+      "sha256": "6d44c2c1e4a1336d30748996926e0ea386a74bbe5e1366c407754e94b5b958e2",
+      "imports": [
+        "MachCSL.SConfPhysDefs",
+        "MachCSL.WpPmpXv6"
+      ]
+    },
+    "MachCSL.Translate": {
+      "source": "MachCSL/Translate.lean",
+      "sha256": "016bf6fe5150d422e291e05b7c1e150586d49c75a611ddd8568bf68a0d0e2133",
+      "imports": [
+        "MachCSL.TranslateAddr",
+        "MachCSL.WpStagesM"
+      ]
+    },
+    "MachCSL.WpStagesM": {
+      "source": "MachCSL/WpStagesM.lean",
+      "sha256": "1787b99017a0cae8d40648039cee90654f9ac4776d99b06821d97257ec878020",
+      "imports": [
+        "MachCSL.MConf",
+        "MachCSL.PlatformFacts",
+        "MachCSL.ModelFacts",
+        "MachCSL.FetchedDefs",
+        "MachCSL.Tactics"
+      ]
+    },
+    "MachCSL.SmodeMemFacts": {
+      "source": "MachCSL/SmodeMemFacts.lean",
+      "sha256": "240578d6e393a2a05cc53f894a2d9c61934b8365543433cd8c451f7e623cccb9",
+      "imports": [
+        "MachCSL.PlatformFacts"
+      ]
+    },
+    "MachCSL.WpSmodeMemLd": {
+      "source": "MachCSL/WpSmodeMemLd.lean",
+      "sha256": "8052aa16850571e86b30ea26cf5d15ac8c2fde89df80d6aea9567cb4a96afc9c",
+      "imports": [
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.Translate",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.KCtxGpr"
+      ]
+    },
+    "MachCSL.WpSmodeMemLw": {
+      "source": "MachCSL/WpSmodeMemLw.lean",
+      "sha256": "ebfff1ae3bbbc5acf5ad5e6b0b892c2d6f0c57138fdbaed35e801a066b0605e8",
+      "imports": [
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.Translate",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.KCtxGpr",
+        "MachCSL.SmodeMemFacts"
+      ]
+    },
+    "MachCSL.WpSmodeMemSb": {
+      "source": "MachCSL/WpSmodeMemSb.lean",
+      "sha256": "535a41dedb5f4ee402f46edab0bf59c73e83174f8116b4d40738a7787e805f48",
+      "imports": [
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.Translate",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.KCtxGpr",
+        "MachCSL.SmodeMemFacts"
+      ]
+    },
+    "MachCSL.WpSmodeMemSd": {
+      "source": "MachCSL/WpSmodeMemSd.lean",
+      "sha256": "25302e6fc2cb250403b81aca664ddc88ef5f4e479046867a66849e4b3db76283",
+      "imports": [
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.Translate",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.KCtxGpr"
+      ]
+    },
+    "MachCSL.WpSmodeMemSw": {
+      "source": "MachCSL/WpSmodeMemSw.lean",
+      "sha256": "3872573db604ac308f16a52c2332cb2cc0a8f9dc39734b74e01f28820a9d1098",
+      "imports": [
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.Translate",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.KCtxGpr",
+        "MachCSL.SmodeMemFacts"
+      ]
+    },
+    "MachCSL.WpSmodeRegOps": {
+      "source": "MachCSL/WpSmodeRegOps.lean",
+      "sha256": "e55f608e04ee029279ed6227904836fc084ab706803b2768cf068968bb372745",
+      "imports": [
+        "MachCSL.WpSmodeCycle",
+        "MachCSL.WpAluFile"
+      ]
+    },
+    "MachCSL.KNormCache": {
+      "source": "MachCSL/KNormCache.lean",
+      "sha256": "08651f2ff0e8d6acfd603202f714fe3677acf15a5c888d8eb5c8cc357fdff6c7",
+      "imports": [
+        "MachCSL.Compat",
+        "Lean"
+      ]
+    },
+    "MachCSL.KApply": {
+      "source": "MachCSL/KApply.lean",
+      "sha256": "4598369784e9e68ee73a38ea7986a42e42cae2df0df90bdbf212b50433eb2f71",
+      "imports": [
+        "MachCSL.Compat",
+        "Iris.ProofMode"
+      ]
+    },
+    "Experiments.WholeFunction.StackDecode": {
+      "source": "Experiments/WholeFunction/StackDecode.lean",
+      "sha256": "795788f3f0d826c3ad4650d89f7473b587f47daf29ce23a4977388622242f6e2",
+      "imports": [
+        "Experiments.WholeFunction.StackActions"
+      ]
+    },
+    "Experiments.WholeFunction.StackActions": {
+      "source": "Experiments/WholeFunction/StackActions.lean",
+      "sha256": "21b850e33813eead618ddddcd89ba18e40a5ca6edc92ceb66fee71a1c3d14733",
+      "imports": [
+        "Experiments.WholeFunction.StackCells",
+        "Experiments.WholeFunction.ControlFlow",
+        "Experiments.WholeFunction.KernelReg"
+      ]
+    },
+    "Experiments.WholeFunction.StackCells": {
+      "source": "Experiments/WholeFunction/StackCells.lean",
+      "sha256": "ae08f93fd97e72f5b637487f5581cc69a67a8ee732e85357555cd67a52290355",
+      "imports": [
+        "Experiments.WholeFunction.Binary",
+        "MachCSL.WpSmodeFrame"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinCallClosure": {
+      "source": "Experiments/WholeFunction/CopyinCallClosure.lean",
+      "sha256": "e65de8a6138cdb599cc3fa9b77b9f96f9b2f270d47a1ba1c351de3e6469bffbc",
+      "imports": [
+        "Experiments.WholeFunction.CopyinCallFacts",
+        "Experiments.WholeFunction.CopyinJoins"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinCallFacts": {
+      "source": "Experiments/WholeFunction/CopyinCallFacts.lean",
+      "sha256": "8e3d9354a0162cf663f41cbe0b118505010e9fdc1011f233cb3da674ad0893a1",
+      "imports": [
+        "Experiments.WholeFunction.CopyinClosure"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinClosure": {
+      "source": "Experiments/WholeFunction/CopyinClosure.lean",
+      "sha256": "87b4fb7559416fc626e05b9e44800fba67af842e273ae9d24cff4271d006db0d",
+      "imports": [
+        "Experiments.WholeFunction.CopyinInvariant",
+        "Experiments.WholeFunction.CopyinDispatch",
+        "Experiments.WholeFunction.CopyinExit",
+        "Experiments.WholeFunction.CopyinPageFacts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinInvariant": {
+      "source": "Experiments/WholeFunction/CopyinInvariant.lean",
+      "sha256": "7b9efad65cc7ced3b49ed66af34154cd432c938d7154fe632c2a60c881906f1f",
+      "imports": [
+        "Experiments.WholeFunction.CopyinModel",
+        "Experiments.WholeFunction.CopyinPure",
+        "Experiments.WholeFunction.KernelSymbolic",
+        "Experiments.WholeFunction.StackValueWp"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinModel": {
+      "source": "Experiments/WholeFunction/CopyinModel.lean",
+      "sha256": "8c1c9ce47e6b9573ffeb30849026d0df867396d18590cddc6b799fea8463935d",
+      "imports": [
+        "Experiments.WholeFunction.CopyControl",
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.CopyControl": {
+      "source": "Experiments/WholeFunction/CopyControl.lean",
+      "sha256": "4c1e65b564efd342ddde240f27802975de0f970a30de37a86ff03cba244870d9",
+      "imports": [
+        "Experiments.WholeFunction.ControlFlow",
+        "Experiments.WholeFunction.CopyContracts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyContracts": {
+      "source": "Experiments/WholeFunction/CopyContracts.lean",
+      "sha256": "a8d43aa7d82827dd0efb3499385295b602851893fec27fef0e42c01e7664d341",
+      "imports": [
+        "Experiments.WholeFunction.CopyEffects",
+        "Xv6.SpecCopyin",
+        "Xv6.SpecCopyout",
+        "Xv6.SpecCopyinstr"
+      ]
+    },
+    "Experiments.WholeFunction.CopyEffects": {
+      "source": "Experiments/WholeFunction/CopyEffects.lean",
+      "sha256": "535148586dd1ae933b18c7fe90242716c72bb0abd6d4c47647434396bac81eea",
+      "imports": [
+        "Xv6.UMemLemmas"
+      ]
+    },
+    "Xv6.UMemLemmas": {
+      "source": "Xv6/UMemLemmas.lean",
+      "sha256": "c579dea6b5d99288f0e0c1eb3c8edeab74e3abf569c5b1040f16dddb5690139b",
+      "imports": [
+        "Xv6.UMem",
+        "Xv6.PtRunLemmas"
+      ]
+    },
+    "Xv6.UMem": {
+      "source": "Xv6/UMem.lean",
+      "sha256": "e73409acba325cabac90b75c01facd091d52e57b85a7b845a5d352338ebfc80e",
+      "imports": [
+        "Xv6.UPtDefs"
+      ]
+    },
+    "Xv6.UPtDefs": {
+      "source": "Xv6/UPtDefs.lean",
+      "sha256": "a92a7ee9a37edbc560a52ae91fdcbeb278464b081cb9908683c9ed5617492eef",
+      "imports": [
+        "Xv6.PtOwn",
+        "Xv6.KallocDefs",
+        "MachCSL.PteClass"
+      ]
+    },
+    "Xv6.PtOwn": {
+      "source": "Xv6/PtOwn.lean",
+      "sha256": "2689dd6cbb21ca65e71ab8798d4ebe941510d3aa7a02ba66140b2c34d206c3a0",
+      "imports": [
+        "MachCSL.PtTree",
+        "MachCSL.WordPointsTo"
+      ]
+    },
+    "Xv6.KallocDefs": {
+      "source": "Xv6/KallocDefs.lean",
+      "sha256": "8113f5b0e339d7ca0b7e980b8b591bfa34ff59d295f906871c90ab5c866c1899",
+      "imports": [
+        "Xv6.UartTrace",
+        "MachCSL.BytesFree"
+      ]
+    },
+    "Xv6.UartTrace": {
+      "source": "Xv6/UartTrace.lean",
+      "sha256": "cb64c53fdc33fa30bcd269aba69fb8662c6efa1eb713df52dcc5ee6d3d07a28d",
+      "imports": [
+        "MachCSL.Lock",
+        "Xv6.Geom",
+        "Iris.Instances.Lib.CInvariants",
+        "Xv6.PipeNames",
+        "Xv6.KallocEv"
+      ]
+    },
+    "MachCSL.Lock": {
+      "source": "MachCSL/Lock.lean",
+      "sha256": "02a3b965c456e7ebdbed702cf72e0465677a0f2973107e1c6d7f4dbce3c1f232",
+      "imports": [
+        "MachCSL.CtxBoot",
+        "MachCSL.KCtx"
+      ]
+    },
+    "MachCSL.CtxBoot": {
+      "source": "MachCSL/CtxBoot.lean",
+      "sha256": "4bf1419d6550c378a008b653b5bd3d9ce37ebf618344a90a8606e2cf10b502fb",
+      "imports": [
+        "MachCSL.CtxLaws"
+      ]
+    },
+    "Xv6.Geom": {
+      "source": "Xv6/Geom.lean",
+      "sha256": "ed6a81ac697c1837fec5128bf57d3eed8824c3865527cd07a53da1553448dc5d",
+      "imports": [
+        "MachCSL.KCtx",
+        "Xv6.KernelImage"
+      ]
+    },
+    "Xv6.PipeNames": {
+      "source": "Xv6/PipeNames.lean",
+      "sha256": "e17d1093bfb25b9b7faa711aa31afef4c2a29f5758f8bd24d2c2609d116e09ba",
+      "imports": [
+        "Iris.Algebra.IProp"
+      ]
+    },
+    "Xv6.KallocEv": {
+      "source": "Xv6/KallocEv.lean",
+      "sha256": "959b109948ed6a35622c154a59ed60d5cafa3949924297fde5c49a3ef40a35de",
+      "imports": []
+    },
+    "MachCSL.BytesFree": {
+      "source": "MachCSL/BytesFree.lean",
+      "sha256": "c8512db1a6ca0096180c0a86a7a0ce95d593af6f492879332833dcd10f1b9116",
+      "imports": [
+        "MachCSL.ByteWord"
+      ]
+    },
+    "MachCSL.ByteWord": {
+      "source": "MachCSL/ByteWord.lean",
+      "sha256": "1a963ea95e5cd578fcf0b0e44d65faeb4b020279ada939f853c7ce80121c1c0d",
+      "imports": [
+        "MachCSL.CallConv",
+        "MachCSL.ByteWordDefs"
+      ]
+    },
+    "MachCSL.ByteWordDefs": {
+      "source": "MachCSL/ByteWordDefs.lean",
+      "sha256": "0ad342480fc586bc151bb032b02137bf64eeb9241fdafa7f2d08a2db4b259329",
+      "imports": [
+        "MachCSL.TsoMem"
+      ]
+    },
+    "MachCSL.PteClass": {
+      "source": "MachCSL/PteClass.lean",
+      "sha256": "671ac340d435585a8aa42f9618fc0866fb37d0777ce0f2feb3f72176d6b7f612",
+      "imports": [
+        "MachCSL.PtTree",
+        "Std.Tactic.BVDecide"
+      ]
+    },
+    "Xv6.PtRunLemmas": {
+      "source": "Xv6/PtRunLemmas.lean",
+      "sha256": "d19012d8ee00f31a5a0a5ce21e10479ad38fc490df49e479463b213d13a03fbf",
+      "imports": [
+        "Xv6.KallocDefs",
+        "Xv6.PtOwnLemmas"
+      ]
+    },
+    "Xv6.PtOwnLemmas": {
+      "source": "Xv6/PtOwnLemmas.lean",
+      "sha256": "aa83c2f65bd652265339bee4e936869ba59ca208b9c4c97d027d812f125c3d8f",
+      "imports": [
+        "Xv6.PtOwn",
+        "MachCSL.ByteWord"
+      ]
+    },
+    "Xv6.SpecCopyin": {
+      "source": "Xv6/SpecCopyin.lean",
+      "sha256": "85e4c0ab436b260102759134b0b10cdc3eb14f570c3da3082a014861ce8fd252",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.UMem",
+        "Xv6.Image",
+        "Xv6.SlotGen"
+      ]
+    },
+    "Xv6.Image": {
+      "source": "Xv6/Image.lean",
+      "sha256": "3a79ba8bba962a5ab22e5f4038d63371df9ce306e6452b01bc470d5c479f7d4a",
+      "imports": [
+        "Xv6.KernelData"
+      ]
+    },
+    "Xv6.SlotGen": {
+      "source": "Xv6/SlotGen.lean",
+      "sha256": "ffb6fb8b263bc257a197baa206bb4cfa237d2c2989c42823d77b66366c006e84",
+      "imports": [
+        "Xv6.ChildTok",
+        "Xv6.PidEv",
+        "Xv6.ZombEv",
+        "Xv6.SlotEv"
+      ]
+    },
+    "Xv6.ChildTok": {
+      "source": "Xv6/ChildTok.lean",
+      "sha256": "81cab6c0d829c1cb831d5ef4adc165146736b6ef3d56715cb26975b5051de5f5",
+      "imports": [
+        "Iris.Instances.Lib.SavedProp",
+        "MachCSL.KernelElf"
+      ]
+    },
+    "Xv6.PidEv": {
+      "source": "Xv6/PidEv.lean",
+      "sha256": "0ae488804c52a66010dab0e63a7b9d0da7a7c5ac92e0420bbecfa5240ded1591",
+      "imports": []
+    },
+    "Xv6.ZombEv": {
+      "source": "Xv6/ZombEv.lean",
+      "sha256": "28bebcc785ac974e708a36189c5d658e8707cacd2348116830691d80685abd6a",
+      "imports": [
+        "Xv6.ProcGeom"
+      ]
+    },
+    "Xv6.ProcGeom": {
+      "source": "Xv6/ProcGeom.lean",
+      "sha256": "4eca26113f3260c1bc9649aa0dd453d6769d9cf8b77783fd0091257d62b56473",
+      "imports": [
+        "Xv6.SlotSupply"
+      ]
+    },
+    "Xv6.SlotSupply": {
+      "source": "Xv6/SlotSupply.lean",
+      "sha256": "4060d4161c9ae4fdaa2e5e4be8c18dabf31b69baf2491189db8df4c02b0dfa2d",
+      "imports": [
+        "Xv6.UartTrace",
+        "Xv6.VirtioQueue"
+      ]
+    },
+    "Xv6.VirtioQueue": {
+      "source": "Xv6/VirtioQueue.lean",
+      "sha256": "ce01423e4dec2ea1fc2e699c8c6df14406e161149d56ffdf11c3778c88460fbf",
+      "imports": [
+        "Xv6.DiskDefs"
+      ]
+    },
+    "Xv6.DiskDefs": {
+      "source": "Xv6/DiskDefs.lean",
+      "sha256": "99be34816090d2351d0698a9b623643a65d61cd31c2437282eef66d35cc61b46",
+      "imports": [
+        "MachCSL.Resources",
+        "Xv6.KernelImage"
+      ]
+    },
+    "Xv6.SlotEv": {
+      "source": "Xv6/SlotEv.lean",
+      "sha256": "28b740a83a45828853b847baf3e20f235c3098816fbd3ef3a8459fc76876c57e",
+      "imports": [
+        "Xv6.ProcGeom"
+      ]
+    },
+    "Xv6.SpecCopyout": {
+      "source": "Xv6/SpecCopyout.lean",
+      "sha256": "70c92db1444c95f6e5ae1a7e7fbe6b6611973f1fa90a03f4dfbe69a8317a8cc6",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.Image",
+        "Xv6.UMemLemmas",
+        "Xv6.SlotGen"
+      ]
+    },
+    "Xv6.SpecCopyinstr": {
+      "source": "Xv6/SpecCopyinstr.lean",
+      "sha256": "779d8e179c443adbe1cf76513aa020c874026b1f6b0543f3d370c222778ac7c5",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.UMem",
+        "Xv6.Image",
+        "Xv6.SlotGen"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinPure": {
+      "source": "Experiments/WholeFunction/CopyinPure.lean",
+      "sha256": "33baf326f450614e70fc36b1e1e78c2fc6d0025e89a8a7ee94c777580628065e",
+      "imports": [
+        "Experiments.WholeFunction.CopyContracts",
+        "Xv6.CopyLemmas"
+      ]
+    },
+    "Xv6.CopyLemmas": {
+      "source": "Xv6/CopyLemmas.lean",
+      "sha256": "27e56605413b2e54eea1cb8890888b8b6ea10ee34a7f3b8b916a4b36662d9468",
+      "imports": [
+        "Xv6.SpecWalkaddr",
+        "Xv6.SpecVmfault",
+        "Xv6.SpecMemmove",
+        "Xv6.UMemLemmas"
+      ]
+    },
+    "Xv6.SpecWalkaddr": {
+      "source": "Xv6/SpecWalkaddr.lean",
+      "sha256": "89aba32a528e1e91594828bd8e67fe2b6fffbb50e09c17c515bad674d30121f6",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.UPtDefs",
+        "Xv6.Image"
+      ]
+    },
+    "Xv6.SpecVmfault": {
+      "source": "Xv6/SpecVmfault.lean",
+      "sha256": "770185d2144a10806e536cc47a2ab8571214b71cd5486313001b2eeeadb79b9c",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.UPtDefs",
+        "Xv6.Image",
+        "Xv6.SlotGen"
+      ]
+    },
+    "Xv6.SpecMemmove": {
+      "source": "Xv6/SpecMemmove.lean",
+      "sha256": "221f08264a24d99d0cc624383bea603be6d3f7c19c928e42d9dc504419d70fed",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.Image",
+        "Xv6.Geom"
+      ]
+    },
+    "Experiments.WholeFunction.KernelSymbolic": {
+      "source": "Experiments/WholeFunction/KernelSymbolic.lean",
+      "sha256": "89053a88368c2d92dfcfc2b129fb169cff432d36b99bc680b7e6aad75ec29f95",
+      "imports": [
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.StackValueWp": {
+      "source": "Experiments/WholeFunction/StackValueWp.lean",
+      "sha256": "3a62bac40cb3f03bb3ef37ff0182c57877fa350b7704f398768c8bbf422163bd",
+      "imports": [
+        "Experiments.WholeFunction.KernelLinear",
+        "Experiments.WholeFunction.StackValues"
+      ]
+    },
+    "Experiments.WholeFunction.KernelLinear": {
+      "source": "Experiments/WholeFunction/KernelLinear.lean",
+      "sha256": "6b67376ee484cc6ae246a03caf4058b59a117bec8399ba22642f61b0992e8925",
+      "imports": [
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.StackValues": {
+      "source": "Experiments/WholeFunction/StackValues.lean",
+      "sha256": "c4eb07a43911e12e312051afcaeea656964251fdf7437f314654b1e3a4994113",
+      "imports": [
+        "Experiments.WholeFunction.StackChecks"
+      ]
+    },
+    "Experiments.WholeFunction.StackChecks": {
+      "source": "Experiments/WholeFunction/StackChecks.lean",
+      "sha256": "10757f98d0b59c52ae10bc033900a06216ab91f87a47e29dd2e1e81d8e570839",
+      "imports": [
+        "Experiments.WholeFunction.StackShape",
+        "Experiments.WholeFunction.KernelStackGraph",
+        "Experiments.WholeFunction.BinaryCopy"
+      ]
+    },
+    "Experiments.WholeFunction.StackShape": {
+      "source": "Experiments/WholeFunction/StackShape.lean",
+      "sha256": "51da66c96415e5d3b38d76ec60ec9df5470e7529fbc3e06bb87504b6e9f401f6",
+      "imports": [
+        "Experiments.WholeFunction.StackDecode"
+      ]
+    },
+    "Experiments.WholeFunction.BinaryCopy": {
+      "source": "Experiments/WholeFunction/BinaryCopy.lean",
+      "sha256": "eb979dc5d58a92fe5cf291f5724cccb96ee250fdfa2af0bfd00d00d19b3d722a",
+      "imports": [
+        "Experiments.WholeFunction.Binary"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinDispatch": {
+      "source": "Experiments/WholeFunction/CopyinDispatch.lean",
+      "sha256": "45bf60433307180a0e0b3936af790ea2465b85a3166454f9462ed7d9d812cc38",
+      "imports": [
+        "Experiments.WholeFunction.CopyCallRegistry",
+        "Experiments.WholeFunction.KernelDispatch",
+        "Experiments.WholeFunction.BinaryCopy"
+      ]
+    },
+    "Experiments.WholeFunction.CopyCallRegistry": {
+      "source": "Experiments/WholeFunction/CopyCallRegistry.lean",
+      "sha256": "b01a973046f7dcf06dd26a95ca1738f23a0b4bed9a2c83a7563904c867a8c02d",
+      "imports": [
+        "Experiments.WholeFunction.CopyCalls",
+        "Experiments.WholeFunction.CopyinModel",
+        "Experiments.WholeFunction.KernelCalls"
+      ]
+    },
+    "Experiments.WholeFunction.CopyCalls": {
+      "source": "Experiments/WholeFunction/CopyCalls.lean",
+      "sha256": "949d4d292204aef2b1dcebad430777657eade523c1d7a8087f574d4bee7632ea",
+      "imports": [
+        "Xv6.CopyLemmas",
+        "Xv6.UMemLemmas",
+        "Experiments.WholeFunction.CopyContracts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinExit": {
+      "source": "Experiments/WholeFunction/CopyinExit.lean",
+      "sha256": "1dfb97b95707191c367303ab9cc46d3d7d2bf0c83602547e1032bc3f12cc7d63",
+      "imports": [
+        "Experiments.WholeFunction.CopyinModel",
+        "Experiments.WholeFunction.KernelCalls",
+        "Experiments.WholeFunction.StackReturn"
+      ]
+    },
+    "Experiments.WholeFunction.StackReturn": {
+      "source": "Experiments/WholeFunction/StackReturn.lean",
+      "sha256": "0377e7558794830b0710c213234f370bfda074d2b1f08bf8012d7381d755c6a1",
+      "imports": [
+        "Experiments.WholeFunction.StackValueWp"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinPageFacts": {
+      "source": "Experiments/WholeFunction/CopyinPageFacts.lean",
+      "sha256": "f789e3797ca5bd887008b65660ae3bdcb04e54dc5c46f83834e8a102376b7305",
+      "imports": [
+        "Experiments.WholeFunction.CopyCallRegistry"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinJoins": {
+      "source": "Experiments/WholeFunction/CopyinJoins.lean",
+      "sha256": "a3ab20433217320e78781306166170b9a79a79c5d6b2f6c7e08228f1626ba202",
+      "imports": [
+        "Experiments.WholeFunction.CopyinHeaderPrefix"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinHeaderPrefix": {
+      "source": "Experiments/WholeFunction/CopyinHeaderPrefix.lean",
+      "sha256": "7b9596e6fe98309b1930b36dfef08a5fa2ca69256b0de88803a48d4bc45d4f58",
+      "imports": [
+        "Experiments.WholeFunction.CopyinPrefix"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinPrefix": {
+      "source": "Experiments/WholeFunction/CopyinPrefix.lean",
+      "sha256": "2c6f4508c0b119a5b7874378fb3d13d7e6c7c480ee2e624018820d0128beb709",
+      "imports": [
+        "Experiments.WholeFunction.CopyinChunkFacts",
+        "Experiments.WholeFunction.CopyinClosure",
+        "Experiments.WholeFunction.MemoryPrefix"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinChunkFacts": {
+      "source": "Experiments/WholeFunction/CopyinChunkFacts.lean",
+      "sha256": "0a96b6e9d550ea959506a1bd06ba8ce0ce4003ec8e9af427223ca36bebf43a7d",
+      "imports": [
+        "Experiments.WholeFunction.CopyinInvariant",
+        "Experiments.WholeFunction.CopyArithmetic"
+      ]
+    },
+    "Experiments.WholeFunction.CopyArithmetic": {
+      "source": "Experiments/WholeFunction/CopyArithmetic.lean",
+      "sha256": "b12e43fff87756060b57fb657ac515937cba71da644071b53645688a21c263ad",
+      "imports": [
+        "MachCSL.Compat",
+        "Experiments.SolverSurvey.SmtSlice"
+      ]
+    },
+    "Experiments.SolverSurvey.SmtSlice": {
+      "source": "Experiments/SolverSurvey/SmtSlice.lean",
+      "sha256": "d1b3e727e5211767c3b239b14168dc0b465a6f7934c19fb42b78db4f0ba3396c",
+      "imports": [
+        "Lean"
+      ]
+    },
+    "Experiments.WholeFunction.MemoryPrefix": {
+      "source": "Experiments/WholeFunction/MemoryPrefix.lean",
+      "sha256": "f28a8d7da97ae413bed74417feba286a3647decfeff8bed45ece8dbeb0f175a8",
+      "imports": [
+        "Experiments.WholeFunction.KernelSymbolic"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinStart": {
+      "source": "Experiments/WholeFunction/CopyinStart.lean",
+      "sha256": "8c1a13518fce997cd33eec81ea165044c819a83d381659e8064c61ce1fef816b",
+      "imports": [
+        "Experiments.WholeFunction.CopyinHeaderPrefix"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinBoundary": {
+      "source": "Experiments/WholeFunction/CopyinBoundary.lean",
+      "sha256": "1afec58a9775b9fc3b55b74b792f5d94f34613764fe8c31b2d30ce9fa9131dcb",
+      "imports": [
+        "Experiments.WholeFunction.CopyinExit",
+        "Experiments.WholeFunction.CopyinEntry"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinEntry": {
+      "source": "Experiments/WholeFunction/CopyinEntry.lean",
+      "sha256": "5e91ce5c5dc3b85e89fc406fe75f9d11f922e7e68a767bec4b08b4a029c42e15",
+      "imports": [
+        "Experiments.WholeFunction.StackValueWp"
+      ]
+    },
+    "Xv6.ProofCopyin": {
+      "source": "Xv6/ProofCopyin.lean",
+      "sha256": "7d42000a9043907493562680ab6f8ca99ad765fd76d48544a8ec3ae42da452c9",
+      "imports": [
+        "Experiments.WholeFunction.CopyinComplete"
+      ]
+    },
+    "Xv6.LinkCopyin": {
+      "source": "Xv6/LinkCopyin.lean",
+      "sha256": "81bb6792382139ac4c0bb1cc464de6046f1623c36abbd9f6cdfa0fb446bc4837",
+      "imports": [
+        "Xv6.ProofCopyin",
+        "Xv6.LinkWalkaddr",
+        "Xv6.LinkVmfault",
+        "Xv6.LinkMemmove"
+      ]
+    },
+    "Xv6.LinkWalkaddr": {
+      "source": "Xv6/LinkWalkaddr.lean",
+      "sha256": "a6c1b581f2d1a9c062acd592a79d17000fee7dbaf69e8abe7812d607e9d93b32",
+      "imports": [
+        "Xv6.ProofWalkaddr"
+      ]
+    },
+    "Xv6.ProofWalkaddr": {
+      "source": "Xv6/ProofWalkaddr.lean",
+      "sha256": "5cfa2e96ba7a586500b34308940dfea9721e7e825806498a102aaae5ada6c74e",
+      "imports": [
+        "Xv6.SpecWalkaddr",
+        "Xv6.UPtWalkaddrLemmas",
+        "Xv6.WalkaddrDefs",
+        "Xv6.CodeTactics"
+      ]
+    },
+    "Xv6.UPtWalkaddrLemmas": {
+      "source": "Xv6/UPtWalkaddrLemmas.lean",
+      "sha256": "b03184480f12d3f54e50576c817a9c5621fea5f26620f3d4937e7680561d180b",
+      "imports": [
+        "Xv6.UPtDefs",
+        "Xv6.PtRunLemmas"
+      ]
+    },
+    "Xv6.WalkaddrDefs": {
+      "source": "Xv6/WalkaddrDefs.lean",
+      "sha256": "355b5d4d0a187aa8b0cfb64315d24da71be5aed8e020f95d1d553f6e6c9e7d5b",
+      "imports": [
+        "Xv6.SpecWalk"
+      ]
+    },
+    "Xv6.SpecWalk": {
+      "source": "Xv6/SpecWalk.lean",
+      "sha256": "0c7d95485053cb0396f2416a70cf8a094ad962a43259ca184d6948e23be3bd95",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.PtOwn",
+        "Xv6.Image",
+        "Xv6.KallocDefs",
+        "Xv6.SlotGen"
+      ]
+    },
+    "Xv6.LinkVmfault": {
+      "source": "Xv6/LinkVmfault.lean",
+      "sha256": "a39106be04ab523b0397e4d928af35eedea8fbfbf3069ddc0a155c7d019f29ce",
+      "imports": [
+        "Xv6.ProofVmfault",
+        "Xv6.LinkIsmapped",
+        "Xv6.LinkWalk",
+        "Xv6.LinkKalloc",
+        "Xv6.LinkKfree",
+        "Xv6.LinkMemset",
+        "Xv6.LinkMappages",
+        "Xv6.LinkAcquire",
+        "Xv6.LinkRelease"
+      ]
+    },
+    "Xv6.ProofVmfault": {
+      "source": "Xv6/ProofVmfault.lean",
+      "sha256": "eb705d7bec1a595d00c00bc6eee9d058a8053b2631ac0f8df0eab4c23b3d6ebc",
+      "imports": [
+        "Xv6.SpecVmfault",
+        "Xv6.VmfaultDefs",
+        "MachCSL.BvLemmas"
+      ]
+    },
+    "Xv6.VmfaultDefs": {
+      "source": "Xv6/VmfaultDefs.lean",
+      "sha256": "e965e81feb39d01bc789239cbce615b6e4ac9463e475e2cc645b5586be7eaba3",
+      "imports": [
+        "Xv6.SpecUvmclear",
+        "Xv6.SpecIsmapped",
+        "Xv6.SpecMemset",
+        "Xv6.SpecMappages",
+        "Xv6.UPtFaultLemmas",
+        "Xv6.CodeTactics",
+        "MachCSL.WpSmodeFrame6",
+        "Xv6.UvmCallSites"
+      ]
+    },
+    "Xv6.SpecUvmclear": {
+      "source": "Xv6/SpecUvmclear.lean",
+      "sha256": "221ab09adc8c083a1c722b276d9885f5fc44bdc6a673538df7bd1bb5c24d50f0",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.UPtDefs",
+        "Xv6.Image"
+      ]
+    },
+    "Xv6.SpecIsmapped": {
+      "source": "Xv6/SpecIsmapped.lean",
+      "sha256": "d0b93b28d3e82e551f1ad6b4e58811bdd7c40bd649d1c1b551c147f8ae87977e",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.UPtDefs",
+        "Xv6.Image"
+      ]
+    },
+    "Xv6.SpecMemset": {
+      "source": "Xv6/SpecMemset.lean",
+      "sha256": "61f97a99748db9e5d8180b4475f54fc93e1d98ba9cc11182ac948f18dcd14b7a",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.Image",
+        "Xv6.Geom",
+        "MachCSL.BytesFree"
+      ]
+    },
+    "Xv6.SpecMappages": {
+      "source": "Xv6/SpecMappages.lean",
+      "sha256": "e8ca37f7c119bfd0007aeffe6e7208c59caa97687b8c0338026f06d664c8f05a",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.PtOwn",
+        "Xv6.Image",
+        "Xv6.KallocDefs",
+        "Xv6.SlotGen"
+      ]
+    },
+    "Xv6.UPtFaultLemmas": {
+      "source": "Xv6/UPtFaultLemmas.lean",
+      "sha256": "4a345e9b303735f84ae97685ed16d1b97929104abc34f2449cc1f6a7e2ffd659",
+      "imports": [
+        "Xv6.UPtDefs",
+        "Xv6.PtRunLemmas"
+      ]
+    },
+    "MachCSL.WpSmodeFrame6": {
+      "source": "MachCSL/WpSmodeFrame6.lean",
+      "sha256": "7ad866b1bfcdf2466364885cc8dff8d8250a119ab8055210cb8594762848a370",
+      "imports": [
+        "MachCSL.WpSmodeFrame"
+      ]
+    },
+    "Xv6.UvmCallSites": {
+      "source": "Xv6/UvmCallSites.lean",
+      "sha256": "e9536b16605974c06882a4544976cb1b978347b8f173d68d39715f789313160b",
+      "imports": [
+        "Xv6.SpecKalloc",
+        "Xv6.SpecKfree"
+      ]
+    },
+    "Xv6.SpecKalloc": {
+      "source": "Xv6/SpecKalloc.lean",
+      "sha256": "ffa5cf84d32b492968f9f62eced297514502bae3d16854527ff5821f84b0ae1a",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.KallocDefs",
+        "Xv6.Image",
+        "Xv6.SlotGen"
+      ]
+    },
+    "Xv6.SpecKfree": {
+      "source": "Xv6/SpecKfree.lean",
+      "sha256": "b1358244ad94450678b699b5a0df8148977430fdba760cc87e4a078c6ccb38f7",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.KallocDefs",
+        "Xv6.Image",
+        "Xv6.SlotGen"
+      ]
+    },
+    "MachCSL.BvLemmas": {
+      "source": "MachCSL/BvLemmas.lean",
+      "sha256": "8d43d2ea994988aa65a9be44c27ea7dfce974ec2277590d169c722b8778b737e",
+      "imports": [
+        "MachCSL.Compat",
+        "Std.Tactic.BVDecide"
+      ]
+    },
+    "Xv6.LinkIsmapped": {
+      "source": "Xv6/LinkIsmapped.lean",
+      "sha256": "a039b09f8b54409526aabdaa9f86061bcda2855e3721ecf009cfa8bda45e20d0",
+      "imports": [
+        "Xv6.ProofIsmapped"
+      ]
+    },
+    "Xv6.ProofIsmapped": {
+      "source": "Xv6/ProofIsmapped.lean",
+      "sha256": "4fe721c2ef456f68b61accc54cd9936bc69fccf2520f9d1b49496bb6d44cacaa",
+      "imports": [
+        "Xv6.SpecIsmapped",
+        "Xv6.UPtWalkaddrLemmas",
+        "Xv6.WalkaddrDefs",
+        "Xv6.CodeTactics"
+      ]
+    },
+    "Xv6.LinkWalk": {
+      "source": "Xv6/LinkWalk.lean",
+      "sha256": "60298799075b2bf5bff6ea376b0661349d22127330f8704b4b1bd1c66fe91a25",
+      "imports": [
+        "Xv6.ProofWalk"
+      ]
+    },
+    "Xv6.ProofWalk": {
+      "source": "Xv6/ProofWalk.lean",
+      "sha256": "de30ffd7b228e8460a5ad43573322379c05047d3d7746e836b92bcee12a01a58",
+      "imports": [
+        "MachCSL.WpSmodeAlu2",
+        "Xv6.SpecWalk",
+        "Xv6.SpecKalloc",
+        "Xv6.UvmCallSites",
+        "Xv6.SpecMemset",
+        "Xv6.PtOwnLemmas",
+        "Xv6.CodeTactics",
+        "MachCSL.WpSmodeFrame8",
+        "Xv6.KvmLemmas",
+        "Xv6.PtRunLemmas",
+        "MachCSL.BvLemmas"
+      ]
+    },
+    "MachCSL.WpSmodeAlu2": {
+      "source": "MachCSL/WpSmodeAlu2.lean",
+      "sha256": "e20d6f742e1345f4bdafd9b323e2c6dc7ab0a068399102af8a1818b348870cfa",
+      "imports": [
+        "MachCSL.WpSmodeRegOps"
+      ]
+    },
+    "MachCSL.WpSmodeFrame8": {
+      "source": "MachCSL/WpSmodeFrame8.lean",
+      "sha256": "3943e853f4e6aac689d9be109b32be3f24f8ac0e3d4280c6216861c10cc0f204",
+      "imports": [
+        "MachCSL.WpSmodeFrame"
+      ]
+    },
+    "Xv6.KvmLemmas": {
+      "source": "Xv6/KvmLemmas.lean",
+      "sha256": "6356b92bacf28616486236fbc3b203c21d055c39a3c7c352c4fafe74900a05cb",
+      "imports": [
+        "Xv6.PtRunLemmas",
+        "Xv6.KvmDefs"
+      ]
+    },
+    "Xv6.KvmDefs": {
+      "source": "Xv6/KvmDefs.lean",
+      "sha256": "3fe1cab258bc2ceb94921372ab5019705f33b478adc18b1399ac619393bd74b4",
+      "imports": [
+        "Xv6.PtOwn"
+      ]
+    },
+    "Xv6.LinkKalloc": {
+      "source": "Xv6/LinkKalloc.lean",
+      "sha256": "b811c84f0ba642694fcd3692045aa7ab943a85b07e2d16b9ac16da2d08665dbc",
+      "imports": [
+        "Xv6.ProofKalloc"
+      ]
+    },
+    "Xv6.ProofKalloc": {
+      "source": "Xv6/ProofKalloc.lean",
+      "sha256": "d9cf500813a25ffcf08d9749ad716f24014e5b39b0ab30636eca454a0d62b34d",
+      "imports": [
+        "Xv6.SpecKalloc",
+        "Xv6.SpecAcquire",
+        "Xv6.SpecRelease",
+        "Xv6.SpecMemset",
+        "Xv6.CodeTactics",
+        "Xv6.PtRunLemmas"
+      ]
+    },
+    "Xv6.SpecAcquire": {
+      "source": "Xv6/SpecAcquire.lean",
+      "sha256": "11c32af03fb5024dfa72f0415566feb3d057a175480ddccb49ecc9e7dfa67d55",
+      "imports": [
+        "Xv6.Image",
+        "MachCSL.WpSmodeIntr",
+        "Xv6.Geom",
+        "MachCSL.Lock"
+      ]
+    },
+    "Xv6.SpecRelease": {
+      "source": "Xv6/SpecRelease.lean",
+      "sha256": "08ded8233c08b1eeff3ca67a1de74b3a66ca20399d30387a8916db6d57434c04",
+      "imports": [
+        "Xv6.Image",
+        "MachCSL.WpSmodeIntr",
+        "Xv6.Geom",
+        "MachCSL.Lock"
+      ]
+    },
+    "Xv6.LinkKfree": {
+      "source": "Xv6/LinkKfree.lean",
+      "sha256": "8062fc107587c35c05ea8f3d97497e570424e9582f01adb20417c8b8b2664bb2",
+      "imports": [
+        "Xv6.ProofKfree"
+      ]
+    },
+    "Xv6.ProofKfree": {
+      "source": "Xv6/ProofKfree.lean",
+      "sha256": "e124026835b8df5f2f086eef111b7ea8f22905b77bef5e94ea7380fb6f729e4b",
+      "imports": [
+        "MachCSL.WpSmodeSltu",
+        "Xv6.SpecKfree",
+        "Xv6.SpecAcquire",
+        "Xv6.SpecRelease",
+        "Xv6.SpecMemset",
+        "Xv6.CodeTactics"
+      ]
+    },
+    "MachCSL.WpSmodeSltu": {
+      "source": "MachCSL/WpSmodeSltu.lean",
+      "sha256": "f17e347eb6c5cff06de537ec581d0b801af1d8de79d14d17037908a59e7acf91",
+      "imports": [
+        "MachCSL.WpSmodeRegOps",
+        "MachCSL.WpSmodeCtl"
+      ]
+    },
+    "Xv6.LinkMemset": {
+      "source": "Xv6/LinkMemset.lean",
+      "sha256": "46ec7a458e417c9186f700f0126e5c8698dd5f39d6976adc8330fbb352ed23c2",
+      "imports": [
+        "Xv6.ProofMemset"
+      ]
+    },
+    "Xv6.ProofMemset": {
+      "source": "Xv6/ProofMemset.lean",
+      "sha256": "4fcdc22d66ab1a8bf511e93d4f0310cdc705fa622c7d7b8ad0dd039b98a2d463",
+      "imports": [
+        "Xv6.SpecMemset",
+        "Xv6.CodeTactics",
+        "MachCSL.WpStoreFree",
+        "MachCSL.BvLemmas"
+      ]
+    },
+    "MachCSL.WpStoreFree": {
+      "source": "MachCSL/WpStoreFree.lean",
+      "sha256": "3f308ed97ca40c4395ecca6c8446a05101ebf45b220cf51eaf11db6e3f57d9dd",
+      "imports": [
+        "MachCSL.WpSmodeRules",
+        "MachCSL.BytesFree",
+        "MachCSL.CtxKeyMint"
+      ]
+    },
+    "MachCSL.CtxKeyMint": {
+      "source": "MachCSL/CtxKeyMint.lean",
+      "sha256": "816dfa7b6680602e3915c2c7ea1184a5dea787026399adc3c1b7498e407b1f52",
+      "imports": [
+        "MachCSL.CtxLaws"
+      ]
+    },
+    "Xv6.LinkMappages": {
+      "source": "Xv6/LinkMappages.lean",
+      "sha256": "c75ed1a339244fca634bf9da4218ba50fdc00c4fad805b20a2c7fc17ffb6b301",
+      "imports": [
+        "Xv6.ProofMappages"
+      ]
+    },
+    "Xv6.ProofMappages": {
+      "source": "Xv6/ProofMappages.lean",
+      "sha256": "64aaf4a76634d9ea84cbdb39516b6de38c940a72fe7bf1a1316747ced04b3b5b",
+      "imports": [
+        "Xv6.SpecMappages",
+        "Xv6.SpecWalk",
+        "Xv6.PtRunLemmas",
+        "Xv6.CodeTactics",
+        "Xv6.ByteCursor",
+        "Xv6.UvmallocDefs",
+        "MachCSL.BvLemmas"
+      ]
+    },
+    "Xv6.ByteCursor": {
+      "source": "Xv6/ByteCursor.lean",
+      "sha256": "626ad22e53f94c65daceab83f33b525c7317942e3314c3a6f9b68897357dc4da",
+      "imports": [
+        "MachCSL.ByteWord"
+      ]
+    },
+    "Xv6.UvmallocDefs": {
+      "source": "Xv6/UvmallocDefs.lean",
+      "sha256": "c26f3dfcb6bca4fc2669b59e677bc3e9053e3010213d91b4ba8e2a5a79ef9238",
+      "imports": [
+        "MachCSL.WpSmodeFrame"
+      ]
+    },
+    "Xv6.LinkAcquire": {
+      "source": "Xv6/LinkAcquire.lean",
+      "sha256": "0f9523d9a234605f5c131d8979e4a171c9f789ae6407b2c32b80a660b2cdaeb8",
+      "imports": [
+        "Xv6.ProofAcquire",
+        "Xv6.LinkPushoff",
+        "Xv6.LinkHolding"
+      ]
+    },
+    "Xv6.ProofAcquire": {
+      "source": "Xv6/ProofAcquire.lean",
+      "sha256": "0a240a7fe58aeec8fd4075bdd7af79591d5f85f7ff792fffab93e5bbd9d8082c",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "MachCSL.WpLock",
+        "Xv6.SpecAcquire",
+        "Xv6.SpecPushoff",
+        "Xv6.SpecHolding",
+        "Xv6.SpecMycpu",
+        "Xv6.CodeTactics",
+        "MachCSL.LockFacts"
+      ]
+    },
+    "MachCSL.WpLock": {
+      "source": "MachCSL/WpLock.lean",
+      "sha256": "92f35368cf67f485f77e790382babc8b9a2d35370f86653a419190198bd2ce57",
+      "imports": [
+        "MachCSL.WpSmodeAtomic",
+        "MachCSL.WpSmodeRules",
+        "MachCSL.Lock",
+        "MachCSL.WpLockSchema"
+      ]
+    },
+    "MachCSL.WpSmodeAtomic": {
+      "source": "MachCSL/WpSmodeAtomic.lean",
+      "sha256": "6f023fdf9b2282f3adb7402265972e439f5c7d3b2e50e854a7f5eef773311f13",
+      "imports": [
+        "MachCSL.WpSmodeAu",
+        "MachCSL.WpSmodeCtl",
+        "MachCSL.SmodeMemFacts",
+        "MachCSL.WpAluFile",
+        "MachCSL.Translate"
+      ]
+    },
+    "MachCSL.WpSmodeAu": {
+      "source": "MachCSL/WpSmodeAu.lean",
+      "sha256": "23d73da8d7aef7a75e3e14e01aee7455725f91de454d6e46ce7f58259e7c1bfc",
+      "imports": [
+        "MachCSL.WpAtomic",
+        "MachCSL.WpSmodeAuDefs",
+        "MachCSL.SConfPhysDefs",
+        "MachCSL.WpPmpXv6"
+      ]
+    },
+    "MachCSL.WpLockSchema": {
+      "source": "MachCSL/WpLockSchema.lean",
+      "sha256": "2ccae166a31eba5abe5d4953624c77b6376f1560851ad3eae899dde2090bf98c",
+      "imports": [
+        "MachCSL.CallConv",
+        "MachCSL.WpSmodeCycle"
+      ]
+    },
+    "Xv6.SpecPushoff": {
+      "source": "Xv6/SpecPushoff.lean",
+      "sha256": "3246641df57fec546258a9af1eb1ab936f8de893a0bdea7de4cf6ae9d300c629",
+      "imports": [
+        "MachCSL.WpSmodeIntr",
+        "Xv6.Image",
+        "Xv6.Geom"
+      ]
+    },
+    "Xv6.SpecHolding": {
+      "source": "Xv6/SpecHolding.lean",
+      "sha256": "6d285f0c88a3951670c7f3480b65add2eb70e08d833876f31609833851e17eaa",
+      "imports": [
+        "MachCSL.Lock",
+        "Xv6.Image",
+        "Xv6.Geom",
+        "MachCSL.WpSmodeCtl"
+      ]
+    },
+    "Xv6.SpecMycpu": {
+      "source": "Xv6/SpecMycpu.lean",
+      "sha256": "8078aa91a6a17c9206598968029dc883598705a4978d1c59fd33884f3c2c8d71",
+      "imports": [
+        "Xv6.Image",
+        "Xv6.Geom",
+        "MachCSL.WpSmodeCtl"
+      ]
+    },
+    "MachCSL.LockFacts": {
+      "source": "MachCSL/LockFacts.lean",
+      "sha256": "6b20ee00ad180300e57384e05a3e429596ba12805cfb74618c8a133991d81c19",
+      "imports": [
+        "MachCSL.AluFacts",
+        "MachCSL.Lock"
+      ]
+    },
+    "Xv6.LinkPushoff": {
+      "source": "Xv6/LinkPushoff.lean",
+      "sha256": "7fa3e01cd313ee50f1d920de3d70cc13733bc3cfbe921b16cc80161ceee4f35c",
+      "imports": [
+        "Xv6.ProofPushoff",
+        "Xv6.LinkMycpu"
+      ]
+    },
+    "Xv6.ProofPushoff": {
+      "source": "Xv6/ProofPushoff.lean",
+      "sha256": "22978b5d7b1d615d2fd2f8ffc160a46f151530b5c905b13e1e71cb21517d1b4b",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.SpecPushoff",
+        "Xv6.SpecMycpu",
+        "Xv6.CodeTactics",
+        "Xv6.StepLemmas"
+      ]
+    },
+    "Xv6.StepLemmas": {
+      "source": "Xv6/StepLemmas.lean",
+      "sha256": "b8cb7da54866f46be248a27b76e25c387f38eb1560e3b3f63e924dbb1281ad6d",
+      "imports": [
+        "MachCSL.AluFacts",
+        "Xv6.ByteCursor"
+      ]
+    },
+    "Xv6.LinkMycpu": {
+      "source": "Xv6/LinkMycpu.lean",
+      "sha256": "26b3d456891f4336300a41a2f8d237ae1316fae31fb0e38e0591e2d6354c2fbf",
+      "imports": [
+        "Xv6.ProofMycpu"
+      ]
+    },
+    "Xv6.ProofMycpu": {
+      "source": "Xv6/ProofMycpu.lean",
+      "sha256": "39853074d885620b6691a27712ba92cea9288fec4597ed5ff04910f928201d94",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.SpecMycpu",
+        "Xv6.CodeTactics"
+      ]
+    },
+    "Xv6.LinkHolding": {
+      "source": "Xv6/LinkHolding.lean",
+      "sha256": "7b3f7ed856f2951f0ca019c58cdc548b6d6ff66efd6b6f97989d039b4d965900",
+      "imports": [
+        "Xv6.ProofHolding",
+        "Xv6.LinkMycpu"
+      ]
+    },
+    "Xv6.ProofHolding": {
+      "source": "Xv6/ProofHolding.lean",
+      "sha256": "4a25aae76a6a9b5a67b69d7b8fdd58b82a1fb778fadf37fc61a909c8e2b08fe0",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "MachCSL.WpLock",
+        "Xv6.SpecHolding",
+        "Xv6.SpecMycpu",
+        "Xv6.CodeTactics",
+        "MachCSL.LockFacts"
+      ]
+    },
+    "Xv6.LinkRelease": {
+      "source": "Xv6/LinkRelease.lean",
+      "sha256": "6d79137346a7f424389653116de8ef3bddf52c87e58a8acb9337538ac36b863d",
+      "imports": [
+        "Xv6.ProofRelease",
+        "Xv6.LinkHolding",
+        "Xv6.LinkPopoff"
+      ]
+    },
+    "Xv6.ProofRelease": {
+      "source": "Xv6/ProofRelease.lean",
+      "sha256": "4f8f2d57d99a502fc43b7706860df83500b196c53afea5c64ac653ec13be7a31",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "MachCSL.WpLock",
+        "Xv6.SpecRelease",
+        "Xv6.SpecPopoff",
+        "Xv6.SpecHolding",
+        "Xv6.CodeTactics",
+        "MachCSL.LockFacts"
+      ]
+    },
+    "Xv6.SpecPopoff": {
+      "source": "Xv6/SpecPopoff.lean",
+      "sha256": "a7285b4c7ed9e94d3801b211767e724882f504a541a12eb9962b186cac0370b4",
+      "imports": [
+        "Xv6.Image",
+        "Xv6.Geom",
+        "MachCSL.WpSmodeIntr"
+      ]
+    },
+    "Xv6.LinkPopoff": {
+      "source": "Xv6/LinkPopoff.lean",
+      "sha256": "4c5ec68dfb9e904e4f875a0de239bb760ff49c5d5fddd842554218921ee78974",
+      "imports": [
+        "Xv6.ProofPopoff",
+        "Xv6.LinkMycpu"
+      ]
+    },
+    "Xv6.ProofPopoff": {
+      "source": "Xv6/ProofPopoff.lean",
+      "sha256": "6f0ce601fc63ef1ebe5e13572823e51962dfcec0c536a8c3a07598b68b1ddafb",
+      "imports": [
+        "MachCSL.WpSmodeFrame",
+        "Xv6.SpecPopoff",
+        "Xv6.SpecMycpu",
+        "Xv6.CodeTactics",
+        "Xv6.StepLemmas",
+        "MachCSL.LockFacts"
+      ]
+    },
+    "Xv6.LinkMemmove": {
+      "source": "Xv6/LinkMemmove.lean",
+      "sha256": "6af48b09fbb75547a45893c3b0e8bb430c72fb92257b84c2279c4a0960dea4a9",
+      "imports": [
+        "Xv6.ProofMemmove"
+      ]
+    },
+    "Xv6.ProofMemmove": {
+      "source": "Xv6/ProofMemmove.lean",
+      "sha256": "e5ab249cb66ab9a28bc7785d3ab70b4483676d4db6dd4b1713b7e419fcf98b58",
+      "imports": [
+        "Xv6.SpecMemmove",
+        "Xv6.CodeTactics",
+        "Xv6.StepLemmas",
+        "MachCSL.BvLemmas"
+      ]
+    }
+  },
+  "source_changes_during_run": [],
+  "memory_limit_gib": 4,
+  "lean_workers": 1,
+  "samples": [
+    {
+      "source": "Experiments/WholeFunction/CopyinInvariant.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 18.632,
+      "service_runtime": "2.576s",
+      "peak_mib": 214.3,
+      "physical_lines": 145,
+      "sha256": "7b9efad65cc7ced3b49ed66af34154cd432c938d7154fe632c2a60c881906f1f",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinInvariant.log",
+      "module": "Experiments.WholeFunction.CopyinInvariant",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinClosure.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 2.519,
+      "service_runtime": "2.461s",
+      "peak_mib": 213.3,
+      "physical_lines": 105,
+      "sha256": "87b4fb7559416fc626e05b9e44800fba67af842e273ae9d24cff4271d006db0d",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinClosure.log",
+      "module": "Experiments.WholeFunction.CopyinClosure",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinCallFacts.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 6.145,
+      "service_runtime": "2.840s",
+      "peak_mib": 214.5,
+      "physical_lines": 143,
+      "sha256": "8e3d9354a0162cf663f41cbe0b118505010e9fdc1011f233cb3da674ad0893a1",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinCallFacts.log",
+      "module": "Experiments.WholeFunction.CopyinCallFacts",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinChunkFacts.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 2.786,
+      "service_runtime": "2.730s",
+      "peak_mib": 216.4,
+      "physical_lines": 99,
+      "sha256": "0a96b6e9d550ea959506a1bd06ba8ce0ce4003ec8e9af427223ca36bebf43a7d",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinChunkFacts.log",
+      "module": "Experiments.WholeFunction.CopyinChunkFacts",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinPrefix.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 6.321,
+      "service_runtime": "6.268s",
+      "peak_mib": 227.4,
+      "physical_lines": 85,
+      "sha256": "2c6f4508c0b119a5b7874378fb3d13d7e6c7c480ee2e624018820d0128beb709",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinPrefix.log",
+      "module": "Experiments.WholeFunction.CopyinPrefix",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinHeaderPrefix.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 3.621,
+      "service_runtime": "3.565s",
+      "peak_mib": 218.6,
+      "physical_lines": 41,
+      "sha256": "7b9596e6fe98309b1930b36dfef08a5fa2ca69256b0de88803a48d4bc45d4f58",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinHeaderPrefix.log",
+      "module": "Experiments.WholeFunction.CopyinHeaderPrefix",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinJoins.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 9.209,
+      "service_runtime": "9.153s",
+      "peak_mib": 234.7,
+      "physical_lines": 194,
+      "sha256": "a3ab20433217320e78781306166170b9a79a79c5d6b2f6c7e08228f1626ba202",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinJoins.log",
+      "module": "Experiments.WholeFunction.CopyinJoins",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinCallClosure.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 2.413,
+      "service_runtime": "2.354s",
+      "peak_mib": 211.4,
+      "physical_lines": 70,
+      "sha256": "e65de8a6138cdb599cc3fa9b77b9f96f9b2f270d47a1ba1c351de3e6469bffbc",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinCallClosure.log",
+      "module": "Experiments.WholeFunction.CopyinCallClosure",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinStart.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 6.21,
+      "service_runtime": "6.154s",
+      "peak_mib": 235.3,
+      "physical_lines": 61,
+      "sha256": "8c1a13518fce997cd33eec81ea165044c819a83d381659e8064c61ce1fef816b",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinStart.log",
+      "module": "Experiments.WholeFunction.CopyinStart",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinRegistryClient.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 39.382,
+      "service_runtime": "4.312s",
+      "peak_mib": 225.6,
+      "physical_lines": 275,
+      "sha256": "ef5c3b1e57ad608c5e96475f374fd480db7ad24f78e02470f95c8b9e6a4aff10",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinRegistryClient.log",
+      "module": "Experiments.WholeFunction.CopyinRegistryClient",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Experiments/WholeFunction/CopyinComplete.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 14.331,
+      "service_runtime": "2.218s",
+      "peak_mib": 210.7,
+      "physical_lines": 19,
+      "sha256": "c128e226c6b2a584b5bc004a1ba0976cfb0b3937eb1505aaa1f2c2a897954c07",
+      "log": ".lake/whole-function/suite-selected-002714550532-Experiments.WholeFunction.CopyinComplete.log",
+      "module": "Experiments.WholeFunction.CopyinComplete",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Xv6/ProofCopyin.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 8.568,
+      "service_runtime": "2.148s",
+      "peak_mib": 207.6,
+      "physical_lines": 14,
+      "sha256": "7d42000a9043907493562680ab6f8ca99ad765fd76d48544a8ec3ae42da452c9",
+      "log": ".lake/whole-function/suite-selected-002714550532-Xv6.ProofCopyin.log",
+      "module": "Xv6.ProofCopyin",
+      "source_changed_after_check": false
+    },
+    {
+      "source": "Xv6/LinkCopyin.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 5.084,
+      "service_runtime": "2.159s",
+      "peak_mib": 213.3,
+      "physical_lines": 29,
+      "sha256": "81bb6792382139ac4c0bb1cc464de6046f1623c36abbd9f6cdfa0fb446bc4837",
+      "log": ".lake/whole-function/suite-selected-002714550532-Xv6.LinkCopyin.log",
+      "module": "Xv6.LinkCopyin",
+      "source_changed_after_check": false
+    }
+  ],
+  "passed": true
+}

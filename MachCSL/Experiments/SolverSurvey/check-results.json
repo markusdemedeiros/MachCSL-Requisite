@@ -1,0 +1,239 @@
+{
+  "scope": "Focused correctness checks with cached external imports; not build benchmarks",
+  "passed": true,
+  "workers": 1,
+  "memory_limit_gib": 4,
+  "samples": [
+    {
+      "source": "Experiments/SolverSurvey/SmtSlice.lean",
+      "sha256": "d1b3e727e5211767c3b239b14168dc0b465a6f7934c19fb42b78db4f0ba3396c",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SmtSlice.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.949s",
+      "peak": "219.2M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/ArithmeticClients.lean",
+      "sha256": "226d177448de2618d902f36f149629011a48c5bbe77fa360a5441580387988ac",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-ArithmeticClients.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.915s",
+      "peak": "254.7M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/SolverCache.lean",
+      "sha256": "6ac80a71ed19f8cf9845c5caf20fcc0f193ee3bdaffbdff9a7745763ce76f4a5",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SolverCache.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "1.923s",
+      "peak": "173.3M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/BlockNormalize.lean",
+      "sha256": "1940dad631be000386da1d7b067b80545d34a407dbe3ad73b553967ac4b2c240",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-BlockNormalize.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.006s",
+      "peak": "230.6M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/BlockChecks.lean",
+      "sha256": "843c38714fed908c0dd5375dbfc2db8a1fc6d02e522497e6bae02879a9f19ed1",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-BlockChecks.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "3.929s",
+      "peak": "271.8M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/BlockMachine.lean",
+      "sha256": "d1f15a56f09b024a775a022536f4a02bf12dc6f9682d0678014c113db37f2867",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-BlockMachine.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.477s",
+      "peak": "241.3M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/BlockPhase.lean",
+      "sha256": "fc3a8d11eb5a4454c5c1ee88dd15d5aec5343dffb0dbc965efe9bed26f7f179c",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-BlockPhase.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "25.445s",
+      "peak": "293M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/BlockBridge.lean",
+      "sha256": "141144cd4e597cd77ec7a6b2d27f5171fc6f192d32cadf01d9e745011d416cd1",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-BlockBridge.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "3.214s",
+      "peak": "254.4M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/BlockAudit.lean",
+      "sha256": "e2b206c0bf79ce2c9d1f773692bf194b56045d59b711aeb8b4d6211e306dad42",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-BlockAudit.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "4.598s",
+      "peak": "231.8M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/BlockRejects.lean",
+      "sha256": "6e2b0d8ba1148d6f7f98d1142d1d620890cd2873587aa90e681afe8a89db80a2",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-BlockRejects.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.522s",
+      "peak": "241.2M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/Collections.lean",
+      "sha256": "b53de6be0b2559301ce8349521ced9186eff1965e84e5f6b453b99a85207f9ad",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-Collections.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "1.784s",
+      "peak": "210.7M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/CollectionsChecks.lean",
+      "sha256": "6c3b5c45b3e2ff9d1116686737a767c4a3139794c997839a1d9bc8375d047708",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-CollectionsChecks.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "10.583s",
+      "peak": "259.1M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/ImageWriteLaws.lean",
+      "sha256": "b9cdc0d0f6b388b38701007b17ed556858d125f46e9e434975299ccbacaaba6d",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-ImageWriteLaws.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.083s",
+      "peak": "230.2M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/MapOverlay.lean",
+      "sha256": "193c5038a69adba920d7621962bea7184284db54767bbc16819eeae556632c8c",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-MapOverlay.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.985s",
+      "peak": "229.2M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/MapOverlayChecks.lean",
+      "sha256": "159a3a619793c9c91ae5e303e3d20ee4561bde9ee213ef5de7da8de14b0518ae",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-MapOverlayChecks.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.974s",
+      "peak": "237.4M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/SmtLearn.lean",
+      "sha256": "207f1eebe27903822b053e4c3f0eb628bd7c22e3c557eb9a949b8bff84da6e9a",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SmtLearn.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "2.645s",
+      "peak": "215.1M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/SmtLearnChecks.lean",
+      "sha256": "5a8aecc9be101711311f9ea219ad9396ec39bd02ce7f766233e0e221af6a0639",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SmtLearnChecks.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "1.776s",
+      "peak": "223.5M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/SmtLearnImport.lean",
+      "sha256": "5cbc53917e35d694538c35956592b8a20b4d5664844f93fafccfd4a63071e0a5",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SmtLearnImport.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "1.618s",
+      "peak": "198.9M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/SmtSliceChecks.lean",
+      "sha256": "2249ba1916b9fa1b6c753baab749900b0a6a293ac17a3e4a91460864a615fe8f",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SmtSliceChecks.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "1.942s",
+      "peak": "215.4M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/SmtSliceRejects.lean",
+      "sha256": "2209f92a839c71ea6dbd1f471baf2617327791cf0ac3da02f0ca9148088f859d",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SmtSliceRejects.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "1.657s",
+      "peak": "210.3M (swap: 0B)",
+      "hash_matches_after_suite": true
+    },
+    {
+      "source": "Experiments/SolverSurvey/SolverChecks.lean",
+      "sha256": "ef42eda9d990de353a07d063e0df1b4774206052898f6f1aef43edfddeee0e4a",
+      "exit_code": 0,
+      "log": ".lake/solver-survey/suite-SolverChecks.log",
+      "source_changed": false,
+      "incomplete": false,
+      "service_runtime": "1.709s",
+      "peak": "168.8M (swap: 0B)",
+      "hash_matches_after_suite": true
+    }
+  ]
+}

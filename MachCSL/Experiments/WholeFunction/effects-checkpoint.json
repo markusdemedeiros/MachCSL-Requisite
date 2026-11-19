@@ -1,0 +1,62 @@
+{
+  "scope": "String effect engine and closed decoder metadata cache; production COPYIN/COPYOUT were unchanged by this checkpoint. String production exports remain originals.",
+  "reports": {
+    "Experiments/WholeFunction/effects-regression.json": "2c2f178511a5f1123ddad09b94d1308cc521e2cab4c5b56d922945cbc27e3b7f",
+    "Experiments/WholeFunction/string-effects-integration.json": "73c58c2110b45f4395a869f4389875a9fd04147c05f76dcb0388b3c44732df15",
+    "Experiments/WholeFunction/client-authoring-effects.json": "4c02aed5e7ee2475f3ad3ecae86136c072ee7178e5870c59a3781eae8077943e",
+    "Experiments/WholeFunction/prefix-cache-results.json": "748b88b01e3742b1dfa67e24044e2bf97fa03be0212dfaed9b0a4e9909d53c1c"
+  },
+  "sources": {
+    "Experiments/WholeFunction/RegisterEffects.lean": "d57ff3af167569e049a3851057e77f4fc3691c4a56620c29801b1a4020c408c4",
+    "Experiments/WholeFunction/MemoryFrame.lean": "d1920d13f6fd15cdd34e81b8243365824b09bea5dc8cffe43c74e2f3f629d4b3",
+    "Experiments/WholeFunction/FrameEffects.lean": "6f16d3ba70d634059da55d65dbfeefec2747aa17e4e6cf2e91e04a822660af5d",
+    "Experiments/WholeFunction/MemoryPrefix.lean": "f28a8d7da97ae413bed74417feba286a3647decfeff8bed45ece8dbeb0f175a8",
+    "Experiments/WholeFunction/MemoryPrefixCacheChecks.lean": "e5758118a2dbdcd6cb3d71abdfcbddfe80eef8f29df53b2d17918e61c4b1f9ca"
+  },
+  "regression": {
+    "passed": true,
+    "modules": 21,
+    "service_seconds": 77.688,
+    "peak_MiB": 278.3,
+    "sources_changed": []
+  },
+  "public_contracts": {
+    "Strlen": {
+      "type": "Xv6.STRLEN",
+      "theorem": "Xv6.WholeFunction.Strlen.compiled_strlen",
+      "baseline_axioms": 38,
+      "current_axioms": 37,
+      "added": [],
+      "old_proof_imports": []
+    },
+    "Strncpy": {
+      "type": "Xv6.STRNCPY",
+      "theorem": "Xv6.WholeFunction.Strncpy.compiled_strncpy",
+      "baseline_axioms": 38,
+      "current_axioms": 37,
+      "added": [],
+      "old_proof_imports": []
+    }
+  },
+  "cache": {
+    "median_seconds": {
+      "original": 15.157,
+      "closed_uncached": 15.122,
+      "cached": 12.744
+    },
+    "relative_reduction": 0.15920036946625327,
+    "fixed_inputs_changed": [],
+    "imported_cache_negative_test_log": ".lake/whole-function/prefix-cache-checks-final.log",
+    "negative_cases": [
+      "different binary table at same PC",
+      "false semantic postcondition"
+    ],
+    "different_cutpoint_positive": true
+  },
+  "limitations": [
+    "Focused cached-import checks, not a whole xv6 build.",
+    "Shared implementation and replacement proof source exceed original proof source.",
+    "No direct use of requisiteness in this Sail WP instruction compiler.",
+    "Source and axiom evidence is frozen to named hashes; later edits require fresh checks."
+  ]
+}

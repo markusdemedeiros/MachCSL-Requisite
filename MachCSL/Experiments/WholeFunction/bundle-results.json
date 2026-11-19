@@ -1,0 +1,1604 @@
+{
+  "scope": "Focused Lean packaging experiment with cached external imports; not a clean xv6 or Lake build benchmark. Service runtime excludes shared-lock waiting.",
+  "memory_cap_gib": 4,
+  "runtime_cap_seconds_per_check": 180,
+  "lean_workers": 1,
+  "generation": "Topologically concatenate authored source snapshots; remove internal imports, put external imports at top, wrap each source in section, alpha-rename private local declarations per source. Authored modules and production files unchanged.",
+  "validation": "Bundles do not import selected source modules, checked via transitive source imports. Full COPYOUT declaration absent before elaboration; generated compiled_copyout checked with exactly37 axioms, all in the existing MixedAction.sound production baseline, and no sorryAx.",
+  "limitations": [
+    "Three-module pilot recorded source hashes but predates external artifact hash recording.",
+    "Twenty-module comparison holds source and direct external artifact hashes fixed and includes import-only controls.",
+    "Full55module modular baseline is a source-hash-matched cross-run sum, not a paired same-environment clean rebuild. Three missing timings measured from frozen snapshots after full bundle, when frontend macros could have been added to cached imports.",
+    "Import-only controls approximate startup/loading/export overhead; subtracting them is not a direct Lean internal phase profile.",
+    "Generated source snapshots and logs are in .lake/whole-function/bundles; manifests identify exact sources and git ref."
+  ],
+  "pilot_three_modules": {
+    "snapshot_manifest": ".lake/whole-function/bundles/frame-entry-v1/manifest.json",
+    "snapshot_manifest_sha256": "9d460a8144c42298684771453d92111d55e853724a6fc5cee0b054253c649f40",
+    "git_head": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+    "source_count": 3,
+    "source_lines": 319,
+    "sources": [
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrameDefs",
+        "sha256": "f1fea3af6220bb8925c7f5348f4b9de772810819f3ea9f0a40b5548f707682a8",
+        "lines": 38
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrame",
+        "sha256": "2d7df86a8486101109a58dbf8a47ca09cf1d5b900764faed48dcc4a2e29ccaec",
+        "lines": 129
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutEntry",
+        "sha256": "5661d5d7e20e812f19cb34b1dc24c15d24fa88f2ca0afd6bb98a836253439b74",
+        "lines": 152
+      }
+    ],
+    "external_imports": [
+      "Experiments.WholeFunction.CopyinEntry",
+      "Experiments.WholeFunction.FrameCompiler"
+    ],
+    "bundle_seconds": 11.984,
+    "bundle_peak_mib": 315.9,
+    "bundle_import_control_seconds": 1.834,
+    "bundle_exit_code": 0,
+    "bundle_log": ".lake/whole-function/bundles/frame-entry-v1/bundle.log",
+    "authored_sources_unchanged_at_end": true,
+    "external_sources_unchanged_at_end": null,
+    "external_oleans_unchanged_at_end": null,
+    "individual_seconds": 15.673,
+    "individual_peak_mib": 305.4,
+    "individual_import_control_seconds": 5.418,
+    "individual_measurements": [
+      {
+        "label": "CopyoutFrameDefs",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.974,
+        "service_runtime": "1.935s",
+        "peak_mib": 223.2,
+        "log": ".lake/whole-function/bundles/frame-entry-v1/CopyoutFrameDefs.log"
+      },
+      {
+        "label": "CopyoutFrame",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 10.703,
+        "service_runtime": "10.664s",
+        "peak_mib": 305.4,
+        "log": ".lake/whole-function/bundles/frame-entry-v1/CopyoutFrame.log"
+      },
+      {
+        "label": "CopyoutEntry",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 3.109,
+        "service_runtime": "3.074s",
+        "peak_mib": 250.2,
+        "log": ".lake/whole-function/bundles/frame-entry-v1/CopyoutEntry.log"
+      }
+    ],
+    "import_control_measurements": [
+      {
+        "label": "CopyoutFrameDefs-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.849,
+        "service_runtime": "1.811s",
+        "peak_mib": 219.0,
+        "log": ".lake/whole-function/bundles/frame-entry-v1/CopyoutFrameDefs-imports.log"
+      },
+      {
+        "label": "CopyoutFrame-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.842,
+        "service_runtime": "1.803s",
+        "peak_mib": 219.1,
+        "log": ".lake/whole-function/bundles/frame-entry-v1/CopyoutFrame-imports.log"
+      },
+      {
+        "label": "CopyoutEntry-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.841,
+        "service_runtime": "1.804s",
+        "peak_mib": 219.0,
+        "log": ".lake/whole-function/bundles/frame-entry-v1/CopyoutEntry-imports.log"
+      }
+    ],
+    "net_saving_seconds": 3.689,
+    "startup_import_saving_seconds": 3.584,
+    "saving_percent": 23.54
+  },
+  "paired_twenty_modules": {
+    "snapshot_manifest": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+    "snapshot_manifest_sha256": "3d2e6f0c08763d43018fb4bedc18cf4781bcb49a7dc01bb5ccab30f30f649c59",
+    "git_head": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+    "source_count": 20,
+    "source_lines": 2836,
+    "sources": [
+      {
+        "module": "Experiments.WholeFunction.CopyoutModel",
+        "sha256": "8ca818216e5d1848212e5664077ff0adc4c53a8ea5b173d00ea57878c51e3caf",
+        "lines": 59,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutPure",
+        "sha256": "e99992fb8d81a516f69cda3ec4e4b3535b1ffa2943b75da63c4d6d0b9eea35f6",
+        "lines": 67,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrameDefs",
+        "sha256": "f1fea3af6220bb8925c7f5348f4b9de772810819f3ea9f0a40b5548f707682a8",
+        "lines": 38,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutInvariant",
+        "sha256": "0ff20fb98fe12d5e7f8f8360fef99ab55e939ed45e19f31212ebaa1eb198ac44",
+        "lines": 174,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCalls",
+        "sha256": "2f3aa3f0986f3bee46315ada209804289c2293391969f1ddf28ae7cbdb2605e4",
+        "lines": 211,
+        "private_alpha_renames": {
+          "pteAD_write_checked": "bundle_private_4_pteAD_write_checked"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallRegistry",
+        "sha256": "0c4751f7af378b5610f8980a62dcf870b43255d81c874f43c08c8c02657d3eee",
+        "lines": 214,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallFacts",
+        "sha256": "cb7b427dd6f074571765136230010a8532e741947d9d1c3949f716bae310096a",
+        "lines": 245,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBlocks",
+        "sha256": "916917c5562c7de5c25a9a96f9ff90fe3446df01473b5674783b1d2b22cc8163",
+        "lines": 336,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBlockFacts",
+        "sha256": "c863f17e5e763ac747022cdf4775c383222db24ede05c9b6210586bc3871a1d3",
+        "lines": 199,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutJoins",
+        "sha256": "4e9af1dbbab937a7db74dbc79373103973207cc67aeacffc3b1df28a9724c791",
+        "lines": 179,
+        "private_alpha_renames": {
+          "high_ne": "bundle_private_9_high_ne"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutPageJoins",
+        "sha256": "7aed2521494b17092b86898fe782dc4bb9cfade855419c4e522a43b2c1f1a3cd",
+        "lines": 120,
+        "private_alpha_renames": {
+          "high_ne": "bundle_private_10_high_ne"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallClosure",
+        "sha256": "4dcd737cc2dfe5f6616777c7f25e469141ec4d0376e1252fd2ac8276dd4fc0fa",
+        "lines": 96,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrame",
+        "sha256": "2d7df86a8486101109a58dbf8a47ca09cf1d5b900764faed48dcc4a2e29ccaec",
+        "lines": 129,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutExit",
+        "sha256": "5fdfdb3986dde63d8fd757fee1b60f337d3eac13d613b502ca915196489cb9ab",
+        "lines": 102,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutClosure",
+        "sha256": "58ad39dd645fe89909b4bb280a3e2132d4e88b3f1b812117fd546a0beabe697c",
+        "lines": 55,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutStart",
+        "sha256": "048190555412cddbc679fa1b31fc06202b70074b5e2f9052dfab493f3834c094",
+        "lines": 54,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutEntry",
+        "sha256": "5661d5d7e20e812f19cb34b1dc24c15d24fa88f2ca0afd6bb98a836253439b74",
+        "lines": 152,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBoundary",
+        "sha256": "858997170e0ebcd73cd835cb9d21677efa8f411c79cb6d0920c8ce5661582adb",
+        "lines": 121,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutRegistryClient",
+        "sha256": "bcc42008dc14cc69f08438fc668858bd65bc8e758070d0ad401f898b3f0dafa0",
+        "lines": 275,
+        "private_alpha_renames": {
+          "owned_wf": "bundle_private_18_owned_wf"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutComplete",
+        "sha256": "29d2f6f7a178819e242ff764fad408763736204986aea4244b11d8439b956d57",
+        "lines": 10,
+        "private_alpha_renames": {}
+      }
+    ],
+    "external_imports": [
+      "Experiments.WholeFunction.BinaryCopy",
+      "Experiments.WholeFunction.CopyArithmetic",
+      "Experiments.WholeFunction.CopyCallRegistry",
+      "Experiments.WholeFunction.CopyRuns",
+      "Experiments.WholeFunction.CopyinEntry",
+      "Experiments.WholeFunction.CopyinPageFacts",
+      "Experiments.WholeFunction.CopyinPure",
+      "Experiments.WholeFunction.FrameCompiler",
+      "Experiments.WholeFunction.KernelCallRegistry",
+      "Experiments.WholeFunction.KernelCalls",
+      "Experiments.WholeFunction.KernelStackGraph",
+      "Experiments.WholeFunction.KernelSymbolic",
+      "Experiments.WholeFunction.Residual",
+      "Xv6.SpecCopyout",
+      "Xv6.SpecWalk"
+    ],
+    "bundle_seconds": 33.906,
+    "bundle_peak_mib": 522.3,
+    "bundle_import_control_seconds": 1.804,
+    "bundle_exit_code": 0,
+    "bundle_log": ".lake/whole-function/bundles/copyout-specific-v2/bundle.log",
+    "authored_sources_unchanged_at_end": true,
+    "external_sources_unchanged_at_end": true,
+    "external_oleans_unchanged_at_end": true,
+    "individual_seconds": 66.08,
+    "individual_peak_mib": 305.1,
+    "individual_import_control_seconds": 36.159,
+    "individual_measurements": [
+      {
+        "label": "CopyoutModel",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 8.676,
+        "service_runtime": "2.015s",
+        "peak_mib": 229.5,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutModel.log"
+      },
+      {
+        "label": "CopyoutPure",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 30.798,
+        "service_runtime": "2.215s",
+        "peak_mib": 231.8,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutPure.log"
+      },
+      {
+        "label": "CopyoutFrameDefs",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 8.391,
+        "service_runtime": "1.958s",
+        "peak_mib": 222.8,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutFrameDefs.log"
+      },
+      {
+        "label": "CopyoutInvariant",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 5.264,
+        "service_runtime": "2.537s",
+        "peak_mib": 233.9,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutInvariant.log"
+      },
+      {
+        "label": "CopyoutCalls",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 3.559,
+        "service_runtime": "3.523s",
+        "peak_mib": 254.6,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCalls.log"
+      },
+      {
+        "label": "CopyoutCallRegistry",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 3.284,
+        "service_runtime": "3.246s",
+        "peak_mib": 250.1,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallRegistry.log"
+      },
+      {
+        "label": "CopyoutCallFacts",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 3.217,
+        "service_runtime": "3.185s",
+        "peak_mib": 246.5,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallFacts.log"
+      },
+      {
+        "label": "CopyoutBlocks",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 5.748,
+        "service_runtime": "5.712s",
+        "peak_mib": 290.1,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBlocks.log"
+      },
+      {
+        "label": "CopyoutBlockFacts",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 5.791,
+        "service_runtime": "5.752s",
+        "peak_mib": 276.8,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBlockFacts.log"
+      },
+      {
+        "label": "CopyoutJoins",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 2.869,
+        "service_runtime": "2.827s",
+        "peak_mib": 234.7,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutJoins.log"
+      },
+      {
+        "label": "CopyoutPageJoins",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 2.927,
+        "service_runtime": "2.888s",
+        "peak_mib": 233.5,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutPageJoins.log"
+      },
+      {
+        "label": "CopyoutCallClosure",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 2.365,
+        "service_runtime": "2.329s",
+        "peak_mib": 230.1,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallClosure.log"
+      },
+      {
+        "label": "CopyoutFrame",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 10.695,
+        "service_runtime": "10.658s",
+        "peak_mib": 305.1,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutFrame.log"
+      },
+      {
+        "label": "CopyoutExit",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 2.332,
+        "service_runtime": "2.296s",
+        "peak_mib": 238.5,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutExit.log"
+      },
+      {
+        "label": "CopyoutClosure",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 4.152,
+        "service_runtime": "2.117s",
+        "peak_mib": 224.5,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutClosure.log"
+      },
+      {
+        "label": "CopyoutStart",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 4.929,
+        "service_runtime": "1.970s",
+        "peak_mib": 223.6,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutStart.log"
+      },
+      {
+        "label": "CopyoutEntry",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 2.932,
+        "service_runtime": "2.897s",
+        "peak_mib": 250.9,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutEntry.log"
+      },
+      {
+        "label": "CopyoutBoundary",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 2.953,
+        "service_runtime": "2.913s",
+        "peak_mib": 239.4,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBoundary.log"
+      },
+      {
+        "label": "CopyoutRegistryClient",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 3.226,
+        "service_runtime": "3.192s",
+        "peak_mib": 242.7,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutRegistryClient.log"
+      },
+      {
+        "label": "CopyoutComplete",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 4.318,
+        "service_runtime": "1.850s",
+        "peak_mib": 223.8,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutComplete.log"
+      }
+    ],
+    "import_control_measurements": [
+      {
+        "label": "CopyoutModel-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 5.511,
+        "service_runtime": "1.758s",
+        "peak_mib": 219.2,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutModel-imports.log"
+      },
+      {
+        "label": "CopyoutPure-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 9.619,
+        "service_runtime": "1.861s",
+        "peak_mib": 219.6,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutPure-imports.log"
+      },
+      {
+        "label": "CopyoutFrameDefs-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 8.546,
+        "service_runtime": "1.827s",
+        "peak_mib": 219.6,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutFrameDefs-imports.log"
+      },
+      {
+        "label": "CopyoutInvariant-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 8.094,
+        "service_runtime": "1.788s",
+        "peak_mib": 219.7,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutInvariant-imports.log"
+      },
+      {
+        "label": "CopyoutCalls-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.827,
+        "service_runtime": "1.790s",
+        "peak_mib": 219.9,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCalls-imports.log"
+      },
+      {
+        "label": "CopyoutCallRegistry-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.908,
+        "service_runtime": "1.867s",
+        "peak_mib": 220.9,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallRegistry-imports.log"
+      },
+      {
+        "label": "CopyoutCallFacts-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.797,
+        "service_runtime": "1.756s",
+        "peak_mib": 219.2,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallFacts-imports.log"
+      },
+      {
+        "label": "CopyoutBlocks-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.826,
+        "service_runtime": "1.790s",
+        "peak_mib": 221.2,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBlocks-imports.log"
+      },
+      {
+        "label": "CopyoutBlockFacts-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.862,
+        "service_runtime": "1.823s",
+        "peak_mib": 221.5,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBlockFacts-imports.log"
+      },
+      {
+        "label": "CopyoutJoins-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.832,
+        "service_runtime": "1.795s",
+        "peak_mib": 219.9,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutJoins-imports.log"
+      },
+      {
+        "label": "CopyoutPageJoins-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.822,
+        "service_runtime": "1.785s",
+        "peak_mib": 219.9,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutPageJoins-imports.log"
+      },
+      {
+        "label": "CopyoutCallClosure-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.826,
+        "service_runtime": "1.790s",
+        "peak_mib": 221.4,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallClosure-imports.log"
+      },
+      {
+        "label": "CopyoutFrame-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.875,
+        "service_runtime": "1.840s",
+        "peak_mib": 218.4,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutFrame-imports.log"
+      },
+      {
+        "label": "CopyoutExit-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.879,
+        "service_runtime": "1.839s",
+        "peak_mib": 220.0,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutExit-imports.log"
+      },
+      {
+        "label": "CopyoutClosure-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 3.954,
+        "service_runtime": "1.808s",
+        "peak_mib": 219.9,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutClosure-imports.log"
+      },
+      {
+        "label": "CopyoutStart-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.842,
+        "service_runtime": "1.807s",
+        "peak_mib": 220.2,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutStart-imports.log"
+      },
+      {
+        "label": "CopyoutEntry-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.822,
+        "service_runtime": "1.785s",
+        "peak_mib": 219.3,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutEntry-imports.log"
+      },
+      {
+        "label": "CopyoutBoundary-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.847,
+        "service_runtime": "1.809s",
+        "peak_mib": 220.0,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBoundary-imports.log"
+      },
+      {
+        "label": "CopyoutRegistryClient-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.856,
+        "service_runtime": "1.819s",
+        "peak_mib": 220.6,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutRegistryClient-imports.log"
+      },
+      {
+        "label": "CopyoutComplete-imports",
+        "exit_code": 0,
+        "elapsed_including_lock_seconds": 1.859,
+        "service_runtime": "1.822s",
+        "peak_mib": 219.5,
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutComplete-imports.log"
+      }
+    ],
+    "net_saving_seconds": 32.174,
+    "startup_import_saving_seconds": 34.355,
+    "saving_percent": 48.69
+  },
+  "full_fifty_five_modules": {
+    "snapshot_manifest": ".lake/whole-function/bundles/copyout-all-v1/manifest.json",
+    "snapshot_manifest_sha256": "e8c621b02f6b8bc55544f444c87a599ffae53410c0f9d8352d968daf0bd622be",
+    "git_head": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+    "source_count": 55,
+    "source_lines": 7627,
+    "sources": [
+      {
+        "module": "Experiments.WholeFunction.Binary",
+        "sha256": "ad8e6b18cdff6806ae01fffb1c33121af3f814121628cd4efd6eee9ac989043c",
+        "lines": 130,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.ControlFlow",
+        "sha256": "3ca88a250d32ead91ec4d48c998275278f2e319558208a63c528e34f4d7ca255",
+        "lines": 58,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelReg",
+        "sha256": "c51c37fa5a32205d9dd4f27219d7a4191f9b5510f81d95a4b81aa93bc7254a81",
+        "lines": 140,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelDecode",
+        "sha256": "4efc252c625063bb75d8bf59f681e696ef2c52bba67b53f59ed8b9ea89465da8",
+        "lines": 45,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelGraph",
+        "sha256": "6aad3bceffc3267747464fbbab451b7d49e829e0b87ef524fb6434e43bccbdf5",
+        "lines": 97,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackCells",
+        "sha256": "ae08f93fd97e72f5b637487f5581cc69a67a8ee732e85357555cd67a52290355",
+        "lines": 89,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackActions",
+        "sha256": "21b850e33813eead618ddddcd89ba18e40a5ca6edc92ceb66fee71a1c3d14733",
+        "lines": 162,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackDecode",
+        "sha256": "795788f3f0d826c3ad4650d89f7473b587f47daf29ce23a4977388622242f6e2",
+        "lines": 52,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelStackGraph",
+        "sha256": "0fe9f46ad42fa26f305212694127422edf327880991ce7e772b43e740257f9be",
+        "lines": 165,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelCalls",
+        "sha256": "4367710ea1538b5f2a26cf5d0fc8478b556d231e1a995c6692a123ffa4d1ce4d",
+        "lines": 156,
+        "private_alpha_renames": {
+          "walkaddrCallRow": "bundle_private_9_walkaddrCallRow",
+          "vmfaultCallRow": "bundle_private_9_vmfaultCallRow",
+          "memmoveCallRow": "bundle_private_9_memmoveCallRow"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelFull",
+        "sha256": "5f3c7af33c041754111b173e6b21dbcef5c993db81ffe768bbcadc4a830b15bf",
+        "lines": 152,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelDispatch",
+        "sha256": "093622066918b64309a8152653007bb7bed126beb61316a06839d3a5fc5b23c1",
+        "lines": 121,
+        "private_alpha_renames": {
+          "summary_mono": "bundle_private_11_summary_mono"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelCallSites",
+        "sha256": "08d3bfcc512e49b0555ad0812d775c1d55e680a9e80f23ddf40b1e6395184a84",
+        "lines": 70,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelCallRegistry",
+        "sha256": "675d20a98295c13b328a959809b18797a4c5d406faaf6e6c2b07aee0046241d2",
+        "lines": 169,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyEffects",
+        "sha256": "535148586dd1ae933b18c7fe90242716c72bb0abd6d4c47647434396bac81eea",
+        "lines": 162,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyContracts",
+        "sha256": "a8d43aa7d82827dd0efb3499385295b602851893fec27fef0e42c01e7664d341",
+        "lines": 111,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinPure",
+        "sha256": "33baf326f450614e70fc36b1e1e78c2fc6d0025e89a8a7ee94c777580628065e",
+        "lines": 126,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyRuns",
+        "sha256": "78ac959f22b49cfcdc168ab5d9907b6243e6af61b091ecb6d10c5112b5bdb59b",
+        "lines": 134,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutModel",
+        "sha256": "8ca818216e5d1848212e5664077ff0adc4c53a8ea5b173d00ea57878c51e3caf",
+        "lines": 59,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutPure",
+        "sha256": "e99992fb8d81a516f69cda3ec4e4b3535b1ffa2943b75da63c4d6d0b9eea35f6",
+        "lines": 67,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelLinear",
+        "sha256": "6b67376ee484cc6ae246a03caf4058b59a117bec8399ba22642f61b0992e8925",
+        "lines": 98,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackShape",
+        "sha256": "51da66c96415e5d3b38d76ec60ec9df5470e7529fbc3e06bb87504b6e9f401f6",
+        "lines": 54,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.BinaryCopy",
+        "sha256": "eb979dc5d58a92fe5cf291f5724cccb96ee250fdfa2af0bfd00d00d19b3d722a",
+        "lines": 285,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackChecks",
+        "sha256": "10757f98d0b59c52ae10bc033900a06216ab91f87a47e29dd2e1e81d8e570839",
+        "lines": 131,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackValues",
+        "sha256": "c4eb07a43911e12e312051afcaeea656964251fdf7437f314654b1e3a4994113",
+        "lines": 201,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackValueWp",
+        "sha256": "3a62bac40cb3f03bb3ef37ff0182c57877fa350b7704f398768c8bbf422163bd",
+        "lines": 172,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.StackReturn",
+        "sha256": "0377e7558794830b0710c213234f370bfda074d2b1f08bf8012d7381d755c6a1",
+        "lines": 202,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.FrameCompiler",
+        "sha256": "ed93387a435de44ebe0878ccab142c1541e5b26abf2868b4b9d01a160aaa39bb",
+        "lines": 179,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrameDefs",
+        "sha256": "f1fea3af6220bb8925c7f5348f4b9de772810819f3ea9f0a40b5548f707682a8",
+        "lines": 38,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelSymbolic",
+        "sha256": "cdffbdf0d8ba10542eee26529ba53f964633d0317461e25e799ec4594a8819dd",
+        "lines": 219,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.Residual",
+        "sha256": "c8ed3cf6466128419395f5daf8da5c89c175fb767e650bd44976245ccd2c867a",
+        "lines": 77,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutInvariant",
+        "sha256": "0ff20fb98fe12d5e7f8f8360fef99ab55e939ed45e19f31212ebaa1eb198ac44",
+        "lines": 174,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyCalls",
+        "sha256": "949d4d292204aef2b1dcebad430777657eade523c1d7a8087f574d4bee7632ea",
+        "lines": 248,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyControl",
+        "sha256": "4c1e65b564efd342ddde240f27802975de0f970a30de37a86ff03cba244870d9",
+        "lines": 79,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinModel",
+        "sha256": "8c1c9ce47e6b9573ffeb30849026d0df867396d18590cddc6b799fea8463935d",
+        "lines": 49,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyCallRegistry",
+        "sha256": "b01a973046f7dcf06dd26a95ca1738f23a0b4bed9a2c83a7563904c867a8c02d",
+        "lines": 286,
+        "private_alpha_renames": {
+          "tfLeaf_not_vu_checked": "bundle_private_35_tfLeaf_not_vu_checked",
+          "um_of_leaves_vu_checked": "bundle_private_35_um_of_leaves_vu_checked"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCalls",
+        "sha256": "2f3aa3f0986f3bee46315ada209804289c2293391969f1ddf28ae7cbdb2605e4",
+        "lines": 211,
+        "private_alpha_renames": {
+          "pteAD_write_checked": "bundle_private_36_pteAD_write_checked"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallRegistry",
+        "sha256": "0c4751f7af378b5610f8980a62dcf870b43255d81c874f43c08c8c02657d3eee",
+        "lines": 214,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinPageFacts",
+        "sha256": "f789e3797ca5bd887008b65660ae3bdcb04e54dc5c46f83834e8a102376b7305",
+        "lines": 157,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallFacts",
+        "sha256": "cb7b427dd6f074571765136230010a8532e741947d9d1c3949f716bae310096a",
+        "lines": 245,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBlocks",
+        "sha256": "916917c5562c7de5c25a9a96f9ff90fe3446df01473b5674783b1d2b22cc8163",
+        "lines": 336,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyArithmetic",
+        "sha256": "b12e43fff87756060b57fb657ac515937cba71da644071b53645688a21c263ad",
+        "lines": 38,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBlockFacts",
+        "sha256": "c863f17e5e763ac747022cdf4775c383222db24ede05c9b6210586bc3871a1d3",
+        "lines": 199,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutJoins",
+        "sha256": "4e9af1dbbab937a7db74dbc79373103973207cc67aeacffc3b1df28a9724c791",
+        "lines": 179,
+        "private_alpha_renames": {
+          "high_ne": "bundle_private_43_high_ne"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutPageJoins",
+        "sha256": "7aed2521494b17092b86898fe782dc4bb9cfade855419c4e522a43b2c1f1a3cd",
+        "lines": 120,
+        "private_alpha_renames": {
+          "high_ne": "bundle_private_44_high_ne"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallClosure",
+        "sha256": "4dcd737cc2dfe5f6616777c7f25e469141ec4d0376e1252fd2ac8276dd4fc0fa",
+        "lines": 96,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrame",
+        "sha256": "2d7df86a8486101109a58dbf8a47ca09cf1d5b900764faed48dcc4a2e29ccaec",
+        "lines": 129,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutExit",
+        "sha256": "5fdfdb3986dde63d8fd757fee1b60f337d3eac13d613b502ca915196489cb9ab",
+        "lines": 102,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutClosure",
+        "sha256": "58ad39dd645fe89909b4bb280a3e2132d4e88b3f1b812117fd546a0beabe697c",
+        "lines": 55,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutStart",
+        "sha256": "048190555412cddbc679fa1b31fc06202b70074b5e2f9052dfab493f3834c094",
+        "lines": 54,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinEntry",
+        "sha256": "5e91ce5c5dc3b85e89fc406fe75f9d11f922e7e68a767bec4b08b4a029c42e15",
+        "lines": 177,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutEntry",
+        "sha256": "5661d5d7e20e812f19cb34b1dc24c15d24fa88f2ca0afd6bb98a836253439b74",
+        "lines": 152,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBoundary",
+        "sha256": "858997170e0ebcd73cd835cb9d21677efa8f411c79cb6d0920c8ce5661582adb",
+        "lines": 121,
+        "private_alpha_renames": {}
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutRegistryClient",
+        "sha256": "bcc42008dc14cc69f08438fc668858bd65bc8e758070d0ad401f898b3f0dafa0",
+        "lines": 275,
+        "private_alpha_renames": {
+          "owned_wf": "bundle_private_53_owned_wf"
+        }
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutComplete",
+        "sha256": "29d2f6f7a178819e242ff764fad408763736204986aea4244b11d8439b956d57",
+        "lines": 10,
+        "private_alpha_renames": {}
+      }
+    ],
+    "external_imports": [
+      "Experiments.SolverSurvey.SmtSlice",
+      "MachCSL.Compat",
+      "MachCSL.WpSmodeFrame",
+      "Xv6.CodeTactics",
+      "Xv6.CopyLemmas",
+      "Xv6.SpecCopyin",
+      "Xv6.SpecCopyinstr",
+      "Xv6.SpecCopyout",
+      "Xv6.SpecWalk",
+      "Xv6.UMemLemmas"
+    ],
+    "bundle_seconds": 107.584,
+    "bundle_peak_mib": 937.9,
+    "bundle_import_control_seconds": 1.813,
+    "bundle_exit_code": 0,
+    "bundle_log": ".lake/whole-function/bundles/copyout-all-v1/bundle.log",
+    "authored_sources_unchanged_at_end": false,
+    "external_sources_unchanged_at_end": true,
+    "external_oleans_unchanged_at_end": true,
+    "modular_estimate_seconds": 197.338,
+    "modular_estimate_records": [
+      {
+        "module": "Experiments.WholeFunction.Binary",
+        "sha256": "ad8e6b18cdff6806ae01fffb1c33121af3f814121628cd4efd6eee9ac989043c",
+        "lines": 130,
+        "private_alpha_renames": {},
+        "service_runtime": "2.616s",
+        "seconds": 2.616,
+        "peak_mib": 235.6,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-Binary.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.ControlFlow",
+        "sha256": "3ca88a250d32ead91ec4d48c998275278f2e319558208a63c528e34f4d7ca255",
+        "lines": 58,
+        "private_alpha_renames": {},
+        "service_runtime": "2.003s",
+        "seconds": 2.003,
+        "peak_mib": 227.6,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-ControlFlow.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelReg",
+        "sha256": "c51c37fa5a32205d9dd4f27219d7a4191f9b5510f81d95a4b81aa93bc7254a81",
+        "lines": 140,
+        "private_alpha_renames": {},
+        "service_runtime": "2.650s",
+        "seconds": 2.65,
+        "peak_mib": 236.1,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelReg.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelDecode",
+        "sha256": "4efc252c625063bb75d8bf59f681e696ef2c52bba67b53f59ed8b9ea89465da8",
+        "lines": 45,
+        "private_alpha_renames": {},
+        "service_runtime": "1.992s",
+        "seconds": 1.992,
+        "peak_mib": 226.9,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelDecode.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelGraph",
+        "sha256": "6aad3bceffc3267747464fbbab451b7d49e829e0b87ef524fb6434e43bccbdf5",
+        "lines": 97,
+        "private_alpha_renames": {},
+        "service_runtime": "2.329s",
+        "seconds": 2.329,
+        "peak_mib": 229.7,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelGraph.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackCells",
+        "sha256": "ae08f93fd97e72f5b637487f5581cc69a67a8ee732e85357555cd67a52290355",
+        "lines": 89,
+        "private_alpha_renames": {},
+        "service_runtime": "2.116s",
+        "seconds": 2.116,
+        "peak_mib": 225.5,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackCells.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackActions",
+        "sha256": "21b850e33813eead618ddddcd89ba18e40a5ca6edc92ceb66fee71a1c3d14733",
+        "lines": 162,
+        "private_alpha_renames": {},
+        "service_runtime": "2.934s",
+        "seconds": 2.934,
+        "peak_mib": 243.7,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackActions.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackDecode",
+        "sha256": "795788f3f0d826c3ad4650d89f7473b587f47daf29ce23a4977388622242f6e2",
+        "lines": 52,
+        "private_alpha_renames": {},
+        "service_runtime": "2.062s",
+        "seconds": 2.062,
+        "peak_mib": 225.4,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackDecode.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelStackGraph",
+        "sha256": "0fe9f46ad42fa26f305212694127422edf327880991ce7e772b43e740257f9be",
+        "lines": 165,
+        "private_alpha_renames": {},
+        "service_runtime": "2.644s",
+        "seconds": 2.644,
+        "peak_mib": 242.7,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelStackGraph.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelCalls",
+        "sha256": "4367710ea1538b5f2a26cf5d0fc8478b556d231e1a995c6692a123ffa4d1ce4d",
+        "lines": 156,
+        "private_alpha_renames": {
+          "walkaddrCallRow": "bundle_private_9_walkaddrCallRow",
+          "vmfaultCallRow": "bundle_private_9_vmfaultCallRow",
+          "memmoveCallRow": "bundle_private_9_memmoveCallRow"
+        },
+        "service_runtime": "2.760s",
+        "seconds": 2.76,
+        "peak_mib": 240.2,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelCalls.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelFull",
+        "sha256": "5f3c7af33c041754111b173e6b21dbcef5c993db81ffe768bbcadc4a830b15bf",
+        "lines": 152,
+        "private_alpha_renames": {},
+        "service_runtime": "2.757s",
+        "seconds": 2.757,
+        "peak_mib": 244.3,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelFull.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelDispatch",
+        "sha256": "093622066918b64309a8152653007bb7bed126beb61316a06839d3a5fc5b23c1",
+        "lines": 121,
+        "private_alpha_renames": {
+          "summary_mono": "bundle_private_11_summary_mono"
+        },
+        "service_runtime": "2.217s",
+        "seconds": 2.217,
+        "peak_mib": 229.6,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelDispatch.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelCallSites",
+        "sha256": "08d3bfcc512e49b0555ad0812d775c1d55e680a9e80f23ddf40b1e6395184a84",
+        "lines": 70,
+        "private_alpha_renames": {},
+        "service_runtime": "2.206s",
+        "seconds": 2.206,
+        "peak_mib": 227.7,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-all-v1/missing-modular-estimates.json",
+        "log": ".lake/whole-function/bundles/copyout-all-v1/KernelCallSites-estimate.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelCallRegistry",
+        "sha256": "675d20a98295c13b328a959809b18797a4c5d406faaf6e6c2b07aee0046241d2",
+        "lines": 169,
+        "private_alpha_renames": {},
+        "service_runtime": "2.431s",
+        "seconds": 2.431,
+        "peak_mib": 238.7,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-all-v1/missing-modular-estimates.json",
+        "log": ".lake/whole-function/bundles/copyout-all-v1/KernelCallRegistry-estimate.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyEffects",
+        "sha256": "535148586dd1ae933b18c7fe90242716c72bb0abd6d4c47647434396bac81eea",
+        "lines": 162,
+        "private_alpha_renames": {},
+        "service_runtime": "2.235s",
+        "seconds": 2.235,
+        "peak_mib": 233.3,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyEffects.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyContracts",
+        "sha256": "a8d43aa7d82827dd0efb3499385295b602851893fec27fef0e42c01e7664d341",
+        "lines": 111,
+        "private_alpha_renames": {},
+        "service_runtime": "2.101s",
+        "seconds": 2.101,
+        "peak_mib": 225.5,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyContracts.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinPure",
+        "sha256": "33baf326f450614e70fc36b1e1e78c2fc6d0025e89a8a7ee94c777580628065e",
+        "lines": 126,
+        "private_alpha_renames": {},
+        "service_runtime": "2.876s",
+        "seconds": 2.876,
+        "peak_mib": 233.6,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyinPure.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyRuns",
+        "sha256": "78ac959f22b49cfcdc168ab5d9907b6243e6af61b091ecb6d10c5112b5bdb59b",
+        "lines": 134,
+        "private_alpha_renames": {},
+        "service_runtime": "2.203s",
+        "seconds": 2.203,
+        "peak_mib": 233.9,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyRuns.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutModel",
+        "sha256": "8ca818216e5d1848212e5664077ff0adc4c53a8ea5b173d00ea57878c51e3caf",
+        "lines": 59,
+        "private_alpha_renames": {},
+        "service_runtime": "2.015s",
+        "seconds": 2.015,
+        "peak_mib": 229.5,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutModel.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutPure",
+        "sha256": "e99992fb8d81a516f69cda3ec4e4b3535b1ffa2943b75da63c4d6d0b9eea35f6",
+        "lines": 67,
+        "private_alpha_renames": {},
+        "service_runtime": "2.215s",
+        "seconds": 2.215,
+        "peak_mib": 231.8,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutPure.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelLinear",
+        "sha256": "6b67376ee484cc6ae246a03caf4058b59a117bec8399ba22642f61b0992e8925",
+        "lines": 98,
+        "private_alpha_renames": {},
+        "service_runtime": "2.435s",
+        "seconds": 2.435,
+        "peak_mib": 244.9,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelLinear.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackShape",
+        "sha256": "51da66c96415e5d3b38d76ec60ec9df5470e7529fbc3e06bb87504b6e9f401f6",
+        "lines": 54,
+        "private_alpha_renames": {},
+        "service_runtime": "2.429s",
+        "seconds": 2.429,
+        "peak_mib": 238.1,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackShape.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.BinaryCopy",
+        "sha256": "eb979dc5d58a92fe5cf291f5724cccb96ee250fdfa2af0bfd00d00d19b3d722a",
+        "lines": 285,
+        "private_alpha_renames": {},
+        "service_runtime": "39.495s",
+        "seconds": 39.495,
+        "peak_mib": 488.3,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-BinaryCopy.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackChecks",
+        "sha256": "10757f98d0b59c52ae10bc033900a06216ab91f87a47e29dd2e1e81d8e570839",
+        "lines": 131,
+        "private_alpha_renames": {},
+        "service_runtime": "2.686s",
+        "seconds": 2.686,
+        "peak_mib": 260.9,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackChecks.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackValues",
+        "sha256": "c4eb07a43911e12e312051afcaeea656964251fdf7437f314654b1e3a4994113",
+        "lines": 201,
+        "private_alpha_renames": {},
+        "service_runtime": "3.775s",
+        "seconds": 3.775,
+        "peak_mib": 276.0,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackValues.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackValueWp",
+        "sha256": "3a62bac40cb3f03bb3ef37ff0182c57877fa350b7704f398768c8bbf422163bd",
+        "lines": 172,
+        "private_alpha_renames": {},
+        "service_runtime": "2.900s",
+        "seconds": 2.9,
+        "peak_mib": 260.4,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackValueWp.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.StackReturn",
+        "sha256": "0377e7558794830b0710c213234f370bfda074d2b1f08bf8012d7381d755c6a1",
+        "lines": 202,
+        "private_alpha_renames": {},
+        "service_runtime": "5.841s",
+        "seconds": 5.841,
+        "peak_mib": 273.3,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-StackReturn.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.FrameCompiler",
+        "sha256": "ed93387a435de44ebe0878ccab142c1541e5b26abf2868b4b9d01a160aaa39bb",
+        "lines": 179,
+        "private_alpha_renames": {},
+        "service_runtime": "3.368s",
+        "seconds": 3.368,
+        "peak_mib": 236.6,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-FrameCompiler.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrameDefs",
+        "sha256": "f1fea3af6220bb8925c7f5348f4b9de772810819f3ea9f0a40b5548f707682a8",
+        "lines": 38,
+        "private_alpha_renames": {},
+        "service_runtime": "1.958s",
+        "seconds": 1.958,
+        "peak_mib": 222.8,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutFrameDefs.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.KernelSymbolic",
+        "sha256": "cdffbdf0d8ba10542eee26529ba53f964633d0317461e25e799ec4594a8819dd",
+        "lines": 219,
+        "private_alpha_renames": {},
+        "service_runtime": "3.846s",
+        "seconds": 3.846,
+        "peak_mib": 249.5,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-KernelSymbolic.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.Residual",
+        "sha256": "c8ed3cf6466128419395f5daf8da5c89c175fb767e650bd44976245ccd2c867a",
+        "lines": 77,
+        "private_alpha_renames": {},
+        "service_runtime": "1.982s",
+        "seconds": 1.982,
+        "peak_mib": 229.6,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-Residual.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutInvariant",
+        "sha256": "0ff20fb98fe12d5e7f8f8360fef99ab55e939ed45e19f31212ebaa1eb198ac44",
+        "lines": 174,
+        "private_alpha_renames": {},
+        "service_runtime": "2.537s",
+        "seconds": 2.537,
+        "peak_mib": 233.9,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutInvariant.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyCalls",
+        "sha256": "949d4d292204aef2b1dcebad430777657eade523c1d7a8087f574d4bee7632ea",
+        "lines": 248,
+        "private_alpha_renames": {},
+        "service_runtime": "3.294s",
+        "seconds": 3.294,
+        "peak_mib": 254.0,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyCalls.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyControl",
+        "sha256": "4c1e65b564efd342ddde240f27802975de0f970a30de37a86ff03cba244870d9",
+        "lines": 79,
+        "private_alpha_renames": {},
+        "service_runtime": "2.099s",
+        "seconds": 2.099,
+        "peak_mib": 227.1,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyControl.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinModel",
+        "sha256": "8c1c9ce47e6b9573ffeb30849026d0df867396d18590cddc6b799fea8463935d",
+        "lines": 49,
+        "private_alpha_renames": {},
+        "service_runtime": "1.973s",
+        "seconds": 1.973,
+        "peak_mib": 227.7,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyinModel.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyCallRegistry",
+        "sha256": "b01a973046f7dcf06dd26a95ca1738f23a0b4bed9a2c83a7563904c867a8c02d",
+        "lines": 286,
+        "private_alpha_renames": {
+          "tfLeaf_not_vu_checked": "bundle_private_35_tfLeaf_not_vu_checked",
+          "um_of_leaves_vu_checked": "bundle_private_35_um_of_leaves_vu_checked"
+        },
+        "service_runtime": "3.408s",
+        "seconds": 3.408,
+        "peak_mib": 253.3,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyCallRegistry.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCalls",
+        "sha256": "2f3aa3f0986f3bee46315ada209804289c2293391969f1ddf28ae7cbdb2605e4",
+        "lines": 211,
+        "private_alpha_renames": {
+          "pteAD_write_checked": "bundle_private_36_pteAD_write_checked"
+        },
+        "service_runtime": "3.523s",
+        "seconds": 3.523,
+        "peak_mib": 254.6,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCalls.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallRegistry",
+        "sha256": "0c4751f7af378b5610f8980a62dcf870b43255d81c874f43c08c8c02657d3eee",
+        "lines": 214,
+        "private_alpha_renames": {},
+        "service_runtime": "3.246s",
+        "seconds": 3.246,
+        "peak_mib": 250.1,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallRegistry.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinPageFacts",
+        "sha256": "f789e3797ca5bd887008b65660ae3bdcb04e54dc5c46f83834e8a102376b7305",
+        "lines": 157,
+        "private_alpha_renames": {},
+        "service_runtime": "3.012s",
+        "seconds": 3.012,
+        "peak_mib": 237.4,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyinPageFacts.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallFacts",
+        "sha256": "cb7b427dd6f074571765136230010a8532e741947d9d1c3949f716bae310096a",
+        "lines": 245,
+        "private_alpha_renames": {},
+        "service_runtime": "3.185s",
+        "seconds": 3.185,
+        "peak_mib": 246.5,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallFacts.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBlocks",
+        "sha256": "916917c5562c7de5c25a9a96f9ff90fe3446df01473b5674783b1d2b22cc8163",
+        "lines": 336,
+        "private_alpha_renames": {},
+        "service_runtime": "5.712s",
+        "seconds": 5.712,
+        "peak_mib": 290.1,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBlocks.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyArithmetic",
+        "sha256": "b12e43fff87756060b57fb657ac515937cba71da644071b53645688a21c263ad",
+        "lines": 38,
+        "private_alpha_renames": {},
+        "service_runtime": "2.431s",
+        "seconds": 2.431,
+        "peak_mib": 219.5,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-all-v1/missing-modular-estimates.json",
+        "log": ".lake/whole-function/bundles/copyout-all-v1/CopyArithmetic-estimate.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBlockFacts",
+        "sha256": "c863f17e5e763ac747022cdf4775c383222db24ede05c9b6210586bc3871a1d3",
+        "lines": 199,
+        "private_alpha_renames": {},
+        "service_runtime": "5.752s",
+        "seconds": 5.752,
+        "peak_mib": 276.8,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBlockFacts.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutJoins",
+        "sha256": "4e9af1dbbab937a7db74dbc79373103973207cc67aeacffc3b1df28a9724c791",
+        "lines": 179,
+        "private_alpha_renames": {
+          "high_ne": "bundle_private_43_high_ne"
+        },
+        "service_runtime": "2.827s",
+        "seconds": 2.827,
+        "peak_mib": 234.7,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutJoins.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutPageJoins",
+        "sha256": "7aed2521494b17092b86898fe782dc4bb9cfade855419c4e522a43b2c1f1a3cd",
+        "lines": 120,
+        "private_alpha_renames": {
+          "high_ne": "bundle_private_44_high_ne"
+        },
+        "service_runtime": "2.888s",
+        "seconds": 2.888,
+        "peak_mib": 233.5,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutPageJoins.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutCallClosure",
+        "sha256": "4dcd737cc2dfe5f6616777c7f25e469141ec4d0376e1252fd2ac8276dd4fc0fa",
+        "lines": 96,
+        "private_alpha_renames": {},
+        "service_runtime": "2.329s",
+        "seconds": 2.329,
+        "peak_mib": 230.1,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutCallClosure.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutFrame",
+        "sha256": "2d7df86a8486101109a58dbf8a47ca09cf1d5b900764faed48dcc4a2e29ccaec",
+        "lines": 129,
+        "private_alpha_renames": {},
+        "service_runtime": "10.658s",
+        "seconds": 10.658,
+        "peak_mib": 305.1,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutFrame.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutExit",
+        "sha256": "5fdfdb3986dde63d8fd757fee1b60f337d3eac13d613b502ca915196489cb9ab",
+        "lines": 102,
+        "private_alpha_renames": {},
+        "service_runtime": "2.296s",
+        "seconds": 2.296,
+        "peak_mib": 238.5,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutExit.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutClosure",
+        "sha256": "58ad39dd645fe89909b4bb280a3e2132d4e88b3f1b812117fd546a0beabe697c",
+        "lines": 55,
+        "private_alpha_renames": {},
+        "service_runtime": "2.117s",
+        "seconds": 2.117,
+        "peak_mib": 224.5,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutClosure.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutStart",
+        "sha256": "048190555412cddbc679fa1b31fc06202b70074b5e2f9052dfab493f3834c094",
+        "lines": 54,
+        "private_alpha_renames": {},
+        "service_runtime": "1.970s",
+        "seconds": 1.97,
+        "peak_mib": 223.6,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutStart.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyinEntry",
+        "sha256": "5e91ce5c5dc3b85e89fc406fe75f9d11f922e7e68a767bec4b08b4a029c42e15",
+        "lines": 177,
+        "private_alpha_renames": {},
+        "service_runtime": "3.152s",
+        "seconds": 3.152,
+        "peak_mib": 245.4,
+        "timing_provenance": "Experiments/WholeFunction/results.json",
+        "log": ".lake/whole-function/suite-CopyinEntry.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutEntry",
+        "sha256": "5661d5d7e20e812f19cb34b1dc24c15d24fa88f2ca0afd6bb98a836253439b74",
+        "lines": 152,
+        "private_alpha_renames": {},
+        "service_runtime": "2.897s",
+        "seconds": 2.897,
+        "peak_mib": 250.9,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutEntry.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutBoundary",
+        "sha256": "858997170e0ebcd73cd835cb9d21677efa8f411c79cb6d0920c8ce5661582adb",
+        "lines": 121,
+        "private_alpha_renames": {},
+        "service_runtime": "2.913s",
+        "seconds": 2.913,
+        "peak_mib": 239.4,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutBoundary.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutRegistryClient",
+        "sha256": "bcc42008dc14cc69f08438fc668858bd65bc8e758070d0ad401f898b3f0dafa0",
+        "lines": 275,
+        "private_alpha_renames": {
+          "owned_wf": "bundle_private_53_owned_wf"
+        },
+        "service_runtime": "3.192s",
+        "seconds": 3.192,
+        "peak_mib": 242.7,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutRegistryClient.log"
+      },
+      {
+        "module": "Experiments.WholeFunction.CopyoutComplete",
+        "sha256": "29d2f6f7a178819e242ff764fad408763736204986aea4244b11d8439b956d57",
+        "lines": 10,
+        "private_alpha_renames": {},
+        "service_runtime": "1.850s",
+        "seconds": 1.85,
+        "peak_mib": 223.8,
+        "timing_provenance": ".lake/whole-function/bundles/copyout-specific-v2/manifest.json",
+        "log": ".lake/whole-function/bundles/copyout-specific-v2/CopyoutComplete.log"
+      }
+    ],
+    "estimated_saving_percent": 45.48,
+    "source_drift_explanation": "KernelCallSites authored source changed after immutable bundle/source snapshots were generated, with explicit coordination. The compiled bundle uses only those frozen snapshots. External source and artifact hashes remained unchanged."
+  }
+}

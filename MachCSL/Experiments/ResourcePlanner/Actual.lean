@@ -1,0 +1,62 @@
+import Experiments.ResourcePlanner.Planner
+import Xv6.WriteiDefs
+import Xv6.DinodeSlot
+import Lean.Util.CollectAxioms
+
+/-! Exact ownership boundaries from writei and readi. We import their resource
+vocabulary, not WriteiBody/ReadiDefs or their existing boundary proofs. -/
+namespace Experiments.ResourcePlanner.Actual
+open Iris Iris.BI MachCSL Xv6
+section Writei
+variable {hlc : HasLC} {GF : BundledGFunctors} [MachGS hlc GF] [Xv6G GF]
+  [FdslotG GF] [BioslotG GF] [IrefslotG GF] [CtokG GF] [WchG GF]
+  [BcacheG GF] [SleepLockG GF] [DiskG GF] [FsBlocksG GF] [LogG GF]
+  [IregG GF] [IcacheG GF] [FsTopG GF] [FsLinkG GF] [Appcfg GF] [Fscfg] [Icfg] [CurCtx]
+set_option resourcePlanner.trace true
+
+/-- The actual kernel-source/destination ownership boundary at writei's copy.
+The PID share and arbitrary frame are inferred residual resources. -/
+theorem writei_kernel_boundary (A : WiArgs) (src dst : BitVec 64) (P : UPtd)
+    (old : List (BitVec 8)) (tot off n : Nat) (user : A.user = false)
+    (sourceBound : tot+n ≤ A.sbs.length) (destinationBound : off+n ≤ old.length)
+    (F : IProp GF) :
+    (F ∗ wiSrc A src P) ∗ byteBuf dst (DFrac.own 1) old ⊢
+      (byteBuf (src + BitVec.ofNat 64 tot) A.dqs ((A.sbs.drop tot).take n) ∗
+        byteBuf (dst + BitVec.ofNat 64 off) (DFrac.own 1) ((old.drop off).take n)) ∗
+      (∀ new : List (BitVec 8), ⌜new.length = n⌝ -∗
+        (byteBuf (src + BitVec.ofNat 64 tot) A.dqs ((A.sbs.drop tot).take n) ∗
+          byteBuf (dst + BitVec.ofNat 64 off) (DFrac.own 1) new) -∗
+        (F ∗ wiSrc A src P) ∗
+          byteBuf dst (DFrac.own 1) (old.take off ++ (new ++ old.drop (off+n)))) := by
+  unfold wiSrc
+  simp only [user, Bool.false_eq_true, ite_false]
+  resource_write
+
+end Writei
+
+section Readi
+variable {hlc : HasLC} {GF : BundledGFunctors} [MachGS hlc GF] [Xv6G GF]
+  [FdslotG GF] [BioslotG GF] [IrefslotG GF] [CtokG GF] [WchG GF]
+  [BcacheG GF] [DiskG GF] [FsBlocksG GF] [SleepLockG GF] [CurCtx]
+
+/-- Exact statement of ReadiDefs.rd_hold_win, including the exported extent. -/
+theorem readi_hold_window (γb : BcacheNames) (V : BioView GF) (kk : Nat)
+    (pidv dev bno : BitVec 32) (bs bsd : List (BitVec 8)) (off n : Nat)
+    (fit : off+n ≤ BSIZE) :
+    bufHold0 γb V kk pidv dev bno bs bsd ⊢
+      ⌜bs.length = BSIZE⌝ ∗
+      byteBuf (bnode kk + (88#64 + BitVec.ofNat 64 off)) (DFrac.own 1) ((bs.drop off).take n) ∗
+      (byteBuf (bnode kk + (88#64 + BitVec.ofNat 64 off)) (DFrac.own 1) ((bs.drop off).take n) -∗
+        bufHold0 γb V kk pidv dev bno bs bsd) := by
+  have address : bnode kk + (88#64 + BitVec.ofNat 64 off) =
+      aBufData (bnode kk) + BitVec.ofNat 64 off := by
+    unfold aBufData bOffData; rw [BitVec.add_assoc]
+  rw [address]
+  unfold bufHold0 bufOwn
+  resource_read_smt
+
+end Readi
+
+#print axioms writei_kernel_boundary
+#print axioms readi_hold_window
+end Experiments.ResourcePlanner.Actual

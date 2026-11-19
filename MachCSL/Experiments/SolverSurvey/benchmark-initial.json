@@ -1,0 +1,524 @@
+{
+  "scope": "First capped production-client comparisons. One completed sample per variant, not a statistical speed benchmark. Both versions import the cached engine; solver IPC and replay are included. Production proofs stay unchanged. Strncpy logs use the last completed first-round sample; an extra sampler was canceled before further rounds to freeze engine revision.",
+  "engine_sha256": "d1b3e727e5211767c3b239b14168dc0b465a6f7934c19fb42b78db4f0ba3396c",
+  "results": {
+    "strncpy": {
+      "source": "Xv6/ProofStrncpy.lean",
+      "source_sha256": "b2b907864a3d9232dc517a2a6672efa3d961645723d3d9ed1e812fe73631d28c",
+      "declarations": [
+        "sy_sub1",
+        "sy_pad_w",
+        "sy_subw_pad"
+      ],
+      "statement_check": "identical lexical declaration headers",
+      "variant_sha256": {
+        "baseline": "4b3d798ec18da82ca85f20508a07eba2fe9997f1f08de468c4933b24a417b5b7",
+        "solver": "cf08ce39df4db94d88b785b1ef246769da0237305aece3aa9b7d116846ac7c24"
+      },
+      "edit_count": {
+        "baseline": 0,
+        "solver": 3
+      },
+      "variants": {
+        "baseline": {
+          "log": ".lake/solver-survey/initial-frozen-logs/strncpy-baseline-0.log",
+          "log_sha256": "dfe9c13efc838c88c3415acbbf12497acae57f7a78ce97c4ae9734495685ec35",
+          "success": true,
+          "wall_s": 12.146,
+          "cpu_s": 12.179,
+          "peak_mib": 367.7,
+          "axioms": {
+            "Xv6.sy_sub1": [
+              "Quot.sound",
+              "propext"
+            ],
+            "Xv6.sy_pad_w": [
+              "Classical.choice",
+              "Quot.sound",
+              "propext"
+            ],
+            "Xv6.sy_subw_pad": [
+              "Classical.choice",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [],
+          "axioms_subset_of_baseline": true
+        },
+        "solver": {
+          "log": ".lake/solver-survey/initial-frozen-logs/strncpy-solver-0.log",
+          "log_sha256": "28a3664f8f7f549191a741e385f60a30693da73bfc46024078b4dabc36159bc3",
+          "success": true,
+          "wall_s": 12.654,
+          "cpu_s": 12.821,
+          "peak_mib": 372.3,
+          "axioms": {
+            "Xv6.sy_sub1": [
+              "Quot.sound",
+              "propext"
+            ],
+            "Xv6.sy_pad_w": [
+              "Classical.choice",
+              "Quot.sound",
+              "propext"
+            ],
+            "Xv6.sy_subw_pad": [
+              "Classical.choice",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [
+            {
+              "selected": 1,
+              "available": 1
+            },
+            {
+              "selected": 1,
+              "available": 2
+            },
+            {
+              "selected": 1,
+              "available": 3
+            }
+          ],
+          "axioms_subset_of_baseline": true
+        }
+      }
+    },
+    "scheduler": {
+      "source": "Xv6/ProofScheduler.lean",
+      "source_sha256": "d7af3896426ccae7ad22de0cf9a0e28d810de3bb96c97dbe642fe18ce0c99085",
+      "declarations": [
+        "scheduler_setup"
+      ],
+      "statement_check": "identical lexical declaration headers",
+      "variant_sha256": {
+        "baseline": "f62a1cbf9e6815369505775c51e2db61883730345f3acdd1f72347447a48b803",
+        "solver": "f22715724b9b7e2cf2a82e9772ab8218f33d78a6f3638aa4f9809b2be340c07a"
+      },
+      "edit_count": {
+        "baseline": 0,
+        "solver": 4
+      },
+      "variants": {
+        "baseline": {
+          "log": ".lake/solver-survey/initial-frozen-logs/scheduler-baseline-0.log",
+          "log_sha256": "c59a9ab4157809765575d79b44a248080724b1749b28615b44696b9be10930c0",
+          "success": true,
+          "wall_s": 13.707,
+          "cpu_s": 13.7,
+          "peak_mib": 384.2,
+          "axioms": {
+            "Xv6.scheduler_setup": [
+              "Classical.choice",
+              "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.add_lsb0._native.bv_decide.ax_1_5",
+              "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+              "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+              "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+              "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+              "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+              "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+              "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+              "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+              "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+              "MachCSL.sext_lsb0_21._native.bv_decide.ax_1_5",
+              "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+              "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [],
+          "axioms_subset_of_baseline": true
+        },
+        "solver": {
+          "log": ".lake/solver-survey/initial-frozen-logs/scheduler-solver-0.log",
+          "log_sha256": "3f87a13f1af61a180e46bb6024e26195d3c8ff39503e400f96b3b7d736bf6ed8",
+          "success": true,
+          "wall_s": 13.658,
+          "cpu_s": 13.681,
+          "peak_mib": 374.1,
+          "axioms": {
+            "Xv6.scheduler_setup": [
+              "Classical.choice",
+              "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.add_lsb0._native.bv_decide.ax_1_5",
+              "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+              "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+              "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+              "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+              "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+              "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+              "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+              "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+              "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+              "MachCSL.sext_lsb0_21._native.bv_decide.ax_1_5",
+              "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+              "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [
+            {
+              "selected": 0,
+              "available": 1
+            },
+            {
+              "selected": 0,
+              "available": 1
+            }
+          ],
+          "axioms_subset_of_baseline": true
+        }
+      }
+    },
+    "uvmcopy": {
+      "source": "Xv6/ProofUvmcopy.lean",
+      "source_sha256": "16e2f0be8b2e7ac8b7040e11c422b14027921bfd8010f6357b79d83fbd7f41eb",
+      "declarations": [
+        "uvmcopy_epi"
+      ],
+      "statement_check": "identical lexical declaration headers",
+      "variant_sha256": {
+        "baseline": "9fdc65fbd95bac0f8df819ae98d49fe4baaca9e5b607fd91598497583bfa11ef",
+        "solver": "3b5a49e9de5968ef8ad5558a3a3ebdc35bec75e30dade7f8d0787e4ffc04494f"
+      },
+      "edit_count": {
+        "baseline": 0,
+        "solver": 1
+      },
+      "variants": {
+        "baseline": {
+          "log": ".lake/solver-survey/initial-frozen-logs/uvmcopy-baseline-0.log",
+          "log_sha256": "3fe61c33b71076fcea89150f4b86fa9faeda675ef93f64f8ecd66702ae6e23dd",
+          "success": true,
+          "wall_s": 23.294,
+          "cpu_s": 23.349,
+          "peak_mib": 619.3,
+          "axioms": {
+            "Xv6.uvmcopy_epi": [
+              "Classical.choice",
+              "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+              "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+              "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+              "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+              "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+              "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+              "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+              "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+              "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+              "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+              "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+              "MachCSL.update_bit0_eq._native.bv_decide.ax_1_5",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [],
+          "axioms_subset_of_baseline": true
+        },
+        "solver": {
+          "log": ".lake/solver-survey/initial-frozen-logs/uvmcopy-solver-0.log",
+          "log_sha256": "84adb0adb058734eb146473f419d7c6d8c152c3e72144230cb3f79a81798b603",
+          "success": true,
+          "wall_s": 24.906,
+          "cpu_s": 24.96,
+          "peak_mib": 620.3,
+          "axioms": {
+            "Xv6.uvmcopy_epi": [
+              "Classical.choice",
+              "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+              "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+              "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+              "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+              "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+              "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+              "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+              "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+              "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+              "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+              "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+              "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+              "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+              "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+              "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+              "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+              "MachCSL.update_bit0_eq._native.bv_decide.ax_1_5",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [],
+          "axioms_subset_of_baseline": true
+        }
+      }
+    },
+    "grep": {
+      "source": "Xv6/UkGrepLoopFrame.lean",
+      "source_sha256": "650934e7c528dc9b088889b8c54a64f407f26c3096badff32c94a29114099ee0",
+      "declarations": [
+        "grepLoop_epi"
+      ],
+      "statement_check": "identical lexical declaration headers",
+      "variant_sha256": {
+        "baseline": "253e5d30586ad1d132cef45fe3f5b9d1e43ae2b2a24c183f029b41b7702b2977",
+        "uncleared": "ba25e096389a245b4efc3084cd2ac4a49abc7f6b55830e63e41834bf79baae98",
+        "solver_uncleared": "088d34138dbce8b645a535b670da437dff68c9c3c45d817370bbd96968431c53"
+      },
+      "edit_count": {
+        "baseline": 0,
+        "uncleared": 13,
+        "solver_uncleared": 42
+      },
+      "variants": {
+        "baseline": {
+          "log": ".lake/solver-survey/initial-frozen-logs/grep-baseline-0.log",
+          "log_sha256": "6c996ce1d5efc1fcf25dd6883b179e04e41aa669142bc5e1739d80db8eb62405",
+          "success": true,
+          "wall_s": 16.866,
+          "cpu_s": 16.754,
+          "peak_mib": 478.2,
+          "axioms": {
+            "Xv6.grepLoop_epi": [
+              "Classical.choice",
+              "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [],
+          "axioms_subset_of_baseline": true
+        },
+        "uncleared": {
+          "log": ".lake/solver-survey/initial-frozen-logs/grep-uncleared-0.log",
+          "log_sha256": "3dcd96a7290f60a16d1c48b373a3c0c51cddc23e029ae0b9e1397f5a9a36ea7d",
+          "success": true,
+          "wall_s": 26.973,
+          "cpu_s": 27.013,
+          "peak_mib": 1019.1,
+          "axioms": {
+            "Xv6.grepLoop_epi": [
+              "Classical.choice",
+              "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [],
+          "axioms_subset_of_baseline": true
+        },
+        "solver_uncleared": {
+          "log": ".lake/solver-survey/initial-frozen-logs/grep-solver_uncleared-0.log",
+          "log_sha256": "ed51bdc1fdd854cf2d87dcd5d678134015ccdf7588a10a9d22827a567e77b30d",
+          "success": true,
+          "wall_s": 19.188,
+          "cpu_s": 19.358,
+          "peak_mib": 449.2,
+          "axioms": {
+            "Xv6.grepLoop_epi": [
+              "Classical.choice",
+              "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+              "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+              "Quot.sound",
+              "propext"
+            ]
+          },
+          "core_sizes": [
+            {
+              "selected": 1,
+              "available": 3
+            },
+            {
+              "selected": 2,
+              "available": 3
+            },
+            {
+              "selected": 1,
+              "available": 4
+            },
+            {
+              "selected": 2,
+              "available": 4
+            },
+            {
+              "selected": 1,
+              "available": 5
+            },
+            {
+              "selected": 2,
+              "available": 5
+            },
+            {
+              "selected": 1,
+              "available": 6
+            },
+            {
+              "selected": 2,
+              "available": 6
+            },
+            {
+              "selected": 1,
+              "available": 7
+            },
+            {
+              "selected": 2,
+              "available": 7
+            },
+            {
+              "selected": 1,
+              "available": 8
+            },
+            {
+              "selected": 2,
+              "available": 8
+            },
+            {
+              "selected": 1,
+              "available": 9
+            },
+            {
+              "selected": 2,
+              "available": 9
+            },
+            {
+              "selected": 1,
+              "available": 10
+            },
+            {
+              "selected": 2,
+              "available": 10
+            },
+            {
+              "selected": 1,
+              "available": 11
+            },
+            {
+              "selected": 2,
+              "available": 11
+            },
+            {
+              "selected": 1,
+              "available": 12
+            },
+            {
+              "selected": 2,
+              "available": 12
+            },
+            {
+              "selected": 1,
+              "available": 13
+            },
+            {
+              "selected": 2,
+              "available": 13
+            },
+            {
+              "selected": 1,
+              "available": 14
+            },
+            {
+              "selected": 2,
+              "available": 14
+            },
+            {
+              "selected": 1,
+              "available": 15
+            },
+            {
+              "selected": 2,
+              "available": 15
+            },
+            {
+              "selected": 1,
+              "available": 16
+            },
+            {
+              "selected": 2,
+              "available": 16
+            },
+            {
+              "selected": 1,
+              "available": 16
+            }
+          ],
+          "axioms_subset_of_baseline": true
+        }
+      }
+    }
+  }
+}

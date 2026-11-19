@@ -1,0 +1,14 @@
+{
+  "Experiments/ResourcePlanner/Actual.lean": {
+    "snapshot": "Experiments/ResourcePlanner/baseline-source/Actual.lean.txt",
+    "sha256": "3bdd137d984b6edfea334153fe1d586d6da0f590439a3d84067d6fe23b5907c6"
+  },
+  "Experiments/ResourcePlanner/Planner.lean": {
+    "snapshot": "Experiments/ResourcePlanner/baseline-source/Planner.lean.txt",
+    "sha256": "197efb53846551b83b52786833d1c03b4eda212985bf69644549b43cc422ee30"
+  },
+  "Experiments/ResourcePlanner/benchmark.py": {
+    "snapshot": "Experiments/ResourcePlanner/baseline-source/benchmark.py.txt",
+    "sha256": "519bc18af07bbde8748e7931ef55f9fcb6bd2a18ea9a604c29c973ee1c1b29fd"
+  }
+}

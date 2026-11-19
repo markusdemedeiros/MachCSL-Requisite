@@ -1,0 +1,294 @@
+{
+  "scope": "Complete experimental STRLEN consumes a discovered affine invariant; production export unchanged. Focused checks with prebuilt imports, no speed or total-source reduction claim.",
+  "baseline_manifest": "Experiments/WholeFunction/StrlenAffineBaseline.json",
+  "snapshot": ".lake/whole-function/strlen-affine-checkpoint",
+  "contract": {
+    "type": "Xv6.STRLEN",
+    "theorem": "Xv6.WholeFunction.Strlen.compiled_strlen",
+    "original_audit": "Experiments/WholeFunction/strlen-affine-integration.json",
+    "status": "PASS",
+    "original_axioms": 38,
+    "current_axioms": 37,
+    "added_axioms": [],
+    "unchanged_complete_source": true
+  },
+  "authoring": {
+    "before_scan_register_equations": 3,
+    "after_scan_register_equations": 0,
+    "after_scan_predicate": "Affine.Holds Affine.inferred base j ctx",
+    "generated_rules": {
+      "10": [
+        1,
+        0,
+        0
+      ],
+      "13": [
+        1,
+        1,
+        0
+      ],
+      "15": [
+        1,
+        1,
+        1
+      ]
+    },
+    "before_authored_load_actions": 2,
+    "after_authored_load_actions": 0,
+    "remaining_semantic_input": [
+      "ABI argument anchor and result register",
+      "byte-buffer ownership and C-string nonzero-prefix/zero-terminator",
+      "scan index bounds and length < 2^31",
+      "semantic byte/return cutpoints and separately checked frame rows"
+    ],
+    "discovery_authority": "Enumeration/Z3 samples only propose candidates; universal actual-row entry/backedge replay and address proof certify them. Old Scan and loop_good are not discovery inputs.",
+    "replay_reuse": "Original full-row replay certificates are transported through checked flow-closed row filtering, without repeating invariant proofs."
+  },
+  "client_lines_before": 525,
+  "client_lines_after": 516,
+  "new_affine_support_lines_including_generated_tests_driver": 593,
+  "clients": [
+    {
+      "source": "Experiments/WholeFunction/StrlenAxioms.lean",
+      "sha256": "009a22d45c982ed4413d65a72e44407540cd3bb7040b3ca5bd48ff13ae07bdcc",
+      "lines": 42,
+      "bytes": 2162,
+      "baseline_lines": 38,
+      "baseline_sha256": "30f328c29e4e1161da5a2434a0613d81761c59407105c8a5608b02849553cf0f"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenBinary.lean",
+      "sha256": "247c49b3b1721665e12228807e6db6d4512fd7c8f2aee1dd43088e5bca12858b",
+      "lines": 36,
+      "bytes": 1975,
+      "baseline_lines": 36,
+      "baseline_sha256": "247c49b3b1721665e12228807e6db6d4512fd7c8f2aee1dd43088e5bca12858b"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenBlocks.lean",
+      "sha256": "05930b21c30c326ede553930072638bb3c3f936c22e8a18789ca353147d15bb6",
+      "lines": 55,
+      "bytes": 2822,
+      "baseline_lines": 61,
+      "baseline_sha256": "529942d03be26e59b7feba001c6b6addb14b97ece09ff99b6046bd27174ae98c"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenCompile.lean",
+      "sha256": "12a0a3942799b69f087a7ea3269fdece9084b4d0aea3e1e23daba5889318fa54",
+      "lines": 46,
+      "bytes": 2373,
+      "baseline_lines": 52,
+      "baseline_sha256": "ec37de67a791a697ea05bb20a5cf476b5e962bc11230edbbf0554aacd3def1cb"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenComplete.lean",
+      "sha256": "8fe25b98959328ee20023be9e7eed7e678b41e345c09fbb9501dcbca195d4321",
+      "lines": 88,
+      "bytes": 4182,
+      "baseline_lines": 88,
+      "baseline_sha256": "8fe25b98959328ee20023be9e7eed7e678b41e345c09fbb9501dcbca195d4321"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenFacts.lean",
+      "sha256": "9cc4e202f4c244356af8d7fe0479c9754d1e7bd8a36c27f0983bcf817b3807f9",
+      "lines": 62,
+      "bytes": 2724,
+      "baseline_lines": 62,
+      "baseline_sha256": "9cc4e202f4c244356af8d7fe0479c9754d1e7bd8a36c27f0983bcf817b3807f9"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenFrame.lean",
+      "sha256": "6a00df0b917662ecb4256e07c14abd9d61d99b366bcf3c8a19394891acf6c5ad",
+      "lines": 43,
+      "bytes": 2091,
+      "baseline_lines": 43,
+      "baseline_sha256": "6a00df0b917662ecb4256e07c14abd9d61d99b366bcf3c8a19394891acf6c5ad"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenFrameDefs.lean",
+      "sha256": "2c1e2941f5d720c465ebe9c935871bd1cdc29dc729adc10780e51bea09187d20",
+      "lines": 31,
+      "bytes": 1153,
+      "baseline_lines": 31,
+      "baseline_sha256": "2c1e2941f5d720c465ebe9c935871bd1cdc29dc729adc10780e51bea09187d20"
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenModel.lean",
+      "sha256": "2348a068415a11cb2e62a952cb6cde572568a8e4b1ac6c48c54281cad66468fd",
+      "lines": 113,
+      "bytes": 4406,
+      "baseline_lines": 114,
+      "baseline_sha256": "3afcae0f35a9ae8a114a0e90e63a25c2085784937e2b3f4f86c88076464e52b1"
+    }
+  ],
+  "affine_support": [
+    {
+      "source": "Experiments/WholeFunction/AffineCandidates.lean",
+      "sha256": "aa1a71883f626250675e14193e4d6d0843e4a79cab8e838d504f3a4edc6d0218",
+      "lines": 11,
+      "bytes": 291
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineClient.lean",
+      "sha256": "e3f26202d1b06100655f7f008561dd074c07879899bfe0dc88c564f4c0260837",
+      "lines": 30,
+      "bytes": 1280
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineCore.lean",
+      "sha256": "5c3610326e87dfd88d533f70dab85e1f3df18665ec405d9c6264c4bc01cf5c6f",
+      "lines": 21,
+      "bytes": 656
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineRejects.lean",
+      "sha256": "35dfe312d163bd6bf6110b47299938964dccd600733678feb04bbb33756547b4",
+      "lines": 58,
+      "bytes": 2819
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineReplay.lean",
+      "sha256": "868ca24d260801dabce63599d5ae85f2ad432095c68c523ecf6e5a08a84b0baf",
+      "lines": 53,
+      "bytes": 2507
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineSamples.lean",
+      "sha256": "16e06bcc42c2eaddf7ec63bd2befe2083a67a7861336b34eda1b65988f3ff95f",
+      "lines": 146,
+      "bytes": 7012
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineTransport.lean",
+      "sha256": "72b5d3fc4378581c7a9abfc298b93f8b019e4b8275ca195e071e860d6be3cbda",
+      "lines": 144,
+      "bytes": 6923
+    },
+    {
+      "source": "Experiments/WholeFunction/affine-synthesize.py",
+      "sha256": "6489873dd891702eb1518d09034d4244885958b95ef3d551f62b29d1d0bc77a0",
+      "lines": 130,
+      "bytes": 7031
+    }
+  ],
+  "focused_checks": [
+    {
+      "log": ".lake/whole-function/StrlenModel-affine.log",
+      "pass": true,
+      "runtime_seconds": 3.127,
+      "peak_MiB": 265.4
+    },
+    {
+      "log": ".lake/whole-function/StrlenBlocks-affine.log",
+      "pass": true,
+      "runtime_seconds": 6.34,
+      "peak_MiB": 226.0
+    },
+    {
+      "log": ".lake/whole-function/StrlenCompile-affine.log",
+      "pass": true,
+      "runtime_seconds": 2.202,
+      "peak_MiB": 209.4
+    },
+    {
+      "log": ".lake/whole-function/StrlenComplete-affine.log",
+      "pass": true,
+      "runtime_seconds": 2.554,
+      "peak_MiB": 218.8
+    },
+    {
+      "log": ".lake/whole-function/StrlenAxioms-affine.log",
+      "pass": true,
+      "runtime_seconds": 2.335,
+      "peak_MiB": 209.9
+    }
+  ],
+  "baseline_saved_checks": [
+    {
+      "log": ".lake/whole-function/pre-affine-strlen/StrlenAxioms-framed.log",
+      "pass": true,
+      "runtime_seconds": 2.116,
+      "peak_MiB": 226.0
+    },
+    {
+      "log": ".lake/whole-function/pre-affine-strlen/StrlenBlocks-framed.log",
+      "pass": true,
+      "runtime_seconds": 7.653,
+      "peak_MiB": 244.7
+    },
+    {
+      "log": ".lake/whole-function/pre-affine-strlen/StrlenCompile-framed.log",
+      "pass": true,
+      "runtime_seconds": 2.248,
+      "peak_MiB": 224.0
+    },
+    {
+      "log": ".lake/whole-function/pre-affine-strlen/StrlenComplete-framed.log",
+      "pass": true,
+      "runtime_seconds": 2.364,
+      "peak_MiB": 232.1
+    },
+    {
+      "log": ".lake/whole-function/pre-affine-strlen/StrlenModel-framed.log",
+      "pass": true,
+      "runtime_seconds": 3.148,
+      "peak_MiB": 255.3
+    }
+  ],
+  "affine_checks": [
+    {
+      "log": ".lake/whole-function/affine-core.log",
+      "pass": true,
+      "runtime_seconds": 1.922,
+      "peak_MiB": 222.6
+    },
+    {
+      "log": ".lake/whole-function/affine-samples.log",
+      "pass": true,
+      "runtime_seconds": 14.12,
+      "peak_MiB": 280.2
+    },
+    {
+      "log": ".lake/whole-function/affinecandidates.log",
+      "pass": true,
+      "runtime_seconds": 1.886,
+      "peak_MiB": 216.1
+    },
+    {
+      "log": ".lake/whole-function/affinereplay.log",
+      "pass": true,
+      "runtime_seconds": 4.739,
+      "peak_MiB": 261.1
+    },
+    {
+      "log": ".lake/whole-function/affineclient.log",
+      "pass": true,
+      "runtime_seconds": 2.132,
+      "peak_MiB": 225.5
+    },
+    {
+      "log": ".lake/whole-function/affinetransport.log",
+      "pass": true,
+      "runtime_seconds": 3.361,
+      "peak_MiB": 237.1
+    },
+    {
+      "log": ".lake/whole-function/affinerejects.log",
+      "pass": true,
+      "runtime_seconds": 2.903,
+      "peak_MiB": 229.2
+    }
+  ],
+  "discovery_measurement": {
+    "backend": "enumeration",
+    "training_count": 12,
+    "holdout_count": 12,
+    "enumeration_seconds": 0.002499242313206196,
+    "z3_seconds": 1.113828593865037
+  },
+  "measurement_limits": [
+    "Historical baseline timings are not paired measurements of an unchanged dependency closure.",
+    "Discovery and replay support is additional source and check cost; smaller STRLEN client is not a total LOC win.",
+    "Inherited instruction-rule axioms are retained, not eliminated."
+  ]
+}

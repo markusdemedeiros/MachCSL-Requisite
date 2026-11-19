@@ -1,0 +1,186 @@
+{
+  "scope": "Isolated actual-STRLEN affine discovery, universal replay, memory consumer and negative checks; no full xv6 build",
+  "passed": true,
+  "memory_limit_gib": 4,
+  "lean_workers": 1,
+  "solver_limits": {
+    "address_space_mib": 512,
+    "z3_memory_mib": 256,
+    "query_timeout_ms": 3000
+  },
+  "discovered_register_relations": 3,
+  "handwritten_scan_formulas_as_discovery_input": 0,
+  "supplied_semantics": [
+    "ABI anchor entry.a0",
+    "first scan index 1",
+    "nonzero-byte backedge advances index by 1"
+  ],
+  "not_inferred": [
+    "buffer ownership and contents",
+    "C-string termination",
+    "index bounds",
+    "return-value range bound"
+  ],
+  "checked_obligations": [
+    "actual prefix initiation",
+    "actual prefix induction step",
+    "actual byte-load Enabled condition",
+    "finite CFG certificate filtering",
+    "wrong initial index",
+    "wrong stride annotation",
+    "incorrect nonmodular address claim",
+    "removed loop row",
+    "removed empty-string suffix"
+  ],
+  "axiom_boundary": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "performance_limit": "Sampling and module timings are cached-import standalone checks. Discovery timings compare identical finite grammars and data; neither is a whole-build measurement.",
+  "discovery": {
+    "scope": "Untrusted candidate discovery; finite samples are not a proof",
+    "grammar": {
+      "anchor": [
+        -1,
+        0,
+        1
+      ],
+      "counter": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "offset": [
+        -4,
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "modulus": 18446744073709551616
+    },
+    "backend": "enumeration",
+    "training_count": 12,
+    "holdout_count": 12,
+    "candidates": {
+      "10": [
+        1,
+        0,
+        0
+      ],
+      "13": [
+        1,
+        1,
+        0
+      ],
+      "15": [
+        1,
+        1,
+        1
+      ]
+    },
+    "enumeration_seconds": 0.0024553630501031876,
+    "z3_seconds": 1.0992045840248466,
+    "solver_sha256": "bbea82f99718e57d939db27db7a6e3afb2dfdee4bd11dd0858e5cfefbdf80fa1",
+    "driver_sha256": "6489873dd891702eb1518d09034d4244885958b95ef3d551f62b29d1d0bc77a0",
+    "samples_sha256": "4f260bdf9874cd37bb599b64f4b34c7c747fdd07b380dbe22e0238b876c982d5",
+    "generated_sha256": "aa1a71883f626250675e14193e4d6d0843e4a79cab8e838d504f3a4edc6d0218",
+    "query_sha256": "b559fc6121598b387e9d3854ddc7e1f0357ba630160d0345f0ad7232ed3bc634",
+    "response_sha256": "df20082a6f85df39fbb22dd51c1b4c1947e362721abbfce6505896cd63b43d02"
+  },
+  "discovery_report": ".lake/whole-function/affine-discovery-final.json",
+  "samples": [
+    {
+      "source": "Experiments/WholeFunction/AffineCore.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 2.236,
+      "service_runtime": "2.167s",
+      "peak_mib": 205.5,
+      "physical_lines": 21,
+      "sha256": "5c3610326e87dfd88d533f70dab85e1f3df18665ec405d9c6264c4bc01cf5c6f",
+      "log": ".lake/whole-function/suite-affine-final-AffineCore.log"
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineSamples.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 14.076,
+      "service_runtime": "14.018s",
+      "peak_mib": 250.3,
+      "physical_lines": 146,
+      "sha256": "16e06bcc42c2eaddf7ec63bd2befe2083a67a7861336b34eda1b65988f3ff95f",
+      "log": ".lake/whole-function/suite-affine-final-AffineSamples.log"
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineCandidates.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 2.087,
+      "service_runtime": "2.030s",
+      "peak_mib": 203.6,
+      "physical_lines": 11,
+      "sha256": "aa1a71883f626250675e14193e4d6d0843e4a79cab8e838d504f3a4edc6d0218",
+      "log": ".lake/whole-function/suite-affine-final-AffineCandidates.log"
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineReplay.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 4.695,
+      "service_runtime": "4.643s",
+      "peak_mib": 223.4,
+      "physical_lines": 53,
+      "sha256": "868ca24d260801dabce63599d5ae85f2ad432095c68c523ecf6e5a08a84b0baf",
+      "log": ".lake/whole-function/suite-affine-final-AffineReplay.log"
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineClient.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 2.274,
+      "service_runtime": "2.216s",
+      "peak_mib": 208.3,
+      "physical_lines": 30,
+      "sha256": "e3f26202d1b06100655f7f008561dd074c07879899bfe0dc88c564f4c0260837",
+      "log": ".lake/whole-function/suite-affine-final-AffineClient.log"
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineTransport.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 5.966,
+      "service_runtime": "3.302s",
+      "peak_mib": 234.8,
+      "physical_lines": 144,
+      "sha256": "72b5d3fc4378581c7a9abfc298b93f8b019e4b8275ca195e071e860d6be3cbda",
+      "log": ".lake/whole-function/suite-affine-final-AffineTransport.log"
+    },
+    {
+      "source": "Experiments/WholeFunction/AffineRejects.lean",
+      "exit_code": 0,
+      "incomplete_proof_detected": false,
+      "source_changed_during_check": false,
+      "elapsed_seconds_including_lock": 8.617,
+      "service_runtime": "2.903s",
+      "peak_mib": 229.5,
+      "physical_lines": 58,
+      "sha256": "35dfe312d163bd6bf6110b47299938964dccd600733678feb04bbb33756547b4",
+      "log": ".lake/whole-function/suite-affine-final-AffineRejects.log"
+    }
+  ],
+  "reproduction": "python3 Experiments/WholeFunction/affine-check.py --compare-z3"
+}

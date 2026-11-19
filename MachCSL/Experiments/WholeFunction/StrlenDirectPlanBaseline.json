@@ -1,0 +1,105 @@
+{
+  "purpose": "Checked direct-plan STRLEN baseline before replacing per-PC register authoring with Residual/KernelSymbolic prefixes. No speed or total-LOC reduction claim.",
+  "git_head": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+  "snapshot": ".lake/whole-function/strlen-direct-plan-baseline",
+  "modules": [
+    {
+      "module": "StrlenBinary",
+      "source": "Experiments/WholeFunction/StrlenBinary.lean",
+      "sha256": "247c49b3b1721665e12228807e6db6d4512fd7c8f2aee1dd43088e5bca12858b",
+      "bytes": 1975,
+      "lines": 36,
+      "check_log": ".lake/whole-function/strlen-binary.log",
+      "runtime": "3.321s",
+      "memory_peak": "249.4M (swap: 0B)",
+      "status": "checked; olean emitted"
+    },
+    {
+      "module": "StrlenFrameDefs",
+      "source": "Experiments/WholeFunction/StrlenFrameDefs.lean",
+      "sha256": "2c1e2941f5d720c465ebe9c935871bd1cdc29dc729adc10780e51bea09187d20",
+      "bytes": 1153,
+      "lines": 31,
+      "check_log": ".lake/whole-function/strlen-frame-defs.log",
+      "runtime": "1.852s",
+      "memory_peak": "221M (swap: 0B)",
+      "status": "checked; olean emitted"
+    },
+    {
+      "module": "StrlenFrame",
+      "source": "Experiments/WholeFunction/StrlenFrame.lean",
+      "sha256": "5bd7ccc2a1b34a43aaa580c62f018cff2f03598ebffc176e7e36d5ca3de4f700",
+      "bytes": 5290,
+      "lines": 101,
+      "check_log": ".lake/whole-function/strlen-frame.log",
+      "runtime": "4.080s",
+      "memory_peak": "242.7M (swap: 0B)",
+      "status": "checked; olean emitted"
+    },
+    {
+      "module": "StrlenFacts",
+      "source": "Experiments/WholeFunction/StrlenFacts.lean",
+      "sha256": "af860d73eeb273638ff6040d171b0ac9aa20c71237164fe4642e2a7b142c5296",
+      "bytes": 5381,
+      "lines": 115,
+      "check_log": ".lake/whole-function/strlen-facts.log",
+      "runtime": "2.519s",
+      "memory_peak": "236.1M (swap: 0B)",
+      "status": "checked; olean emitted"
+    },
+    {
+      "module": "StrlenModel",
+      "source": "Experiments/WholeFunction/StrlenModel.lean",
+      "sha256": "81ddff26c511849b81d71000885e18e8c7adb68d19e19b6f23ce1bc705a70329",
+      "bytes": 4125,
+      "lines": 79,
+      "check_log": ".lake/whole-function/strlen-model.log",
+      "runtime": "2.119s",
+      "memory_peak": "229.7M (swap: 0B)",
+      "status": "checked; olean emitted"
+    },
+    {
+      "module": "StrlenCompile",
+      "source": "Experiments/WholeFunction/StrlenCompile.lean",
+      "sha256": "a02f9a033056ac47a5c539e27c38cf2b75aa910bc2b5ee38fd76f8a0f170ff27",
+      "bytes": 8002,
+      "lines": 136,
+      "check_log": ".lake/whole-function/strlen-compile.log",
+      "runtime": "3.392s",
+      "memory_peak": "233.4M (swap: 0B)",
+      "status": "checked; olean emitted"
+    },
+    {
+      "module": "StrlenComplete",
+      "source": "Experiments/WholeFunction/StrlenComplete.lean",
+      "sha256": "f1d3e0bce25e2c72d5c89949565b945b371ba9f81d6617f609a46cda111f4f1f",
+      "bytes": 4065,
+      "lines": 89,
+      "check_log": ".lake/whole-function/strlen-complete.log",
+      "runtime": "2.450s",
+      "memory_peak": "234.8M (swap: 0B)",
+      "status": "checked; olean emitted"
+    },
+    {
+      "module": "StrlenAxioms",
+      "source": "Experiments/WholeFunction/StrlenAxioms.lean",
+      "sha256": "f4253122148e6cd54fe4e908a5675794fe786def2133fef8484445230a3a6290",
+      "bytes": 1603,
+      "lines": 33,
+      "check_log": ".lake/whole-function/strlen-axioms.log",
+      "runtime": "2.107s",
+      "memory_peak": "224.8M (swap: 0B)",
+      "status": "checked; olean emitted"
+    }
+  ],
+  "total_client_lines": 620,
+  "public_export": "Xv6.WholeFunction.Strlen.compiled_strlen : Xv6.STRLEN",
+  "audit": "No old STRLEN proof/iteration dependencies; no extra axioms beyond 37 inherited instruction-rule axioms.",
+  "authoring_surface": {
+    "control_constructors": 11,
+    "explicit_register_plan_sites": 7,
+    "explicit_byte_plan_sites": 2,
+    "explicit_scalar_plan_sites": 1,
+    "notes": "Counts describe authored client control/actions. Later frame factoring must be reported separately from residual-prefix changes."
+  }
+}

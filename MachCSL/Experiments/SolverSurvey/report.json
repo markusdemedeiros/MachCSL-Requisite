@@ -1,0 +1,3630 @@
+{
+  "method": "Lexical scan after repository comment/string blanker. Pattern counts overlap and include definitions; theorem cohorts inspect lexical theorem RHS. Subtraction syntax is not type-inferred: Nat-subtraction cohort includes BV/Int subtraction and is a candidate list, not established omega complexity. No benchmarks, builds, or solvers run.",
+  "production_changes": 0,
+  "head": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+  "source_manifest_sha256": "2dfebc85009cdbf193cf57af46ab52b9b5dcbbe83d6b8465bf5d659f7dac5395",
+  "modules": {
+    "MachCSL": 282,
+    "Xv6": 2146
+  },
+  "theorem_declarations": 27785,
+  "patterns": {
+    "omega": "\\bomega\\b",
+    "bv_omega_whole_context": "\\bbv_omega\\b",
+    "bv_omega_goal_only": "\\bbv_omega_g\\b",
+    "bv_decide": "\\bbv_decide\\b",
+    "grind": "\\bgrind\\b",
+    "simp_all": "\\bsimp_all\\b",
+    "k_norm": "\\bk_norm(?:_g|_goal|_all)?\\b",
+    "bitvec_nat_bridge": "BitVec\\.(?:toNat|ofNat|toInt|ofInt|toNat_add|toNat_sub|toNat_ofNat|toNat_mul|toNat_mod|toNat_udiv)\\b",
+    "bit_extract_extend": "BitVec\\.(?:signExtend|zeroExtend|extractLsb\\x27?|setWidth)\\b",
+    "nat_div_mod": "Nat\\.(?:mod|div|mod_eq_of_lt|mod_lt|div_lt_iff_lt_mul|div_add_div_same|mul_div_cancel_left|mul_mod)\\b|\\s(?:%|/)\\s",
+    "nat_subtraction_syntax": "\\s-\\s",
+    "list_observation": "List\\.(?:getElem\\x27?|getElem\\?|getElem!|getD|getElem\\?_append|getElem\\?_take|getElem\\?_drop|getElem\\?_set|ext_getElem\\?|ext_getElem|length_take|length_drop|length_append|length_set)(?![\\w\\x27?])",
+    "list_rearrangement": "List\\.(?:take|drop|append|set|map|mapIdx|replicate|take_append|drop_append|take_left\\x27?|drop_left\\x27?|append_assoc|take_drop|drop_drop)\\b",
+    "finite_map_laws": "(?:LawfulPartialMap|PartialMap)\\.[\\w?\\x27]+|\\b(?:get\\?_insert|get\\?_delete|insert_insert_comm|insert_get\\?)\\b",
+    "ghost_map_operations": "\\bghost_map_[\\w\\x27]+\\b",
+    "resource_accessors": "\\b(?:byteBuf|umPages|ptreeOwn|ptOwnRep|wordPointsTo|pageOwn)[\\w\\x27]*_(?:acc|split|join|lookup|intro|elim)[\\w\\x27]*\\b|BigSep[LM]\\.[\\w\\x27]*(?:acc|lookup)[\\w\\x27]*",
+    "fraction_resources": "\\bDFrac\\.[\\w]+\\b",
+    "set_disjoint_subset": "\\b(?:Disjoint|disjoint|subseteq|subset|Subset|mem_union|mem_inter|mem_diff|mem_insert)\\b|##",
+    "cpu_pin": "\\bhpin[\\w\\x27]*\\b|wpNext_(?:shift|at)\\b",
+    "register_updates": "RegMap\\.(?:set_apply|set|reduceApply|set_other|set_apply_of_eq)\\b",
+    "instruction_dispatch": "\\b(?:k_step|k_step_gen|uk_step|uwk_run|swp_run|kernel_walk)\\b",
+    "branch_case_split": "\\b(?:by_cases|split|split_ifs)\\b",
+    "named_decision_equation": "\\b(?:kernel_rfl|kernel_eq_refl|fsimg_decide|binary_rfl)\\b"
+  },
+  "frequencies": {
+    "omega": {
+      "occurrences": 14482,
+      "by_tree": {
+        "MachCSL": 759,
+        "Xv6": 13723
+      },
+      "file_count": 1168,
+      "top_files": [
+        {
+          "path": "Xv6/BootCarveProc.lean",
+          "occurrences": 224
+        },
+        {
+          "path": "Xv6/PipesFire.lean",
+          "occurrences": 208
+        },
+        {
+          "path": "Xv6/BootCarveFs.lean",
+          "occurrences": 185
+        },
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "occurrences": 152
+        },
+        {
+          "path": "Xv6/BootCarveMain.lean",
+          "occurrences": 146
+        },
+        {
+          "path": "Xv6/UshGrep.lean",
+          "occurrences": 129
+        },
+        {
+          "path": "Xv6/KexecBuilt.lean",
+          "occurrences": 120
+        },
+        {
+          "path": "Xv6/UshGeom.lean",
+          "occurrences": 119
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 33,
+          "token": "omega"
+        },
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 55,
+          "token": "omega"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 96,
+          "token": "omega"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 112,
+          "token": "omega"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 14,
+          "token": "omega"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 41,
+          "token": "omega"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 38,
+          "token": "omega"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 45,
+          "token": "omega"
+        }
+      ]
+    },
+    "bv_omega_whole_context": {
+      "occurrences": 210,
+      "by_tree": {
+        "MachCSL": 21,
+        "Xv6": 189
+      },
+      "file_count": 84,
+      "top_files": [
+        {
+          "path": "Xv6/SysOpenParts.lean",
+          "occurrences": 11
+        },
+        {
+          "path": "Xv6/UlibVprintfLoop.lean",
+          "occurrences": 11
+        },
+        {
+          "path": "Xv6/UlibVprintfPro.lean",
+          "occurrences": 11
+        },
+        {
+          "path": "Xv6/ConsoleRing.lean",
+          "occurrences": 9
+        },
+        {
+          "path": "Xv6/ProofScheduler.lean",
+          "occurrences": 9
+        },
+        {
+          "path": "Xv6/ProofSched.lean",
+          "occurrences": 8
+        },
+        {
+          "path": "MachCSL/PlatformFacts.lean",
+          "occurrences": 7
+        },
+        {
+          "path": "Xv6/ForkretClose.lean",
+          "occurrences": 7
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/KCtx.lean",
+          "line": 263,
+          "token": "bv_omega"
+        },
+        {
+          "path": "MachCSL/PlatformFacts.lean",
+          "line": 38,
+          "token": "bv_omega"
+        },
+        {
+          "path": "MachCSL/PlatformFacts.lean",
+          "line": 39,
+          "token": "bv_omega"
+        },
+        {
+          "path": "MachCSL/StackOwnBounds.lean",
+          "line": 47,
+          "token": "bv_omega"
+        },
+        {
+          "path": "MachCSL/UMemMisPlan.lean",
+          "line": 72,
+          "token": "bv_omega"
+        },
+        {
+          "path": "MachCSL/UMemMisPlan.lean",
+          "line": 72,
+          "token": "bv_omega"
+        },
+        {
+          "path": "MachCSL/UMemPfPhys.lean",
+          "line": 141,
+          "token": "bv_omega"
+        },
+        {
+          "path": "MachCSL/UMemPfPhys.lean",
+          "line": 142,
+          "token": "bv_omega"
+        }
+      ]
+    },
+    "bv_omega_goal_only": {
+      "occurrences": 120,
+      "by_tree": {
+        "Xv6": 120
+      },
+      "file_count": 12,
+      "top_files": [
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "occurrences": 19
+        },
+        {
+          "path": "Xv6/SysExecParts.lean",
+          "occurrences": 18
+        },
+        {
+          "path": "Xv6/ProofUlibPrintf.lean",
+          "occurrences": 16
+        },
+        {
+          "path": "Xv6/ProofConsolewrite.lean",
+          "occurrences": 15
+        },
+        {
+          "path": "Xv6/ProofUlibFprintf.lean",
+          "occurrences": 14
+        },
+        {
+          "path": "Xv6/SysUnlinkFrame.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "Xv6/KexecParts.lean",
+          "occurrences": 10
+        },
+        {
+          "path": "Xv6/ProofKfork.lean",
+          "occurrences": 7
+        }
+      ],
+      "examples": [
+        {
+          "path": "Xv6/KexecD.lean",
+          "line": 117,
+          "token": "bv_omega_g"
+        },
+        {
+          "path": "Xv6/KexecD.lean",
+          "line": 120,
+          "token": "bv_omega_g"
+        },
+        {
+          "path": "Xv6/KexecParts.lean",
+          "line": 112,
+          "token": "bv_omega_g"
+        },
+        {
+          "path": "Xv6/KexecParts.lean",
+          "line": 128,
+          "token": "bv_omega_g"
+        },
+        {
+          "path": "Xv6/ProofBinit.lean",
+          "line": 523,
+          "token": "bv_omega_g"
+        },
+        {
+          "path": "Xv6/ProofConsolewrite.lean",
+          "line": 208,
+          "token": "bv_omega_g"
+        },
+        {
+          "path": "Xv6/ProofConsolewrite.lean",
+          "line": 210,
+          "token": "bv_omega_g"
+        },
+        {
+          "path": "Xv6/ProofKexit.lean",
+          "line": 135,
+          "token": "bv_omega_g"
+        }
+      ]
+    },
+    "bv_decide": {
+      "occurrences": 660,
+      "by_tree": {
+        "MachCSL": 158,
+        "Xv6": 502
+      },
+      "file_count": 227,
+      "top_files": [
+        {
+          "path": "MachCSL/Instr.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "MachCSL/Pte.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "MachCSL/WpSmodeSret.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "Xv6/UPtFaultLemmas.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "Xv6/UserFetchLeaf.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "Xv6/PipeRw.lean",
+          "occurrences": 11
+        },
+        {
+          "path": "Xv6/ProofVirtioDiskInit.lean",
+          "occurrences": 11
+        },
+        {
+          "path": "Xv6/UPtDefs.lean",
+          "occurrences": 11
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/AluFacts.lean",
+          "line": 31,
+          "token": "bv_decide"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 41,
+          "token": "bv_decide"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 46,
+          "token": "bv_decide"
+        },
+        {
+          "path": "MachCSL/BvEnumSatp.lean",
+          "line": 17,
+          "token": "bv_decide"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 26,
+          "token": "bv_decide"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 50,
+          "token": "bv_decide"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 56,
+          "token": "bv_decide"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 62,
+          "token": "bv_decide"
+        }
+      ]
+    },
+    "grind": {
+      "occurrences": 73,
+      "by_tree": {
+        "MachCSL": 21,
+        "Xv6": 52
+      },
+      "file_count": 21,
+      "top_files": [
+        {
+          "path": "MachCSL/CtxBox.lean",
+          "occurrences": 19
+        },
+        {
+          "path": "Xv6/IcacheRef.lean",
+          "occurrences": 9
+        },
+        {
+          "path": "Xv6/IcacheInvRef.lean",
+          "occurrences": 7
+        },
+        {
+          "path": "Xv6/IcacheInvStore.lean",
+          "occurrences": 6
+        },
+        {
+          "path": "Xv6/FsDurXferRuns.lean",
+          "occurrences": 5
+        },
+        {
+          "path": "Xv6/IputTail.lean",
+          "occurrences": 4
+        },
+        {
+          "path": "Xv6/DiskInvDefs.lean",
+          "occurrences": 3
+        },
+        {
+          "path": "Xv6/IgetParts.lean",
+          "occurrences": 3
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 61,
+          "token": "grind"
+        },
+        {
+          "path": "MachCSL/CtxBox.lean",
+          "line": 305,
+          "token": "grind"
+        },
+        {
+          "path": "MachCSL/CtxBox.lean",
+          "line": 325,
+          "token": "grind"
+        },
+        {
+          "path": "MachCSL/PmpXv6Defs.lean",
+          "line": 44,
+          "token": "grind"
+        },
+        {
+          "path": "Xv6/ChildTok.lean",
+          "line": 571,
+          "token": "grind"
+        },
+        {
+          "path": "Xv6/DiskInvDefs.lean",
+          "line": 591,
+          "token": "grind"
+        },
+        {
+          "path": "Xv6/DiskInvDefs.lean",
+          "line": 602,
+          "token": "grind"
+        },
+        {
+          "path": "Xv6/DiskTier.lean",
+          "line": 600,
+          "token": "grind"
+        }
+      ]
+    },
+    "simp_all": {
+      "occurrences": 99,
+      "by_tree": {
+        "MachCSL": 25,
+        "Xv6": 74
+      },
+      "file_count": 47,
+      "top_files": [
+        {
+          "path": "Xv6/UserHeap.lean",
+          "occurrences": 11
+        },
+        {
+          "path": "Xv6/ProgTree.lean",
+          "occurrences": 8
+        },
+        {
+          "path": "Xv6/UhistDefs.lean",
+          "occurrences": 7
+        },
+        {
+          "path": "Xv6/IcacheEscrowPoolMove.lean",
+          "occurrences": 6
+        },
+        {
+          "path": "MachCSL/ObsTrace.lean",
+          "occurrences": 4
+        },
+        {
+          "path": "MachCSL/Wp.lean",
+          "occurrences": 4
+        },
+        {
+          "path": "MachCSL/UDecodeWalk.lean",
+          "occurrences": 3
+        },
+        {
+          "path": "Xv6/NiTrace.lean",
+          "occurrences": 3
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/CallConv.lean",
+          "line": 265,
+          "token": "simp_all"
+        },
+        {
+          "path": "MachCSL/KCtx.lean",
+          "line": 122,
+          "token": "simp_all"
+        },
+        {
+          "path": "MachCSL/KptInv.lean",
+          "line": 238,
+          "token": "simp_all"
+        },
+        {
+          "path": "MachCSL/ObsTrace.lean",
+          "line": 410,
+          "token": "simp_all"
+        },
+        {
+          "path": "MachCSL/ObsTrace.lean",
+          "line": 413,
+          "token": "simp_all"
+        },
+        {
+          "path": "MachCSL/Pte.lean",
+          "line": 214,
+          "token": "simp_all"
+        },
+        {
+          "path": "MachCSL/Pte.lean",
+          "line": 217,
+          "token": "simp_all"
+        },
+        {
+          "path": "MachCSL/Resources.lean",
+          "line": 650,
+          "token": "simp_all"
+        }
+      ]
+    },
+    "k_norm": {
+      "occurrences": 8234,
+      "by_tree": {
+        "MachCSL": 58,
+        "Xv6": 8176
+      },
+      "file_count": 384,
+      "top_files": [
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "occurrences": 159
+        },
+        {
+          "path": "Xv6/ProofInstallTrans.lean",
+          "occurrences": 143
+        },
+        {
+          "path": "Xv6/ProofKwait.lean",
+          "occurrences": 119
+        },
+        {
+          "path": "Xv6/ProofPipewrite.lean",
+          "occurrences": 119
+        },
+        {
+          "path": "Xv6/ProofPiperead.lean",
+          "occurrences": 113
+        },
+        {
+          "path": "Xv6/ProofKvmmake.lean",
+          "occurrences": 107
+        },
+        {
+          "path": "Xv6/ProofAllocproc.lean",
+          "occurrences": 102
+        },
+        {
+          "path": "Xv6/ProofBeginOp.lean",
+          "occurrences": 97
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/WpSmodeFrame.lean",
+          "line": 133,
+          "token": "k_norm_g"
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame.lean",
+          "line": 133,
+          "token": "k_norm_g"
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame12.lean",
+          "line": 116,
+          "token": "k_norm_g"
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame12.lean",
+          "line": 186,
+          "token": "k_norm_g"
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame12b.lean",
+          "line": 287,
+          "token": "k_norm_g"
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame12b.lean",
+          "line": 368,
+          "token": "k_norm_g"
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame16.lean",
+          "line": 80,
+          "token": "k_norm_g"
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame6.lean",
+          "line": 67,
+          "token": "k_norm_g"
+        }
+      ]
+    },
+    "bitvec_nat_bridge": {
+      "occurrences": 14933,
+      "by_tree": {
+        "MachCSL": 557,
+        "Xv6": 14376
+      },
+      "file_count": 1024,
+      "top_files": [
+        {
+          "path": "Xv6/KernelImage.lean",
+          "occurrences": 702
+        },
+        {
+          "path": "Xv6/UshMainCode.lean",
+          "occurrences": 207
+        },
+        {
+          "path": "Xv6/ProofEchoMain.lean",
+          "occurrences": 202
+        },
+        {
+          "path": "Xv6/ProofMappages.lean",
+          "occurrences": 191
+        },
+        {
+          "path": "Xv6/UshRunCode.lean",
+          "occurrences": 177
+        },
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "occurrences": 134
+        },
+        {
+          "path": "Xv6/UshStep.lean",
+          "occurrences": 134
+        },
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "occurrences": 123
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 27,
+          "token": "BitVec.ofNat"
+        },
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 37,
+          "token": "BitVec.ofNat"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 18,
+          "token": "BitVec.ofNat"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 20,
+          "token": "BitVec.ofNat"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 35,
+          "token": "BitVec.ofNat"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 35,
+          "token": "BitVec.ofNat"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 38,
+          "token": "BitVec.toNat_ofNat"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 41,
+          "token": "BitVec.ofNat"
+        }
+      ]
+    },
+    "bit_extract_extend": {
+      "occurrences": 5523,
+      "by_tree": {
+        "MachCSL": 1324,
+        "Xv6": 4199
+      },
+      "file_count": 727,
+      "top_files": [
+        {
+          "path": "MachCSL/WpLock.lean",
+          "occurrences": 108
+        },
+        {
+          "path": "Xv6/ProofConsoleread.lean",
+          "occurrences": 93
+        },
+        {
+          "path": "Xv6/ProofKfork.lean",
+          "occurrences": 81
+        },
+        {
+          "path": "Xv6/ConsoleintrArms.lean",
+          "occurrences": 70
+        },
+        {
+          "path": "Xv6/ProofVirtioDiskInit.lean",
+          "occurrences": 65
+        },
+        {
+          "path": "Xv6/PipeRw.lean",
+          "occurrences": 63
+        },
+        {
+          "path": "MachCSL/WpSmodeAuRules.lean",
+          "occurrences": 55
+        },
+        {
+          "path": "MachCSL/UTrap.lean",
+          "occurrences": 54
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 40,
+          "token": "BitVec.extractLsb"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 45,
+          "token": "BitVec.extractLsb"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 11,
+          "token": "BitVec.setWidth"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 16,
+          "token": "BitVec.extractLsb"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 42,
+          "token": "BitVec.extractLsb"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 44,
+          "token": "BitVec.extractLsb'"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 36,
+          "token": "BitVec.extractLsb"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 38,
+          "token": "BitVec.extractLsb'"
+        }
+      ]
+    },
+    "nat_div_mod": {
+      "occurrences": 3263,
+      "by_tree": {
+        "MachCSL": 418,
+        "Xv6": 2845
+      },
+      "file_count": 528,
+      "top_files": [
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "occurrences": 92
+        },
+        {
+          "path": "Xv6/ProofCopyout.lean",
+          "occurrences": 72
+        },
+        {
+          "path": "Xv6/DiskInv.lean",
+          "occurrences": 68
+        },
+        {
+          "path": "Xv6/KvmCounts.lean",
+          "occurrences": 52
+        },
+        {
+          "path": "Xv6/UkFetchFact.lean",
+          "occurrences": 43
+        },
+        {
+          "path": "Xv6/DiskInvDefs.lean",
+          "occurrences": 40
+        },
+        {
+          "path": "Xv6/KexecBuilt.lean",
+          "occurrences": 39
+        },
+        {
+          "path": "Xv6/ProofUvmalloc.lean",
+          "occurrences": 39
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 55,
+          "token": "Nat.mod_eq_of_lt"
+        },
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 55,
+          "token": "Nat.mod_eq_of_lt"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 103,
+          "token": " % "
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 48,
+          "token": "Nat.mod_eq_of_lt"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 41,
+          "token": " % "
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 64,
+          "token": " % "
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 35,
+          "token": " % "
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 58,
+          "token": " % "
+        }
+      ]
+    },
+    "nat_subtraction_syntax": {
+      "occurrences": 5276,
+      "by_tree": {
+        "MachCSL": 199,
+        "Xv6": 5077
+      },
+      "file_count": 812,
+      "top_files": [
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "occurrences": 113
+        },
+        {
+          "path": "Xv6/ProofConsoleread.lean",
+          "occurrences": 79
+        },
+        {
+          "path": "Xv6/ProofKvmmake.lean",
+          "occurrences": 79
+        },
+        {
+          "path": "Xv6/UkGrepLoopFrame.lean",
+          "occurrences": 70
+        },
+        {
+          "path": "Xv6/ConsoleRing.lean",
+          "occurrences": 59
+        },
+        {
+          "path": "Xv6/BootCarveHart.lean",
+          "occurrences": 54
+        },
+        {
+          "path": "Xv6/ProofMappages.lean",
+          "occurrences": 48
+        },
+        {
+          "path": "Xv6/ShMallocArms.lean",
+          "occurrences": 47
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/BigSepLib.lean",
+          "line": 30,
+          "token": " -\n"
+        },
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 27,
+          "token": " - "
+        },
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 37,
+          "token": " - "
+        },
+        {
+          "path": "MachCSL/BootPeel.lean",
+          "line": 83,
+          "token": " - "
+        },
+        {
+          "path": "MachCSL/BootPeel.lean",
+          "line": 84,
+          "token": " - "
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 103,
+          "token": " - "
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 126,
+          "token": " - "
+        },
+        {
+          "path": "MachCSL/BootReset.lean",
+          "line": 65,
+          "token": " - "
+        }
+      ]
+    },
+    "list_observation": {
+      "occurrences": 920,
+      "by_tree": {
+        "MachCSL": 13,
+        "Xv6": 907
+      },
+      "file_count": 291,
+      "top_files": [
+        {
+          "path": "Xv6/NamexParts.lean",
+          "occurrences": 26
+        },
+        {
+          "path": "Xv6/UMemLemmas.lean",
+          "occurrences": 26
+        },
+        {
+          "path": "Xv6/LineModelLinks.lean",
+          "occurrences": 22
+        },
+        {
+          "path": "Xv6/UserFd.lean",
+          "occurrences": 21
+        },
+        {
+          "path": "Xv6/FsCrashSector.lean",
+          "occurrences": 15
+        },
+        {
+          "path": "Xv6/FileDiscLine.lean",
+          "occurrences": 14
+        },
+        {
+          "path": "Xv6/FilestatParts.lean",
+          "occurrences": 14
+        },
+        {
+          "path": "Xv6/ProofConsolewrite.lean",
+          "occurrences": 14
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 291,
+          "token": "List.length_take"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 240,
+          "token": "List.length_take"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 271,
+          "token": "List.length_take"
+        },
+        {
+          "path": "MachCSL/Dev/DevLang.lean",
+          "line": 252,
+          "token": "List.getD"
+        },
+        {
+          "path": "MachCSL/Dev/DevLang.lean",
+          "line": 262,
+          "token": "List.ext_getElem"
+        },
+        {
+          "path": "MachCSL/DiskImg.lean",
+          "line": 148,
+          "token": "List.ext_getElem?"
+        },
+        {
+          "path": "MachCSL/Resources.lean",
+          "line": 593,
+          "token": "List.length_append"
+        },
+        {
+          "path": "MachCSL/Resources.lean",
+          "line": 861,
+          "token": "List.length_append"
+        }
+      ]
+    },
+    "list_rearrangement": {
+      "occurrences": 983,
+      "by_tree": {
+        "MachCSL": 18,
+        "Xv6": 965
+      },
+      "file_count": 223,
+      "top_files": [
+        {
+          "path": "Xv6/UservecPt.lean",
+          "occurrences": 172
+        },
+        {
+          "path": "Xv6/ProofKfork.lean",
+          "occurrences": 32
+        },
+        {
+          "path": "Xv6/ProofVirtioDiskInit.lean",
+          "occurrences": 32
+        },
+        {
+          "path": "Xv6/PtStackLemmas.lean",
+          "occurrences": 30
+        },
+        {
+          "path": "Xv6/FdTable.lean",
+          "occurrences": 29
+        },
+        {
+          "path": "Xv6/ProofAllocproc.lean",
+          "occurrences": 27
+        },
+        {
+          "path": "Xv6/ConsoleintrKill.lean",
+          "occurrences": 24
+        },
+        {
+          "path": "Xv6/PipeBirth.lean",
+          "occurrences": 21
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 150,
+          "token": "List.replicate"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 151,
+          "token": "List.replicate"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 241,
+          "token": "List.take_left"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 242,
+          "token": "List.drop_left"
+        },
+        {
+          "path": "MachCSL/PtTree.lean",
+          "line": 499,
+          "token": "List.map"
+        },
+        {
+          "path": "MachCSL/PtTree.lean",
+          "line": 504,
+          "token": "List.map"
+        },
+        {
+          "path": "MachCSL/Requisiteness.lean",
+          "line": 50,
+          "token": "List.append_assoc"
+        },
+        {
+          "path": "MachCSL/Resources.lean",
+          "line": 1297,
+          "token": "List.append_assoc"
+        }
+      ]
+    },
+    "finite_map_laws": {
+      "occurrences": 2606,
+      "by_tree": {
+        "MachCSL": 124,
+        "Xv6": 2482
+      },
+      "file_count": 278,
+      "top_files": [
+        {
+          "path": "Xv6/ProofLogWrite.lean",
+          "occurrences": 90
+        },
+        {
+          "path": "Xv6/DiskInvDefs.lean",
+          "occurrences": 88
+        },
+        {
+          "path": "Xv6/IcacheInvStore.lean",
+          "occurrences": 68
+        },
+        {
+          "path": "Xv6/FsAbsDelta.lean",
+          "occurrences": 60
+        },
+        {
+          "path": "Xv6/UserHeap.lean",
+          "occurrences": 55
+        },
+        {
+          "path": "MachCSL/CtxBox.lean",
+          "occurrences": 53
+        },
+        {
+          "path": "Xv6/IcacheTable.lean",
+          "occurrences": 51
+        },
+        {
+          "path": "Xv6/IgetRecycle.lean",
+          "occurrences": 45
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/Adequacy.lean",
+          "line": 445,
+          "token": "LawfulPartialMap.get?_empty"
+        },
+        {
+          "path": "MachCSL/Ctx.lean",
+          "line": 80,
+          "token": "PartialMap.insert"
+        },
+        {
+          "path": "MachCSL/Ctx.lean",
+          "line": 84,
+          "token": "LawfulPartialMap.get?_empty"
+        },
+        {
+          "path": "MachCSL/CtxBoot.lean",
+          "line": 37,
+          "token": "LawfulPartialMap.get?_empty"
+        },
+        {
+          "path": "MachCSL/CtxBoot.lean",
+          "line": 42,
+          "token": "LawfulPartialMap.get?_empty"
+        },
+        {
+          "path": "MachCSL/CtxBox.lean",
+          "line": 456,
+          "token": "LawfulPartialMap.get?_empty"
+        },
+        {
+          "path": "MachCSL/CtxBox.lean",
+          "line": 474,
+          "token": "LawfulPartialMap.eq_empty_iff"
+        },
+        {
+          "path": "MachCSL/CtxKeyMint.lean",
+          "line": 54,
+          "token": "PartialMap.insert"
+        }
+      ]
+    },
+    "ghost_map_operations": {
+      "occurrences": 384,
+      "by_tree": {
+        "MachCSL": 64,
+        "Xv6": 320
+      },
+      "file_count": 112,
+      "top_files": [
+        {
+          "path": "Xv6/LogInv.lean",
+          "occurrences": 16
+        },
+        {
+          "path": "Xv6/FsBytesInv.lean",
+          "occurrences": 15
+        },
+        {
+          "path": "Xv6/UserHeap.lean",
+          "occurrences": 14
+        },
+        {
+          "path": "MachCSL/HwConfig.lean",
+          "occurrences": 13
+        },
+        {
+          "path": "Xv6/UserFd.lean",
+          "occurrences": 13
+        },
+        {
+          "path": "Xv6/FsBlocks.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "Xv6/WaitInvTies.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "Xv6/UkForkHeap.lean",
+          "occurrences": 11
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/Adequacy.lean",
+          "line": 403,
+          "token": "ghost_map_alloc_empty"
+        },
+        {
+          "path": "MachCSL/CrashPermInv.lean",
+          "line": 115,
+          "token": "ghost_map_alloc_empty"
+        },
+        {
+          "path": "MachCSL/CrashPermInv.lean",
+          "line": 150,
+          "token": "ghost_map_insert"
+        },
+        {
+          "path": "MachCSL/Ctx.lean",
+          "line": 253,
+          "token": "ghost_map_lookup"
+        },
+        {
+          "path": "MachCSL/Ctx.lean",
+          "line": 329,
+          "token": "ghost_map_lookup"
+        },
+        {
+          "path": "MachCSL/CtxBoot.lean",
+          "line": 25,
+          "token": "ghost_map_alloc_empty"
+        },
+        {
+          "path": "MachCSL/CtxBoot.lean",
+          "line": 60,
+          "token": "ghost_map_alloc_empty"
+        },
+        {
+          "path": "MachCSL/CtxKeyMint.lean",
+          "line": 51,
+          "token": "ghost_map_insert_persist"
+        }
+      ]
+    },
+    "resource_accessors": {
+      "occurrences": 366,
+      "by_tree": {
+        "MachCSL": 52,
+        "Xv6": 314
+      },
+      "file_count": 162,
+      "top_files": [
+        {
+          "path": "Xv6/FsDurSnap.lean",
+          "occurrences": 13
+        },
+        {
+          "path": "Xv6/UserHeap.lean",
+          "occurrences": 12
+        },
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "occurrences": 10
+        },
+        {
+          "path": "Xv6/UkForkHeap.lean",
+          "occurrences": 9
+        },
+        {
+          "path": "Xv6/ProofUvmunmap.lean",
+          "occurrences": 7
+        },
+        {
+          "path": "Xv6/PtOwnLemmas.lean",
+          "occurrences": 7
+        },
+        {
+          "path": "MachCSL/WordPointsTo.lean",
+          "occurrences": 6
+        },
+        {
+          "path": "Xv6/DiskInvDefs.lean",
+          "occurrences": 6
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 149,
+          "token": "byteBuf_replicate_split"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 209,
+          "token": "wordPointsTo_intro"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 130,
+          "token": "wordPointsTo_intro"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 151,
+          "token": "wordPointsTo_intro"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 170,
+          "token": "wordPointsTo_intro"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 193,
+          "token": "wordPointsTo_intro"
+        },
+        {
+          "path": "MachCSL/CallConv.lean",
+          "line": 24,
+          "token": "byteBuf_acc"
+        },
+        {
+          "path": "MachCSL/CallConv.lean",
+          "line": 31,
+          "token": "BigSepL.bigSepL_insert_acc"
+        }
+      ]
+    },
+    "fraction_resources": {
+      "occurrences": 10364,
+      "by_tree": {
+        "MachCSL": 1085,
+        "Xv6": 9279
+      },
+      "file_count": 819,
+      "top_files": [
+        {
+          "path": "Xv6/ProofKfork.lean",
+          "occurrences": 262
+        },
+        {
+          "path": "Xv6/ProofPiperead.lean",
+          "occurrences": 129
+        },
+        {
+          "path": "MachCSL/WpMmodeCsr.lean",
+          "occurrences": 124
+        },
+        {
+          "path": "Xv6/PrintkDefs.lean",
+          "occurrences": 120
+        },
+        {
+          "path": "Xv6/ProofVirtioDiskInit.lean",
+          "occurrences": 117
+        },
+        {
+          "path": "Xv6/KexecTail.lean",
+          "occurrences": 105
+        },
+        {
+          "path": "Xv6/ProofAllocproc.lean",
+          "occurrences": 105
+        },
+        {
+          "path": "Xv6/ProofConsolewrite.lean",
+          "occurrences": 102
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/Adequacy.lean",
+          "line": 287,
+          "token": "DFrac.own"
+        },
+        {
+          "path": "MachCSL/Adequacy.lean",
+          "line": 305,
+          "token": "DFrac.own"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 286,
+          "token": "DFrac.own"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 287,
+          "token": "DFrac.own"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 235,
+          "token": "DFrac.own"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 236,
+          "token": "DFrac.own"
+        },
+        {
+          "path": "MachCSL/BytesFree.lean",
+          "line": 94,
+          "token": "DFrac.own"
+        },
+        {
+          "path": "MachCSL/BytesFree.lean",
+          "line": 116,
+          "token": "DFrac.own"
+        }
+      ]
+    },
+    "set_disjoint_subset": {
+      "occurrences": 250,
+      "by_tree": {
+        "MachCSL": 3,
+        "Xv6": 247
+      },
+      "file_count": 68,
+      "top_files": [
+        {
+          "path": "Xv6/FsCollectAll.lean",
+          "occurrences": 49
+        },
+        {
+          "path": "Xv6/IcacheEscrowPoolMove.lean",
+          "occurrences": 16
+        },
+        {
+          "path": "Xv6/IgetRecycle.lean",
+          "occurrences": 16
+        },
+        {
+          "path": "Xv6/FsCfgSnapVocab.lean",
+          "occurrences": 10
+        },
+        {
+          "path": "Xv6/WaitInvTies.lean",
+          "occurrences": 10
+        },
+        {
+          "path": "Xv6/FsCollectAllBodies.lean",
+          "occurrences": 9
+        },
+        {
+          "path": "Xv6/FsCollectAllRows.lean",
+          "occurrences": 9
+        },
+        {
+          "path": "Xv6/UkHandler.lean",
+          "occurrences": 9
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/Adequacy.lean",
+          "line": 238,
+          "token": "##"
+        },
+        {
+          "path": "MachCSL/CtxLaws.lean",
+          "line": 662,
+          "token": "disjoint"
+        },
+        {
+          "path": "MachCSL/WpWire.lean",
+          "line": 137,
+          "token": "##"
+        },
+        {
+          "path": "Xv6/AppFilePure.lean",
+          "line": 249,
+          "token": "subset"
+        },
+        {
+          "path": "Xv6/BioPool.lean",
+          "line": 203,
+          "token": "mem_diff"
+        },
+        {
+          "path": "Xv6/BioPool.lean",
+          "line": 227,
+          "token": "mem_diff"
+        },
+        {
+          "path": "Xv6/BitmapEnc.lean",
+          "line": 93,
+          "token": "mem_union"
+        },
+        {
+          "path": "Xv6/BitmapEnc.lean",
+          "line": 306,
+          "token": "mem_union"
+        }
+      ]
+    },
+    "cpu_pin": {
+      "occurrences": 3479,
+      "by_tree": {
+        "MachCSL": 243,
+        "Xv6": 3236
+      },
+      "file_count": 386,
+      "top_files": [
+        {
+          "path": "Xv6/ProofUvmcopy.lean",
+          "occurrences": 72
+        },
+        {
+          "path": "Xv6/ProofPipealloc.lean",
+          "occurrences": 62
+        },
+        {
+          "path": "Xv6/ProofWalk.lean",
+          "occurrences": 60
+        },
+        {
+          "path": "Xv6/ProofUvmalloc.lean",
+          "occurrences": 53
+        },
+        {
+          "path": "Xv6/SysPipeTails.lean",
+          "occurrences": 52
+        },
+        {
+          "path": "Xv6/LineModelLinks.lean",
+          "occurrences": 49
+        },
+        {
+          "path": "Xv6/SyscallArmsExec.lean",
+          "occurrences": 45
+        },
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "occurrences": 42
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 190,
+          "token": "hpin"
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "line": 203,
+          "token": "hpin"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 111,
+          "token": "hpin"
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "line": 124,
+          "token": "hpin"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 151,
+          "token": "hpin"
+        },
+        {
+          "path": "MachCSL/ByteWord4.lean",
+          "line": 164,
+          "token": "hpin"
+        },
+        {
+          "path": "MachCSL/BytesFree.lean",
+          "line": 124,
+          "token": "hpin"
+        },
+        {
+          "path": "MachCSL/BytesFree.lean",
+          "line": 129,
+          "token": "hpin"
+        }
+      ]
+    },
+    "register_updates": {
+      "occurrences": 4448,
+      "by_tree": {
+        "MachCSL": 116,
+        "Xv6": 4332
+      },
+      "file_count": 389,
+      "top_files": [
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "occurrences": 181
+        },
+        {
+          "path": "Xv6/UserretPt.lean",
+          "occurrences": 172
+        },
+        {
+          "path": "Xv6/ProofWalk.lean",
+          "occurrences": 139
+        },
+        {
+          "path": "Xv6/ProofAllocproc.lean",
+          "occurrences": 130
+        },
+        {
+          "path": "Xv6/ProofConsoleread.lean",
+          "occurrences": 112
+        },
+        {
+          "path": "Xv6/ProofKfork.lean",
+          "occurrences": 103
+        },
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "occurrences": 101
+        },
+        {
+          "path": "Xv6/KexecB.lean",
+          "occurrences": 77
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/CallConv.lean",
+          "line": 113,
+          "token": "RegMap.set_apply"
+        },
+        {
+          "path": "MachCSL/CallConv.lean",
+          "line": 115,
+          "token": "RegMap.set"
+        },
+        {
+          "path": "MachCSL/KCtx.lean",
+          "line": 108,
+          "token": "RegMap.set"
+        },
+        {
+          "path": "MachCSL/KCtx.lean",
+          "line": 112,
+          "token": "RegMap.set"
+        },
+        {
+          "path": "MachCSL/KCtxMove.lean",
+          "line": 243,
+          "token": "RegMap.set"
+        },
+        {
+          "path": "MachCSL/Tactics.lean",
+          "line": 362,
+          "token": "RegMap.set"
+        },
+        {
+          "path": "MachCSL/WpAluFile.lean",
+          "line": 85,
+          "token": "RegMap.set"
+        },
+        {
+          "path": "MachCSL/WpAluFile.lean",
+          "line": 96,
+          "token": "RegMap.set"
+        }
+      ]
+    },
+    "instruction_dispatch": {
+      "occurrences": 5913,
+      "by_tree": {
+        "MachCSL": 1001,
+        "Xv6": 4912
+      },
+      "file_count": 300,
+      "top_files": [
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "occurrences": 201
+        },
+        {
+          "path": "Xv6/ProofVirtioDiskInit.lean",
+          "occurrences": 115
+        },
+        {
+          "path": "Xv6/ProofKwait.lean",
+          "occurrences": 96
+        },
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "occurrences": 93
+        },
+        {
+          "path": "Xv6/ProofCopyout.lean",
+          "occurrences": 93
+        },
+        {
+          "path": "Xv6/ProofWalk.lean",
+          "occurrences": 91
+        },
+        {
+          "path": "Xv6/ProofPipewrite.lean",
+          "occurrences": 87
+        },
+        {
+          "path": "Xv6/ProofPiperead.lean",
+          "occurrences": 85
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/KCtxGpr.lean",
+          "line": 28,
+          "token": "swp_run"
+        },
+        {
+          "path": "MachCSL/Tactics.lean",
+          "line": 137,
+          "token": "swp_run"
+        },
+        {
+          "path": "MachCSL/Tactics.lean",
+          "line": 162,
+          "token": "swp_run"
+        },
+        {
+          "path": "MachCSL/Translate.lean",
+          "line": 43,
+          "token": "swp_run"
+        },
+        {
+          "path": "MachCSL/Translate.lean",
+          "line": 55,
+          "token": "swp_run"
+        },
+        {
+          "path": "MachCSL/TranslateAddr.lean",
+          "line": 89,
+          "token": "swp_run"
+        },
+        {
+          "path": "MachCSL/TranslateAddr.lean",
+          "line": 97,
+          "token": "swp_run"
+        },
+        {
+          "path": "MachCSL/UExecCsr.lean",
+          "line": 68,
+          "token": "uwk_run"
+        }
+      ]
+    },
+    "branch_case_split": {
+      "occurrences": 3388,
+      "by_tree": {
+        "MachCSL": 364,
+        "Xv6": 3024
+      },
+      "file_count": 758,
+      "top_files": [
+        {
+          "path": "Xv6/DiskInvDefs.lean",
+          "occurrences": 58
+        },
+        {
+          "path": "Xv6/ZombEv.lean",
+          "occurrences": 49
+        },
+        {
+          "path": "Xv6/UserHeap.lean",
+          "occurrences": 46
+        },
+        {
+          "path": "Xv6/PipesFire.lean",
+          "occurrences": 43
+        },
+        {
+          "path": "Xv6/RefParseSym.lean",
+          "occurrences": 42
+        },
+        {
+          "path": "MachCSL/ObsTrace.lean",
+          "occurrences": 41
+        },
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "occurrences": 37
+        },
+        {
+          "path": "Xv6/UkFileIfaceReg.lean",
+          "occurrences": 34
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/BootImage.lean",
+          "line": 61,
+          "token": "by_cases"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 59,
+          "token": "by_cases"
+        },
+        {
+          "path": "MachCSL/BootPmp.lean",
+          "line": 130,
+          "token": "by_cases"
+        },
+        {
+          "path": "MachCSL/BootReset.lean",
+          "line": 104,
+          "token": "split"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 41,
+          "token": "split"
+        },
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "line": 48,
+          "token": "split"
+        },
+        {
+          "path": "MachCSL/CallConv.lean",
+          "line": 122,
+          "token": "by_cases"
+        },
+        {
+          "path": "MachCSL/CallConv.lean",
+          "line": 124,
+          "token": "by_cases"
+        }
+      ]
+    },
+    "named_decision_equation": {
+      "occurrences": 676,
+      "by_tree": {
+        "MachCSL": 69,
+        "Xv6": 607
+      },
+      "file_count": 29,
+      "top_files": [
+        {
+          "path": "Xv6/UshCodeGettoken.lean",
+          "occurrences": 98
+        },
+        {
+          "path": "Xv6/UshCodeAlloc.lean",
+          "occurrences": 87
+        },
+        {
+          "path": "Xv6/UshCodeExec.lean",
+          "occurrences": 82
+        },
+        {
+          "path": "Xv6/UshCodeRedirs.lean",
+          "occurrences": 65
+        },
+        {
+          "path": "Xv6/UshCodeNul.lean",
+          "occurrences": 42
+        },
+        {
+          "path": "Xv6/UshCodePipe.lean",
+          "occurrences": 41
+        },
+        {
+          "path": "Xv6/UshCodePeek.lean",
+          "occurrences": 40
+        },
+        {
+          "path": "Xv6/FsImgCheckSweeps.lean",
+          "occurrences": 36
+        }
+      ],
+      "examples": [
+        {
+          "path": "MachCSL/UCycle.lean",
+          "line": 260,
+          "token": "kernel_rfl"
+        },
+        {
+          "path": "MachCSL/UCycle.lean",
+          "line": 263,
+          "token": "kernel_rfl"
+        },
+        {
+          "path": "MachCSL/UExecAluGpr.lean",
+          "line": 217,
+          "token": "kernel_rfl"
+        },
+        {
+          "path": "MachCSL/UExecAluGpr.lean",
+          "line": 218,
+          "token": "kernel_rfl"
+        },
+        {
+          "path": "MachCSL/UExecCsr.lean",
+          "line": 55,
+          "token": "kernel_rfl"
+        },
+        {
+          "path": "MachCSL/UExecCsr.lean",
+          "line": 97,
+          "token": "kernel_rfl"
+        },
+        {
+          "path": "MachCSL/UExecCsrCnt.lean",
+          "line": 109,
+          "token": "kernel_rfl"
+        },
+        {
+          "path": "MachCSL/UExecCsrCnt.lean",
+          "line": 112,
+          "token": "kernel_rfl"
+        }
+      ]
+    }
+  },
+  "cohorts": [
+    {
+      "name": "mixed_machine_integer_arithmetic",
+      "theorem_count": 1360,
+      "file_count": 561,
+      "representatives": [
+        {
+          "path": "Xv6/ProofShParseexec.lean",
+          "theorem": "wp_shParseexec",
+          "line": 43,
+          "body_lines": 329,
+          "counts": {
+            "omega": 106,
+            "bitvec_nat_bridge": 57,
+            "bit_extract_extend": 2,
+            "nat_div_mod": 11,
+            "nat_subtraction_syntax": 28,
+            "list_observation": 1,
+            "fraction_resources": 2
+          }
+        },
+        {
+          "path": "Xv6/BootCarveProc.lean",
+          "theorem": "bootCarveProc_slot",
+          "line": 149,
+          "body_lines": 100,
+          "counts": {
+            "omega": 113,
+            "bitvec_nat_bridge": 3,
+            "resource_accessors": 3
+          }
+        },
+        {
+          "path": "Xv6/ProofMappages.lean",
+          "theorem": "mappages_loop",
+          "line": 449,
+          "body_lines": 259,
+          "counts": {
+            "omega": 20,
+            "bitvec_nat_bridge": 94,
+            "bit_extract_extend": 36,
+            "nat_subtraction_syntax": 23,
+            "list_observation": 1,
+            "cpu_pin": 5,
+            "register_updates": 7,
+            "instruction_dispatch": 2
+          }
+        },
+        {
+          "path": "Xv6/BootCarveMain.lean",
+          "theorem": "bootCarve_buf",
+          "line": 93,
+          "body_lines": 70,
+          "counts": {
+            "omega": 99,
+            "bitvec_nat_bridge": 4,
+            "nat_div_mod": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofKfork.lean",
+          "theorem": "kf_tf_chunk",
+          "line": 421,
+          "body_lines": 200,
+          "counts": {
+            "omega": 29,
+            "bitvec_nat_bridge": 65,
+            "bit_extract_extend": 24,
+            "fraction_resources": 19
+          }
+        },
+        {
+          "path": "Xv6/UkGrepLoopStep.lean",
+          "theorem": "grepLoop_step",
+          "line": 34,
+          "body_lines": 319,
+          "counts": {
+            "omega": 25,
+            "bitvec_nat_bridge": 67,
+            "bit_extract_extend": 8,
+            "nat_div_mod": 2,
+            "nat_subtraction_syntax": 5,
+            "fraction_resources": 4,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofEchoMain.lean",
+          "theorem": "wp_echoMain",
+          "line": 436,
+          "body_lines": 236,
+          "counts": {
+            "omega": 25,
+            "bitvec_nat_bridge": 66,
+            "bit_extract_extend": 3,
+            "nat_subtraction_syntax": 28,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofShParsecmd.lean",
+          "theorem": "wp_shParsecmd",
+          "line": 72,
+          "body_lines": 202,
+          "counts": {
+            "omega": 45,
+            "bitvec_nat_bridge": 41,
+            "nat_div_mod": 7,
+            "nat_subtraction_syntax": 42,
+            "fraction_resources": 6,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofGrepMain.lean",
+          "theorem": "wp_grepMain",
+          "line": 112,
+          "body_lines": 204,
+          "counts": {
+            "omega": 32,
+            "bitvec_nat_bridge": 53,
+            "bit_extract_extend": 2,
+            "nat_div_mod": 1,
+            "nat_subtraction_syntax": 16,
+            "branch_case_split": 2
+          }
+        },
+        {
+          "path": "Xv6/ProofCatMain.lean",
+          "theorem": "wp_catMain",
+          "line": 141,
+          "body_lines": 226,
+          "counts": {
+            "omega": 24,
+            "bitvec_nat_bridge": 51,
+            "bit_extract_extend": 2,
+            "nat_subtraction_syntax": 19,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofUvmcopy.lean",
+          "theorem": "uvmcopy_iter",
+          "line": 685,
+          "body_lines": 513,
+          "counts": {
+            "omega": 23,
+            "k_norm": 31,
+            "bitvec_nat_bridge": 50,
+            "bit_extract_extend": 13,
+            "nat_subtraction_syntax": 2,
+            "list_rearrangement": 1,
+            "resource_accessors": 1,
+            "fraction_resources": 4,
+            "cpu_pin": 37,
+            "register_updates": 11,
+            "instruction_dispatch": 29,
+            "branch_case_split": 3
+          }
+        },
+        {
+          "path": "Xv6/ProofGrepMatch.lean",
+          "theorem": "wp_grepMatch",
+          "line": 183,
+          "body_lines": 279,
+          "counts": {
+            "omega": 26,
+            "bitvec_nat_bridge": 42,
+            "bit_extract_extend": 5,
+            "nat_div_mod": 1,
+            "nat_subtraction_syntax": 14,
+            "fraction_resources": 4
+          }
+        }
+      ]
+    },
+    {
+      "name": "arithmetic_with_many_subtraction_terms",
+      "theorem_count": 79,
+      "file_count": 64,
+      "representatives": [
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "theorem": "cstr_iter",
+          "line": 1016,
+          "body_lines": 172,
+          "counts": {
+            "omega": 26,
+            "nat_div_mod": 23,
+            "nat_subtraction_syntax": 43,
+            "list_observation": 1,
+            "cpu_pin": 14,
+            "register_updates": 19,
+            "instruction_dispatch": 15,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofShParsecmd.lean",
+          "theorem": "wp_shParsecmd",
+          "line": 72,
+          "body_lines": 202,
+          "counts": {
+            "omega": 45,
+            "bitvec_nat_bridge": 41,
+            "nat_div_mod": 7,
+            "nat_subtraction_syntax": 42,
+            "fraction_resources": 6,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofEchoMain.lean",
+          "theorem": "wp_echoMain",
+          "line": 436,
+          "body_lines": 236,
+          "counts": {
+            "omega": 25,
+            "bitvec_nat_bridge": 66,
+            "bit_extract_extend": 3,
+            "nat_subtraction_syntax": 28,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofKvmmake.lean",
+          "theorem": "km_regions",
+          "line": 217,
+          "body_lines": 492,
+          "counts": {
+            "omega": 14,
+            "k_norm": 77,
+            "nat_subtraction_syntax": 28,
+            "cpu_pin": 15,
+            "instruction_dispatch": 52
+          }
+        },
+        {
+          "path": "Xv6/ProofShParseexec.lean",
+          "theorem": "wp_shParseexec",
+          "line": 43,
+          "body_lines": 329,
+          "counts": {
+            "omega": 106,
+            "bitvec_nat_bridge": 57,
+            "bit_extract_extend": 2,
+            "nat_div_mod": 11,
+            "nat_subtraction_syntax": 28,
+            "list_observation": 1,
+            "fraction_resources": 2
+          }
+        },
+        {
+          "path": "Xv6/ProofShParsepipe.lean",
+          "theorem": "wp_shParsepipe_ind",
+          "line": 43,
+          "body_lines": 182,
+          "counts": {
+            "omega": 14,
+            "bitvec_nat_bridge": 18,
+            "nat_subtraction_syntax": 28
+          }
+        },
+        {
+          "path": "Xv6/UkGrepLoopFrame.lean",
+          "theorem": "grepLoop_epi",
+          "line": 407,
+          "body_lines": 191,
+          "counts": {
+            "omega": 29,
+            "bitvec_nat_bridge": 18,
+            "nat_subtraction_syntax": 27,
+            "fraction_resources": 13
+          }
+        },
+        {
+          "path": "Xv6/UshRedirsWalk.lean",
+          "theorem": "shRedirs_turn",
+          "line": 112,
+          "body_lines": 142,
+          "counts": {
+            "omega": 12,
+            "bitvec_nat_bridge": 39,
+            "nat_div_mod": 6,
+            "nat_subtraction_syntax": 26,
+            "fraction_resources": 2,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofMappages.lean",
+          "theorem": "mappages_loop",
+          "line": 449,
+          "body_lines": 259,
+          "counts": {
+            "omega": 20,
+            "bitvec_nat_bridge": 94,
+            "bit_extract_extend": 36,
+            "nat_subtraction_syntax": 23,
+            "list_observation": 1,
+            "cpu_pin": 5,
+            "register_updates": 7,
+            "instruction_dispatch": 2
+          }
+        },
+        {
+          "path": "Xv6/ShMallocCut.lean",
+          "theorem": "shMalloc_cut",
+          "line": 39,
+          "body_lines": 122,
+          "counts": {
+            "omega": 16,
+            "bitvec_nat_bridge": 35,
+            "nat_subtraction_syntax": 23
+          }
+        },
+        {
+          "path": "Xv6/ShMallocFrame.lean",
+          "theorem": "shMalloc_pro",
+          "line": 51,
+          "body_lines": 79,
+          "counts": {
+            "omega": 14,
+            "bitvec_nat_bridge": 11,
+            "nat_div_mod": 1,
+            "nat_subtraction_syntax": 23
+          }
+        },
+        {
+          "path": "Xv6/ProofCopyinstr.lean",
+          "theorem": "cstr_nsel",
+          "line": 819,
+          "body_lines": 85,
+          "counts": {
+            "omega": 18,
+            "nat_div_mod": 13,
+            "nat_subtraction_syntax": 22,
+            "cpu_pin": 2,
+            "register_updates": 30,
+            "instruction_dispatch": 7,
+            "branch_case_split": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "sequence_observation_and_arithmetic",
+      "theorem_count": 429,
+      "file_count": 240,
+      "representatives": [
+        {
+          "path": "Xv6/PipeInv.lean",
+          "theorem": "pipeBytes_pageFree",
+          "line": 223,
+          "body_lines": 111,
+          "counts": {
+            "omega": 3,
+            "bitvec_nat_bridge": 19,
+            "nat_div_mod": 3,
+            "list_observation": 10,
+            "list_rearrangement": 4,
+            "fraction_resources": 7
+          }
+        },
+        {
+          "path": "Xv6/FilestatParts.lean",
+          "theorem": "fstat_bytes_stat",
+          "line": 259,
+          "body_lines": 41,
+          "counts": {
+            "omega": 21,
+            "list_observation": 10,
+            "fraction_resources": 8
+          }
+        },
+        {
+          "path": "Xv6/FsCrashSector.lean",
+          "theorem": "fsBlocks_splice",
+          "line": 114,
+          "body_lines": 26,
+          "counts": {
+            "omega": 14,
+            "nat_subtraction_syntax": 6,
+            "list_observation": 7,
+            "list_rearrangement": 2,
+            "branch_case_split": 3
+          }
+        },
+        {
+          "path": "Xv6/ProofWriteHead.lean",
+          "theorem": "whBytes_step",
+          "line": 67,
+          "body_lines": 20,
+          "counts": {
+            "omega": 2,
+            "bitvec_nat_bridge": 5,
+            "list_observation": 2,
+            "list_rearrangement": 7
+          }
+        },
+        {
+          "path": "Xv6/GenOutRead.lean",
+          "theorem": "greadStage",
+          "line": 46,
+          "body_lines": 37,
+          "counts": {
+            "omega": 5,
+            "list_observation": 7,
+            "cpu_pin": 2,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofKfork.lean",
+          "theorem": "kf_merge_set_step",
+          "line": 256,
+          "body_lines": 8,
+          "counts": {
+            "omega": 1,
+            "list_observation": 1,
+            "list_rearrangement": 6
+          }
+        },
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "piBuf_elim",
+          "line": 133,
+          "body_lines": 33,
+          "counts": {
+            "omega": 3,
+            "nat_div_mod": 2,
+            "list_observation": 6,
+            "list_rearrangement": 1,
+            "fraction_resources": 10
+          }
+        },
+        {
+          "path": "Xv6/ArgPath.lean",
+          "theorem": "argPathOf_umemStr",
+          "line": 146,
+          "body_lines": 41,
+          "counts": {
+            "omega": 6,
+            "list_observation": 6
+          }
+        },
+        {
+          "path": "Xv6/ItruncParts.lean",
+          "theorem": "itZ_get",
+          "line": 296,
+          "body_lines": 19,
+          "counts": {
+            "omega": 7,
+            "list_observation": 6,
+            "branch_case_split": 3
+          }
+        },
+        {
+          "path": "Xv6/ProofCopyout.lean",
+          "theorem": "copyout_move",
+          "line": 567,
+          "body_lines": 174,
+          "counts": {
+            "omega": 27,
+            "k_norm": 4,
+            "bitvec_nat_bridge": 17,
+            "bit_extract_extend": 2,
+            "nat_div_mod": 24,
+            "nat_subtraction_syntax": 8,
+            "list_observation": 5,
+            "list_rearrangement": 1,
+            "resource_accessors": 4,
+            "fraction_resources": 2,
+            "cpu_pin": 5,
+            "register_updates": 12,
+            "instruction_dispatch": 12,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/SysLinkWalkA.lean",
+          "theorem": "sys_link_path_of",
+          "line": 74,
+          "body_lines": 37,
+          "counts": {
+            "omega": 1,
+            "list_observation": 6,
+            "fraction_resources": 2
+          }
+        },
+        {
+          "path": "Xv6/SysUnlinkW1.lean",
+          "theorem": "sys_unlink_path_of",
+          "line": 102,
+          "body_lines": 38,
+          "counts": {
+            "omega": 1,
+            "list_observation": 6,
+            "fraction_resources": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "finite_map_case_reasoning",
+      "theorem_count": 216,
+      "file_count": 122,
+      "representatives": [
+        {
+          "path": "Xv6/UserHeap.lean",
+          "theorem": "uheap_grow_run",
+          "line": 1200,
+          "body_lines": 157,
+          "counts": {
+            "omega": 10,
+            "finite_map_laws": 18,
+            "ghost_map_operations": 1,
+            "set_disjoint_subset": 2,
+            "branch_case_split": 11
+          }
+        },
+        {
+          "path": "Xv6/ProofEndOp.lean",
+          "theorem": "eo_entry",
+          "line": 137,
+          "body_lines": 398,
+          "counts": {
+            "omega": 29,
+            "k_norm": 17,
+            "bitvec_nat_bridge": 6,
+            "nat_subtraction_syntax": 7,
+            "finite_map_laws": 21,
+            "fraction_resources": 11,
+            "cpu_pin": 2,
+            "register_updates": 3,
+            "instruction_dispatch": 14,
+            "branch_case_split": 5
+          }
+        },
+        {
+          "path": "Xv6/ProofLogWrite.lean",
+          "theorem": "lw_closeB",
+          "line": 1415,
+          "body_lines": 153,
+          "counts": {
+            "omega": 11,
+            "nat_subtraction_syntax": 4,
+            "list_observation": 1,
+            "finite_map_laws": 16,
+            "fraction_resources": 5,
+            "branch_case_split": 5
+          }
+        },
+        {
+          "path": "Xv6/UkRun.lean",
+          "theorem": "uslot_of_urun_all_at",
+          "line": 695,
+          "body_lines": 76,
+          "counts": {
+            "omega": 3,
+            "nat_subtraction_syntax": 2,
+            "finite_map_laws": 18,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofLogWrite.lean",
+          "theorem": "lw_closeA",
+          "line": 1215,
+          "body_lines": 97,
+          "counts": {
+            "omega": 5,
+            "finite_map_laws": 13,
+            "fraction_resources": 2,
+            "branch_case_split": 4
+          }
+        },
+        {
+          "path": "Xv6/HfpReg.lean",
+          "theorem": "pool_give",
+          "line": 177,
+          "body_lines": 26,
+          "counts": {
+            "finite_map_laws": 15,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/FsDurImgView.lean",
+          "theorem": "fsDurImgDelete_insertNe",
+          "line": 123,
+          "body_lines": 13,
+          "counts": {
+            "finite_map_laws": 13,
+            "branch_case_split": 2
+          }
+        },
+        {
+          "path": "Xv6/ProofBeginOp.lean",
+          "theorem": "bo_loop",
+          "line": 1136,
+          "body_lines": 230,
+          "counts": {
+            "omega": 3,
+            "k_norm": 3,
+            "bitvec_nat_bridge": 7,
+            "finite_map_laws": 10,
+            "fraction_resources": 4,
+            "instruction_dispatch": 15,
+            "branch_case_split": 4
+          }
+        },
+        {
+          "path": "Xv6/UkFileIfaceReg.lean",
+          "theorem": "fif_ok_close",
+          "line": 321,
+          "body_lines": 47,
+          "counts": {
+            "finite_map_laws": 7,
+            "branch_case_split": 7
+          }
+        },
+        {
+          "path": "Xv6/UkCatFIfaceReg.lean",
+          "theorem": "cif_ok_open",
+          "line": 149,
+          "body_lines": 36,
+          "counts": {
+            "omega": 2,
+            "finite_map_laws": 5,
+            "branch_case_split": 8
+          }
+        },
+        {
+          "path": "Xv6/UkCatFIfaceReg.lean",
+          "theorem": "cif_ok_open_std",
+          "line": 252,
+          "body_lines": 50,
+          "counts": {
+            "omega": 3,
+            "finite_map_laws": 5,
+            "branch_case_split": 8
+          }
+        },
+        {
+          "path": "Xv6/UserHeap.lean",
+          "theorem": "uheap_store",
+          "line": 606,
+          "body_lines": 42,
+          "counts": {
+            "finite_map_laws": 8,
+            "ghost_map_operations": 2,
+            "branch_case_split": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "spatial_accessor_composition",
+      "theorem_count": 10,
+      "file_count": 10,
+      "representatives": [
+        {
+          "path": "Xv6/ProofUvmunmap.lean",
+          "theorem": "uvmunmap_iter",
+          "line": 470,
+          "body_lines": 215,
+          "counts": {
+            "omega": 3,
+            "k_norm": 6,
+            "bitvec_nat_bridge": 5,
+            "resource_accessors": 5,
+            "fraction_resources": 3,
+            "cpu_pin": 9,
+            "register_updates": 28,
+            "instruction_dispatch": 13,
+            "branch_case_split": 2
+          }
+        },
+        {
+          "path": "Xv6/ProofCopyout.lean",
+          "theorem": "copyout_move",
+          "line": 567,
+          "body_lines": 174,
+          "counts": {
+            "omega": 27,
+            "k_norm": 4,
+            "bitvec_nat_bridge": 17,
+            "bit_extract_extend": 2,
+            "nat_div_mod": 24,
+            "nat_subtraction_syntax": 8,
+            "list_observation": 5,
+            "list_rearrangement": 1,
+            "resource_accessors": 4,
+            "fraction_resources": 2,
+            "cpu_pin": 5,
+            "register_updates": 12,
+            "instruction_dispatch": 12,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofStrncmp.lean",
+          "theorem": "strncmp_loop",
+          "line": 92,
+          "body_lines": 209,
+          "counts": {
+            "omega": 18,
+            "nat_subtraction_syntax": 14,
+            "resource_accessors": 4,
+            "cpu_pin": 6,
+            "register_updates": 31,
+            "instruction_dispatch": 16,
+            "branch_case_split": 6
+          }
+        },
+        {
+          "path": "Xv6/UserHeap.lean",
+          "theorem": "uinstrIs_ukInstr",
+          "line": 848,
+          "body_lines": 48,
+          "counts": {
+            "omega": 3,
+            "bitvec_nat_bridge": 2,
+            "nat_div_mod": 1,
+            "resource_accessors": 4,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/BootCarveProc.lean",
+          "theorem": "bootCarveProc_slot",
+          "line": 149,
+          "body_lines": 100,
+          "counts": {
+            "omega": 113,
+            "bitvec_nat_bridge": 3,
+            "resource_accessors": 3
+          }
+        },
+        {
+          "path": "Xv6/FsDurSnap.lean",
+          "theorem": "inodeDat_slotInj",
+          "line": 356,
+          "body_lines": 44,
+          "counts": {
+            "omega": 8,
+            "finite_map_laws": 3,
+            "resource_accessors": 3,
+            "branch_case_split": 3
+          }
+        },
+        {
+          "path": "Xv6/ProofProcPagetable.lean",
+          "theorem": "proc_pagetable_proof",
+          "line": 105,
+          "body_lines": 530,
+          "counts": {
+            "omega": 19,
+            "k_norm": 52,
+            "bit_extract_extend": 16,
+            "resource_accessors": 3,
+            "cpu_pin": 18,
+            "register_updates": 12,
+            "instruction_dispatch": 42
+          }
+        },
+        {
+          "path": "Xv6/ProofUvmalloc.lean",
+          "theorem": "uvma_iter",
+          "line": 755,
+          "body_lines": 286,
+          "counts": {
+            "omega": 16,
+            "k_norm": 18,
+            "bitvec_nat_bridge": 1,
+            "bit_extract_extend": 12,
+            "nat_div_mod": 18,
+            "list_rearrangement": 1,
+            "finite_map_laws": 2,
+            "resource_accessors": 3,
+            "cpu_pin": 14,
+            "register_updates": 5,
+            "instruction_dispatch": 15,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofWalk.lean",
+          "theorem": "walk_descend",
+          "line": 436,
+          "body_lines": 160,
+          "counts": {
+            "resource_accessors": 3,
+            "fraction_resources": 13,
+            "cpu_pin": 8,
+            "register_updates": 35,
+            "instruction_dispatch": 12
+          }
+        },
+        {
+          "path": "Xv6/UkForkHeap.lean",
+          "theorem": "ukFork_below",
+          "line": 204,
+          "body_lines": 23,
+          "counts": {
+            "omega": 1,
+            "finite_map_laws": 1,
+            "ghost_map_operations": 2,
+            "resource_accessors": 3,
+            "fraction_resources": 2,
+            "branch_case_split": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "whole_context_bv_in_large_proofs",
+      "theorem_count": 23,
+      "file_count": 18,
+      "representatives": [
+        {
+          "path": "Xv6/ProofScheduler.lean",
+          "theorem": "scheduler_setup",
+          "line": 132,
+          "body_lines": 82,
+          "counts": {
+            "bv_omega_whole_context": 4,
+            "k_norm": 4,
+            "bitvec_nat_bridge": 3,
+            "register_updates": 1,
+            "instruction_dispatch": 17
+          }
+        },
+        {
+          "path": "Xv6/ProofMappages.lean",
+          "theorem": "mappages_any_proof",
+          "line": 879,
+          "body_lines": 203,
+          "counts": {
+            "omega": 3,
+            "bv_omega_whole_context": 1,
+            "k_norm": 1,
+            "nat_subtraction_syntax": 2,
+            "cpu_pin": 9,
+            "register_updates": 19,
+            "instruction_dispatch": 27
+          }
+        },
+        {
+          "path": "Xv6/ProofSched.lean",
+          "theorem": "sched_proof",
+          "line": 388,
+          "body_lines": 453,
+          "counts": {
+            "omega": 7,
+            "bv_omega_whole_context": 1,
+            "k_norm": 58,
+            "bitvec_nat_bridge": 2,
+            "nat_subtraction_syntax": 17,
+            "fraction_resources": 1,
+            "cpu_pin": 1,
+            "register_updates": 11,
+            "instruction_dispatch": 16,
+            "branch_case_split": 1
+          }
+        },
+        {
+          "path": "Xv6/ProofKwait.lean",
+          "theorem": "kw_epi",
+          "line": 1115,
+          "body_lines": 81,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "k_norm": 1,
+            "fraction_resources": 9,
+            "cpu_pin": 4,
+            "register_updates": 2,
+            "instruction_dispatch": 12
+          }
+        },
+        {
+          "path": "Xv6/ProofProcMapstacks.lean",
+          "theorem": "pms_epi",
+          "line": 645,
+          "body_lines": 66,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "fraction_resources": 10,
+            "cpu_pin": 4,
+            "register_updates": 1,
+            "instruction_dispatch": 12
+          }
+        },
+        {
+          "path": "Xv6/ProofMappages.lean",
+          "theorem": "mappages_epi",
+          "line": 797,
+          "body_lines": 63,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "fraction_resources": 9,
+            "cpu_pin": 4,
+            "register_updates": 2,
+            "instruction_dispatch": 11
+          }
+        },
+        {
+          "path": "Xv6/ProofProcdump.lean",
+          "theorem": "pd_epi",
+          "line": 1021,
+          "body_lines": 59,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "fraction_resources": 9,
+            "cpu_pin": 4,
+            "register_updates": 1,
+            "instruction_dispatch": 11
+          }
+        },
+        {
+          "path": "Xv6/ProofUvmcopy.lean",
+          "theorem": "uvmcopy_epi",
+          "line": 324,
+          "body_lines": 63,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "fraction_resources": 9,
+            "cpu_pin": 4,
+            "register_updates": 2,
+            "instruction_dispatch": 11
+          }
+        },
+        {
+          "path": "Xv6/ProofScheduler.lean",
+          "theorem": "scheduler_head_step",
+          "line": 305,
+          "body_lines": 63,
+          "counts": {
+            "omega": 1,
+            "bv_omega_whole_context": 1,
+            "k_norm": 2,
+            "register_updates": 2,
+            "instruction_dispatch": 9
+          }
+        },
+        {
+          "path": "Xv6/ProofUvmunmap.lean",
+          "theorem": "uvmunmap_epi",
+          "line": 216,
+          "body_lines": 53,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "fraction_resources": 7,
+            "cpu_pin": 4,
+            "register_updates": 1,
+            "instruction_dispatch": 9
+          }
+        },
+        {
+          "path": "Xv6/ProofWakeup.lean",
+          "theorem": "wk_epi",
+          "line": 535,
+          "body_lines": 52,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "fraction_resources": 7,
+            "cpu_pin": 4,
+            "register_updates": 1,
+            "instruction_dispatch": 9
+          }
+        },
+        {
+          "path": "Xv6/ProofReparent.lean",
+          "theorem": "rp_epi",
+          "line": 477,
+          "body_lines": 48,
+          "counts": {
+            "bv_omega_whole_context": 1,
+            "fraction_resources": 6,
+            "cpu_pin": 4,
+            "register_updates": 1,
+            "instruction_dispatch": 8
+          }
+        }
+      ]
+    }
+  ],
+  "repeated_exact_simp_suites": [
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, ite_false",
+      "occurrences": 1036,
+      "files": 139,
+      "examples": [
+        {
+          "path": "MachCSL/CallConv.lean",
+          "theorem": "calleeSaved_set",
+          "line": 309
+        },
+        {
+          "path": "Xv6/BmapTail.lean",
+          "theorem": "bm_epilogue",
+          "line": 63
+        },
+        {
+          "path": "Xv6/BreadScan.lean",
+          "theorem": "bdOther_set",
+          "line": 56
+        },
+        {
+          "path": "Xv6/BreadScan.lean",
+          "theorem": "bd_fwd_step",
+          "line": 135
+        }
+      ]
+    },
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, ite_false, ite_true",
+      "occurrences": 771,
+      "files": 184,
+      "examples": [
+        {
+          "path": "MachCSL/CallConv.lean",
+          "theorem": "calleeSaved_mk",
+          "line": 275
+        },
+        {
+          "path": "MachCSL/WpSmodeFrame6c.lean",
+          "theorem": "calleeSaved_epi6s3",
+          "line": 143
+        },
+        {
+          "path": "Xv6/BallocDefs.lean",
+          "theorem": "ba_calleeSaved_epi",
+          "line": 109
+        },
+        {
+          "path": "Xv6/BallocMain.lean",
+          "theorem": "ba_after_bread",
+          "line": 118
+        }
+      ]
+    },
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, ite_true, ite_false",
+      "occurrences": 644,
+      "files": 74,
+      "examples": [
+        {
+          "path": "Xv6/BfreeMid.lean",
+          "theorem": "bf_mid",
+          "line": 174
+        },
+        {
+          "path": "Xv6/BreadScan.lean",
+          "theorem": "bd_fwd",
+          "line": 329
+        },
+        {
+          "path": "Xv6/BreadScan.lean",
+          "theorem": "bd_bwd",
+          "line": 541
+        },
+        {
+          "path": "Xv6/EitherDefs.lean",
+          "theorem": "ec_ret",
+          "line": 305
+        }
+      ]
+    },
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, if_false",
+      "occurrences": 48,
+      "files": 5,
+      "examples": [
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_pbody",
+          "line": 642
+        },
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_pbody",
+          "line": 644
+        },
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_pbody",
+          "line": 645
+        },
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_pbody",
+          "line": 646
+        }
+      ]
+    },
+    {
+      "lemmas": "BitVec.toNat_add, BitVec.toNat_ofNat",
+      "occurrences": 45,
+      "files": 33,
+      "examples": [
+        {
+          "path": "MachCSL/BytesFree.lean",
+          "theorem": "bytesFree_cons",
+          "line": 159
+        },
+        {
+          "path": "MachCSL/Ctx.lean",
+          "theorem": "addr_succ",
+          "line": 521
+        },
+        {
+          "path": "MachCSL/TsoMem.lean",
+          "theorem": "Mem.foldl_insert_get?",
+          "line": 229
+        },
+        {
+          "path": "MachCSL/UByteFrame.lean",
+          "theorem": "ub_offset_inj",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, ite_true",
+      "occurrences": 44,
+      "files": 22,
+      "examples": [
+        {
+          "path": "Xv6/IgetScan.lean",
+          "theorem": "ig_step",
+          "line": 139
+        },
+        {
+          "path": "Xv6/IgetScan.lean",
+          "theorem": "ig_free",
+          "line": 207
+        },
+        {
+          "path": "Xv6/ItruncDirect.lean",
+          "theorem": "itrunc_dnext",
+          "line": 124
+        },
+        {
+          "path": "Xv6/ItruncELoop.lean",
+          "theorem": "itrunc_enext",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, if_false, if_true",
+      "occurrences": 32,
+      "files": 4,
+      "examples": [
+        {
+          "path": "Xv6/CreateMkdir.lean",
+          "theorem": "create_mkdir_cok",
+          "line": 2615
+        },
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "theorem": "printk_pct_5e2",
+          "line": 2502
+        },
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "theorem": "printk_pct_5e2",
+          "line": 2510
+        },
+        {
+          "path": "Xv6/ProofPrintk.lean",
+          "theorem": "printk_pct_5e2",
+          "line": 2511
+        }
+      ]
+    },
+    {
+      "lemmas": "List.length_append, List.length_singleton",
+      "occurrences": 25,
+      "files": 17,
+      "examples": [
+        {
+          "path": "MachCSL/Resources.lean",
+          "theorem": "authMap_snoc",
+          "line": 593
+        },
+        {
+          "path": "MachCSL/TsoMem.lean",
+          "theorem": "FlatMem.writeBytes_histOk",
+          "line": 508
+        },
+        {
+          "path": "Xv6/ConsoleTags.lean",
+          "theorem": "consSnoc_lookup_eq",
+          "line": 314
+        },
+        {
+          "path": "Xv6/ConsoleTags.lean",
+          "theorem": "consChain_snoc",
+          "line": 474
+        }
+      ]
+    },
+    {
+      "lemmas": "List.getElem?_cons_zero, Option.some.injEq",
+      "occurrences": 24,
+      "files": 22,
+      "examples": [
+        {
+          "path": "MachCSL/RequisiteFramework.lean",
+          "theorem": "wp_requisiteness",
+          "line": 137
+        },
+        {
+          "path": "Xv6/ConsLog.lean",
+          "theorem": "clLogOk_snoc",
+          "line": 215
+        },
+        {
+          "path": "Xv6/EchoOutPure.lean",
+          "theorem": "filterStrictOrder",
+          "line": 195
+        },
+        {
+          "path": "Xv6/EchoOutPureSeal.lean",
+          "theorem": "inPres_lookup_ins",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, ite_false, ite_true, _root_.true_and",
+      "occurrences": 22,
+      "files": 16,
+      "examples": [
+        {
+          "path": "Xv6/ProofAcquire.lean",
+          "theorem": "acquire_body",
+          "line": 227
+        },
+        {
+          "path": "Xv6/ProofAcquire.lean",
+          "theorem": "acquire_body_gen",
+          "line": 503
+        },
+        {
+          "path": "Xv6/ProofFlags2perm.lean",
+          "theorem": "flags2perm_proof",
+          "line": 96
+        },
+        {
+          "path": "Xv6/ProofKerneltrap.lean",
+          "theorem": "kerneltrap_proof",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "lemmas": "RegMap.set_apply, BitVec.reduceEq, if_true, if_false, reduceIte",
+      "occurrences": 22,
+      "files": 1,
+      "examples": [
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_body",
+          "line": 444
+        },
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_body",
+          "line": 445
+        },
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_body",
+          "line": 446
+        },
+        {
+          "path": "Xv6/ProofPrintint.lean",
+          "theorem": "pi_body",
+          "line": 447
+        }
+      ]
+    },
+    {
+      "lemmas": "List.mem_cons, List.not_mem_nil, _root_.or_false",
+      "occurrences": 20,
+      "files": 13,
+      "examples": [
+        {
+          "path": "Xv6/KexecA.lean",
+          "theorem": "kxc_a1_au",
+          "line": 376
+        },
+        {
+          "path": "Xv6/KexecA.lean",
+          "theorem": "kxc_a1_au",
+          "line": 448
+        },
+        {
+          "path": "Xv6/KexecACode.lean",
+          "theorem": "kxcA_tests_r",
+          "line": 572
+        },
+        {
+          "path": "Xv6/KexecACode.lean",
+          "theorem": "kxcA_tests_r",
+          "line": 638
+        }
+      ]
+    },
+    {
+      "lemmas": "List.mem_cons, List.not_mem_nil, or_false",
+      "occurrences": 20,
+      "files": 13,
+      "examples": [
+        {
+          "path": "Xv6/PipesUline.lean",
+          "theorem": "uline_pipes_words",
+          "line": 217
+        },
+        {
+          "path": "Xv6/ProofGrepMemmove.lean",
+          "theorem": "wp_grepMemmove",
+          "line": 342
+        },
+        {
+          "path": "Xv6/ProofGrepStrchr.lean",
+          "theorem": "wp_grepStrchr",
+          "line": 214
+        },
+        {
+          "path": "Xv6/RefParseSym.lean",
+          "theorem": "ref_redir_hit_gt",
+          "line": 343
+        }
+      ]
+    },
+    {
+      "lemmas": "BitVec.toNat_add, BitVec.toNat_ofNat, Nat.reducePow",
+      "occurrences": 17,
+      "files": 11,
+      "examples": [
+        {
+          "path": "MachCSL/BvLemmas.lean",
+          "theorem": "add_inj",
+          "line": 58
+        },
+        {
+          "path": "Xv6/InitlogHead.lean",
+          "theorem": "ilCur_step",
+          "line": 123
+        },
+        {
+          "path": "Xv6/InitlogHead.lean",
+          "theorem": "il_lhBlock_step",
+          "line": 131
+        },
+        {
+          "path": "Xv6/InitlogHead.lean",
+          "theorem": "il_slot_addr",
+          "line": 170
+        }
+      ]
+    },
+    {
+      "lemmas": "List.range_succ, List.range_zero, List.nil_append, Iris.Algebra.BigOpL.bigOpL_cons, Iris.Algebra.BigOpL.bigOpL_nil, nthByte_one, BitVec.add_zero",
+      "occurrences": 17,
+      "files": 8,
+      "examples": [
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "theorem": "wordPointsTo_byte_to",
+          "line": 180
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "theorem": "wordPointsTo_byte_of",
+          "line": 213
+        },
+        {
+          "path": "MachCSL/ByteWord.lean",
+          "theorem": "wordPointsTo_to_bytes",
+          "line": 277
+        },
+        {
+          "path": "MachCSL/ByteWord2.lean",
+          "theorem": "wordPointsTo_byte_to2",
+          "line": 101
+        }
+      ]
+    }
+  ],
+  "enlarged_limits": {
+    "count": 2314,
+    "top": [
+      {
+        "path": "Xv6/EndOpLoop.lean",
+        "line": 260,
+        "option": "maxHeartbeats",
+        "value": 80000000
+      },
+      {
+        "path": "Xv6/ProofEndOp.lean",
+        "line": 134,
+        "option": "maxHeartbeats",
+        "value": 80000000
+      },
+      {
+        "path": "Xv6/ProofSysClose.lean",
+        "line": 285,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/ProofSysDup.lean",
+        "line": 228,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/ProofSysExit.lean",
+        "line": 167,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/ProofSysKill.lean",
+        "line": 136,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/ProofSysWait.lean",
+        "line": 206,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysLinkWalkA.lean",
+        "line": 148,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysLinkWalkA.lean",
+        "line": 554,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysLinkWalkA.lean",
+        "line": 691,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysLinkWalkB.lean",
+        "line": 369,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysUnlinkW5D.lean",
+        "line": 318,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysUnlinkW5F.lean",
+        "line": 250,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysUnlinkW5S.lean",
+        "line": 98,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      },
+      {
+        "path": "Xv6/SysUnlinkW5Z.lean",
+        "line": 201,
+        "option": "maxHeartbeats",
+        "value": 64000000
+      }
+    ]
+  },
+  "assessment": {
+    "ranked_angles": [
+      {
+        "rank": 1,
+        "angle": "External unsat-core selection plus small kernel-replayed arithmetic proofs",
+        "evidence": [
+          "mixed_machine_integer_arithmetic cohort",
+          "arithmetic_with_many_subtraction_terms cohort",
+          "whole_context_bv_in_large_proofs cohort",
+          "claude-notes/optimization.md:850",
+          "claude-notes/optimization.md:863"
+        ],
+        "new_relative_to_existing": "bv_omega_g normalizes only the goal; it cannot select necessary hypotheses. KNormCache caches simplification but does not remove irrelevant arithmetic assumptions. A Z3 core can identify the necessary premises, after which Lean omega/bv reasoning proves the original goal from those premises.",
+        "first_clients": [
+          "Xv6/ProofScheduler.lean:scheduler_setup",
+          "Xv6/ProofStrncpy.lean:sy_sub1,sy_pad_w,sy_subw_pad",
+          "Xv6/ProofUvmcopy.lean:uvmcopy_epi",
+          "Xv6/UkGrepLoopFrame.lean:grepLoop_epi"
+        ],
+        "robustness_test": "Rename/reorder hypotheses, add 0/8/16 irrelevant subtraction-chain facts, and remove the sole necessary bound. Report solved/failed obligations and diagnostic quality; final proof is always kernel-checked.",
+        "success_metric": "Stable results and bounded replay work under context growth; smaller proof dependencies; end-to-end elaboration includes solver IPC and replay."
+      },
+      {
+        "rank": 2,
+        "angle": "Typed BV/Nat word-level planning instead of flattening all machine facts into modular integer arithmetic",
+        "evidence": [
+          "bitvec_nat_bridge frequency",
+          "bit_extract_extend frequency",
+          "Xv6/ProofStrncpy.lean:sy_pad_w",
+          "Xv6/CopyLemmas.lean:co_n_val3",
+          "Xv6/ProofShParseexec.lean:wp_shParseexec"
+        ],
+        "new_relative_to_existing": "Existing bv_decide and bv_omega are already used. The missing planning layer chooses which terms stay bitvectors, which get bounded Nat views, and which shared carries/wrap conditions need proofs. It should emit a small sequence of existing bridge lemmas plus sliced arithmetic, rather than reify an entire symbolic machine state.",
+        "first_clients": [
+          "Xv6/ProofStrncpy.lean:sy_pad_w,sy_subw_pad",
+          "Xv6/CopyLemmas.lean:co_n_val3,co_offB",
+          "Xv6/ProofShParsecmd.lean:wp_shParsecmd"
+        ],
+        "robustness_test": "Equivalent arithmetic reassociation, 32/64-bit width changes, positive/zero/saturating-subtraction boundaries, and rejection of missing no-wrap/sign bounds.",
+        "success_metric": "One clear typed certificate per arithmetic intent; preserve exact theorem statements and audit added axioms; measure solver+replay rather than solver time alone."
+      },
+      {
+        "rank": 3,
+        "angle": "SMT-style read-over-write normal forms over finite maps and indexed sequence views",
+        "evidence": [
+          "finite_map_case_reasoning cohort",
+          "sequence_observation_and_arithmetic cohort",
+          "Xv6/FsAbsDelta.lean",
+          "Xv6/HfpReg.lean:pool_give",
+          "Xv6/FsCrashSector.lean:fsBlocks_splice"
+        ],
+        "new_relative_to_existing": "Archived Sequence/SequenceShapes already offer index search and shared splice templates, and FsAbsDelta already supplies operation-specific delta laws. New work should generate an observation-level store/select certificate and necessary key/index cases across maps AND views, while keeping implementations opaque. It must not merely rerun unrestricted grind or restore a template library.",
+        "first_clients": [
+          "Xv6/FsDurImgView.lean:fsDurImgDelete_insertNe",
+          "Xv6/HfpReg.lean:pool_give",
+          "Xv6/FsCrashSector.lean:fsBlocks_splice",
+          "Xv6/EchoOutPure.lean:readWindow_prefix"
+        ],
+        "robustness_test": "Reorder independent updates, insert overwritten writes, rename keys, vary clipping bounds, and reject missing key disequalities or out-of-range list observations.",
+        "success_metric": "Proofs state update semantics and footprint, with generated pointwise cases; kernel replay must reuse established lookup/length laws. Ghost authority and crash protocol remain explicit."
+      },
+      {
+        "rank": 4,
+        "angle": "Resource-routing planner with explicit fraction, extent, and restoration constraints",
+        "evidence": [
+          "resource_accessors frequency",
+          "spatial_accessor_composition cohort",
+          "Xv6/ProofCopyin.lean:ci_move",
+          "Xv6/ProofCopyout.lean:copyout_move",
+          "Xv6/UserHeap.lean:uinstrIs_ukInstr"
+        ],
+        "new_relative_to_existing": "BigSep accessors, FrameFilter, LayoutResources, and archived typed Access certificates already perform individual splitting/composition. New capability would infer a valid sequence of existing spatial rules from desired read/write windows, preserving linear restoration continuations and fraction constraints, and explain impossible overlap/width requests.",
+        "first_clients": [
+          "Xv6/ProofCopyin.lean:ci_move",
+          "Xv6/UMemLemmas.lean:byteBuf_split_td",
+          "Xv6/ByteWord4.lean:byteBuf_word4_at"
+        ],
+        "robustness_test": "Alter padding, source fraction, slice nesting, ownership order and alias constraints; solver must reject full-write requests backed only by fractional ownership.",
+        "success_metric": "User supplies access intent and real domain invariant; planner derives a replayable route. Do not ask external arithmetic to invent ghost resources or justify invariant opening."
+      },
+      {
+        "rank": 5,
+        "angle": "Shared symbolic DAG certificates and cutpoint obligation diagnostics",
+        "evidence": [
+          "repeated_exact_simp_suites",
+          "claude-notes/optimization.md:1090",
+          "MachCSL/KNormCache.lean",
+          "Experiments/WholeFunction/CopyinBlocks.lean"
+        ],
+        "new_relative_to_existing": "KNormCache already caches within declarations; uwk_run +merge already merges equal-state branches; the current whole-function backend already decodes and symbolically computes blocks. The next distinction is sharing parameterized proofs across blocks/declarations and surfacing only unsolved invariant/resource obligations, rather than rebuilding a second interpreter.",
+        "first_clients": [
+          "Xv6/ProofScheduler.lean:scheduler_setup",
+          "Xv6/ProofMappages.lean:mappages_loop",
+          "Experiments/WholeFunction/CopyinBlockFacts.lean"
+        ],
+        "robustness_test": "Equivalent register allocation and branch refactoring regenerate a certificate without changing domain invariants; wrong targets and insufficient call contracts yield focused failures.",
+        "success_metric": "Fewer brittle intermediate-state annotations; predictable diagnostics; separately measure certificate regeneration, shared helper check, and cached consumer check."
+      }
+    ],
+    "existing_engines_not_to_reinvent": [
+      {
+        "source": "MachCSL/URunRW.lean",
+        "capability": "Write-capable Sail event interpreter and swp importer; ownership footprint and oracle handling already proved."
+      },
+      {
+        "source": "MachCSL/KNormCache.lean",
+        "capability": "Per-declaration simp cache keyed by lemma context with stale-hypothesis detection."
+      },
+      {
+        "source": "MachCSL/WpSmodeFrame.lean:39",
+        "capability": "Literal-index update/read reduction; see RegMap.reduceApply and optimization.md lane K."
+      },
+      {
+        "source": "MachCSL/FrameFilter.lean",
+        "capability": "Head/unification filtering for spatial frame search."
+      },
+      {
+        "source": "Xv6/KernelTac.lean",
+        "capability": "Goal-only bv_omega_g and closed kernel_eq_refl."
+      },
+      {
+        "source": "MachCSL/UWalkRun.lean:196",
+        "capability": "Existing symbolic walker branch merging; inspect uwk_run +merge before proposing path merging."
+      },
+      {
+        "source": "Xv6/FsAbsDelta.lean",
+        "capability": "Pure filesystem map-transition algebra; resource/protocol boundaries remain substantive."
+      },
+      {
+        "source": "Experiments/LayoutResources.lean",
+        "capability": "Existing deterministic record ownership routing."
+      }
+    ],
+    "archived_evidence": {
+      "ref": "archive/requisiteness-experiments-20261118",
+      "source": "Requisiteness/README.md",
+      "findings": [
+        "General kernel reduction of SAT certificates approached 3.3 GiB on tiny examples; direct bit proofs were cheaper. Do not indiscriminately bit-blast all VCs.",
+        "Restricted per-client sequence grind made five focused module medians sum 28.447 -> 34.173 seconds; reduced source was not faster checking.",
+        "Shared sequence certificates improved incremental checks versus per-client search (35.671 -> 27.041 seconds), but the 8.359-second helper erased first-pass savings.",
+        "Unfolding overwrite exhausted grind case-split limits; lookup/length observations made the same theorem succeed. Preserve opaque data-structure representations.",
+        "Typed resource access certificates passed six integrations but aggregate median improvement was only 2.8% before helper cost; algebra alone is not an automatic planner.",
+        "CPU pin equality closure survived renaming/reordering/reversal and inserted hops; already explored and not a new primary target.",
+        "Early benchmark rounds did not explicitly pass -j1; only later sequence/access rounds enforced one Lean worker. Historical measurements are not new results."
+      ]
+    },
+    "current_negative_evidence": [
+      {
+        "source": "Experiments/README.md:37",
+        "finding": "Restricted grind field lookup increased a paired module median from 2.542 to 4.545 seconds; deterministic routing retained."
+      },
+      {
+        "source": "Experiments/WholeFunction/RequisiteObstruction.lean",
+        "finding": "Exact ownState cannot coexist with production resourceInv under stateInterp. Pure external certificates need the footprint/resource boundary, not extra exact-state ownership."
+      },
+      {
+        "source": "Experiments/WholeFunction/CopyinBlocks.lean",
+        "finding": "Current branch equality debugging found global simp recursion; restricted simp only plus kernel_rfl succeeded. New solvers should publish narrow observation/replay interfaces."
+      }
+    ],
+    "evaluation_priority": [
+      "unchanged semantic statements",
+      "transparent proof intent",
+      "robustness to harmless context/layout changes",
+      "focused counterexample/failure diagnostics",
+      "total solver+kernel replay time and peak RSS",
+      "axiom-set audit"
+    ],
+    "not_claimed": "No new speed, robustness, or solver-coverage result follows from these static counts. No LOC-saving target is used. This survey changes no production proof."
+  },
+  "sources_unchanged_during_scan": true
+}

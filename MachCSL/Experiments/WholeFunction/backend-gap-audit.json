@@ -1,0 +1,531 @@
+{
+  "method": "Disjoint source-line heuristic over theorem RHS only. Category precedence: complete *_call theorem bodies; instruction dispatch with indented arguments and bare iintro Hk Hpc; numeric-register case blocks containing register normalization; ordered memory/callee/CPU/register/Iris markers; remainder. A line belongs to exactly one category. No fraction of a mixed line is separately counted.",
+  "actual_production_loc_saved": 0,
+  "categories": {
+    "callee_adapter_body": 101,
+    "instruction_dispatch_and_resume": 2459,
+    "register_preservation_case_body": 308,
+    "memory_accessor_or_reconstruction": 164,
+    "callee_application": 48,
+    "cpu_continuation": 811,
+    "register_and_context_normalization": 839,
+    "generic_iris_syntax_not_proven_removable": 1625,
+    "other_domain_or_unclassified": 4385
+  },
+  "recognized_kernel_bookkeeping_gross": 4417,
+  "within_category_disjoint_breakdowns": {
+    "instruction_dispatch_and_resume": {
+      "instruction_tactic_head": 856,
+      "bare_Hk_Hpc_intro": 588,
+      "indented_instruction_arguments": 1015
+    },
+    "cpu_continuation": {
+      "wpNext_at_or_shift": 133,
+      "explicit_hp_composition": 252,
+      "other_wpNext": 147,
+      "pin_declaration_or_resume": 279
+    },
+    "register_and_context_normalization": {
+      "k_norm": 382,
+      "explicit_RegMap_set": 323,
+      "other_register_context_fact": 134
+    }
+  },
+  "net_5000_budget_before_any_overhead": -583,
+  "all_nonbody_source_lines": 2371,
+  "optimistic_overhead_budget_if_every_nonbody_line_disappeared": 1788,
+  "scale_assessment": "The observed kernel-bookkeeping bodies alone do not reach 5k gross. It is not a mathematical impossibility: deleting duplicated local signatures/definitions can add lines. Even crediting EVERY nonbody line would leave only the reported optimistic overhead budget for engine, certificates and invariants; that extreme includes imports and substantive definitions that actually remain. A credible 5k net plan therefore needs measured signature compression and/or generic resource/callee adaptation, not just register substitution and CPU pin transport.",
+  "warning": "Recognized lines are candidate gross deletions, not established savings. Signature/definition compression could add savings, while engine/certificates/invariants/adapters subtract them. Generic Iris syntax includes domain/resource work and must not be silently credited to a register/CPU backend.",
+  "examples": {
+    "callee_adapter_body": [
+      {
+        "path": "Xv6/ProofCopyout.lean",
+        "line": 303,
+        "theorem": "co_walk_call",
+        "source": "\u22a2 wpLoop (GF := GF) c := by"
+      },
+      {
+        "path": "Xv6/ProofCopyout.lean",
+        "line": 304,
+        "theorem": "co_walk_call",
+        "source": "have h := W.wp_walk_noalloc (hlc := hlc) (GF := GF) c k' dq t hK' hroot' hva' halloc' hwf'"
+      },
+      {
+        "path": "Xv6/ProofCopyout.lean",
+        "line": 305,
+        "theorem": "co_walk_call",
+        "source": "unfold wp_walk_noalloc_body at h"
+      },
+      {
+        "path": "Xv6/ProofCopyout.lean",
+        "line": 306,
+        "theorem": "co_walk_call",
+        "source": "simp only [walkAddr] at h"
+      }
+    ],
+    "instruction_dispatch_and_resume": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 93,
+        "theorem": "wp_prologueCi_gen",
+        "source": "k_step_gen (wp_s_push cpu _ pc true 4000#12 12 hK MachCSL.imm_m96) $$ [- $Hk $Hpc] next c1 hp1"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 99,
+        "theorem": "wp_prologueCi_gen",
+        "source": "k_step_gen (wp_s_sd c1 _ (pc + 2#64) true 88#12 2#5 1#5 (by decide) w\u2081) $$ [- $Hk $Hpc] next c2 hp2"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 101,
+        "theorem": "wp_prologueCi_gen",
+        "source": "k_step_gen (wp_s_sd c2 _ (pc + 4#64) true 80#12 2#5 8#5 (by decide) w\u2082) $$ [- $Hk $Hpc] next c3 hp3"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 103,
+        "theorem": "wp_prologueCi_gen",
+        "source": "k_step_gen (wp_s_sd c3 _ (pc + 6#64) true 72#12 2#5 9#5 (by decide) w\u2083) $$ [- $Hk $Hpc] next c4 hp4"
+      }
+    ],
+    "register_preservation_case_body": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 785,
+        "theorem": "ci_nsel",
+        "source": "case hsp' => simp only [RegMap.set_apply, BitVec.reduceEq, ite_true, ite_false]; exact hsp"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 786,
+        "theorem": "ci_nsel",
+        "source": "case h9' => simp only [RegMap.set_apply, BitVec.reduceEq, ite_true, ite_false]"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 787,
+        "theorem": "ci_nsel",
+        "source": "case h10' => simp only [RegMap.set_apply, BitVec.reduceEq, ite_true, ite_false]; exact h10"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 788,
+        "theorem": "ci_nsel",
+        "source": "case h18' => simp only [RegMap.set_apply, BitVec.reduceEq, ite_true, ite_false]; exact h18"
+      }
+    ],
+    "memory_accessor_or_reconstruction": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 334,
+        "theorem": "ci_page",
+        "source": "icases UMemL.procPtAt_elim _ _ $$ HP with \u27e8%hwf1, \u27e8%t1, %ht1, Htree\u27e9, Hum\u27e9"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 349,
+        "theorem": "ci_page",
+        "source": "ihave HP := UMemL.procPtAt_intro' (GF := GF) P1 (viewFaulted P P1 M) t1 ht1 hwf1 $$ [Htree Hum]"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 573,
+        "theorem": "ci_move",
+        "source": "icases UMemL.procPtAt_elim _ _ $$ HP with \u27e8%hwf2, \u27e8%t2, %ht2, Htree\u27e9, Hum2\u27e9"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 574,
+        "theorem": "ci_move",
+        "source": "icases UMemL.umPages_acc P2 (viewFaulted P P2 M) ((A + d) / 4096) w hum $$ Hum2"
+      }
+    ],
+    "callee_application": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 335,
+        "theorem": "ci_page",
+        "source": "iapply (co_walkaddr_call WA c4 _ (DFrac.own 1) t1 P1.leaves ?hKa ?hro ht1.2) $$ [- $Hk $Hpc]"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 373,
+        "theorem": "ci_page",
+        "source": "iapply (co_vmfault_call VF c11 _ \u03b3l \u03b3k P1 (viewFaulted P P1 M)"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 602,
+        "theorem": "ci_move",
+        "source": "iapply (co_memmove_call MM c5 _ (umemRead (viewFaulted P P2 M) (A + d) n)"
+      },
+      {
+        "path": "Xv6/ProofCopyout.lean",
+        "line": 379,
+        "theorem": "copyout_page",
+        "source": "iapply (co_walkaddr_call WA c5 _ (DFrac.own 1) t1 P1.leaves ?hKa ?hro ht1.2) $$ [- $Hk $Hpc]"
+      }
+    ],
+    "cpu_continuation": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 126,
+        "theorem": "wp_prologueCi_gen",
+        "source": "ihave H\u03a6' := wpNext_at _ _ _ c14 _"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 127,
+        "theorem": "wp_prologueCi_gen",
+        "source": "(fun h => (hp14 h).trans ((hp13 h).trans ((hp12 h).trans ((hp11 h).trans ((hp10 h).trans"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 128,
+        "theorem": "wp_prologueCi_gen",
+        "source": "((hp9 h).trans ((hp8 h).trans ((hp7 h).trans ((hp6 h).trans ((hp5 h).trans"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 129,
+        "theorem": "wp_prologueCi_gen",
+        "source": "((hp4 h).trans ((hp3 h).trans ((hp2 h).trans (hp1 h)))))))))))))) $$ H\u03a6"
+      }
+    ],
+    "register_and_context_normalization": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 125,
+        "theorem": "wp_prologueCi_gen",
+        "source": "k_norm_g"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 337,
+        "theorem": "ci_page",
+        "source": "k_norm_g"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 339,
+        "theorem": "ci_page",
+        "source": "case hKa => k_norm_g; omega"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 340,
+        "theorem": "ci_page",
+        "source": "case hro => k_norm_g; rw [ht1.1, hext1.1.1]"
+      }
+    ],
+    "generic_iris_syntax_not_proven_removable": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 91,
+        "theorem": "wp_prologueCi_gen",
+        "source": "iintro \u27e8#Hi0, #Hi2, #Hi4, #Hi6, #Hi8, #Hi10, #Hi12, #Hi14, #Hi16, #Hi18, #Hi20, #Hi22,"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 94,
+        "theorem": "wp_prologueCi_gen",
+        "source": "iintro Hk Hpc Hframe"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 97,
+        "theorem": "wp_prologueCi_gen",
+        "source": "iintro \u27e8\u27e8%w\u2081, Hf8\u27e9, \u27e8%w\u2082, Hf16\u27e9, \u27e8%w\u2083, Hf24\u27e9, \u27e8%w\u2084, Hf32\u27e9, \u27e8%w\u2085, Hf40\u27e9, \u27e8%w\u2086, Hf48\u27e9,"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 100,
+        "theorem": "wp_prologueCi_gen",
+        "source": "iintro Hk Hpc Hf8"
+      }
+    ],
+    "other_domain_or_unclassified": [
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 68,
+        "theorem": "wp_prologueCi_gen",
+        "source": "instr (GF := GF) pc true (instruction.ITYPE (4000#12, regidx.Regidx 2#5, regidx.Regidx 2#5, iop.ADDI)) \u2217"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 69,
+        "theorem": "wp_prologueCi_gen",
+        "source": "instr (GF := GF) (pc + 2#64) true (instruction.STORE (88#12, regidx.Regidx 1#5, regidx.Regidx 2#5, 8)) \u2217"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 70,
+        "theorem": "wp_prologueCi_gen",
+        "source": "instr (GF := GF) (pc + 4#64) true (instruction.STORE (80#12, regidx.Regidx 8#5, regidx.Regidx 2#5, 8)) \u2217"
+      },
+      {
+        "path": "Xv6/ProofCopyin.lean",
+        "line": 71,
+        "theorem": "wp_prologueCi_gen",
+        "source": "instr (GF := GF) (pc + 6#64) true (instruction.STORE (72#12, regidx.Regidx 9#5, regidx.Regidx 2#5, 8)) \u2217"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "Xv6/ProofCopyin.lean",
+      "theorem_body_nonempty_lines": 813,
+      "counts": {
+        "instruction_dispatch_and_resume": 194,
+        "other_domain_or_unclassified": 336,
+        "generic_iris_syntax_not_proven_removable": 123,
+        "register_and_context_normalization": 49,
+        "cpu_continuation": 60,
+        "memory_accessor_or_reconstruction": 10,
+        "callee_application": 3,
+        "register_preservation_case_body": 38
+      }
+    },
+    {
+      "path": "Xv6/ProofCopyout.lean",
+      "theorem_body_nonempty_lines": 980,
+      "counts": {
+        "other_domain_or_unclassified": 376,
+        "instruction_dispatch_and_resume": 259,
+        "generic_iris_syntax_not_proven_removable": 130,
+        "register_and_context_normalization": 61,
+        "cpu_continuation": 73,
+        "callee_adapter_body": 5,
+        "memory_accessor_or_reconstruction": 15,
+        "callee_application": 4,
+        "register_preservation_case_body": 57
+      }
+    },
+    {
+      "path": "Xv6/ProofCopyinstr.lean",
+      "theorem_body_nonempty_lines": 1052,
+      "counts": {
+        "instruction_dispatch_and_resume": 272,
+        "other_domain_or_unclassified": 437,
+        "generic_iris_syntax_not_proven_removable": 136,
+        "register_and_context_normalization": 52,
+        "cpu_continuation": 72,
+        "memory_accessor_or_reconstruction": 8,
+        "callee_application": 2,
+        "register_preservation_case_body": 73
+      }
+    },
+    {
+      "path": "Xv6/ProofEitherCopyin.lean",
+      "theorem_body_nonempty_lines": 274,
+      "counts": {
+        "other_domain_or_unclassified": 85,
+        "instruction_dispatch_and_resume": 78,
+        "generic_iris_syntax_not_proven_removable": 48,
+        "register_and_context_normalization": 36,
+        "callee_application": 3,
+        "cpu_continuation": 20,
+        "memory_accessor_or_reconstruction": 4
+      }
+    },
+    {
+      "path": "Xv6/ProofEitherCopyout.lean",
+      "theorem_body_nonempty_lines": 283,
+      "counts": {
+        "callee_adapter_body": 16,
+        "other_domain_or_unclassified": 84,
+        "instruction_dispatch_and_resume": 78,
+        "generic_iris_syntax_not_proven_removable": 46,
+        "register_and_context_normalization": 35,
+        "callee_application": 3,
+        "cpu_continuation": 20,
+        "memory_accessor_or_reconstruction": 1
+      }
+    },
+    {
+      "path": "Xv6/ProofWalk.lean",
+      "theorem_body_nonempty_lines": 1051,
+      "counts": {
+        "other_domain_or_unclassified": 387,
+        "instruction_dispatch_and_resume": 259,
+        "generic_iris_syntax_not_proven_removable": 195,
+        "register_and_context_normalization": 85,
+        "cpu_continuation": 89,
+        "callee_application": 2,
+        "memory_accessor_or_reconstruction": 20,
+        "register_preservation_case_body": 14
+      }
+    },
+    {
+      "path": "Xv6/ProofWalkaddr.lean",
+      "theorem_body_nonempty_lines": 255,
+      "counts": {
+        "other_domain_or_unclassified": 91,
+        "instruction_dispatch_and_resume": 65,
+        "generic_iris_syntax_not_proven_removable": 31,
+        "register_and_context_normalization": 41,
+        "cpu_continuation": 25,
+        "callee_application": 1,
+        "memory_accessor_or_reconstruction": 1
+      }
+    },
+    {
+      "path": "Xv6/ProofVmfault.lean",
+      "theorem_body_nonempty_lines": 642,
+      "counts": {
+        "other_domain_or_unclassified": 231,
+        "generic_iris_syntax_not_proven_removable": 106,
+        "instruction_dispatch_and_resume": 160,
+        "register_and_context_normalization": 61,
+        "memory_accessor_or_reconstruction": 9,
+        "callee_application": 5,
+        "cpu_continuation": 70
+      }
+    },
+    {
+      "path": "Xv6/ProofMappages.lean",
+      "theorem_body_nonempty_lines": 840,
+      "counts": {
+        "other_domain_or_unclassified": 463,
+        "callee_adapter_body": 6,
+        "instruction_dispatch_and_resume": 170,
+        "generic_iris_syntax_not_proven_removable": 90,
+        "callee_application": 2,
+        "register_and_context_normalization": 33,
+        "cpu_continuation": 46,
+        "memory_accessor_or_reconstruction": 1,
+        "register_preservation_case_body": 29
+      }
+    },
+    {
+      "path": "Xv6/ProofUvmcreate.lean",
+      "theorem_body_nonempty_lines": 183,
+      "counts": {
+        "other_domain_or_unclassified": 63,
+        "callee_adapter_body": 5,
+        "instruction_dispatch_and_resume": 32,
+        "generic_iris_syntax_not_proven_removable": 38,
+        "register_and_context_normalization": 26,
+        "cpu_continuation": 15,
+        "callee_application": 2,
+        "memory_accessor_or_reconstruction": 2
+      }
+    },
+    {
+      "path": "Xv6/ProofUvmalloc.lean",
+      "theorem_body_nonempty_lines": 1178,
+      "counts": {
+        "other_domain_or_unclassified": 492,
+        "instruction_dispatch_and_resume": 246,
+        "generic_iris_syntax_not_proven_removable": 195,
+        "cpu_continuation": 81,
+        "register_and_context_normalization": 91,
+        "callee_adapter_body": 29,
+        "memory_accessor_or_reconstruction": 30,
+        "callee_application": 6,
+        "register_preservation_case_body": 8
+      }
+    },
+    {
+      "path": "Xv6/ProofUvmdealloc.lean",
+      "theorem_body_nonempty_lines": 284,
+      "counts": {
+        "other_domain_or_unclassified": 129,
+        "instruction_dispatch_and_resume": 69,
+        "generic_iris_syntax_not_proven_removable": 31,
+        "register_and_context_normalization": 27,
+        "cpu_continuation": 23,
+        "register_preservation_case_body": 2,
+        "memory_accessor_or_reconstruction": 2,
+        "callee_application": 1
+      }
+    },
+    {
+      "path": "Xv6/ProofUvmunmap.lean",
+      "theorem_body_nonempty_lines": 795,
+      "counts": {
+        "other_domain_or_unclassified": 340,
+        "generic_iris_syntax_not_proven_removable": 145,
+        "callee_adapter_body": 2,
+        "instruction_dispatch_and_resume": 154,
+        "cpu_continuation": 50,
+        "register_and_context_normalization": 52,
+        "callee_application": 2,
+        "memory_accessor_or_reconstruction": 16,
+        "register_preservation_case_body": 34
+      }
+    },
+    {
+      "path": "Xv6/ProofUvmfree.lean",
+      "theorem_body_nonempty_lines": 221,
+      "counts": {
+        "other_domain_or_unclassified": 69,
+        "callee_adapter_body": 12,
+        "instruction_dispatch_and_resume": 54,
+        "generic_iris_syntax_not_proven_removable": 31,
+        "cpu_continuation": 15,
+        "register_and_context_normalization": 23,
+        "memory_accessor_or_reconstruction": 3,
+        "callee_application": 2,
+        "register_preservation_case_body": 12
+      }
+    },
+    {
+      "path": "Xv6/ProofUvmcopy.lean",
+      "theorem_body_nonempty_lines": 1215,
+      "counts": {
+        "other_domain_or_unclassified": 534,
+        "callee_adapter_body": 19,
+        "instruction_dispatch_and_resume": 218,
+        "generic_iris_syntax_not_proven_removable": 170,
+        "cpu_continuation": 98,
+        "register_and_context_normalization": 111,
+        "memory_accessor_or_reconstruction": 34,
+        "register_preservation_case_body": 25,
+        "callee_application": 6
+      }
+    },
+    {
+      "path": "Xv6/ProofUvmclear.lean",
+      "theorem_body_nonempty_lines": 111,
+      "counts": {
+        "other_domain_or_unclassified": 43,
+        "instruction_dispatch_and_resume": 22,
+        "generic_iris_syntax_not_proven_removable": 17,
+        "memory_accessor_or_reconstruction": 4,
+        "register_and_context_normalization": 14,
+        "cpu_continuation": 10,
+        "callee_application": 1
+      }
+    },
+    {
+      "path": "Xv6/ProofFreewalk.lean",
+      "theorem_body_nonempty_lines": 420,
+      "counts": {
+        "other_domain_or_unclassified": 163,
+        "callee_adapter_body": 7,
+        "instruction_dispatch_and_resume": 106,
+        "generic_iris_syntax_not_proven_removable": 71,
+        "cpu_continuation": 31,
+        "register_and_context_normalization": 21,
+        "callee_application": 2,
+        "register_preservation_case_body": 16,
+        "memory_accessor_or_reconstruction": 3
+      }
+    },
+    {
+      "path": "Xv6/ProofIsmapped.lean",
+      "theorem_body_nonempty_lines": 143,
+      "counts": {
+        "other_domain_or_unclassified": 62,
+        "instruction_dispatch_and_resume": 23,
+        "generic_iris_syntax_not_proven_removable": 22,
+        "register_and_context_normalization": 21,
+        "cpu_continuation": 13,
+        "callee_application": 1,
+        "memory_accessor_or_reconstruction": 1
+      }
+    }
+  ]
+}

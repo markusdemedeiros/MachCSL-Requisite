@@ -1,0 +1,87 @@
+{
+  "scope": "COPYOUT MemoryPrefix reuse, focused checks with cached imports; one-run paired Blocks comparison, no whole-build speedup claim.",
+  "snapshot": ".lake/whole-function/pre-copyout-prefix",
+  "changed_sources": [
+    {
+      "module": "Experiments.WholeFunction.CopyoutBlockFacts",
+      "source": "Experiments/WholeFunction/CopyoutBlockFacts.lean",
+      "before_lines": 199,
+      "after_lines": 199,
+      "before_sha256": "c863f17e5e763ac747022cdf4775c383222db24ede05c9b6210586bc3871a1d3",
+      "after_sha256": "17395280044392be0b38735478951edb006892562c80bb3173fdf036d95ba18f"
+    },
+    {
+      "module": "Experiments.WholeFunction.CopyoutPageJoins",
+      "source": "Experiments/WholeFunction/CopyoutPageJoins.lean",
+      "before_lines": 120,
+      "after_lines": 107,
+      "before_sha256": "7aed2521494b17092b86898fe782dc4bb9cfade855419c4e522a43b2c1f1a3cd",
+      "after_sha256": "7353dbea8031738e7a1e8cdf3ba53cfd863f029407c7f6fb6caf75b197f0f8b3"
+    },
+    {
+      "module": "Experiments.WholeFunction.CopyoutBlocks",
+      "source": "Experiments/WholeFunction/CopyoutBlocks.lean",
+      "before_lines": 336,
+      "after_lines": 119,
+      "before_sha256": "916917c5562c7de5c25a9a96f9ff90fe3446df01473b5674783b1d2b22cc8163",
+      "after_sha256": "78c3abf23b4e4ceb8cdf494445a03bda200e85ca940fda5b1c67fad3c6391885"
+    },
+    {
+      "module": "Experiments.WholeFunction.CopyoutJoins",
+      "source": "Experiments/WholeFunction/CopyoutJoins.lean",
+      "before_lines": 179,
+      "after_lines": 164,
+      "before_sha256": "4e9af1dbbab937a7db74dbc79373103973207cc67aeacffc3b1df28a9724c791",
+      "after_sha256": "5f4ebad5c1a0f29a42c9f04b00c520e758d8dd136c921961b6592cf7c0ba605d"
+    }
+  ],
+  "source_lines": {
+    "before": 834,
+    "after": 589
+  },
+  "removed": [
+    "8 hand-authored LocatedReg instruction/branch declarations",
+    "custom out_rfl and symbolic_step tactics/lemmas",
+    "all runUntil execution scripts from CopyoutBlocks",
+    "walkResult, faultResult, permissionResult, moveResult composite summaries",
+    "redundant endpoint and certificate adapters for four return paths"
+  ],
+  "new_boundary": "walkaddr/fault/probe/memmove returns use generated Symbolic.Prefix into semantic Good; resource data is preserved through Residual.prepend.",
+  "remaining_manual": [
+    "setup/header/page register summaries used by arithmetic ABI facts",
+    "semantic loop invariants, argument and result facts, frame/call/resource adapters"
+  ],
+  "paired_blocks": {
+    "before": {
+      "log": ".lake/whole-function/pre-copyout-prefix/CopyoutBlocks.log",
+      "runtime_seconds": 5.588,
+      "peak_MiB": 291.1
+    },
+    "after": {
+      "log": ".lake/whole-function/prefix-CopyoutBlocks.log",
+      "runtime_seconds": 12.214,
+      "peak_MiB": 266.9
+    }
+  },
+  "checks": {
+    "blocks": {
+      "log": ".lake/whole-function/prefix-CopyoutBlocks.log",
+      "runtime_seconds": 12.214,
+      "peak_MiB": 266.9
+    },
+    "abi_facts": {
+      "log": ".lake/whole-function/prefix-CopyoutBlockFacts.log",
+      "runtime_seconds": 5.9,
+      "peak_MiB": 276.8
+    },
+    "coverage_rejections": {
+      "log": ".lake/whole-function/prefix-CopyoutChecks.log",
+      "runtime_seconds": 5.407,
+      "peak_MiB": 380.8
+    },
+    "focused_report": ".lake/whole-function/copyout-prefix-complete.json",
+    "setup_refresh_report": ".lake/whole-function/copyout-prefix-start-refresh.json"
+  },
+  "public_contract": "Unchanged compiled_copyout : WALKADDR \u2192 VMFAULT \u2192 WALK_NOALLOC \u2192 MEMMOVE \u2192 COPYOUT; production wrappers untouched.",
+  "audit": "BlockFacts and PageJoins guards check pure certificates/semantic joins use only propext/Classical.choice/Quot.sound; RegistryClient retains its exact 37-axiom inherited audit."
+}

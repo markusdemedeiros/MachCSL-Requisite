@@ -1,0 +1,86 @@
+{
+  "scope": "Checked spatial resource planning pilot; no production changes, no whole-function correctness claim.",
+  "checks": [
+    {
+      "module": "Rules",
+      "source": "Experiments/ResourcePlanner/Rules.lean",
+      "source_sha256": "cd36d70a4c086f1ad7ac3b8f2287d6e6eec49c8f32e67720c55958e67962fea8",
+      "log": ".lake/resource-planner-rules.log",
+      "log_sha256": "4ea5d7a94a5a7657e6d1da960e267310d1d4c305865bd70d1b86829a05390d4e",
+      "success": true,
+      "service_runtime": "2.060s",
+      "memory_peak": "222.7M (swap: 0B)"
+    },
+    {
+      "module": "Planner",
+      "source": "Experiments/ResourcePlanner/Planner.lean",
+      "source_sha256": "197efb53846551b83b52786833d1c03b4eda212985bf69644549b43cc422ee30",
+      "log": ".lake/resource-planner-planner.log",
+      "log_sha256": "c7aa93d852ba182e8e0be9417c888a3345b8482a3178317e8354d0bd5fea3413",
+      "success": true,
+      "service_runtime": "3.673s",
+      "memory_peak": "247M (swap: 0B)"
+    },
+    {
+      "module": "Actual",
+      "source": "Experiments/ResourcePlanner/Actual.lean",
+      "source_sha256": "3bdd137d984b6edfea334153fe1d586d6da0f590439a3d84067d6fe23b5907c6",
+      "log": ".lake/resource-planner-actual-minimal.log",
+      "log_sha256": "b34154079f4e7ee8d0d734bbad25ca360e16fe329b3522dff3bcd02d54338562",
+      "success": true,
+      "service_runtime": "2.678s",
+      "memory_peak": "205.4M (swap: 0B)"
+    },
+    {
+      "module": "Checks",
+      "source": "Experiments/ResourcePlanner/Checks.lean",
+      "source_sha256": "85ecf4df82c0bc137914f160890e18741e9a0c96c0ab9d102a3216e19a62635d",
+      "log": ".lake/resource-planner-checks-final.log",
+      "log_sha256": "b1c4aad01b5fccf63823dd2ff1a5b38f036e68f9096f79025190cf76f52b63de",
+      "success": true,
+      "service_runtime": "3.229s",
+      "memory_peak": "223M (swap: 0B)"
+    },
+    {
+      "module": "RootReadiContract",
+      "source": ".lake/resource-planner/RootReadiContract.lean",
+      "source_sha256": "9e1b9ad8e7ecf62bfd995b0a8222d98666b7ad3f24b8b8581b8663432245de53",
+      "log": ".lake/resource-planner/minimal-contract-recheck.log",
+      "log_sha256": "eb1e7ec072818c6dac4662962ecf1be59c7211414f1fdcbfe16c8e552d3c1592",
+      "success": true,
+      "service_runtime": "2.291s",
+      "memory_peak": "213.7M (swap: 0B)"
+    }
+  ],
+  "accepted_actual_clients": [
+    "writei_kernel_boundary: actual WiArgs/wiSrc kernel arm plus arbitrary frame, source/destination windows and same-length arbitrary returned destination bytes",
+    "readi_hold_window: exact original rd_hold_win type and minimal instances, without importing original proof"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "rejection_regressions": [
+    "out-of-bounds window",
+    "insufficient fractional ownership for full window",
+    "mismatched returned length",
+    "one owner used for two requests",
+    "fractional destination used for arbitrary write",
+    "malicious solver suggests duplicate source assignment"
+  ],
+  "positive_regressions": [
+    "symbolic offsets and arbitrary frame",
+    "reordered requests and returned resources",
+    "two equivalent fractional source owners",
+    "bottleneck: choices [[0,1],[0]] require assignment [1,0]"
+  ],
+  "explicit_limits": [
+    "one requested window per source atom; adjacent split is valid but rejected, with a separate manual proof",
+    "address/content matching is syntactic or definitional, not alias/range reasoning",
+    "no map keys, fraction splitting, invariant synthesis, or user-arm fault semantics",
+    "leading pure output remains an explicit client wrapper; current generic extraction handles pure inputs"
+  ],
+  "failure_guard_count": 13,
+  "historical_failed_minimal_audit": ".lake/resource-planner/root-readi-contract.log"
+}

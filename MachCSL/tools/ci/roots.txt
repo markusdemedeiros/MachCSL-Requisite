@@ -1,0 +1,18 @@
+# The top theorems: the roots of the proof cone.  One fully qualified name
+# per line.  tools/ci/EnvFacts.lean fails if a name here is not a
+# declaration of the tree (a renamed top theorem must not empty the cone).
+# The same theorems the assumption audit pins (tools/audit/baseline.json);
+# tools/ci/lint.sh fails if the two lists differ.
+Xv6.xv6FsAdequacy_closed      # the system theorem, closed (Rocq xv6_fs_adequacy_xv6Σ)
+Xv6.xv6FsAdequacy_xv6GF       # the same at the concrete functor list, USER as a hypothesis
+Xv6.userProof                 # USER (Rocq ProofUser.UserProof)
+Xv6.unionAdequacyClosed       # the union application (Rocq union_adequacy_closed)
+Xv6.unionSyncCutNeg           # Rocq union_sync_cut_neg
+Xv6.unionResults              # Rocq UInitUnion.union_results
+Xv6.xv6NiAdequacy             # NI M2-W4: the trace-level NI theorem, closed (publication gated on W2d)
+Xv6.xv6NiTwoRun               # NI M2-W4 / M2-X4: its two-run corollary, at equal ledger histories (the ledger part, NI M3 NI-OUT)
+Xv6.xv6NiTwoRunObs            # NI M2-X4 (ruling X-R3 amended): the two-run corollary's observable form
+Xv6.xv6NiStrongInstance       # NI M2-W4: its strong instance (enters before the first ecall replay exits)
+Xv6.xv6NiOut                  # NI M3 NI-OUT: equal out-inputs (the caller's own buffers among them) push equal attributed console runs
+Xv6.xv6NiPrefix               # NI M3 no-kill K3: the prefix form of the two-run theorem (inputs a prefix, ledger histories below -> enters a prefix; a kill only truncates)
+Xv6.xv6NiDet                  # NI M3 U-3: the determinism theorem for arbitrary low code (equal first keys, the regime, positions a prefix, histories below -> the ecall skeleton and its console runs a prefix)

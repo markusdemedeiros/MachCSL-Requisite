@@ -1,0 +1,172 @@
+{
+  "created_utc": "2026-11-19T00:10:30.925838+00:00",
+  "status": "complete isolated experiment; not integrated into existing clients",
+  "checks": {
+    "FrameDeriveLemmas": {
+      "source": "Experiments/WholeFunction/FrameDeriveLemmas.lean",
+      "source_sha256": "aef1364e67ce1c30de8a20f542dda82e466739e29254258eebb88f0298a7a21b",
+      "olean_sha256": "e05d6e6c0010c7be9aba8c942b26f75a1ca0125cc144e7928bd48bc5ac032b4b",
+      "log": ".lake/whole-function/frame-derive-lemmas.log",
+      "log_sha256": "4075cb4b109781064d37a426bd570ca95e41c53ece1be7fbc5d03456f00ea05c",
+      "seconds": 2.345,
+      "peak_MiB_reported": 223.8,
+      "normal_exit": 0
+    },
+    "FrameDerive": {
+      "source": "Experiments/WholeFunction/FrameDerive.lean",
+      "source_sha256": "ee7a80dc12f9ed7bb3fd3bb4ba119969c873b68dc2403ff4c5d066cd774de716",
+      "olean_sha256": "acfbe0b16f64c2461d55c33ddaeadb4f03278a59cb1f61701ffa4da892b4fe5a",
+      "log": ".lake/whole-function/frame-derive.log",
+      "log_sha256": "21a933f17e90cf82f9fa94e3adf5d80959edfb60d8db3bfb0b55571fa0d458e6",
+      "seconds": 2.716,
+      "peak_MiB_reported": 233.7,
+      "normal_exit": 0
+    },
+    "FrameDeriveFrontend": {
+      "source": "Experiments/WholeFunction/FrameDeriveFrontend.lean",
+      "source_sha256": "266fb2af47d588297fa366d7774fe48643f2e59182b86159b21fa6f5bc02f127",
+      "olean_sha256": "084406273fabf9aef846af44a4049d6af1f0f25eb497f34d9089ca9c9550f294",
+      "log": ".lake/whole-function/frame-derive-frontend.log",
+      "log_sha256": "69f8cc0212ff14227b59a566d164b92af4824758b1ce334215b3bf140a84fee7",
+      "seconds": 4.994,
+      "peak_MiB_reported": 243.7,
+      "normal_exit": 0
+    },
+    "FrameDeriveFixtures": {
+      "source": "Experiments/WholeFunction/FrameDeriveFixtures.lean",
+      "source_sha256": "9a88f89b9e7f531b32df13deebbf663632d193a5b9dc9d20decfeeb05c63f79d",
+      "olean_sha256": "fc84263b9393f9bdf600e1b95a8e15c5897032bdd7dc18df0feb7d5fe197d957",
+      "log": ".lake/whole-function/frame-derive-fixtures.log",
+      "log_sha256": "8c7b763cc9b3212e1a77741163b41fdaeb485ff37e4db28bc9198e40905cd3bc",
+      "seconds": 3.621,
+      "peak_MiB_reported": 226.8,
+      "normal_exit": 0
+    },
+    "FrameDeriveChecks": {
+      "source": "Experiments/WholeFunction/FrameDeriveChecks.lean",
+      "source_sha256": "a4b0f9140e4347509283719054266ae49d8b6818f54d7f8a30b70ad34fb0b749",
+      "olean_sha256": "549aeca9502432b7e527dfbe741c64225562fb69eb4762dfdfe343504369d3e1",
+      "log": ".lake/whole-function/frame-derive-checks.log",
+      "log_sha256": "cca95664e7ed6dc0bb3e0667ee06af7293337215ac753110438e461dbae51b49",
+      "seconds": 101.745,
+      "peak_MiB_reported": 561.9,
+      "normal_exit": 0
+    },
+    "FrameDeriveReplay": {
+      "source": "Experiments/WholeFunction/FrameDeriveReplay.lean",
+      "source_sha256": "db1507f2f40f633a9d946b9f1b97eea51c948e95bb3911b20e11fe3e5508e5d3",
+      "olean_sha256": "7068a4ce953040121120ffd6843346f31bb35cc7517449e52d191a53533a07ec",
+      "log": ".lake/whole-function/frame-derive-replay.log",
+      "log_sha256": "e3465a2d53b6b209af15e0901cb1c4e10acff99ee1411ff15704370064943c97",
+      "seconds": 9.345,
+      "peak_MiB_reported": 232.2,
+      "normal_exit": 0
+    }
+  },
+  "source_set_sha256": "ba7bf7f0612b266ba241258dad13f7722efddbda02f7580e214a33486e36c09d",
+  "kernel_replay": [
+    {
+      "fixture": "strncpy",
+      "generated_declarations": 16,
+      "kernel_replay_ms": 575
+    },
+    {
+      "fixture": "copyin",
+      "generated_declarations": 26,
+      "kernel_replay_ms": 1582
+    },
+    {
+      "fixture": "copyout",
+      "generated_declarations": 27,
+      "kernel_replay_ms": 1771
+    },
+    {
+      "fixture": "consoleread",
+      "generated_declarations": 22,
+      "kernel_replay_ms": 1193
+    },
+    {
+      "fixture": "kexec",
+      "generated_declarations": 18,
+      "kernel_replay_ms": 1796
+    }
+  ],
+  "kernel_replay_total_ms": 6917,
+  "generated_declarations_replayed": 109,
+  "actual_fixtures": [
+    {
+      "name": "strncpy",
+      "slots": 2,
+      "saved": 2,
+      "scratch": 0
+    },
+    {
+      "name": "copyin",
+      "slots": 12,
+      "saved": 12,
+      "scratch": 0
+    },
+    {
+      "name": "copyout",
+      "slots": 14,
+      "saved": 13,
+      "scratch": 1
+    },
+    {
+      "name": "consoleread",
+      "slots": 12,
+      "saved": 8,
+      "scratch": 4,
+      "saved_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "kexec",
+      "slots": 68,
+      "saved": 4,
+      "scratch": 64,
+      "instruction_bytes": [
+        2,
+        4
+      ]
+    }
+  ],
+  "negative_checks": [
+    "missing RA save",
+    "wrong frame-size return rows",
+    "conditional entry instruction",
+    "discontinuous actual row order",
+    "ABI coverage rejects unsaved s1",
+    "ABI coverage rejects SP write",
+    "consoleread ABI coverage rejects deferred s5 write"
+  ],
+  "padding_checks": [
+    "copyout slot13",
+    "consoleread interior slot6",
+    "kexec final slot67"
+  ],
+  "axiom_audit": "FrameDeriveChecks: no additions beyond existing FrameCompiler.wp_push_plan baseline; no sorryAx",
+  "resume_note": "Only frontend diagnostic/documentation and independent replay/padding checks changed after interruption. Generated certificates and negative cases retained from the successful101.745s run; their kernel declarations replayed independently. The interrupted TERM check was not counted as success.",
+  "limitations": [
+    "Closed static instruction sequences only; conditional and shrink-wrapped layouts reject.",
+    "Aligned frame sizes8..2040bytes; -2048 is a valid push but +2048 is not a signed12 immediate for the required single pop.",
+    "Full fixture generation/checking is expensive:101.745s; keep experimental until frontend costs are improved.",
+    "Existing clients, production proofs, and shared compiler files were not edited."
+  ],
+  "runner": {
+    "wrapper": "Experiments/check.sh",
+    "memory_max": "4G",
+    "memory_high": "3G",
+    "lean_threads": 1,
+    "wall_limit_seconds": 180,
+    "serialized": true
+  }
+}

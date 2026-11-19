@@ -1,0 +1,47 @@
+# Extra liveness roots for the dead-code report (tools/find_dead.py): things
+# that are deliberately not reached by the top theorems.  Entries:
+#   decl <fully.qualified.Name>     one declaration
+#   module <Module.Name>            every declaration of a module
+#   prefix <Namespace>              every declaration under a namespace
+# Everything an entry reaches counts as live ("allowlist").  An entry that
+# matches nothing is an error (stale rows do not accumulate).
+
+# -- demos and smoke tests: results in their own right, outside every cone
+module Xv6.UnionDemo             # anti-vacuity `decide` demos for the union model (DU9)
+module Xv6.UnionAdmDemo          # the boot relation after a sync, run on transcripts (Rocq UnionAdmDemo.v)
+module MachCSL.Hello             # smoke test: iris-lean's proof mode is wired up
+module MachCSL.URunRWDemo        # the D50 go/no-go spike for runRW
+module Xv6.UserTextSpikeEcho     # the DU3 spike on echo's dumped text
+
+# -- kernel functions that are proved and linked but that nothing in this
+#    kernel image reaches (tools/ci/coverage_allow.txt has the same four)
+decl Xv6.Memcmp
+decl Xv6.Memcpy
+decl Xv6.Procdump
+decl Xv6.Spin
+
+# -- the user tier's M0 engine reading (NI M0 / M2-W3): the landed
+#    relational arm at getpid / uptime IS the functional arm `usysDet`
+#    (`uexecRetContF_det`, with `usysIotaFits_exists`, which supplies the
+#    prefix from the answer).  `round_det` itself is reached since NI M2-X4
+#    (UserretClosedRows.urc_niDetRow, at the round's cited ι); this reading
+#    is reached only when a program proof takes the det arm -- keep it until
+#    one does (claude-notes/projects/noninterference.md, "M2-X design" §3)
+decl Xv6.uexecRetContF_det
+
+# -- NI M3 FAM-1a (claude-notes/projects/noninterference.md, "M3 families
+#    as landed"): the family form is pure and conditional on `zevWf`; FAM-1b
+#    reaches it (the thirteenth root `xv6NiFam`), and is not landed (its
+#    kernel export is blocked at kfork's parent store).  Remove these rows
+#    when FAM-1b lands.
+decl Xv6.niTwoRunFam             # FAM-1b reaches (xv6NiFam); reaches zLowest_zevIn and the §9 family form
+decl Xv6.niForkChild             # FAM-1b reaches (the filings' tree, FAM-R2's derived reading, via niForkZRow)
+
+# -- NI M3 U-1 (claude-notes/projects/noninterference.md, "M3 ustep U-1 as
+#    landed"; "U-2b as landed"): the pure user step is reached by the NI
+#    roots since U-2b (`niUserRow`/`uhistChain` in `niEntryOk` and
+#    `xv6NiPhi`'s `niUserChain`), so its module row is off; the anti-vacuity
+#    check (echo's text runs to its ecall) is a result in its own right: a
+#    TEST BY DESIGN, which no root cites (U-3's `xv6NiDet` is about every
+#    program; this row says `ustep` is not vacuously `stuck` on a real one).
+module Xv6.UstepEcho             # anti-vacuity check, test by design (echo runs to its ecall under ustep)

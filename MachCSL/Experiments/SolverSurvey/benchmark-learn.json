@@ -1,0 +1,527 @@
+{
+  "method": "Paired, capped scratch-client checks of external SMT selection + Lean replay.\n\nProduction files stay untouched. Both variants import the cached engine, so\nthe paired difference isolates tactic/replay behavior. Helper compilation is\nnot included; all solver IPC and kernel checking in each client IS included.\n",
+  "engine": "learn",
+  "engine_sha256": {
+    "Experiments/SolverSurvey/SmtSlice.lean": "d1b3e727e5211767c3b239b14168dc0b465a6f7934c19fb42b78db4f0ba3396c",
+    "Experiments/SolverSurvey/SmtLearn.lean": "207f1eebe27903822b053e4c3f0eb628bd7c22e3c557eb9a949b8bff84da6e9a"
+  },
+  "rounds": 3,
+  "results": {
+    "grep": {
+      "source": "Xv6/UkGrepLoopFrame.lean",
+      "source_sha256": "650934e7c528dc9b088889b8c54a64f407f26c3096badff32c94a29114099ee0",
+      "declarations": [
+        "grepLoop_epi"
+      ],
+      "statement_check": "identical lexical declaration headers",
+      "variant_sha256": {
+        "baseline": "48ca98c87bd2f95b944098fece8e69eabf527b77fb69a36e274cef67370f3281",
+        "solver_uncleared": "5e17265f1fe37d494d0277fff88188f9e435e4cddc1c77f2353f4ac3c6c33719"
+      },
+      "edit_count": {
+        "baseline": 0,
+        "solver_uncleared": 42
+      },
+      "samples": {
+        "baseline": [
+          {
+            "exit_code": 0,
+            "log": ".lake/solver-survey/learn-grep-baseline-0.log",
+            "log_sha256": "eb3c1c1cba805173ba0a2f72d5a4a10caf00ccbf81341c59b9173d1da681286e",
+            "wall_s": 15.448,
+            "cpu_s": 15.488,
+            "peak_mib": 431.0,
+            "axioms": {
+              "Xv6.grepLoop_epi": [
+                "Classical.choice",
+                "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+                "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+                "Quot.sound",
+                "propext"
+              ]
+            },
+            "selected_hypotheses": [],
+            "learned_lemmas": 0,
+            "reused_lemmas": 0,
+            "generalization_fallbacks": 0
+          },
+          {
+            "exit_code": 0,
+            "log": ".lake/solver-survey/learn-grep-baseline-1.log",
+            "log_sha256": "18fd6f7012d4eecb9eec819fefde25b1197a7af8d45394d426dc64e6a5d08b41",
+            "wall_s": 15.998,
+            "cpu_s": 16.041,
+            "peak_mib": 438.5,
+            "axioms": {
+              "Xv6.grepLoop_epi": [
+                "Classical.choice",
+                "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+                "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+                "Quot.sound",
+                "propext"
+              ]
+            },
+            "selected_hypotheses": [],
+            "learned_lemmas": 0,
+            "reused_lemmas": 0,
+            "generalization_fallbacks": 0
+          },
+          {
+            "exit_code": 0,
+            "log": ".lake/solver-survey/learn-grep-baseline-2.log",
+            "log_sha256": "476ff72ce77f3e365e7df31ef5765cc1001c2c0e84f004ac0d50a58ced11f8e8",
+            "wall_s": 16.23,
+            "cpu_s": 16.272,
+            "peak_mib": 434.5,
+            "axioms": {
+              "Xv6.grepLoop_epi": [
+                "Classical.choice",
+                "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+                "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+                "Quot.sound",
+                "propext"
+              ]
+            },
+            "selected_hypotheses": [],
+            "learned_lemmas": 0,
+            "reused_lemmas": 0,
+            "generalization_fallbacks": 0
+          }
+        ],
+        "solver_uncleared": [
+          {
+            "exit_code": 0,
+            "log": ".lake/solver-survey/learn-grep-solver_uncleared-0.log",
+            "log_sha256": "e41a8129c1f2dfed65216607fd7db71cfc79386c7a6f7f536f476448c71e05b0",
+            "wall_s": 17.447,
+            "cpu_s": 17.557,
+            "peak_mib": 427.8,
+            "axioms": {
+              "Xv6.grepLoop_epi": [
+                "Classical.choice",
+                "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+                "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+                "Quot.sound",
+                "propext"
+              ]
+            },
+            "selected_hypotheses": [
+              {
+                "selected": 1,
+                "available": 3
+              },
+              {
+                "selected": 2,
+                "available": 3
+              },
+              {
+                "selected": 1,
+                "available": 4
+              },
+              {
+                "selected": 2,
+                "available": 4
+              },
+              {
+                "selected": 1,
+                "available": 5
+              },
+              {
+                "selected": 2,
+                "available": 5
+              },
+              {
+                "selected": 1,
+                "available": 6
+              },
+              {
+                "selected": 2,
+                "available": 6
+              },
+              {
+                "selected": 1,
+                "available": 7
+              },
+              {
+                "selected": 2,
+                "available": 7
+              },
+              {
+                "selected": 1,
+                "available": 8
+              },
+              {
+                "selected": 2,
+                "available": 8
+              },
+              {
+                "selected": 1,
+                "available": 9
+              },
+              {
+                "selected": 2,
+                "available": 9
+              },
+              {
+                "selected": 1,
+                "available": 10
+              },
+              {
+                "selected": 2,
+                "available": 10
+              },
+              {
+                "selected": 1,
+                "available": 11
+              },
+              {
+                "selected": 2,
+                "available": 11
+              },
+              {
+                "selected": 1,
+                "available": 12
+              },
+              {
+                "selected": 2,
+                "available": 12
+              },
+              {
+                "selected": 1,
+                "available": 13
+              },
+              {
+                "selected": 2,
+                "available": 13
+              },
+              {
+                "selected": 1,
+                "available": 14
+              },
+              {
+                "selected": 2,
+                "available": 14
+              },
+              {
+                "selected": 1,
+                "available": 15
+              },
+              {
+                "selected": 2,
+                "available": 15
+              },
+              {
+                "selected": 1,
+                "available": 16
+              },
+              {
+                "selected": 2,
+                "available": 16
+              }
+            ],
+            "learned_lemmas": 28,
+            "reused_lemmas": 1,
+            "generalization_fallbacks": 0
+          },
+          {
+            "exit_code": 0,
+            "log": ".lake/solver-survey/learn-grep-solver_uncleared-1.log",
+            "log_sha256": "994147761ad56f20441d247980e037a32c7067b2c72e590e93793fb352d2978a",
+            "wall_s": 17.294,
+            "cpu_s": 17.394,
+            "peak_mib": 421.5,
+            "axioms": {
+              "Xv6.grepLoop_epi": [
+                "Classical.choice",
+                "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+                "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+                "Quot.sound",
+                "propext"
+              ]
+            },
+            "selected_hypotheses": [
+              {
+                "selected": 1,
+                "available": 3
+              },
+              {
+                "selected": 2,
+                "available": 3
+              },
+              {
+                "selected": 1,
+                "available": 4
+              },
+              {
+                "selected": 2,
+                "available": 4
+              },
+              {
+                "selected": 1,
+                "available": 5
+              },
+              {
+                "selected": 2,
+                "available": 5
+              },
+              {
+                "selected": 1,
+                "available": 6
+              },
+              {
+                "selected": 2,
+                "available": 6
+              },
+              {
+                "selected": 1,
+                "available": 7
+              },
+              {
+                "selected": 2,
+                "available": 7
+              },
+              {
+                "selected": 1,
+                "available": 8
+              },
+              {
+                "selected": 2,
+                "available": 8
+              },
+              {
+                "selected": 1,
+                "available": 9
+              },
+              {
+                "selected": 2,
+                "available": 9
+              },
+              {
+                "selected": 1,
+                "available": 10
+              },
+              {
+                "selected": 2,
+                "available": 10
+              },
+              {
+                "selected": 1,
+                "available": 11
+              },
+              {
+                "selected": 2,
+                "available": 11
+              },
+              {
+                "selected": 1,
+                "available": 12
+              },
+              {
+                "selected": 2,
+                "available": 12
+              },
+              {
+                "selected": 1,
+                "available": 13
+              },
+              {
+                "selected": 2,
+                "available": 13
+              },
+              {
+                "selected": 1,
+                "available": 14
+              },
+              {
+                "selected": 2,
+                "available": 14
+              },
+              {
+                "selected": 1,
+                "available": 15
+              },
+              {
+                "selected": 2,
+                "available": 15
+              },
+              {
+                "selected": 1,
+                "available": 16
+              },
+              {
+                "selected": 2,
+                "available": 16
+              }
+            ],
+            "learned_lemmas": 28,
+            "reused_lemmas": 1,
+            "generalization_fallbacks": 0
+          },
+          {
+            "exit_code": 0,
+            "log": ".lake/solver-survey/learn-grep-solver_uncleared-2.log",
+            "log_sha256": "8d2b775dc3ffdd0be03b228b6ed1a693a73286633ca4275689e1af0bef21640d",
+            "wall_s": 17.823,
+            "cpu_s": 17.947,
+            "peak_mib": 419.1,
+            "axioms": {
+              "Xv6.grepLoop_epi": [
+                "Classical.choice",
+                "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+                "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+                "Quot.sound",
+                "propext"
+              ]
+            },
+            "selected_hypotheses": [
+              {
+                "selected": 1,
+                "available": 3
+              },
+              {
+                "selected": 2,
+                "available": 3
+              },
+              {
+                "selected": 1,
+                "available": 4
+              },
+              {
+                "selected": 2,
+                "available": 4
+              },
+              {
+                "selected": 1,
+                "available": 5
+              },
+              {
+                "selected": 2,
+                "available": 5
+              },
+              {
+                "selected": 1,
+                "available": 6
+              },
+              {
+                "selected": 2,
+                "available": 6
+              },
+              {
+                "selected": 1,
+                "available": 7
+              },
+              {
+                "selected": 2,
+                "available": 7
+              },
+              {
+                "selected": 1,
+                "available": 8
+              },
+              {
+                "selected": 2,
+                "available": 8
+              },
+              {
+                "selected": 1,
+                "available": 9
+              },
+              {
+                "selected": 2,
+                "available": 9
+              },
+              {
+                "selected": 1,
+                "available": 10
+              },
+              {
+                "selected": 2,
+                "available": 10
+              },
+              {
+                "selected": 1,
+                "available": 11
+              },
+              {
+                "selected": 2,
+                "available": 11
+              },
+              {
+                "selected": 1,
+                "available": 12
+              },
+              {
+                "selected": 2,
+                "available": 12
+              },
+              {
+                "selected": 1,
+                "available": 13
+              },
+              {
+                "selected": 2,
+                "available": 13
+              },
+              {
+                "selected": 1,
+                "available": 14
+              },
+              {
+                "selected": 2,
+                "available": 14
+              },
+              {
+                "selected": 1,
+                "available": 15
+              },
+              {
+                "selected": 2,
+                "available": 15
+              },
+              {
+                "selected": 1,
+                "available": 16
+              },
+              {
+                "selected": 2,
+                "available": 16
+              }
+            ],
+            "learned_lemmas": 28,
+            "reused_lemmas": 1,
+            "generalization_fallbacks": 0
+          }
+        ]
+      },
+      "medians": {
+        "baseline": {
+          "wall_s": 15.998,
+          "cpu_s": 16.041,
+          "peak_mib": 434.5
+        },
+        "solver_uncleared": {
+          "wall_s": 17.447,
+          "cpu_s": 17.557,
+          "peak_mib": 421.5
+        }
+      },
+      "axiom_audit": {
+        "baseline": {
+          "all_theorems_reported": true,
+          "axioms_subset_of_baseline": true
+        },
+        "solver_uncleared": {
+          "all_theorems_reported": true,
+          "axioms_subset_of_baseline": true
+        }
+      },
+      "source_ref": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+      "source_commit": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb"
+    }
+  },
+  "engine_unchanged": true,
+  "production_sources_unchanged": true,
+  "reproduction_command": "python3 Experiments/SolverSurvey/benchmark.py --engine learn --cases grep --variants baseline solver_uncleared --rounds 3 --source-ref 818a8b6a6d38d128130fa0aa7e0c0505d6850feb --report Experiments/SolverSurvey/benchmark-learn.json",
+  "historical_generator_equivalence_checked": true,
+  "interpretation": "Paired medians: learned uncleared proof is 9.06% slower than hand-tuned baseline while eliminating 13 manual hypothesis-lifetime directives. Each learned check produced 28 fresh lemmas and 1 cache reuse, so do not attribute the result primarily to caching. Same statement headers and axiom subsets; three single-worker capped samples each. Earlier uncleared-original and plain-core results are separate initial samples, not paired speedup baselines for this run."
+}

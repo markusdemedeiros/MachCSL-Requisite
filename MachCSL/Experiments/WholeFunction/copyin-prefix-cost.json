@@ -1,0 +1,82 @@
+{
+  "files": [
+    {
+      "module": "CopyinInvariant",
+      "before": 185,
+      "after": 145,
+      "delta": -40,
+      "sha256": "7b9efad65cc7ced3b49ed66af34154cd432c938d7154fe632c2a60c881906f1f"
+    },
+    {
+      "module": "CopyinClosure",
+      "before": 141,
+      "after": 105,
+      "delta": -36,
+      "sha256": "87b4fb7559416fc626e05b9e44800fba67af842e273ae9d24cff4271d006db0d"
+    },
+    {
+      "module": "CopyinBlocks",
+      "before": 176,
+      "after": 0,
+      "delta": -176,
+      "sha256": null
+    },
+    {
+      "module": "CopyinBlockFacts",
+      "before": 119,
+      "after": 0,
+      "delta": -119,
+      "sha256": null
+    },
+    {
+      "module": "CopyinJoins",
+      "before": 171,
+      "after": 194,
+      "delta": 23,
+      "sha256": "a3ab20433217320e78781306166170b9a79a79c5d6b2f6c7e08228f1626ba202"
+    },
+    {
+      "module": "CopyinStart",
+      "before": 80,
+      "after": 61,
+      "delta": -19,
+      "sha256": "8c1a13518fce997cd33eec81ea165044c819a83d381659e8064c61ce1fef816b"
+    },
+    {
+      "module": "CopyinPrefix",
+      "before": 0,
+      "after": 85,
+      "delta": 85,
+      "sha256": "2c6f4508c0b119a5b7874378fb3d13d7e6c7c480ee2e624018820d0128beb709"
+    },
+    {
+      "module": "CopyinHeaderPrefix",
+      "before": 0,
+      "after": 41,
+      "delta": 41,
+      "sha256": "7b9596e6fe98309b1930b36dfef08a5fa2ca69256b0de88803a48d4bc45d4f58"
+    }
+  ],
+  "before": 872,
+  "after": 631,
+  "source_audit": {
+    "handwritten_instruction_result_contexts": 0,
+    "manual_located_reg_records": 0,
+    "direct_runUntil_calls_in_new_client_modules": 0,
+    "admissions_or_todo_in_changed_sources": 0,
+    "removed_modules": [
+      "CopyinBlocks",
+      "CopyinBlockFacts"
+    ],
+    "shared_engine_modified": false
+  },
+  "checks": {
+    "baseline": ".lake/whole-function/pre-copyin-prefix/check.json",
+    "production": ".lake/whole-function/copyin-prefix-production.json",
+    "note": "Focused existing-cache checks, not a full or clean xv6 rebuild. Old header work was in Invariant/Closure, so the measured module timings are not a complete old/new lane benchmark.",
+    "passed": true,
+    "modules": 13,
+    "inherited_axioms": 37,
+    "maximum_peak_mib": 235.3
+  }
+}

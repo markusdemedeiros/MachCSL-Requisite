@@ -1,0 +1,655 @@
+{
+  "scope": "Single capped checks with prebuilt imports; no whole-build speedup or source-length savings claim.",
+  "reproduce": "python3 Experiments/WholeFunction/audit-strings.py",
+  "functions": {
+    "Strlen": {
+      "status": "PASS",
+      "baseline": {
+        "key": {
+          "revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+          "source_sha256": "fdcc62d27e3d91e2938364d4c0b1651dddb9301d501d5f1ab823a69b16a63d5c",
+          "audit_sha256": "4f5c64214edbe5a8b8b21585353c7ccd32b4528ca568252f5269d79e19104fb5"
+        },
+        "checks": [
+          {
+            "command": [
+              "bash",
+              "Experiments/check.sh",
+              "--root=.lake/whole-function/strings",
+              "-o",
+              ".lake/build/lib/lean/UpstreamStrlen.olean",
+              ".lake/whole-function/strings/UpstreamStrlen.lean"
+            ],
+            "source_sha256": "fdcc62d27e3d91e2938364d4c0b1651dddb9301d501d5f1ab823a69b16a63d5c",
+            "log": ".lake/whole-function/strings/strlen-baseline.log",
+            "exit_code": 0,
+            "source_changed_during_check": false,
+            "runtime_seconds": 4.828,
+            "cpu_seconds": 4.834,
+            "peak_MiB": 280.1
+          },
+          {
+            "command": [
+              "bash",
+              "Experiments/check.sh",
+              ".lake/whole-function/strings/StrlenBaselineAudit.lean"
+            ],
+            "source_sha256": "4f5c64214edbe5a8b8b21585353c7ccd32b4528ca568252f5269d79e19104fb5",
+            "log": ".lake/whole-function/strings/strlen-baseline-audit.log",
+            "exit_code": 0,
+            "source_changed_during_check": false,
+            "runtime_seconds": 1.851,
+            "cpu_seconds": 1.847,
+            "peak_MiB": 217.2
+          }
+        ],
+        "status": "PASS",
+        "axioms_sha256": "03859d08c902dff939cecf9fe7215522495f1db0d81af7131b1f2e4464e89c68"
+      },
+      "public_type": "Xv6.STRLEN",
+      "compiled_theorem": "Xv6.WholeFunction.Strlen.compiled_strlen",
+      "checks": [
+        {
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrlenComplete.olean",
+            "Experiments/WholeFunction/StrlenComplete.lean"
+          ],
+          "source_sha256": "eb8c2c591b8dcc4f0ec50016d339aec160bb19f38bbc0d04a7c006eafc357f10",
+          "log": ".lake/whole-function/strings/strlen-complete.log",
+          "exit_code": 0,
+          "source_changed_during_check": false,
+          "runtime_seconds": 2.287,
+          "cpu_seconds": 2.287,
+          "peak_MiB": 230.4
+        },
+        {
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            ".lake/whole-function/strings/StrlenCurrentAudit.lean"
+          ],
+          "source_sha256": "292e39a3e5c02b976ba973df0c6dcc75a06cc63a387910c51a2e42106f42f4c0",
+          "log": ".lake/whole-function/strings/strlen-current-audit.log",
+          "exit_code": 0,
+          "source_changed_during_check": false,
+          "runtime_seconds": 1.954,
+          "cpu_seconds": 1.954,
+          "peak_MiB": 215.9
+        }
+      ],
+      "experiment_dependency_source_hashes": {
+        "Experiments/WholeFunction/StrlenComplete.lean": "eb8c2c591b8dcc4f0ec50016d339aec160bb19f38bbc0d04a7c006eafc357f10",
+        "Experiments/WholeFunction/StrlenCompile.lean": "c885d228b317e385e1f28e44a3218b6c65dd8f37eaa51b74ee1cfa0ef7f724c4",
+        "Experiments/WholeFunction/StrlenBlocks.lean": "cafdc5eb975e806339498791e8d0f10370f3d09700ea6d0dd3a4dccca2213f8d",
+        "Experiments/WholeFunction/StrlenModel.lean": "b3ca0d7e0a6bacc297d9fdf1d72e5b9a2bb31a34cf1448ee05d309814638a458",
+        "Experiments/WholeFunction/StrlenFacts.lean": "af860d73eeb273638ff6040d171b0ac9aa20c71237164fe4642e2a7b142c5296",
+        "Experiments/WholeFunction/StrlenFrame.lean": "6a00df0b917662ecb4256e07c14abd9d61d99b366bcf3c8a19394891acf6c5ad",
+        "Experiments/WholeFunction/StrlenFrameDefs.lean": "2c1e2941f5d720c465ebe9c935871bd1cdc29dc729adc10780e51bea09187d20",
+        "Experiments/WholeFunction/FrameCompiler.lean": "ed93387a435de44ebe0878ccab142c1541e5b26abf2868b4b9d01a160aaa39bb",
+        "Experiments/WholeFunction/StackReturn.lean": "0377e7558794830b0710c213234f370bfda074d2b1f08bf8012d7381d755c6a1",
+        "Experiments/WholeFunction/StackValueWp.lean": "3a62bac40cb3f03bb3ef37ff0182c57877fa350b7704f398768c8bbf422163bd",
+        "Experiments/WholeFunction/KernelLinear.lean": "6b67376ee484cc6ae246a03caf4058b59a117bec8399ba22642f61b0992e8925",
+        "Experiments/WholeFunction/KernelStackGraph.lean": "0fe9f46ad42fa26f305212694127422edf327880991ce7e772b43e740257f9be",
+        "Experiments/WholeFunction/KernelGraph.lean": "6aad3bceffc3267747464fbbab451b7d49e829e0b87ef524fb6434e43bccbdf5",
+        "Experiments/WholeFunction/KernelDecode.lean": "4efc252c625063bb75d8bf59f681e696ef2c52bba67b53f59ed8b9ea89465da8",
+        "Experiments/WholeFunction/KernelReg.lean": "c51c37fa5a32205d9dd4f27219d7a4191f9b5510f81d95a4b81aa93bc7254a81",
+        "Experiments/WholeFunction/Binary.lean": "ad8e6b18cdff6806ae01fffb1c33121af3f814121628cd4efd6eee9ac989043c",
+        "Experiments/WholeFunction/ControlFlow.lean": "3ca88a250d32ead91ec4d48c998275278f2e319558208a63c528e34f4d7ca255",
+        "Experiments/WholeFunction/StackDecode.lean": "795788f3f0d826c3ad4650d89f7473b587f47daf29ce23a4977388622242f6e2",
+        "Experiments/WholeFunction/StackActions.lean": "21b850e33813eead618ddddcd89ba18e40a5ca6edc92ceb66fee71a1c3d14733",
+        "Experiments/WholeFunction/StackCells.lean": "ae08f93fd97e72f5b637487f5581cc69a67a8ee732e85357555cd67a52290355",
+        "Experiments/WholeFunction/StackValues.lean": "c4eb07a43911e12e312051afcaeea656964251fdf7437f314654b1e3a4994113",
+        "Experiments/WholeFunction/StackChecks.lean": "10757f98d0b59c52ae10bc033900a06216ab91f87a47e29dd2e1e81d8e570839",
+        "Experiments/WholeFunction/StackShape.lean": "51da66c96415e5d3b38d76ec60ec9df5470e7529fbc3e06bb87504b6e9f401f6",
+        "Experiments/WholeFunction/BinaryCopy.lean": "eb979dc5d58a92fe5cf291f5724cccb96ee250fdfa2af0bfd00d00d19b3d722a",
+        "Experiments/WholeFunction/StrlenBinary.lean": "247c49b3b1721665e12228807e6db6d4512fd7c8f2aee1dd43088e5bca12858b",
+        "Experiments/WholeFunction/FrameContract.lean": "c8b4e20c6ec9d37d2d80d2638dc7701da7c81b5746faea158a1d3f1ab9363281",
+        "Experiments/WholeFunction/MemoryResidual.lean": "8d429325a4646bad389fb8592174becc12459dba38afa0253516111e9eb42e3d",
+        "Experiments/WholeFunction/MemoryCompiler.lean": "d4a751de80e4fc470cfe5424d995d86011cf4a0872c3e3c5eea461db4805e250",
+        "Experiments/WholeFunction/MemoryActions.lean": "9a32f178bec55b5a04586136ca87c1352124be6899cd9815d2694eb5870b7883",
+        "Experiments/WholeFunction/MemoryModel.lean": "f270726fa4dba1cf51e3062f0617bf9a581aaa58a7c0449f8d020b81864af9c9",
+        "Experiments/WholeFunction/KernelFull.lean": "5f3c7af33c041754111b173e6b21dbcef5c993db81ffe768bbcadc4a830b15bf",
+        "Experiments/WholeFunction/KernelCalls.lean": "4367710ea1538b5f2a26cf5d0fc8478b556d231e1a995c6692a123ffa4d1ce4d",
+        "Experiments/WholeFunction/MemoryScalar.lean": "513899034d049f2c5fcb61bc33e421c64317e62319438a259579d42d19ff8f1d",
+        "Experiments/WholeFunction/Residual.lean": "c8ed3cf6466128419395f5daf8da5c89c175fb767e650bd44976245ccd2c867a",
+        "Experiments/WholeFunction/KernelSymbolic.lean": "cdffbdf0d8ba10542eee26529ba53f964633d0317461e25e799ec4594a8819dd",
+        "Experiments/WholeFunction/MemoryPrefix.lean": "4ea68f89e4c2dab6a5f146453c50147360452eaebdb964335ac7c2f3291d5633"
+      },
+      "forbidden_proof_imports": [],
+      "sources_unchanged_across_check": true,
+      "axioms": {
+        "baseline_count": 38,
+        "current_count": 37,
+        "added": [],
+        "removed": [
+          "Xv6.bcZext8EqZero._native.bv_decide.ax_1_5"
+        ],
+        "baseline": [
+          "Classical.choice",
+          "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.add_lsb0._native.bv_decide.ax_1_5",
+          "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+          "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+          "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+          "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+          "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+          "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+          "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+          "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+          "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_13._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_21._native.bv_decide.ax_1_5",
+          "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+          "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+          "MachCSL.update_bit0_eq._native.bv_decide.ax_1_5",
+          "Quot.sound",
+          "Xv6.bcZext8EqZero._native.bv_decide.ax_1_5",
+          "propext"
+        ],
+        "current": [
+          "Classical.choice",
+          "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.add_lsb0._native.bv_decide.ax_1_5",
+          "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+          "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+          "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+          "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+          "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+          "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+          "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+          "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+          "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_13._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_21._native.bv_decide.ax_1_5",
+          "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+          "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+          "MachCSL.update_bit0_eq._native.bv_decide.ax_1_5",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "old_proof_declarations_absent": [
+        "subw_len",
+        "cstrAt",
+        "cstrAt_len",
+        "cstrAt_of_nonul",
+        "strlen_iter",
+        "strlen_loop",
+        "strlen_proof"
+      ],
+      "dependency_refresh": [
+        {
+          "source": "Experiments/WholeFunction/StrlenFacts.lean",
+          "source_sha256": "af860d73eeb273638ff6040d171b0ac9aa20c71237164fe4642e2a7b142c5296",
+          "log": ".lake/whole-function/StrlenFacts-residual.log",
+          "source_association": "Owner confirmed full residual cone fresh and sources frozen before exact-original audit.",
+          "runtime_seconds": 2.708,
+          "peak_MiB": 236.0
+        },
+        {
+          "source": "Experiments/WholeFunction/StrlenModel.lean",
+          "source_sha256": "b3ca0d7e0a6bacc297d9fdf1d72e5b9a2bb31a34cf1448ee05d309814638a458",
+          "log": ".lake/whole-function/StrlenModel-residual.log",
+          "source_association": "Owner confirmed full residual cone fresh and sources frozen before exact-original audit.",
+          "runtime_seconds": 2.363,
+          "peak_MiB": 234.1
+        },
+        {
+          "source": "Experiments/WholeFunction/StrlenCompile.lean",
+          "source_sha256": "c885d228b317e385e1f28e44a3218b6c65dd8f37eaa51b74ee1cfa0ef7f724c4",
+          "log": ".lake/whole-function/StrlenCompile-residual.log",
+          "source_association": "Owner confirmed full residual cone fresh and sources frozen before exact-original audit.",
+          "runtime_seconds": 2.329,
+          "peak_MiB": 226.4
+        },
+        {
+          "source": "Experiments/WholeFunction/StrlenComplete.lean",
+          "source_sha256": "eb8c2c591b8dcc4f0ec50016d339aec160bb19f38bbc0d04a7c006eafc357f10",
+          "log": ".lake/whole-function/StrlenComplete-residual.log",
+          "source_association": "Owner confirmed full residual cone fresh and sources frozen before exact-original audit.",
+          "runtime_seconds": 2.439,
+          "peak_MiB": 235.2
+        },
+        {
+          "source": "Experiments/WholeFunction/StrlenAxioms.lean",
+          "source_sha256": "f4253122148e6cd54fe4e908a5675794fe786def2133fef8484445230a3a6290",
+          "log": ".lake/whole-function/StrlenAxioms-residual.log",
+          "source_association": "Owner confirmed full residual cone fresh and sources frozen before exact-original audit.",
+          "runtime_seconds": 1.982,
+          "peak_MiB": 223.8
+        },
+        {
+          "source": "Experiments/WholeFunction/StrlenBlocks.lean",
+          "source_sha256": "cafdc5eb975e806339498791e8d0f10370f3d09700ea6d0dd3a4dccca2213f8d",
+          "log": ".lake/whole-function/strlen-blocks.log",
+          "source_association": "Owner confirmed full residual cone fresh and sources frozen before exact-original audit.",
+          "runtime_seconds": 6.099,
+          "peak_MiB": 241.5
+        }
+      ],
+      "checkpoint": "First prefix-driven residual STRLEN; shared FrameContract and MemoryPrefix; before scalar-core integration.",
+      "snapshot_directory": ".lake/whole-function/strlen-prefix-checkpoint"
+    },
+    "Strncpy": {
+      "status": "PASS",
+      "baseline": {
+        "key": {
+          "revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+          "source_sha256": "b2b907864a3d9232dc517a2a6672efa3d961645723d3d9ed1e812fe73631d28c",
+          "audit_sha256": "3f687a2d5f37f910dd17acb91ac915c15bf6170c22d84974d956c939c943177e"
+        },
+        "checks": [
+          {
+            "command": [
+              "bash",
+              "Experiments/check.sh",
+              "--root=.lake/whole-function/strings",
+              "-o",
+              ".lake/build/lib/lean/UpstreamStrncpy.olean",
+              ".lake/whole-function/strings/UpstreamStrncpy.lean"
+            ],
+            "source_sha256": "b2b907864a3d9232dc517a2a6672efa3d961645723d3d9ed1e812fe73631d28c",
+            "log": ".lake/whole-function/strings/strncpy-baseline.log",
+            "exit_code": 0,
+            "source_changed_during_check": false,
+            "runtime_seconds": 12.195,
+            "cpu_seconds": 12.215,
+            "peak_MiB": 361.3
+          },
+          {
+            "command": [
+              "bash",
+              "Experiments/check.sh",
+              ".lake/whole-function/strings/StrncpyBaselineAudit.lean"
+            ],
+            "source_sha256": "3f687a2d5f37f910dd17acb91ac915c15bf6170c22d84974d956c939c943177e",
+            "log": ".lake/whole-function/strings/strncpy-baseline-audit.log",
+            "exit_code": 0,
+            "source_changed_during_check": false,
+            "runtime_seconds": 1.97,
+            "cpu_seconds": 1.971,
+            "peak_MiB": 214.8
+          }
+        ],
+        "status": "PASS",
+        "axioms_sha256": "03859d08c902dff939cecf9fe7215522495f1db0d81af7131b1f2e4464e89c68"
+      },
+      "public_type": "Xv6.STRNCPY",
+      "compiled_theorem": "Xv6.WholeFunction.Strncpy.compiled_strncpy",
+      "checks": [
+        {
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyComplete.olean",
+            "Experiments/WholeFunction/StrncpyComplete.lean"
+          ],
+          "source_sha256": "a15fd81ab98bd85fe35e6565bbf043621e65852e05685d724076b42a13324e1c",
+          "log": ".lake/whole-function/strings/strncpy-complete.log",
+          "exit_code": 0,
+          "source_changed_during_check": false,
+          "runtime_seconds": 2.423,
+          "cpu_seconds": 2.419,
+          "peak_MiB": 234.1
+        },
+        {
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            ".lake/whole-function/strings/StrncpyCurrentAudit.lean"
+          ],
+          "source_sha256": "f07815184eea9f7683a8e2681919dce66c7957ba261427290939d00f5270e141",
+          "log": ".lake/whole-function/strings/strncpy-current-audit.log",
+          "exit_code": 0,
+          "source_changed_during_check": false,
+          "runtime_seconds": 1.9,
+          "cpu_seconds": 1.9,
+          "peak_MiB": 215.8
+        }
+      ],
+      "experiment_dependency_source_hashes": {
+        "Experiments/WholeFunction/StrncpyComplete.lean": "a15fd81ab98bd85fe35e6565bbf043621e65852e05685d724076b42a13324e1c",
+        "Experiments/WholeFunction/StrncpyCompile.lean": "c419cd04be822e75ff6212455309e7261a61d0906de393f7aa0262a503ab89c5",
+        "Experiments/WholeFunction/StrncpyCopy.lean": "3670e45828851f5b9f629904b38902a5f54cdd3c106ff0a81a62def1149d2885",
+        "Experiments/WholeFunction/StrncpyModel.lean": "87fbced8b154698e4d403ecb887022db359468977c98b0c451a2d57a0cf27d67",
+        "Experiments/WholeFunction/StrncpySaved.lean": "1496114a455db9cafac9dc549c583943f1f1f65214710e65da92b74dee3e8fec",
+        "Experiments/WholeFunction/StrncpyFrame.lean": "2716c563606c5bdc38b3e19acdc628cc3372eb47fab9e572ca0ea9f1a1c41677",
+        "Experiments/WholeFunction/StrncpyFrameDefs.lean": "83b57ec40f230aa073ad87b049ee03b4b31d85e35b70598908fa25a98301a838",
+        "Experiments/WholeFunction/FrameCompiler.lean": "ed93387a435de44ebe0878ccab142c1541e5b26abf2868b4b9d01a160aaa39bb",
+        "Experiments/WholeFunction/StackReturn.lean": "0377e7558794830b0710c213234f370bfda074d2b1f08bf8012d7381d755c6a1",
+        "Experiments/WholeFunction/StackValueWp.lean": "3a62bac40cb3f03bb3ef37ff0182c57877fa350b7704f398768c8bbf422163bd",
+        "Experiments/WholeFunction/KernelLinear.lean": "6b67376ee484cc6ae246a03caf4058b59a117bec8399ba22642f61b0992e8925",
+        "Experiments/WholeFunction/KernelStackGraph.lean": "0fe9f46ad42fa26f305212694127422edf327880991ce7e772b43e740257f9be",
+        "Experiments/WholeFunction/KernelGraph.lean": "6aad3bceffc3267747464fbbab451b7d49e829e0b87ef524fb6434e43bccbdf5",
+        "Experiments/WholeFunction/KernelDecode.lean": "4efc252c625063bb75d8bf59f681e696ef2c52bba67b53f59ed8b9ea89465da8",
+        "Experiments/WholeFunction/KernelReg.lean": "c51c37fa5a32205d9dd4f27219d7a4191f9b5510f81d95a4b81aa93bc7254a81",
+        "Experiments/WholeFunction/Binary.lean": "ad8e6b18cdff6806ae01fffb1c33121af3f814121628cd4efd6eee9ac989043c",
+        "Experiments/WholeFunction/ControlFlow.lean": "3ca88a250d32ead91ec4d48c998275278f2e319558208a63c528e34f4d7ca255",
+        "Experiments/WholeFunction/StackDecode.lean": "795788f3f0d826c3ad4650d89f7473b587f47daf29ce23a4977388622242f6e2",
+        "Experiments/WholeFunction/StackActions.lean": "21b850e33813eead618ddddcd89ba18e40a5ca6edc92ceb66fee71a1c3d14733",
+        "Experiments/WholeFunction/StackCells.lean": "ae08f93fd97e72f5b637487f5581cc69a67a8ee732e85357555cd67a52290355",
+        "Experiments/WholeFunction/StackValues.lean": "c4eb07a43911e12e312051afcaeea656964251fdf7437f314654b1e3a4994113",
+        "Experiments/WholeFunction/StackChecks.lean": "10757f98d0b59c52ae10bc033900a06216ab91f87a47e29dd2e1e81d8e570839",
+        "Experiments/WholeFunction/StackShape.lean": "51da66c96415e5d3b38d76ec60ec9df5470e7529fbc3e06bb87504b6e9f401f6",
+        "Experiments/WholeFunction/BinaryCopy.lean": "eb979dc5d58a92fe5cf291f5724cccb96ee250fdfa2af0bfd00d00d19b3d722a",
+        "Experiments/WholeFunction/StrncpyBinary.lean": "f83be6afb2f989c6078d3d14cd5ed3229b2e5eeb6863a5d3c9c3970b5936da94",
+        "Experiments/WholeFunction/FrameContract.lean": "c8b4e20c6ec9d37d2d80d2638dc7701da7c81b5746faea158a1d3f1ab9363281",
+        "Experiments/WholeFunction/StrncpyFacts.lean": "e38b78977812914d6ba42e3109213ddfe6ca988aba34f140c2bec7a1ab9bed22",
+        "Experiments/WholeFunction/MemoryModel.lean": "f270726fa4dba1cf51e3062f0617bf9a581aaa58a7c0449f8d020b81864af9c9",
+        "Experiments/WholeFunction/KernelFull.lean": "5f3c7af33c041754111b173e6b21dbcef5c993db81ffe768bbcadc4a830b15bf",
+        "Experiments/WholeFunction/KernelCalls.lean": "4367710ea1538b5f2a26cf5d0fc8478b556d231e1a995c6692a123ffa4d1ce4d",
+        "Experiments/WholeFunction/MemoryCompiler.lean": "d4a751de80e4fc470cfe5424d995d86011cf4a0872c3e3c5eea461db4805e250",
+        "Experiments/WholeFunction/MemoryActions.lean": "9a32f178bec55b5a04586136ca87c1352124be6899cd9815d2694eb5870b7883",
+        "Experiments/WholeFunction/MemoryScalar.lean": "513899034d049f2c5fcb61bc33e421c64317e62319438a259579d42d19ff8f1d",
+        "Experiments/WholeFunction/StrncpyPad.lean": "eb77ae0265b9d2173eacc14b55677e77b80173545217bd5deae22233ceab432c"
+      },
+      "forbidden_proof_imports": [],
+      "sources_unchanged_across_check": true,
+      "axioms": {
+        "baseline_count": 38,
+        "current_count": 37,
+        "added": [],
+        "removed": [
+          "Xv6.bcZext8EqZero._native.bv_decide.ax_1_5"
+        ],
+        "baseline": [
+          "Classical.choice",
+          "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.add_lsb0._native.bv_decide.ax_1_5",
+          "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+          "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+          "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+          "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+          "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+          "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+          "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+          "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+          "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_13._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_21._native.bv_decide.ax_1_5",
+          "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+          "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+          "MachCSL.update_bit0_eq._native.bv_decide.ax_1_5",
+          "Quot.sound",
+          "Xv6.bcZext8EqZero._native.bv_decide.ax_1_5",
+          "propext"
+        ],
+        "current": [
+          "Classical.choice",
+          "MachCSL.A_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.D_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.add_lsb0._native.bv_decide.ax_1_5",
+          "MachCSL.canonical_of_lt38._native.bv_decide.ax_1_5",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_10",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_15",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_20",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_25",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_30",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_35",
+          "MachCSL.dispatchS_cases._native.bv_decide.ax_1_5",
+          "MachCSL.ext_of_pteSetAD._native.bv_decide.ax_1_10",
+          "MachCSL.extract_vpnOf._native.bv_decide.ax_1_5",
+          "MachCSL.flags_of_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_15",
+          "MachCSL.kPtr_ne_kLeaf._native.bv_decide.ax_1_20",
+          "MachCSL.match_tlbEntryOf._native.bv_decide.ax_1_6",
+          "MachCSL.nthByte_hi0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_hi1._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo0._native.bv_decide.ax_1_5",
+          "MachCSL.nthByte_lo1._native.bv_decide.ax_1_5",
+          "MachCSL.paOf_id._native.bv_decide.ax_1_5",
+          "MachCSL.page_mask_same8._native.bv_decide.ax_1_5",
+          "MachCSL.ppn_of_pteSetAD._native.bv_decide.ax_1_9",
+          "MachCSL.pteSetAD_pteSetAD._native.bv_decide.ax_1_8",
+          "MachCSL.scause_of_trap._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_13._native.bv_decide.ax_1_5",
+          "MachCSL.sext_lsb0_21._native.bv_decide.ax_1_5",
+          "MachCSL.smFacts_trapMs._native.bv_decide.ax_1_5",
+          "MachCSL.stvecDirect_base._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_sie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spie._native.bv_decide.ax_1_5",
+          "MachCSL.trapMs_spp._native.bv_decide.ax_1_5",
+          "MachCSL.update_bit0_eq._native.bv_decide.ax_1_5",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "old_proof_declarations_absent": [
+        "sy_E_add",
+        "sy_E_negone",
+        "sy_sext32",
+        "sy_sub1",
+        "sy_addiw_dec",
+        "sy_slt_zero",
+        "sy_ite_blez",
+        "sy_ite_bgtz",
+        "sy_extract",
+        "sy_succ",
+        "sy_pred",
+        "sy_pad_w",
+        "sy_subw_pad",
+        "sy_nil",
+        "syKept",
+        "syKept_refl",
+        "syKept_trans",
+        "syKept_set14",
+        "syPadKept",
+        "syPadKept_trans",
+        "syKept_of_pad",
+        "sncpy_pad_loop",
+        "sncpyCopyPost",
+        "sncpy_copy_loop",
+        "strncpy_proof"
+      ],
+      "dependent_refresh": [
+        {
+          "module": "Experiments.WholeFunction.StrncpySaved",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpySaved.olean",
+            "Experiments/WholeFunction/StrncpySaved.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "1496114a455db9cafac9dc549c583943f1f1f65214710e65da92b74dee3e8fec",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpySaved.log",
+          "runtime_seconds": 2.139,
+          "cpu_seconds": 2.137,
+          "peak_MiB": 227.1
+        },
+        {
+          "module": "Experiments.WholeFunction.StrncpyFacts",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyFacts.olean",
+            "Experiments/WholeFunction/StrncpyFacts.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "e38b78977812914d6ba42e3109213ddfe6ca988aba34f140c2bec7a1ab9bed22",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpyFacts.log",
+          "runtime_seconds": 4.009,
+          "cpu_seconds": 4.025,
+          "peak_MiB": 255.2
+        },
+        {
+          "module": "Experiments.WholeFunction.StrncpyModel",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyModel.olean",
+            "Experiments/WholeFunction/StrncpyModel.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "87fbced8b154698e4d403ecb887022db359468977c98b0c451a2d57a0cf27d67",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpyModel.log",
+          "runtime_seconds": 2.476,
+          "cpu_seconds": 2.481,
+          "peak_MiB": 236.7
+        },
+        {
+          "module": "Experiments.WholeFunction.StrncpyCopy",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyCopy.olean",
+            "Experiments/WholeFunction/StrncpyCopy.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "3670e45828851f5b9f629904b38902a5f54cdd3c106ff0a81a62def1149d2885",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpyCopy.log",
+          "runtime_seconds": 3.875,
+          "cpu_seconds": 3.881,
+          "peak_MiB": 247.2
+        },
+        {
+          "module": "Experiments.WholeFunction.StrncpyPad",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyPad.olean",
+            "Experiments/WholeFunction/StrncpyPad.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "eb77ae0265b9d2173eacc14b55677e77b80173545217bd5deae22233ceab432c",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpyPad.log",
+          "runtime_seconds": 3.627,
+          "cpu_seconds": 3.634,
+          "peak_MiB": 243.5
+        },
+        {
+          "module": "Experiments.WholeFunction.StrncpyCompile",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyCompile.olean",
+            "Experiments/WholeFunction/StrncpyCompile.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "c419cd04be822e75ff6212455309e7261a61d0906de393f7aa0262a503ab89c5",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpyCompile.log",
+          "runtime_seconds": 1.955,
+          "cpu_seconds": 1.947,
+          "peak_MiB": 225.2
+        },
+        {
+          "module": "Experiments.WholeFunction.StrncpyComplete",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyComplete.olean",
+            "Experiments/WholeFunction/StrncpyComplete.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "a15fd81ab98bd85fe35e6565bbf043621e65852e05685d724076b42a13324e1c",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpyComplete.log",
+          "runtime_seconds": 2.465,
+          "cpu_seconds": 2.466,
+          "peak_MiB": 237.9
+        },
+        {
+          "module": "Experiments.WholeFunction.StrncpyAudit",
+          "command": [
+            "bash",
+            "Experiments/check.sh",
+            "-o",
+            ".lake/build/lib/lean/Experiments/WholeFunction/StrncpyAudit.olean",
+            "Experiments/WholeFunction/StrncpyAudit.lean"
+          ],
+          "exit_code": 0,
+          "source_sha256": "649eacb27545dfe57c098973ada02d126ae8c9bac04b5fd942ddfc5bc043794c",
+          "unchanged_during_check": true,
+          "log": ".lake/whole-function/strings/shared-frame/StrncpyAudit.log",
+          "runtime_seconds": 2.042,
+          "cpu_seconds": 2.039,
+          "peak_MiB": 224.0
+        }
+      ],
+      "checkpoint": "Shared FrameContract migration; complete original direct-plan body, before any residual body refinement."
+    }
+  },
+  "checkpoint": "First prefix-driven STRLEN PASS; preserved STRNCPY shared-frame checkpoint.",
+  "initial_report": "string-integration-initial.json",
+  "policy": {
+    "wrapper": "Experiments/check.sh",
+    "max_memory_GiB": 4,
+    "timeout_seconds": 180,
+    "lean_workers": 1,
+    "serialized": true,
+    "production_edits": false
+  },
+  "baseline_reuse": "--reuse-baseline validates matching pinned source, generated audit and saved axiom-file hashes before skipping original proof checks.",
+  "status": "PASS"
+}

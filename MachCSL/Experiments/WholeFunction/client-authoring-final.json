@@ -1,0 +1,165 @@
+{
+  "method": "Lexical occurrence counts after blanking comments and strings; physical LOC retains both.",
+  "scope": "All function-prefix client files except audit/check modules. Shared engines excluded. These cohorts are not dependency closures, proof-effort estimates, or total-code savings.",
+  "validation": "Source inventory only; this report does not assert that current sources compile.",
+  "baseline_revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+  "patterns": {
+    "instruction_step_occurrences": "\\b(?:k_step|k_step_gen)\\b",
+    "spatial_tactic_occurrences": "\\b(?:iintro|iframe|iexact|iapply|isplitl|isplitr|icases|ihave|iexists|idestruct|inext)\\b",
+    "interrupt_transport_occurrences": "\\bwpNext_(?:shift|at|mono|intro_pin)\\b",
+    "byte_ownership_accessor_occurrences": "\\bbyteBuf_(?:acc|upd)\\b"
+  },
+  "functions": {
+    "Copyin": {
+      "original": {
+        "source": "Xv6/ProofCopyin.lean",
+        "sha256": "200112956f5c78a52c1b6882b59e105dc9bc61a280dac3117f3f6d058402278d",
+        "counts": {
+          "physical_lines": 1143,
+          "instruction_step_occurrences": 72,
+          "spatial_tactic_occurrences": 202,
+          "interrupt_transport_occurrences": 27,
+          "byte_ownership_accessor_occurrences": 0
+        }
+      },
+      "client": {
+        "counts": {
+          "physical_lines": 2007,
+          "instruction_step_occurrences": 0,
+          "spatial_tactic_occurrences": 95,
+          "interrupt_transport_occurrences": 16,
+          "byte_ownership_accessor_occurrences": 0
+        },
+        "files": {
+          "Experiments/WholeFunction/CopyinBoundary.lean": "1afec58a9775b9fc3b55b74b792f5d94f34613764fe8c31b2d30ce9fa9131dcb",
+          "Experiments/WholeFunction/CopyinCallClosure.lean": "e65de8a6138cdb599cc3fa9b77b9f96f9b2f270d47a1ba1c351de3e6469bffbc",
+          "Experiments/WholeFunction/CopyinCallFacts.lean": "8e3d9354a0162cf663f41cbe0b118505010e9fdc1011f233cb3da674ad0893a1",
+          "Experiments/WholeFunction/CopyinChunkFacts.lean": "0a96b6e9d550ea959506a1bd06ba8ce0ce4003ec8e9af427223ca36bebf43a7d",
+          "Experiments/WholeFunction/CopyinClosure.lean": "87b4fb7559416fc626e05b9e44800fba67af842e273ae9d24cff4271d006db0d",
+          "Experiments/WholeFunction/CopyinComplete.lean": "c128e226c6b2a584b5bc004a1ba0976cfb0b3937eb1505aaa1f2c2a897954c07",
+          "Experiments/WholeFunction/CopyinDispatch.lean": "45bf60433307180a0e0b3936af790ea2465b85a3166454f9462ed7d9d812cc38",
+          "Experiments/WholeFunction/CopyinEntry.lean": "5e91ce5c5dc3b85e89fc406fe75f9d11f922e7e68a767bec4b08b4a029c42e15",
+          "Experiments/WholeFunction/CopyinExit.lean": "1dfb97b95707191c367303ab9cc46d3d7d2bf0c83602547e1032bc3f12cc7d63",
+          "Experiments/WholeFunction/CopyinHeaderPrefix.lean": "7b9596e6fe98309b1930b36dfef08a5fa2ca69256b0de88803a48d4bc45d4f58",
+          "Experiments/WholeFunction/CopyinInvariant.lean": "7b9efad65cc7ced3b49ed66af34154cd432c938d7154fe632c2a60c881906f1f",
+          "Experiments/WholeFunction/CopyinJoins.lean": "a3ab20433217320e78781306166170b9a79a79c5d6b2f6c7e08228f1626ba202",
+          "Experiments/WholeFunction/CopyinModel.lean": "8c1c9ce47e6b9573ffeb30849026d0df867396d18590cddc6b799fea8463935d",
+          "Experiments/WholeFunction/CopyinPageFacts.lean": "f789e3797ca5bd887008b65660ae3bdcb04e54dc5c46f83834e8a102376b7305",
+          "Experiments/WholeFunction/CopyinPrefix.lean": "2c6f4508c0b119a5b7874378fb3d13d7e6c7c480ee2e624018820d0128beb709",
+          "Experiments/WholeFunction/CopyinPure.lean": "33baf326f450614e70fc36b1e1e78c2fc6d0025e89a8a7ee94c777580628065e",
+          "Experiments/WholeFunction/CopyinRegistryClient.lean": "ef5c3b1e57ad608c5e96475f374fd480db7ad24f78e02470f95c8b9e6a4aff10",
+          "Experiments/WholeFunction/CopyinStart.lean": "8c1a13518fce997cd33eec81ea165044c819a83d381659e8064c61ce1fef816b"
+        }
+      }
+    },
+    "Copyout": {
+      "original": {
+        "source": "Xv6/ProofCopyout.lean",
+        "sha256": "030515ac5f7c1e9bf5546e49ac3809308a69cfb7c92b3adcc2b72039b791c041",
+        "counts": {
+          "physical_lines": 1317,
+          "instruction_step_occurrences": 93,
+          "spatial_tactic_occurrences": 233,
+          "interrupt_transport_occurrences": 30,
+          "byte_ownership_accessor_occurrences": 0
+        }
+      },
+      "client": {
+        "counts": {
+          "physical_lines": 2567,
+          "instruction_step_occurrences": 1,
+          "spatial_tactic_occurrences": 181,
+          "interrupt_transport_occurrences": 29,
+          "byte_ownership_accessor_occurrences": 0
+        },
+        "files": {
+          "Experiments/WholeFunction/CopyoutBlockFacts.lean": "17395280044392be0b38735478951edb006892562c80bb3173fdf036d95ba18f",
+          "Experiments/WholeFunction/CopyoutBlocks.lean": "78c3abf23b4e4ceb8cdf494445a03bda200e85ca940fda5b1c67fad3c6391885",
+          "Experiments/WholeFunction/CopyoutBoundary.lean": "858997170e0ebcd73cd835cb9d21677efa8f411c79cb6d0920c8ce5661582adb",
+          "Experiments/WholeFunction/CopyoutCallClosure.lean": "4dcd737cc2dfe5f6616777c7f25e469141ec4d0376e1252fd2ac8276dd4fc0fa",
+          "Experiments/WholeFunction/CopyoutCallFacts.lean": "cb7b427dd6f074571765136230010a8532e741947d9d1c3949f716bae310096a",
+          "Experiments/WholeFunction/CopyoutCallRegistry.lean": "0c4751f7af378b5610f8980a62dcf870b43255d81c874f43c08c8c02657d3eee",
+          "Experiments/WholeFunction/CopyoutCalls.lean": "2f3aa3f0986f3bee46315ada209804289c2293391969f1ddf28ae7cbdb2605e4",
+          "Experiments/WholeFunction/CopyoutClosure.lean": "58ad39dd645fe89909b4bb280a3e2132d4e88b3f1b812117fd546a0beabe697c",
+          "Experiments/WholeFunction/CopyoutComplete.lean": "29d2f6f7a178819e242ff764fad408763736204986aea4244b11d8439b956d57",
+          "Experiments/WholeFunction/CopyoutEntry.lean": "5661d5d7e20e812f19cb34b1dc24c15d24fa88f2ca0afd6bb98a836253439b74",
+          "Experiments/WholeFunction/CopyoutExit.lean": "5fdfdb3986dde63d8fd757fee1b60f337d3eac13d613b502ca915196489cb9ab",
+          "Experiments/WholeFunction/CopyoutFrame.lean": "2d7df86a8486101109a58dbf8a47ca09cf1d5b900764faed48dcc4a2e29ccaec",
+          "Experiments/WholeFunction/CopyoutFrameDefs.lean": "f1fea3af6220bb8925c7f5348f4b9de772810819f3ea9f0a40b5548f707682a8",
+          "Experiments/WholeFunction/CopyoutInvariant.lean": "0ff20fb98fe12d5e7f8f8360fef99ab55e939ed45e19f31212ebaa1eb198ac44",
+          "Experiments/WholeFunction/CopyoutJoins.lean": "5f4ebad5c1a0f29a42c9f04b00c520e758d8dd136c921961b6592cf7c0ba605d",
+          "Experiments/WholeFunction/CopyoutModel.lean": "8ca818216e5d1848212e5664077ff0adc4c53a8ea5b173d00ea57878c51e3caf",
+          "Experiments/WholeFunction/CopyoutPageJoins.lean": "7353dbea8031738e7a1e8cdf3ba53cfd863f029407c7f6fb6caf75b197f0f8b3",
+          "Experiments/WholeFunction/CopyoutPure.lean": "e99992fb8d81a516f69cda3ec4e4b3535b1ffa2943b75da63c4d6d0b9eea35f6",
+          "Experiments/WholeFunction/CopyoutRegistryClient.lean": "b289ac0a511bcf44447b2bd2db74fa8554c08f08dade289c834a3e2a8e5ef300",
+          "Experiments/WholeFunction/CopyoutStart.lean": "048190555412cddbc679fa1b31fc06202b70074b5e2f9052dfab493f3834c094"
+        }
+      }
+    },
+    "Strlen": {
+      "original": {
+        "source": "Xv6/ProofStrlen.lean",
+        "sha256": "fdcc62d27e3d91e2938364d4c0b1651dddb9301d501d5f1ab823a69b16a63d5c",
+        "counts": {
+          "physical_lines": 289,
+          "instruction_step_occurrences": 10,
+          "spatial_tactic_occurrences": 62,
+          "interrupt_transport_occurrences": 9,
+          "byte_ownership_accessor_occurrences": 2
+        }
+      },
+      "client": {
+        "counts": {
+          "physical_lines": 474,
+          "instruction_step_occurrences": 0,
+          "spatial_tactic_occurrences": 30,
+          "interrupt_transport_occurrences": 7,
+          "byte_ownership_accessor_occurrences": 0
+        },
+        "files": {
+          "Experiments/WholeFunction/StrlenBinary.lean": "247c49b3b1721665e12228807e6db6d4512fd7c8f2aee1dd43088e5bca12858b",
+          "Experiments/WholeFunction/StrlenBlocks.lean": "05930b21c30c326ede553930072638bb3c3f936c22e8a18789ca353147d15bb6",
+          "Experiments/WholeFunction/StrlenCompile.lean": "12a0a3942799b69f087a7ea3269fdece9084b4d0aea3e1e23daba5889318fa54",
+          "Experiments/WholeFunction/StrlenComplete.lean": "8fe25b98959328ee20023be9e7eed7e678b41e345c09fbb9501dcbca195d4321",
+          "Experiments/WholeFunction/StrlenFacts.lean": "9cc4e202f4c244356af8d7fe0479c9754d1e7bd8a36c27f0983bcf817b3807f9",
+          "Experiments/WholeFunction/StrlenFrame.lean": "6a00df0b917662ecb4256e07c14abd9d61d99b366bcf3c8a19394891acf6c5ad",
+          "Experiments/WholeFunction/StrlenFrameDefs.lean": "2c1e2941f5d720c465ebe9c935871bd1cdc29dc729adc10780e51bea09187d20",
+          "Experiments/WholeFunction/StrlenModel.lean": "2348a068415a11cb2e62a952cb6cde572568a8e4b1ac6c48c54281cad66468fd"
+        }
+      }
+    },
+    "Strncpy": {
+      "original": {
+        "source": "Xv6/ProofStrncpy.lean",
+        "sha256": "b2b907864a3d9232dc517a2a6672efa3d961645723d3d9ed1e812fe73631d28c",
+        "counts": {
+          "physical_lines": 672,
+          "instruction_step_occurrences": 25,
+          "spatial_tactic_occurrences": 100,
+          "interrupt_transport_occurrences": 12,
+          "byte_ownership_accessor_occurrences": 4
+        }
+      },
+      "client": {
+        "counts": {
+          "physical_lines": 815,
+          "instruction_step_occurrences": 0,
+          "spatial_tactic_occurrences": 26,
+          "interrupt_transport_occurrences": 7,
+          "byte_ownership_accessor_occurrences": 0
+        },
+        "files": {
+          "Experiments/WholeFunction/StrncpyBinary.lean": "f83be6afb2f989c6078d3d14cd5ed3229b2e5eeb6863a5d3c9c3970b5936da94",
+          "Experiments/WholeFunction/StrncpyCompile.lean": "ec9e3ecc49f8f7b21606fa971235b9399012a130b412ef2add5eab7f3aa3659b",
+          "Experiments/WholeFunction/StrncpyComplete.lean": "6b0c35bff748842ce782382d4b3d5065f32410738ef248faaa369f8036d0b84a",
+          "Experiments/WholeFunction/StrncpyCopy.lean": "f91da262f1e291a068921c5aee768ba58c3d915065cac83ebaa312525e4578b8",
+          "Experiments/WholeFunction/StrncpyFacts.lean": "e38b78977812914d6ba42e3109213ddfe6ca988aba34f140c2bec7a1ab9bed22",
+          "Experiments/WholeFunction/StrncpyFrame.lean": "2716c563606c5bdc38b3e19acdc628cc3372eb47fab9e572ca0ea9f1a1c41677",
+          "Experiments/WholeFunction/StrncpyFrameDefs.lean": "83b57ec40f230aa073ad87b049ee03b4b31d85e35b70598908fa25a98301a838",
+          "Experiments/WholeFunction/StrncpyModel.lean": "3f7bbc5d230124960ec96fe789e9db93913d22b466131f3b907639f1735f5030",
+          "Experiments/WholeFunction/StrncpyPad.lean": "c97150ce99ca7c58f4a87b120c0512a88f49c13925be6a8c3a07e7dca9a1d743"
+        }
+      }
+    }
+  }
+}

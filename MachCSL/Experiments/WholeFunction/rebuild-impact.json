@@ -1,0 +1,3937 @@
+{
+  "method": "Read-only source-import graph and hash-matched per-module service runtime sums; each distinct module counted once.",
+  "limitations": [
+    "Sums estimate serial source elaboration with cached imports, not an observed clean or Lake incremental build.",
+    "Cached external imports, Lake scheduling/artifact costs, and Z3 setup are excluded; service runtime excludes waiting for the shared lock.",
+    "Module source hashes are checked. Historical timing manifests do not record transitive import artifact hashes; separate suite measurements are estimates, not one clean-build trace.",
+    "Import closure conservatively invalidates all source dependents; no claim of semantic minimality.",
+    "Shared copy-family support includes domain adapters and binary image data. Shared kernel backend includes test-named modules actually imported; classification is by role, not elimination of proof obligations.",
+    "A module may be shared by both functions yet still be function-specific; cross-function support is reported separately.",
+    "Missing/invalid timings are not zero-cost modules. Compare totals only where measurement coverage is complete."
+  ],
+  "timing_manifests": {
+    "Experiments/WholeFunction/results.json": {
+      "sha256": "2e4f200a1c0e0bfb249a9ae547b3552917344df6bfe08b7a3f7a78a2d5e2d79f",
+      "scope": "Focused checks with cached external imports; not a whole-build benchmark"
+    },
+    "Experiments/SolverSurvey/check-results.json": {
+      "sha256": "b5a8f36a699cbb819173db4988e0778ddbbff1aac62dfc01cbe4d23a10f5258b",
+      "scope": "Focused correctness checks with cached external imports; not build benchmarks"
+    }
+  },
+  "roots": {
+    "Xv6.ProofCopyin": {
+      "support": {
+        "module_count": 42,
+        "modules": [
+          "Experiments.WholeFunction.Binary",
+          "Experiments.WholeFunction.BinaryCopy",
+          "Experiments.WholeFunction.ControlFlow",
+          "Experiments.WholeFunction.CopyCallRegistry",
+          "Experiments.WholeFunction.CopyCalls",
+          "Experiments.WholeFunction.CopyContracts",
+          "Experiments.WholeFunction.CopyControl",
+          "Experiments.WholeFunction.CopyEffects",
+          "Experiments.WholeFunction.CopyinBlockFacts",
+          "Experiments.WholeFunction.CopyinBlocks",
+          "Experiments.WholeFunction.CopyinBoundary",
+          "Experiments.WholeFunction.CopyinCallClosure",
+          "Experiments.WholeFunction.CopyinCallFacts",
+          "Experiments.WholeFunction.CopyinChunkFacts",
+          "Experiments.WholeFunction.CopyinClosure",
+          "Experiments.WholeFunction.CopyinComplete",
+          "Experiments.WholeFunction.CopyinDispatch",
+          "Experiments.WholeFunction.CopyinEntry",
+          "Experiments.WholeFunction.CopyinExit",
+          "Experiments.WholeFunction.CopyinInvariant",
+          "Experiments.WholeFunction.CopyinJoins",
+          "Experiments.WholeFunction.CopyinModel",
+          "Experiments.WholeFunction.CopyinPageFacts",
+          "Experiments.WholeFunction.CopyinPure",
+          "Experiments.WholeFunction.CopyinStart",
+          "Experiments.WholeFunction.KernelCalls",
+          "Experiments.WholeFunction.KernelDecode",
+          "Experiments.WholeFunction.KernelDispatch",
+          "Experiments.WholeFunction.KernelFull",
+          "Experiments.WholeFunction.KernelGraph",
+          "Experiments.WholeFunction.KernelLinear",
+          "Experiments.WholeFunction.KernelReg",
+          "Experiments.WholeFunction.KernelStackGraph",
+          "Experiments.WholeFunction.KernelSymbolic",
+          "Experiments.WholeFunction.StackActions",
+          "Experiments.WholeFunction.StackCells",
+          "Experiments.WholeFunction.StackChecks",
+          "Experiments.WholeFunction.StackDecode",
+          "Experiments.WholeFunction.StackReturn",
+          "Experiments.WholeFunction.StackShape",
+          "Experiments.WholeFunction.StackValueWp",
+          "Experiments.WholeFunction.StackValues"
+        ],
+        "measured_module_count": 42,
+        "measured_service_seconds_sum": 155.335,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "support_plus_production_wrapper": {
+        "module_count": 43,
+        "modules": [
+          "Experiments.WholeFunction.Binary",
+          "Experiments.WholeFunction.BinaryCopy",
+          "Experiments.WholeFunction.ControlFlow",
+          "Experiments.WholeFunction.CopyCallRegistry",
+          "Experiments.WholeFunction.CopyCalls",
+          "Experiments.WholeFunction.CopyContracts",
+          "Experiments.WholeFunction.CopyControl",
+          "Experiments.WholeFunction.CopyEffects",
+          "Experiments.WholeFunction.CopyinBlockFacts",
+          "Experiments.WholeFunction.CopyinBlocks",
+          "Experiments.WholeFunction.CopyinBoundary",
+          "Experiments.WholeFunction.CopyinCallClosure",
+          "Experiments.WholeFunction.CopyinCallFacts",
+          "Experiments.WholeFunction.CopyinChunkFacts",
+          "Experiments.WholeFunction.CopyinClosure",
+          "Experiments.WholeFunction.CopyinComplete",
+          "Experiments.WholeFunction.CopyinDispatch",
+          "Experiments.WholeFunction.CopyinEntry",
+          "Experiments.WholeFunction.CopyinExit",
+          "Experiments.WholeFunction.CopyinInvariant",
+          "Experiments.WholeFunction.CopyinJoins",
+          "Experiments.WholeFunction.CopyinModel",
+          "Experiments.WholeFunction.CopyinPageFacts",
+          "Experiments.WholeFunction.CopyinPure",
+          "Experiments.WholeFunction.CopyinStart",
+          "Experiments.WholeFunction.KernelCalls",
+          "Experiments.WholeFunction.KernelDecode",
+          "Experiments.WholeFunction.KernelDispatch",
+          "Experiments.WholeFunction.KernelFull",
+          "Experiments.WholeFunction.KernelGraph",
+          "Experiments.WholeFunction.KernelLinear",
+          "Experiments.WholeFunction.KernelReg",
+          "Experiments.WholeFunction.KernelStackGraph",
+          "Experiments.WholeFunction.KernelSymbolic",
+          "Experiments.WholeFunction.StackActions",
+          "Experiments.WholeFunction.StackCells",
+          "Experiments.WholeFunction.StackChecks",
+          "Experiments.WholeFunction.StackDecode",
+          "Experiments.WholeFunction.StackReturn",
+          "Experiments.WholeFunction.StackShape",
+          "Experiments.WholeFunction.StackValueWp",
+          "Experiments.WholeFunction.StackValues",
+          "Xv6.ProofCopyin"
+        ],
+        "measured_module_count": 43,
+        "measured_service_seconds_sum": 157.327,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "partition": {
+        "function_specific": {
+          "module_count": 17,
+          "modules": [
+            "Experiments.WholeFunction.CopyinBlockFacts",
+            "Experiments.WholeFunction.CopyinBlocks",
+            "Experiments.WholeFunction.CopyinBoundary",
+            "Experiments.WholeFunction.CopyinCallClosure",
+            "Experiments.WholeFunction.CopyinCallFacts",
+            "Experiments.WholeFunction.CopyinChunkFacts",
+            "Experiments.WholeFunction.CopyinClosure",
+            "Experiments.WholeFunction.CopyinComplete",
+            "Experiments.WholeFunction.CopyinDispatch",
+            "Experiments.WholeFunction.CopyinEntry",
+            "Experiments.WholeFunction.CopyinExit",
+            "Experiments.WholeFunction.CopyinInvariant",
+            "Experiments.WholeFunction.CopyinJoins",
+            "Experiments.WholeFunction.CopyinModel",
+            "Experiments.WholeFunction.CopyinPageFacts",
+            "Experiments.WholeFunction.CopyinPure",
+            "Experiments.WholeFunction.CopyinStart"
+          ],
+          "measured_module_count": 17,
+          "measured_service_seconds_sum": 49.711,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "shared_copy_family_support": {
+          "module_count": 6,
+          "modules": [
+            "Experiments.WholeFunction.BinaryCopy",
+            "Experiments.WholeFunction.CopyCallRegistry",
+            "Experiments.WholeFunction.CopyCalls",
+            "Experiments.WholeFunction.CopyContracts",
+            "Experiments.WholeFunction.CopyControl",
+            "Experiments.WholeFunction.CopyEffects"
+          ],
+          "measured_module_count": 6,
+          "measured_service_seconds_sum": 52.632,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "shared_kernel_backend": {
+          "module_count": 19,
+          "modules": [
+            "Experiments.WholeFunction.Binary",
+            "Experiments.WholeFunction.ControlFlow",
+            "Experiments.WholeFunction.KernelCalls",
+            "Experiments.WholeFunction.KernelDecode",
+            "Experiments.WholeFunction.KernelDispatch",
+            "Experiments.WholeFunction.KernelFull",
+            "Experiments.WholeFunction.KernelGraph",
+            "Experiments.WholeFunction.KernelLinear",
+            "Experiments.WholeFunction.KernelReg",
+            "Experiments.WholeFunction.KernelStackGraph",
+            "Experiments.WholeFunction.KernelSymbolic",
+            "Experiments.WholeFunction.StackActions",
+            "Experiments.WholeFunction.StackCells",
+            "Experiments.WholeFunction.StackChecks",
+            "Experiments.WholeFunction.StackDecode",
+            "Experiments.WholeFunction.StackReturn",
+            "Experiments.WholeFunction.StackShape",
+            "Experiments.WholeFunction.StackValueWp",
+            "Experiments.WholeFunction.StackValues"
+          ],
+          "measured_module_count": 19,
+          "measured_service_seconds_sum": 52.992,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        }
+      },
+      "nonexperiment_imports_cached": [
+        "Iris.Algebra.Functions",
+        "Iris.Algebra.IProp",
+        "Iris.Algebra.Lib.ExclAuth",
+        "Iris.BI.Lib.Fixpoint",
+        "Iris.BI.Lib.GenHeap",
+        "Iris.BI.Lib.MonoList",
+        "Iris.BI.Lib.MonoNat",
+        "Iris.Instances.Lib.CInvariants",
+        "Iris.Instances.Lib.GhostMap",
+        "Iris.Instances.Lib.GhostVar",
+        "Iris.Instances.Lib.Invariants",
+        "Iris.Instances.Lib.NaInvariants",
+        "Iris.Instances.Lib.SavedProp",
+        "Iris.ProgramLogic.Language",
+        "Iris.ProgramLogic.Lifting",
+        "Iris.ProgramLogic.WeakestPre",
+        "Iris.ProofMode",
+        "Iris.ProofMode.Tactics.Frame",
+        "Lean",
+        "Lean.Meta.Tactic.Simp",
+        "LeanRV64D.Arithmetic",
+        "LeanRV64D.BaseInsts",
+        "LeanRV64D.Defs",
+        "LeanRV64D.Fetch",
+        "LeanRV64D.Model",
+        "LeanRV64D.PlatformConfig",
+        "LeanRV64D.Pma",
+        "LeanRV64D.Step",
+        "LeanRV64D.VmemPte",
+        "LeanRV64D.VmemTlb",
+        "LeanRV64D.Xv6Extras",
+        "LeanRV64D.ZicsrInsts",
+        "MachCSL.AluFacts",
+        "MachCSL.ArchReset",
+        "MachCSL.Boot",
+        "MachCSL.BootImage",
+        "MachCSL.BootRun",
+        "MachCSL.ByteWord",
+        "MachCSL.ByteWordDefs",
+        "MachCSL.BytesFree",
+        "MachCSL.CallConv",
+        "MachCSL.Coherence",
+        "MachCSL.Compat",
+        "MachCSL.Ctx",
+        "MachCSL.CtxBoot",
+        "MachCSL.CtxLaws",
+        "MachCSL.DecodeBridge",
+        "MachCSL.Dev.DevIds",
+        "MachCSL.Dev.DevLang",
+        "MachCSL.Dev.Fabric",
+        "MachCSL.Dev.Plic",
+        "MachCSL.Dev.Uart",
+        "MachCSL.Dev.Virtio",
+        "MachCSL.DiskImg",
+        "MachCSL.DiskOf",
+        "MachCSL.ExactState",
+        "MachCSL.FetchedDefs",
+        "MachCSL.FrameFilter",
+        "MachCSL.Gpr",
+        "MachCSL.HwConfig",
+        "MachCSL.Instr",
+        "MachCSL.KApply",
+        "MachCSL.KCtx",
+        "MachCSL.KCtxGpr",
+        "MachCSL.KMap",
+        "MachCSL.KNormCache",
+        "MachCSL.KernelElf",
+        "MachCSL.KptInv",
+        "MachCSL.Lang",
+        "MachCSL.Lock",
+        "MachCSL.LogEntryDefs",
+        "MachCSL.MConf",
+        "MachCSL.ModelFacts",
+        "MachCSL.ObsTrace",
+        "MachCSL.Platform",
+        "MachCSL.PlatformFacts",
+        "MachCSL.PmpXv6Defs",
+        "MachCSL.PtTree",
+        "MachCSL.Pte",
+        "MachCSL.PteClass",
+        "MachCSL.ResourceLifting",
+        "MachCSL.Resources",
+        "MachCSL.SConfAtDefs",
+        "MachCSL.SConfDefs",
+        "MachCSL.SConfPhysDefs",
+        "MachCSL.SimpAttr",
+        "MachCSL.SmodeMemFacts",
+        "MachCSL.Tactics",
+        "MachCSL.Translate",
+        "MachCSL.TranslateAddr",
+        "MachCSL.TsoMem",
+        "MachCSL.WordHist",
+        "MachCSL.WordPointsTo",
+        "MachCSL.Wp",
+        "MachCSL.WpAluFile",
+        "MachCSL.WpAtomic",
+        "MachCSL.WpCsrFacts",
+        "MachCSL.WpCsrS",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.WpGpr",
+        "MachCSL.WpGprDefs",
+        "MachCSL.WpPmp",
+        "MachCSL.WpPmpDefs",
+        "MachCSL.WpPmpXv6",
+        "MachCSL.WpPtWalk",
+        "MachCSL.WpSmode",
+        "MachCSL.WpSmodeAuDefs",
+        "MachCSL.WpSmodeCsr",
+        "MachCSL.WpSmodeCtl",
+        "MachCSL.WpSmodeCycle",
+        "MachCSL.WpSmodeCycleB32",
+        "MachCSL.WpSmodeCycleBase",
+        "MachCSL.WpSmodeCycleRvc",
+        "MachCSL.WpSmodeFetch",
+        "MachCSL.WpSmodeFetch2",
+        "MachCSL.WpSmodeFetch4",
+        "MachCSL.WpSmodeFetchRvc",
+        "MachCSL.WpSmodeFrame",
+        "MachCSL.WpSmodeIntr",
+        "MachCSL.WpSmodeMemLbu",
+        "MachCSL.WpSmodeMemLd",
+        "MachCSL.WpSmodeMemLw",
+        "MachCSL.WpSmodeMemPhys",
+        "MachCSL.WpSmodeMemSb",
+        "MachCSL.WpSmodeMemSd",
+        "MachCSL.WpSmodeMemSw",
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.WpSmodePmp",
+        "MachCSL.WpSmodeRegOps",
+        "MachCSL.WpSmodeRules",
+        "MachCSL.WpStagesM",
+        "MachCSL.WpTick",
+        "MachCSL.WpTrap",
+        "Std.Tactic.BVDecide",
+        "Xv6.ChildTok",
+        "Xv6.CodeTactics",
+        "Xv6.CopyLemmas",
+        "Xv6.DiskDefs",
+        "Xv6.Geom",
+        "Xv6.Image",
+        "Xv6.KallocDefs",
+        "Xv6.KallocEv",
+        "Xv6.KernelData",
+        "Xv6.KernelImage",
+        "Xv6.KernelMap",
+        "Xv6.KernelTac",
+        "Xv6.KernelText",
+        "Xv6.KernelTree",
+        "Xv6.PidEv",
+        "Xv6.PipeNames",
+        "Xv6.ProcGeom",
+        "Xv6.PtOwn",
+        "Xv6.PtOwnLemmas",
+        "Xv6.PtRunLemmas",
+        "Xv6.SlotEv",
+        "Xv6.SlotGen",
+        "Xv6.SlotSupply",
+        "Xv6.SpecCopyin",
+        "Xv6.SpecCopyinstr",
+        "Xv6.SpecCopyout",
+        "Xv6.SpecMemmove",
+        "Xv6.SpecVmfault",
+        "Xv6.SpecWalkaddr",
+        "Xv6.UMem",
+        "Xv6.UMemLemmas",
+        "Xv6.UPtDefs",
+        "Xv6.UartTrace",
+        "Xv6.VirtioQueue",
+        "Xv6.ZombEv"
+      ],
+      "additional_modules_if_other_proof_support_cached": {
+        "module_count": 11,
+        "modules": [
+          "Experiments.WholeFunction.CopyinBlockFacts",
+          "Experiments.WholeFunction.CopyinBoundary",
+          "Experiments.WholeFunction.CopyinCallClosure",
+          "Experiments.WholeFunction.CopyinCallFacts",
+          "Experiments.WholeFunction.CopyinClosure",
+          "Experiments.WholeFunction.CopyinComplete",
+          "Experiments.WholeFunction.CopyinDispatch",
+          "Experiments.WholeFunction.CopyinExit",
+          "Experiments.WholeFunction.CopyinJoins",
+          "Experiments.WholeFunction.CopyinStart",
+          "Xv6.ProofCopyin"
+        ],
+        "measured_module_count": 11,
+        "measured_service_seconds_sum": 32.18,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      }
+    },
+    "Xv6.ProofCopyout": {
+      "support": {
+        "module_count": 60,
+        "modules": [
+          "Experiments.SolverSurvey.BlockBridge",
+          "Experiments.SolverSurvey.BlockMachine",
+          "Experiments.SolverSurvey.BlockNormalize",
+          "Experiments.SolverSurvey.SmtSlice",
+          "Experiments.SolverSurvey.SolverCache",
+          "Experiments.WholeFunction.Binary",
+          "Experiments.WholeFunction.BinaryCopy",
+          "Experiments.WholeFunction.ControlFlow",
+          "Experiments.WholeFunction.CopyCallRegistry",
+          "Experiments.WholeFunction.CopyCalls",
+          "Experiments.WholeFunction.CopyContracts",
+          "Experiments.WholeFunction.CopyControl",
+          "Experiments.WholeFunction.CopyEffects",
+          "Experiments.WholeFunction.CopyRuns",
+          "Experiments.WholeFunction.CopyinBlocks",
+          "Experiments.WholeFunction.CopyinChunkFacts",
+          "Experiments.WholeFunction.CopyinEntry",
+          "Experiments.WholeFunction.CopyinInvariant",
+          "Experiments.WholeFunction.CopyinModel",
+          "Experiments.WholeFunction.CopyinPageFacts",
+          "Experiments.WholeFunction.CopyinPure",
+          "Experiments.WholeFunction.CopyoutBlockFacts",
+          "Experiments.WholeFunction.CopyoutBlocks",
+          "Experiments.WholeFunction.CopyoutBoundary",
+          "Experiments.WholeFunction.CopyoutCallClosure",
+          "Experiments.WholeFunction.CopyoutCallFacts",
+          "Experiments.WholeFunction.CopyoutCallRegistry",
+          "Experiments.WholeFunction.CopyoutCalls",
+          "Experiments.WholeFunction.CopyoutClosure",
+          "Experiments.WholeFunction.CopyoutComplete",
+          "Experiments.WholeFunction.CopyoutDispatch",
+          "Experiments.WholeFunction.CopyoutEntry",
+          "Experiments.WholeFunction.CopyoutExit",
+          "Experiments.WholeFunction.CopyoutFrame",
+          "Experiments.WholeFunction.CopyoutFrameDefs",
+          "Experiments.WholeFunction.CopyoutInvariant",
+          "Experiments.WholeFunction.CopyoutJoins",
+          "Experiments.WholeFunction.CopyoutModel",
+          "Experiments.WholeFunction.CopyoutPageJoins",
+          "Experiments.WholeFunction.CopyoutPure",
+          "Experiments.WholeFunction.CopyoutStart",
+          "Experiments.WholeFunction.FrameCompiler",
+          "Experiments.WholeFunction.KernelCalls",
+          "Experiments.WholeFunction.KernelDecode",
+          "Experiments.WholeFunction.KernelDispatch",
+          "Experiments.WholeFunction.KernelFull",
+          "Experiments.WholeFunction.KernelGraph",
+          "Experiments.WholeFunction.KernelLinear",
+          "Experiments.WholeFunction.KernelReg",
+          "Experiments.WholeFunction.KernelStackGraph",
+          "Experiments.WholeFunction.KernelSymbolic",
+          "Experiments.WholeFunction.Residual",
+          "Experiments.WholeFunction.StackActions",
+          "Experiments.WholeFunction.StackCells",
+          "Experiments.WholeFunction.StackChecks",
+          "Experiments.WholeFunction.StackDecode",
+          "Experiments.WholeFunction.StackReturn",
+          "Experiments.WholeFunction.StackShape",
+          "Experiments.WholeFunction.StackValueWp",
+          "Experiments.WholeFunction.StackValues"
+        ],
+        "measured_module_count": 60,
+        "measured_service_seconds_sum": 215.105,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "support_plus_production_wrapper": {
+        "module_count": 61,
+        "modules": [
+          "Experiments.SolverSurvey.BlockBridge",
+          "Experiments.SolverSurvey.BlockMachine",
+          "Experiments.SolverSurvey.BlockNormalize",
+          "Experiments.SolverSurvey.SmtSlice",
+          "Experiments.SolverSurvey.SolverCache",
+          "Experiments.WholeFunction.Binary",
+          "Experiments.WholeFunction.BinaryCopy",
+          "Experiments.WholeFunction.ControlFlow",
+          "Experiments.WholeFunction.CopyCallRegistry",
+          "Experiments.WholeFunction.CopyCalls",
+          "Experiments.WholeFunction.CopyContracts",
+          "Experiments.WholeFunction.CopyControl",
+          "Experiments.WholeFunction.CopyEffects",
+          "Experiments.WholeFunction.CopyRuns",
+          "Experiments.WholeFunction.CopyinBlocks",
+          "Experiments.WholeFunction.CopyinChunkFacts",
+          "Experiments.WholeFunction.CopyinEntry",
+          "Experiments.WholeFunction.CopyinInvariant",
+          "Experiments.WholeFunction.CopyinModel",
+          "Experiments.WholeFunction.CopyinPageFacts",
+          "Experiments.WholeFunction.CopyinPure",
+          "Experiments.WholeFunction.CopyoutBlockFacts",
+          "Experiments.WholeFunction.CopyoutBlocks",
+          "Experiments.WholeFunction.CopyoutBoundary",
+          "Experiments.WholeFunction.CopyoutCallClosure",
+          "Experiments.WholeFunction.CopyoutCallFacts",
+          "Experiments.WholeFunction.CopyoutCallRegistry",
+          "Experiments.WholeFunction.CopyoutCalls",
+          "Experiments.WholeFunction.CopyoutClosure",
+          "Experiments.WholeFunction.CopyoutComplete",
+          "Experiments.WholeFunction.CopyoutDispatch",
+          "Experiments.WholeFunction.CopyoutEntry",
+          "Experiments.WholeFunction.CopyoutExit",
+          "Experiments.WholeFunction.CopyoutFrame",
+          "Experiments.WholeFunction.CopyoutFrameDefs",
+          "Experiments.WholeFunction.CopyoutInvariant",
+          "Experiments.WholeFunction.CopyoutJoins",
+          "Experiments.WholeFunction.CopyoutModel",
+          "Experiments.WholeFunction.CopyoutPageJoins",
+          "Experiments.WholeFunction.CopyoutPure",
+          "Experiments.WholeFunction.CopyoutStart",
+          "Experiments.WholeFunction.FrameCompiler",
+          "Experiments.WholeFunction.KernelCalls",
+          "Experiments.WholeFunction.KernelDecode",
+          "Experiments.WholeFunction.KernelDispatch",
+          "Experiments.WholeFunction.KernelFull",
+          "Experiments.WholeFunction.KernelGraph",
+          "Experiments.WholeFunction.KernelLinear",
+          "Experiments.WholeFunction.KernelReg",
+          "Experiments.WholeFunction.KernelStackGraph",
+          "Experiments.WholeFunction.KernelSymbolic",
+          "Experiments.WholeFunction.Residual",
+          "Experiments.WholeFunction.StackActions",
+          "Experiments.WholeFunction.StackCells",
+          "Experiments.WholeFunction.StackChecks",
+          "Experiments.WholeFunction.StackDecode",
+          "Experiments.WholeFunction.StackReturn",
+          "Experiments.WholeFunction.StackShape",
+          "Experiments.WholeFunction.StackValueWp",
+          "Experiments.WholeFunction.StackValues",
+          "Xv6.ProofCopyout"
+        ],
+        "measured_module_count": 61,
+        "measured_service_seconds_sum": 217.012,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "partition": {
+        "cross_function_specific_reuse": {
+          "module_count": 7,
+          "modules": [
+            "Experiments.WholeFunction.CopyinBlocks",
+            "Experiments.WholeFunction.CopyinChunkFacts",
+            "Experiments.WholeFunction.CopyinEntry",
+            "Experiments.WholeFunction.CopyinInvariant",
+            "Experiments.WholeFunction.CopyinModel",
+            "Experiments.WholeFunction.CopyinPageFacts",
+            "Experiments.WholeFunction.CopyinPure"
+          ],
+          "measured_module_count": 7,
+          "measured_service_seconds_sum": 19.523,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "function_specific": {
+          "module_count": 20,
+          "modules": [
+            "Experiments.WholeFunction.CopyoutBlockFacts",
+            "Experiments.WholeFunction.CopyoutBlocks",
+            "Experiments.WholeFunction.CopyoutBoundary",
+            "Experiments.WholeFunction.CopyoutCallClosure",
+            "Experiments.WholeFunction.CopyoutCallFacts",
+            "Experiments.WholeFunction.CopyoutCallRegistry",
+            "Experiments.WholeFunction.CopyoutCalls",
+            "Experiments.WholeFunction.CopyoutClosure",
+            "Experiments.WholeFunction.CopyoutComplete",
+            "Experiments.WholeFunction.CopyoutDispatch",
+            "Experiments.WholeFunction.CopyoutEntry",
+            "Experiments.WholeFunction.CopyoutExit",
+            "Experiments.WholeFunction.CopyoutFrame",
+            "Experiments.WholeFunction.CopyoutFrameDefs",
+            "Experiments.WholeFunction.CopyoutInvariant",
+            "Experiments.WholeFunction.CopyoutJoins",
+            "Experiments.WholeFunction.CopyoutModel",
+            "Experiments.WholeFunction.CopyoutPageJoins",
+            "Experiments.WholeFunction.CopyoutPure",
+            "Experiments.WholeFunction.CopyoutStart"
+          ],
+          "measured_module_count": 20,
+          "measured_service_seconds_sum": 69.836,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "shared_copy_family_support": {
+          "module_count": 7,
+          "modules": [
+            "Experiments.WholeFunction.BinaryCopy",
+            "Experiments.WholeFunction.CopyCallRegistry",
+            "Experiments.WholeFunction.CopyCalls",
+            "Experiments.WholeFunction.CopyContracts",
+            "Experiments.WholeFunction.CopyControl",
+            "Experiments.WholeFunction.CopyEffects",
+            "Experiments.WholeFunction.CopyRuns"
+          ],
+          "measured_module_count": 7,
+          "measured_service_seconds_sum": 54.835,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "shared_kernel_backend": {
+          "module_count": 21,
+          "modules": [
+            "Experiments.WholeFunction.Binary",
+            "Experiments.WholeFunction.ControlFlow",
+            "Experiments.WholeFunction.FrameCompiler",
+            "Experiments.WholeFunction.KernelCalls",
+            "Experiments.WholeFunction.KernelDecode",
+            "Experiments.WholeFunction.KernelDispatch",
+            "Experiments.WholeFunction.KernelFull",
+            "Experiments.WholeFunction.KernelGraph",
+            "Experiments.WholeFunction.KernelLinear",
+            "Experiments.WholeFunction.KernelReg",
+            "Experiments.WholeFunction.KernelStackGraph",
+            "Experiments.WholeFunction.KernelSymbolic",
+            "Experiments.WholeFunction.Residual",
+            "Experiments.WholeFunction.StackActions",
+            "Experiments.WholeFunction.StackCells",
+            "Experiments.WholeFunction.StackChecks",
+            "Experiments.WholeFunction.StackDecode",
+            "Experiments.WholeFunction.StackReturn",
+            "Experiments.WholeFunction.StackShape",
+            "Experiments.WholeFunction.StackValueWp",
+            "Experiments.WholeFunction.StackValues"
+          ],
+          "measured_module_count": 21,
+          "measured_service_seconds_sum": 58.342,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "solver_survey": {
+          "module_count": 5,
+          "modules": [
+            "Experiments.SolverSurvey.BlockBridge",
+            "Experiments.SolverSurvey.BlockMachine",
+            "Experiments.SolverSurvey.BlockNormalize",
+            "Experiments.SolverSurvey.SmtSlice",
+            "Experiments.SolverSurvey.SolverCache"
+          ],
+          "measured_module_count": 5,
+          "measured_service_seconds_sum": 12.569,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        }
+      },
+      "nonexperiment_imports_cached": [
+        "Iris.Algebra.Functions",
+        "Iris.Algebra.IProp",
+        "Iris.Algebra.Lib.ExclAuth",
+        "Iris.BI.Lib.Fixpoint",
+        "Iris.BI.Lib.GenHeap",
+        "Iris.BI.Lib.MonoList",
+        "Iris.BI.Lib.MonoNat",
+        "Iris.Instances.Lib.CInvariants",
+        "Iris.Instances.Lib.GhostMap",
+        "Iris.Instances.Lib.GhostVar",
+        "Iris.Instances.Lib.Invariants",
+        "Iris.Instances.Lib.NaInvariants",
+        "Iris.Instances.Lib.SavedProp",
+        "Iris.ProgramLogic.Language",
+        "Iris.ProgramLogic.Lifting",
+        "Iris.ProgramLogic.WeakestPre",
+        "Iris.ProofMode",
+        "Iris.ProofMode.Tactics.Frame",
+        "Lean",
+        "Lean.Elab.Tactic.BVDecide",
+        "Lean.Meta.Tactic.Simp",
+        "Lean.Util.CollectFVars",
+        "LeanRV64D.Arithmetic",
+        "LeanRV64D.BaseInsts",
+        "LeanRV64D.Defs",
+        "LeanRV64D.Fetch",
+        "LeanRV64D.Model",
+        "LeanRV64D.PlatformConfig",
+        "LeanRV64D.Pma",
+        "LeanRV64D.Step",
+        "LeanRV64D.VmemPte",
+        "LeanRV64D.VmemTlb",
+        "LeanRV64D.Xv6Extras",
+        "LeanRV64D.ZicsrInsts",
+        "MachCSL.AluFacts",
+        "MachCSL.ArchReset",
+        "MachCSL.Boot",
+        "MachCSL.BootImage",
+        "MachCSL.BootRun",
+        "MachCSL.ByteWord",
+        "MachCSL.ByteWordDefs",
+        "MachCSL.BytesFree",
+        "MachCSL.CallConv",
+        "MachCSL.Coherence",
+        "MachCSL.Compat",
+        "MachCSL.Ctx",
+        "MachCSL.CtxBoot",
+        "MachCSL.CtxLaws",
+        "MachCSL.DecodeBridge",
+        "MachCSL.Dev.DevIds",
+        "MachCSL.Dev.DevLang",
+        "MachCSL.Dev.Fabric",
+        "MachCSL.Dev.Plic",
+        "MachCSL.Dev.Uart",
+        "MachCSL.Dev.Virtio",
+        "MachCSL.DiskImg",
+        "MachCSL.DiskOf",
+        "MachCSL.ExactState",
+        "MachCSL.FetchedDefs",
+        "MachCSL.FrameFilter",
+        "MachCSL.Gpr",
+        "MachCSL.HwConfig",
+        "MachCSL.Instr",
+        "MachCSL.KApply",
+        "MachCSL.KCtx",
+        "MachCSL.KCtxGpr",
+        "MachCSL.KMap",
+        "MachCSL.KNormCache",
+        "MachCSL.KernelElf",
+        "MachCSL.KptInv",
+        "MachCSL.Lang",
+        "MachCSL.Lock",
+        "MachCSL.LogEntryDefs",
+        "MachCSL.MConf",
+        "MachCSL.ModelFacts",
+        "MachCSL.ObsTrace",
+        "MachCSL.Platform",
+        "MachCSL.PlatformFacts",
+        "MachCSL.PmpXv6Defs",
+        "MachCSL.PtTree",
+        "MachCSL.Pte",
+        "MachCSL.PteClass",
+        "MachCSL.ResourceLifting",
+        "MachCSL.Resources",
+        "MachCSL.SConfAtDefs",
+        "MachCSL.SConfDefs",
+        "MachCSL.SConfPhysDefs",
+        "MachCSL.SimpAttr",
+        "MachCSL.SmodeMemFacts",
+        "MachCSL.Tactics",
+        "MachCSL.Translate",
+        "MachCSL.TranslateAddr",
+        "MachCSL.TsoMem",
+        "MachCSL.WordHist",
+        "MachCSL.WordPointsTo",
+        "MachCSL.Wp",
+        "MachCSL.WpAluFile",
+        "MachCSL.WpAtomic",
+        "MachCSL.WpCsrFacts",
+        "MachCSL.WpCsrS",
+        "MachCSL.WpCycleDefs",
+        "MachCSL.WpGpr",
+        "MachCSL.WpGprDefs",
+        "MachCSL.WpPmp",
+        "MachCSL.WpPmpDefs",
+        "MachCSL.WpPmpXv6",
+        "MachCSL.WpPtWalk",
+        "MachCSL.WpSmode",
+        "MachCSL.WpSmodeAuDefs",
+        "MachCSL.WpSmodeCsr",
+        "MachCSL.WpSmodeCtl",
+        "MachCSL.WpSmodeCycle",
+        "MachCSL.WpSmodeCycleB32",
+        "MachCSL.WpSmodeCycleBase",
+        "MachCSL.WpSmodeCycleRvc",
+        "MachCSL.WpSmodeFetch",
+        "MachCSL.WpSmodeFetch2",
+        "MachCSL.WpSmodeFetch4",
+        "MachCSL.WpSmodeFetchRvc",
+        "MachCSL.WpSmodeFrame",
+        "MachCSL.WpSmodeIntr",
+        "MachCSL.WpSmodeMemLbu",
+        "MachCSL.WpSmodeMemLd",
+        "MachCSL.WpSmodeMemLw",
+        "MachCSL.WpSmodeMemPhys",
+        "MachCSL.WpSmodeMemSb",
+        "MachCSL.WpSmodeMemSd",
+        "MachCSL.WpSmodeMemSw",
+        "MachCSL.WpSmodeMemTac",
+        "MachCSL.WpSmodePmp",
+        "MachCSL.WpSmodeRegOps",
+        "MachCSL.WpSmodeRules",
+        "MachCSL.WpStagesM",
+        "MachCSL.WpTick",
+        "MachCSL.WpTrap",
+        "Std.Tactic.BVDecide",
+        "Xv6.ChildTok",
+        "Xv6.CodeTactics",
+        "Xv6.CopyLemmas",
+        "Xv6.DiskDefs",
+        "Xv6.Geom",
+        "Xv6.Image",
+        "Xv6.KallocDefs",
+        "Xv6.KallocEv",
+        "Xv6.KernelData",
+        "Xv6.KernelImage",
+        "Xv6.KernelMap",
+        "Xv6.KernelTac",
+        "Xv6.KernelText",
+        "Xv6.KernelTree",
+        "Xv6.PidEv",
+        "Xv6.PipeNames",
+        "Xv6.ProcGeom",
+        "Xv6.PtOwn",
+        "Xv6.PtOwnLemmas",
+        "Xv6.PtRunLemmas",
+        "Xv6.SlotEv",
+        "Xv6.SlotGen",
+        "Xv6.SlotSupply",
+        "Xv6.SpecCopyin",
+        "Xv6.SpecCopyinstr",
+        "Xv6.SpecCopyout",
+        "Xv6.SpecMemmove",
+        "Xv6.SpecVmfault",
+        "Xv6.SpecWalk",
+        "Xv6.SpecWalkaddr",
+        "Xv6.UMem",
+        "Xv6.UMemLemmas",
+        "Xv6.UPtDefs",
+        "Xv6.UartTrace",
+        "Xv6.VirtioQueue",
+        "Xv6.ZombEv"
+      ],
+      "additional_modules_if_other_proof_support_cached": {
+        "module_count": 29,
+        "modules": [
+          "Experiments.SolverSurvey.BlockBridge",
+          "Experiments.SolverSurvey.BlockMachine",
+          "Experiments.SolverSurvey.BlockNormalize",
+          "Experiments.SolverSurvey.SmtSlice",
+          "Experiments.SolverSurvey.SolverCache",
+          "Experiments.WholeFunction.CopyRuns",
+          "Experiments.WholeFunction.CopyoutBlockFacts",
+          "Experiments.WholeFunction.CopyoutBlocks",
+          "Experiments.WholeFunction.CopyoutBoundary",
+          "Experiments.WholeFunction.CopyoutCallClosure",
+          "Experiments.WholeFunction.CopyoutCallFacts",
+          "Experiments.WholeFunction.CopyoutCallRegistry",
+          "Experiments.WholeFunction.CopyoutCalls",
+          "Experiments.WholeFunction.CopyoutClosure",
+          "Experiments.WholeFunction.CopyoutComplete",
+          "Experiments.WholeFunction.CopyoutDispatch",
+          "Experiments.WholeFunction.CopyoutEntry",
+          "Experiments.WholeFunction.CopyoutExit",
+          "Experiments.WholeFunction.CopyoutFrame",
+          "Experiments.WholeFunction.CopyoutFrameDefs",
+          "Experiments.WholeFunction.CopyoutInvariant",
+          "Experiments.WholeFunction.CopyoutJoins",
+          "Experiments.WholeFunction.CopyoutModel",
+          "Experiments.WholeFunction.CopyoutPageJoins",
+          "Experiments.WholeFunction.CopyoutPure",
+          "Experiments.WholeFunction.CopyoutStart",
+          "Experiments.WholeFunction.FrameCompiler",
+          "Experiments.WholeFunction.Residual",
+          "Xv6.ProofCopyout"
+        ],
+        "measured_module_count": 29,
+        "measured_service_seconds_sum": 91.865,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      }
+    }
+  },
+  "distinct_union_with_wrappers": {
+    "module_count": 72,
+    "modules": [
+      "Experiments.SolverSurvey.BlockBridge",
+      "Experiments.SolverSurvey.BlockMachine",
+      "Experiments.SolverSurvey.BlockNormalize",
+      "Experiments.SolverSurvey.SmtSlice",
+      "Experiments.SolverSurvey.SolverCache",
+      "Experiments.WholeFunction.Binary",
+      "Experiments.WholeFunction.BinaryCopy",
+      "Experiments.WholeFunction.ControlFlow",
+      "Experiments.WholeFunction.CopyCallRegistry",
+      "Experiments.WholeFunction.CopyCalls",
+      "Experiments.WholeFunction.CopyContracts",
+      "Experiments.WholeFunction.CopyControl",
+      "Experiments.WholeFunction.CopyEffects",
+      "Experiments.WholeFunction.CopyRuns",
+      "Experiments.WholeFunction.CopyinBlockFacts",
+      "Experiments.WholeFunction.CopyinBlocks",
+      "Experiments.WholeFunction.CopyinBoundary",
+      "Experiments.WholeFunction.CopyinCallClosure",
+      "Experiments.WholeFunction.CopyinCallFacts",
+      "Experiments.WholeFunction.CopyinChunkFacts",
+      "Experiments.WholeFunction.CopyinClosure",
+      "Experiments.WholeFunction.CopyinComplete",
+      "Experiments.WholeFunction.CopyinDispatch",
+      "Experiments.WholeFunction.CopyinEntry",
+      "Experiments.WholeFunction.CopyinExit",
+      "Experiments.WholeFunction.CopyinInvariant",
+      "Experiments.WholeFunction.CopyinJoins",
+      "Experiments.WholeFunction.CopyinModel",
+      "Experiments.WholeFunction.CopyinPageFacts",
+      "Experiments.WholeFunction.CopyinPure",
+      "Experiments.WholeFunction.CopyinStart",
+      "Experiments.WholeFunction.CopyoutBlockFacts",
+      "Experiments.WholeFunction.CopyoutBlocks",
+      "Experiments.WholeFunction.CopyoutBoundary",
+      "Experiments.WholeFunction.CopyoutCallClosure",
+      "Experiments.WholeFunction.CopyoutCallFacts",
+      "Experiments.WholeFunction.CopyoutCallRegistry",
+      "Experiments.WholeFunction.CopyoutCalls",
+      "Experiments.WholeFunction.CopyoutClosure",
+      "Experiments.WholeFunction.CopyoutComplete",
+      "Experiments.WholeFunction.CopyoutDispatch",
+      "Experiments.WholeFunction.CopyoutEntry",
+      "Experiments.WholeFunction.CopyoutExit",
+      "Experiments.WholeFunction.CopyoutFrame",
+      "Experiments.WholeFunction.CopyoutFrameDefs",
+      "Experiments.WholeFunction.CopyoutInvariant",
+      "Experiments.WholeFunction.CopyoutJoins",
+      "Experiments.WholeFunction.CopyoutModel",
+      "Experiments.WholeFunction.CopyoutPageJoins",
+      "Experiments.WholeFunction.CopyoutPure",
+      "Experiments.WholeFunction.CopyoutStart",
+      "Experiments.WholeFunction.FrameCompiler",
+      "Experiments.WholeFunction.KernelCalls",
+      "Experiments.WholeFunction.KernelDecode",
+      "Experiments.WholeFunction.KernelDispatch",
+      "Experiments.WholeFunction.KernelFull",
+      "Experiments.WholeFunction.KernelGraph",
+      "Experiments.WholeFunction.KernelLinear",
+      "Experiments.WholeFunction.KernelReg",
+      "Experiments.WholeFunction.KernelStackGraph",
+      "Experiments.WholeFunction.KernelSymbolic",
+      "Experiments.WholeFunction.Residual",
+      "Experiments.WholeFunction.StackActions",
+      "Experiments.WholeFunction.StackCells",
+      "Experiments.WholeFunction.StackChecks",
+      "Experiments.WholeFunction.StackDecode",
+      "Experiments.WholeFunction.StackReturn",
+      "Experiments.WholeFunction.StackShape",
+      "Experiments.WholeFunction.StackValueWp",
+      "Experiments.WholeFunction.StackValues",
+      "Xv6.ProofCopyin",
+      "Xv6.ProofCopyout"
+    ],
+    "measured_module_count": 72,
+    "measured_service_seconds_sum": 249.192,
+    "complete_measurement_coverage": true,
+    "missing_timings": []
+  },
+  "shared_imported_support": {
+    "module_count": 32,
+    "modules": [
+      "Experiments.WholeFunction.Binary",
+      "Experiments.WholeFunction.BinaryCopy",
+      "Experiments.WholeFunction.ControlFlow",
+      "Experiments.WholeFunction.CopyCallRegistry",
+      "Experiments.WholeFunction.CopyCalls",
+      "Experiments.WholeFunction.CopyContracts",
+      "Experiments.WholeFunction.CopyControl",
+      "Experiments.WholeFunction.CopyEffects",
+      "Experiments.WholeFunction.CopyinBlocks",
+      "Experiments.WholeFunction.CopyinChunkFacts",
+      "Experiments.WholeFunction.CopyinEntry",
+      "Experiments.WholeFunction.CopyinInvariant",
+      "Experiments.WholeFunction.CopyinModel",
+      "Experiments.WholeFunction.CopyinPageFacts",
+      "Experiments.WholeFunction.CopyinPure",
+      "Experiments.WholeFunction.KernelCalls",
+      "Experiments.WholeFunction.KernelDecode",
+      "Experiments.WholeFunction.KernelDispatch",
+      "Experiments.WholeFunction.KernelFull",
+      "Experiments.WholeFunction.KernelGraph",
+      "Experiments.WholeFunction.KernelLinear",
+      "Experiments.WholeFunction.KernelReg",
+      "Experiments.WholeFunction.KernelStackGraph",
+      "Experiments.WholeFunction.KernelSymbolic",
+      "Experiments.WholeFunction.StackActions",
+      "Experiments.WholeFunction.StackCells",
+      "Experiments.WholeFunction.StackChecks",
+      "Experiments.WholeFunction.StackDecode",
+      "Experiments.WholeFunction.StackReturn",
+      "Experiments.WholeFunction.StackShape",
+      "Experiments.WholeFunction.StackValueWp",
+      "Experiments.WholeFunction.StackValues"
+    ],
+    "measured_module_count": 32,
+    "measured_service_seconds_sum": 125.147,
+    "complete_measurement_coverage": true,
+    "missing_timings": []
+  },
+  "incremental_changes": {
+    "Experiments.WholeFunction.CopyoutInvariant": {
+      "measured_copy_proof_rebuild_subset": {
+        "module_count": 9,
+        "modules": [
+          "Experiments.WholeFunction.CopyoutCallClosure",
+          "Experiments.WholeFunction.CopyoutCallFacts",
+          "Experiments.WholeFunction.CopyoutClosure",
+          "Experiments.WholeFunction.CopyoutComplete",
+          "Experiments.WholeFunction.CopyoutInvariant",
+          "Experiments.WholeFunction.CopyoutJoins",
+          "Experiments.WholeFunction.CopyoutPageJoins",
+          "Experiments.WholeFunction.CopyoutStart",
+          "Xv6.ProofCopyout"
+        ],
+        "measured_module_count": 9,
+        "measured_service_seconds_sum": 23.854,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "per_root": {
+        "Xv6.ProofCopyin": {
+          "module_count": 0,
+          "modules": [],
+          "measured_module_count": 0,
+          "measured_service_seconds_sum": 0,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "Xv6.ProofCopyout": {
+          "module_count": 9,
+          "modules": [
+            "Experiments.WholeFunction.CopyoutCallClosure",
+            "Experiments.WholeFunction.CopyoutCallFacts",
+            "Experiments.WholeFunction.CopyoutClosure",
+            "Experiments.WholeFunction.CopyoutComplete",
+            "Experiments.WholeFunction.CopyoutInvariant",
+            "Experiments.WholeFunction.CopyoutJoins",
+            "Experiments.WholeFunction.CopyoutPageJoins",
+            "Experiments.WholeFunction.CopyoutStart",
+            "Xv6.ProofCopyout"
+          ],
+          "measured_module_count": 9,
+          "measured_service_seconds_sum": 23.854,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        }
+      },
+      "repository_source_consumers": [
+        "Experiments.WholeFunction.CopyoutCallClosure",
+        "Experiments.WholeFunction.CopyoutCallFacts",
+        "Experiments.WholeFunction.CopyoutClosure",
+        "Experiments.WholeFunction.CopyoutComplete",
+        "Experiments.WholeFunction.CopyoutInvariant",
+        "Experiments.WholeFunction.CopyoutJoins",
+        "Experiments.WholeFunction.CopyoutPageJoins",
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Experiments.WholeFunction.CopyoutStart",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "production_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "outside_measured_copy_closures": [
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutBlockFacts": {
+      "measured_copy_proof_rebuild_subset": {
+        "module_count": 7,
+        "modules": [
+          "Experiments.WholeFunction.CopyoutBlockFacts",
+          "Experiments.WholeFunction.CopyoutCallClosure",
+          "Experiments.WholeFunction.CopyoutComplete",
+          "Experiments.WholeFunction.CopyoutJoins",
+          "Experiments.WholeFunction.CopyoutPageJoins",
+          "Experiments.WholeFunction.CopyoutStart",
+          "Xv6.ProofCopyout"
+        ],
+        "measured_module_count": 7,
+        "measured_service_seconds_sum": 20.858,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "per_root": {
+        "Xv6.ProofCopyin": {
+          "module_count": 0,
+          "modules": [],
+          "measured_module_count": 0,
+          "measured_service_seconds_sum": 0,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "Xv6.ProofCopyout": {
+          "module_count": 7,
+          "modules": [
+            "Experiments.WholeFunction.CopyoutBlockFacts",
+            "Experiments.WholeFunction.CopyoutCallClosure",
+            "Experiments.WholeFunction.CopyoutComplete",
+            "Experiments.WholeFunction.CopyoutJoins",
+            "Experiments.WholeFunction.CopyoutPageJoins",
+            "Experiments.WholeFunction.CopyoutStart",
+            "Xv6.ProofCopyout"
+          ],
+          "measured_module_count": 7,
+          "measured_service_seconds_sum": 20.858,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        }
+      },
+      "repository_source_consumers": [
+        "Experiments.WholeFunction.CopyoutBlockFacts",
+        "Experiments.WholeFunction.CopyoutCallClosure",
+        "Experiments.WholeFunction.CopyoutComplete",
+        "Experiments.WholeFunction.CopyoutJoins",
+        "Experiments.WholeFunction.CopyoutPageJoins",
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Experiments.WholeFunction.CopyoutStart",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "production_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "outside_measured_copy_closures": [
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ]
+    },
+    "Experiments.WholeFunction.KernelReg": {
+      "measured_copy_proof_rebuild_subset": {
+        "module_count": 60,
+        "modules": [
+          "Experiments.SolverSurvey.BlockBridge",
+          "Experiments.SolverSurvey.BlockMachine",
+          "Experiments.SolverSurvey.BlockNormalize",
+          "Experiments.WholeFunction.CopyCallRegistry",
+          "Experiments.WholeFunction.CopyinBlockFacts",
+          "Experiments.WholeFunction.CopyinBlocks",
+          "Experiments.WholeFunction.CopyinBoundary",
+          "Experiments.WholeFunction.CopyinCallClosure",
+          "Experiments.WholeFunction.CopyinCallFacts",
+          "Experiments.WholeFunction.CopyinChunkFacts",
+          "Experiments.WholeFunction.CopyinClosure",
+          "Experiments.WholeFunction.CopyinComplete",
+          "Experiments.WholeFunction.CopyinDispatch",
+          "Experiments.WholeFunction.CopyinEntry",
+          "Experiments.WholeFunction.CopyinExit",
+          "Experiments.WholeFunction.CopyinInvariant",
+          "Experiments.WholeFunction.CopyinJoins",
+          "Experiments.WholeFunction.CopyinModel",
+          "Experiments.WholeFunction.CopyinPageFacts",
+          "Experiments.WholeFunction.CopyinStart",
+          "Experiments.WholeFunction.CopyoutBlockFacts",
+          "Experiments.WholeFunction.CopyoutBlocks",
+          "Experiments.WholeFunction.CopyoutBoundary",
+          "Experiments.WholeFunction.CopyoutCallClosure",
+          "Experiments.WholeFunction.CopyoutCallFacts",
+          "Experiments.WholeFunction.CopyoutCallRegistry",
+          "Experiments.WholeFunction.CopyoutCalls",
+          "Experiments.WholeFunction.CopyoutClosure",
+          "Experiments.WholeFunction.CopyoutComplete",
+          "Experiments.WholeFunction.CopyoutDispatch",
+          "Experiments.WholeFunction.CopyoutEntry",
+          "Experiments.WholeFunction.CopyoutExit",
+          "Experiments.WholeFunction.CopyoutFrame",
+          "Experiments.WholeFunction.CopyoutFrameDefs",
+          "Experiments.WholeFunction.CopyoutInvariant",
+          "Experiments.WholeFunction.CopyoutJoins",
+          "Experiments.WholeFunction.CopyoutModel",
+          "Experiments.WholeFunction.CopyoutPageJoins",
+          "Experiments.WholeFunction.CopyoutPure",
+          "Experiments.WholeFunction.CopyoutStart",
+          "Experiments.WholeFunction.FrameCompiler",
+          "Experiments.WholeFunction.KernelCalls",
+          "Experiments.WholeFunction.KernelDecode",
+          "Experiments.WholeFunction.KernelDispatch",
+          "Experiments.WholeFunction.KernelFull",
+          "Experiments.WholeFunction.KernelGraph",
+          "Experiments.WholeFunction.KernelLinear",
+          "Experiments.WholeFunction.KernelReg",
+          "Experiments.WholeFunction.KernelStackGraph",
+          "Experiments.WholeFunction.KernelSymbolic",
+          "Experiments.WholeFunction.Residual",
+          "Experiments.WholeFunction.StackActions",
+          "Experiments.WholeFunction.StackChecks",
+          "Experiments.WholeFunction.StackDecode",
+          "Experiments.WholeFunction.StackReturn",
+          "Experiments.WholeFunction.StackShape",
+          "Experiments.WholeFunction.StackValueWp",
+          "Experiments.WholeFunction.StackValues",
+          "Xv6.ProofCopyin",
+          "Xv6.ProofCopyout"
+        ],
+        "measured_module_count": 60,
+        "measured_service_seconds_sum": 183.282,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "per_root": {
+        "Xv6.ProofCopyin": {
+          "module_count": 34,
+          "modules": [
+            "Experiments.WholeFunction.CopyCallRegistry",
+            "Experiments.WholeFunction.CopyinBlockFacts",
+            "Experiments.WholeFunction.CopyinBlocks",
+            "Experiments.WholeFunction.CopyinBoundary",
+            "Experiments.WholeFunction.CopyinCallClosure",
+            "Experiments.WholeFunction.CopyinCallFacts",
+            "Experiments.WholeFunction.CopyinChunkFacts",
+            "Experiments.WholeFunction.CopyinClosure",
+            "Experiments.WholeFunction.CopyinComplete",
+            "Experiments.WholeFunction.CopyinDispatch",
+            "Experiments.WholeFunction.CopyinEntry",
+            "Experiments.WholeFunction.CopyinExit",
+            "Experiments.WholeFunction.CopyinInvariant",
+            "Experiments.WholeFunction.CopyinJoins",
+            "Experiments.WholeFunction.CopyinModel",
+            "Experiments.WholeFunction.CopyinPageFacts",
+            "Experiments.WholeFunction.CopyinStart",
+            "Experiments.WholeFunction.KernelCalls",
+            "Experiments.WholeFunction.KernelDecode",
+            "Experiments.WholeFunction.KernelDispatch",
+            "Experiments.WholeFunction.KernelFull",
+            "Experiments.WholeFunction.KernelGraph",
+            "Experiments.WholeFunction.KernelLinear",
+            "Experiments.WholeFunction.KernelReg",
+            "Experiments.WholeFunction.KernelStackGraph",
+            "Experiments.WholeFunction.KernelSymbolic",
+            "Experiments.WholeFunction.StackActions",
+            "Experiments.WholeFunction.StackChecks",
+            "Experiments.WholeFunction.StackDecode",
+            "Experiments.WholeFunction.StackReturn",
+            "Experiments.WholeFunction.StackShape",
+            "Experiments.WholeFunction.StackValueWp",
+            "Experiments.WholeFunction.StackValues",
+            "Xv6.ProofCopyin"
+          ],
+          "measured_module_count": 34,
+          "measured_service_seconds_sum": 98.492,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "Xv6.ProofCopyout": {
+          "module_count": 49,
+          "modules": [
+            "Experiments.SolverSurvey.BlockBridge",
+            "Experiments.SolverSurvey.BlockMachine",
+            "Experiments.SolverSurvey.BlockNormalize",
+            "Experiments.WholeFunction.CopyCallRegistry",
+            "Experiments.WholeFunction.CopyinBlocks",
+            "Experiments.WholeFunction.CopyinChunkFacts",
+            "Experiments.WholeFunction.CopyinEntry",
+            "Experiments.WholeFunction.CopyinInvariant",
+            "Experiments.WholeFunction.CopyinModel",
+            "Experiments.WholeFunction.CopyinPageFacts",
+            "Experiments.WholeFunction.CopyoutBlockFacts",
+            "Experiments.WholeFunction.CopyoutBlocks",
+            "Experiments.WholeFunction.CopyoutBoundary",
+            "Experiments.WholeFunction.CopyoutCallClosure",
+            "Experiments.WholeFunction.CopyoutCallFacts",
+            "Experiments.WholeFunction.CopyoutCallRegistry",
+            "Experiments.WholeFunction.CopyoutCalls",
+            "Experiments.WholeFunction.CopyoutClosure",
+            "Experiments.WholeFunction.CopyoutComplete",
+            "Experiments.WholeFunction.CopyoutDispatch",
+            "Experiments.WholeFunction.CopyoutEntry",
+            "Experiments.WholeFunction.CopyoutExit",
+            "Experiments.WholeFunction.CopyoutFrame",
+            "Experiments.WholeFunction.CopyoutFrameDefs",
+            "Experiments.WholeFunction.CopyoutInvariant",
+            "Experiments.WholeFunction.CopyoutJoins",
+            "Experiments.WholeFunction.CopyoutModel",
+            "Experiments.WholeFunction.CopyoutPageJoins",
+            "Experiments.WholeFunction.CopyoutPure",
+            "Experiments.WholeFunction.CopyoutStart",
+            "Experiments.WholeFunction.FrameCompiler",
+            "Experiments.WholeFunction.KernelCalls",
+            "Experiments.WholeFunction.KernelDecode",
+            "Experiments.WholeFunction.KernelDispatch",
+            "Experiments.WholeFunction.KernelFull",
+            "Experiments.WholeFunction.KernelGraph",
+            "Experiments.WholeFunction.KernelLinear",
+            "Experiments.WholeFunction.KernelReg",
+            "Experiments.WholeFunction.KernelStackGraph",
+            "Experiments.WholeFunction.KernelSymbolic",
+            "Experiments.WholeFunction.Residual",
+            "Experiments.WholeFunction.StackActions",
+            "Experiments.WholeFunction.StackChecks",
+            "Experiments.WholeFunction.StackDecode",
+            "Experiments.WholeFunction.StackReturn",
+            "Experiments.WholeFunction.StackShape",
+            "Experiments.WholeFunction.StackValueWp",
+            "Experiments.WholeFunction.StackValues",
+            "Xv6.ProofCopyout"
+          ],
+          "measured_module_count": 49,
+          "measured_service_seconds_sum": 151.102,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        }
+      },
+      "repository_source_consumers": [
+        "Experiments.SolverSurvey.BlockAudit",
+        "Experiments.SolverSurvey.BlockBridge",
+        "Experiments.SolverSurvey.BlockChecks",
+        "Experiments.SolverSurvey.BlockMachine",
+        "Experiments.SolverSurvey.BlockNormalize",
+        "Experiments.SolverSurvey.BlockPhase",
+        "Experiments.SolverSurvey.BlockRejects",
+        "Experiments.WholeFunction.CopyCallRegistry",
+        "Experiments.WholeFunction.CopyinBlockFacts",
+        "Experiments.WholeFunction.CopyinBlocks",
+        "Experiments.WholeFunction.CopyinBoundary",
+        "Experiments.WholeFunction.CopyinCallClosure",
+        "Experiments.WholeFunction.CopyinCallFacts",
+        "Experiments.WholeFunction.CopyinChunkFacts",
+        "Experiments.WholeFunction.CopyinClosure",
+        "Experiments.WholeFunction.CopyinComplete",
+        "Experiments.WholeFunction.CopyinDispatch",
+        "Experiments.WholeFunction.CopyinEntry",
+        "Experiments.WholeFunction.CopyinExit",
+        "Experiments.WholeFunction.CopyinInvariant",
+        "Experiments.WholeFunction.CopyinJoins",
+        "Experiments.WholeFunction.CopyinModel",
+        "Experiments.WholeFunction.CopyinPageFacts",
+        "Experiments.WholeFunction.CopyinRegistryClient",
+        "Experiments.WholeFunction.CopyinStart",
+        "Experiments.WholeFunction.CopyoutBlockFacts",
+        "Experiments.WholeFunction.CopyoutBlocks",
+        "Experiments.WholeFunction.CopyoutBoundary",
+        "Experiments.WholeFunction.CopyoutCallClosure",
+        "Experiments.WholeFunction.CopyoutCallFacts",
+        "Experiments.WholeFunction.CopyoutCallRegistry",
+        "Experiments.WholeFunction.CopyoutCalls",
+        "Experiments.WholeFunction.CopyoutChecks",
+        "Experiments.WholeFunction.CopyoutClosure",
+        "Experiments.WholeFunction.CopyoutComplete",
+        "Experiments.WholeFunction.CopyoutDispatch",
+        "Experiments.WholeFunction.CopyoutEntry",
+        "Experiments.WholeFunction.CopyoutExit",
+        "Experiments.WholeFunction.CopyoutFrame",
+        "Experiments.WholeFunction.CopyoutFrameDefs",
+        "Experiments.WholeFunction.CopyoutInvariant",
+        "Experiments.WholeFunction.CopyoutJoins",
+        "Experiments.WholeFunction.CopyoutModel",
+        "Experiments.WholeFunction.CopyoutPageJoins",
+        "Experiments.WholeFunction.CopyoutPure",
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Experiments.WholeFunction.CopyoutStart",
+        "Experiments.WholeFunction.FrameCompiler",
+        "Experiments.WholeFunction.KernelAudit",
+        "Experiments.WholeFunction.KernelCallRegistry",
+        "Experiments.WholeFunction.KernelCallSites",
+        "Experiments.WholeFunction.KernelCalls",
+        "Experiments.WholeFunction.KernelChecks",
+        "Experiments.WholeFunction.KernelCycle",
+        "Experiments.WholeFunction.KernelDecode",
+        "Experiments.WholeFunction.KernelDispatch",
+        "Experiments.WholeFunction.KernelFull",
+        "Experiments.WholeFunction.KernelGraph",
+        "Experiments.WholeFunction.KernelLinear",
+        "Experiments.WholeFunction.KernelReg",
+        "Experiments.WholeFunction.KernelStackGraph",
+        "Experiments.WholeFunction.KernelSymbolic",
+        "Experiments.WholeFunction.Residual",
+        "Experiments.WholeFunction.StackActions",
+        "Experiments.WholeFunction.StackChecks",
+        "Experiments.WholeFunction.StackDecode",
+        "Experiments.WholeFunction.StackReturn",
+        "Experiments.WholeFunction.StackShape",
+        "Experiments.WholeFunction.StackValueWp",
+        "Experiments.WholeFunction.StackValues",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyin",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "production_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyin",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "outside_measured_copy_closures": [
+        "Experiments.SolverSurvey.BlockAudit",
+        "Experiments.SolverSurvey.BlockChecks",
+        "Experiments.SolverSurvey.BlockPhase",
+        "Experiments.SolverSurvey.BlockRejects",
+        "Experiments.WholeFunction.CopyinRegistryClient",
+        "Experiments.WholeFunction.CopyoutChecks",
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Experiments.WholeFunction.KernelAudit",
+        "Experiments.WholeFunction.KernelCallRegistry",
+        "Experiments.WholeFunction.KernelCallSites",
+        "Experiments.WholeFunction.KernelChecks",
+        "Experiments.WholeFunction.KernelCycle",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinInvariant": {
+      "measured_copy_proof_rebuild_subset": {
+        "module_count": 21,
+        "modules": [
+          "Experiments.SolverSurvey.BlockBridge",
+          "Experiments.SolverSurvey.BlockMachine",
+          "Experiments.SolverSurvey.BlockNormalize",
+          "Experiments.WholeFunction.CopyinBlockFacts",
+          "Experiments.WholeFunction.CopyinBlocks",
+          "Experiments.WholeFunction.CopyinCallClosure",
+          "Experiments.WholeFunction.CopyinCallFacts",
+          "Experiments.WholeFunction.CopyinChunkFacts",
+          "Experiments.WholeFunction.CopyinClosure",
+          "Experiments.WholeFunction.CopyinComplete",
+          "Experiments.WholeFunction.CopyinInvariant",
+          "Experiments.WholeFunction.CopyinJoins",
+          "Experiments.WholeFunction.CopyinStart",
+          "Experiments.WholeFunction.CopyoutBlockFacts",
+          "Experiments.WholeFunction.CopyoutCallClosure",
+          "Experiments.WholeFunction.CopyoutComplete",
+          "Experiments.WholeFunction.CopyoutJoins",
+          "Experiments.WholeFunction.CopyoutPageJoins",
+          "Experiments.WholeFunction.CopyoutStart",
+          "Xv6.ProofCopyin",
+          "Xv6.ProofCopyout"
+        ],
+        "measured_module_count": 21,
+        "measured_service_seconds_sum": 58.04,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "per_root": {
+        "Xv6.ProofCopyin": {
+          "module_count": 11,
+          "modules": [
+            "Experiments.WholeFunction.CopyinBlockFacts",
+            "Experiments.WholeFunction.CopyinBlocks",
+            "Experiments.WholeFunction.CopyinCallClosure",
+            "Experiments.WholeFunction.CopyinCallFacts",
+            "Experiments.WholeFunction.CopyinChunkFacts",
+            "Experiments.WholeFunction.CopyinClosure",
+            "Experiments.WholeFunction.CopyinComplete",
+            "Experiments.WholeFunction.CopyinInvariant",
+            "Experiments.WholeFunction.CopyinJoins",
+            "Experiments.WholeFunction.CopyinStart",
+            "Xv6.ProofCopyin"
+          ],
+          "measured_module_count": 11,
+          "measured_service_seconds_sum": 29.485,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "Xv6.ProofCopyout": {
+          "module_count": 13,
+          "modules": [
+            "Experiments.SolverSurvey.BlockBridge",
+            "Experiments.SolverSurvey.BlockMachine",
+            "Experiments.SolverSurvey.BlockNormalize",
+            "Experiments.WholeFunction.CopyinBlocks",
+            "Experiments.WholeFunction.CopyinChunkFacts",
+            "Experiments.WholeFunction.CopyinInvariant",
+            "Experiments.WholeFunction.CopyoutBlockFacts",
+            "Experiments.WholeFunction.CopyoutCallClosure",
+            "Experiments.WholeFunction.CopyoutComplete",
+            "Experiments.WholeFunction.CopyoutJoins",
+            "Experiments.WholeFunction.CopyoutPageJoins",
+            "Experiments.WholeFunction.CopyoutStart",
+            "Xv6.ProofCopyout"
+          ],
+          "measured_module_count": 13,
+          "measured_service_seconds_sum": 37.065,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        }
+      },
+      "repository_source_consumers": [
+        "Experiments.SolverSurvey.BlockAudit",
+        "Experiments.SolverSurvey.BlockBridge",
+        "Experiments.SolverSurvey.BlockChecks",
+        "Experiments.SolverSurvey.BlockMachine",
+        "Experiments.SolverSurvey.BlockNormalize",
+        "Experiments.SolverSurvey.BlockPhase",
+        "Experiments.SolverSurvey.BlockRejects",
+        "Experiments.WholeFunction.CopyinBlockFacts",
+        "Experiments.WholeFunction.CopyinBlocks",
+        "Experiments.WholeFunction.CopyinCallClosure",
+        "Experiments.WholeFunction.CopyinCallFacts",
+        "Experiments.WholeFunction.CopyinChunkFacts",
+        "Experiments.WholeFunction.CopyinClosure",
+        "Experiments.WholeFunction.CopyinComplete",
+        "Experiments.WholeFunction.CopyinInvariant",
+        "Experiments.WholeFunction.CopyinJoins",
+        "Experiments.WholeFunction.CopyinRegistryClient",
+        "Experiments.WholeFunction.CopyinStart",
+        "Experiments.WholeFunction.CopyoutBlockFacts",
+        "Experiments.WholeFunction.CopyoutCallClosure",
+        "Experiments.WholeFunction.CopyoutComplete",
+        "Experiments.WholeFunction.CopyoutJoins",
+        "Experiments.WholeFunction.CopyoutPageJoins",
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Experiments.WholeFunction.CopyoutStart",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyin",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "production_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyin",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "outside_measured_copy_closures": [
+        "Experiments.SolverSurvey.BlockAudit",
+        "Experiments.SolverSurvey.BlockChecks",
+        "Experiments.SolverSurvey.BlockPhase",
+        "Experiments.SolverSurvey.BlockRejects",
+        "Experiments.WholeFunction.CopyinRegistryClient",
+        "Experiments.WholeFunction.CopyoutRegistryClient",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ]
+    },
+    "Xv6.ProofCopyout": {
+      "measured_copy_proof_rebuild_subset": {
+        "module_count": 1,
+        "modules": [
+          "Xv6.ProofCopyout"
+        ],
+        "measured_module_count": 1,
+        "measured_service_seconds_sum": 1.907,
+        "complete_measurement_coverage": true,
+        "missing_timings": []
+      },
+      "per_root": {
+        "Xv6.ProofCopyin": {
+          "module_count": 0,
+          "modules": [],
+          "measured_module_count": 0,
+          "measured_service_seconds_sum": 0,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        },
+        "Xv6.ProofCopyout": {
+          "module_count": 1,
+          "modules": [
+            "Xv6.ProofCopyout"
+          ],
+          "measured_module_count": 1,
+          "measured_service_seconds_sum": 1.907,
+          "complete_measurement_coverage": true,
+          "missing_timings": []
+        }
+      },
+      "repository_source_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "production_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "outside_measured_copy_closures": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ]
+    }
+  },
+  "historical_monolithic_proofs": {
+    "Xv6.ProofCopyin": {
+      "source": {
+        "git_revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+        "source": "Xv6/ProofCopyin.lean",
+        "sha256": "200112956f5c78a52c1b6882b59e105dc9bc61a280dac3117f3f6d058402278d",
+        "imports": [
+          "Xv6.SpecCopyin",
+          "Xv6.CodeTactics",
+          "Xv6.CopyLemmas",
+          "Xv6.KvmLemmas",
+          "Xv6.UPtLemmas",
+          "Xv6.UPtAllocLemmas",
+          "MachCSL.WpSmodeFrame12",
+          "MachCSL.BvLemmas"
+        ]
+      },
+      "sample": {
+        "source_lines": 1143,
+        "service_seconds": 20.633,
+        "cpu_seconds": 20.597,
+        "peak_mib": 475.1,
+        "log": ".lake/whole-function/upstream-copyin.log"
+      },
+      "timing_manifest": ".lake/whole-function/copyin-production-integration.json",
+      "manifest_sha256": "dcea3c4f0090deadb994543ce8e38863fd67b69381b2f15af013e427f529fd6a",
+      "validated_service_seconds": 20.633,
+      "source_hash_and_revision_valid": true,
+      "source_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyin",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "production_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkFilewrite",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPipewrite",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyin",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "note": "Earlier capped standalone cached-import measurement, not a paired run. Historical graph comparison substitutes both old copy proof imports into the current source graph; not a full historical checkout. Downstream consumer costs are unmeasured."
+    },
+    "Xv6.ProofCopyout": {
+      "source": {
+        "git_revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+        "source": "Xv6/ProofCopyout.lean",
+        "sha256": "030515ac5f7c1e9bf5546e49ac3809308a69cfb7c92b3adcc2b72039b791c041",
+        "imports": [
+          "Xv6.SpecCopyout",
+          "Xv6.SpecWalk",
+          "Xv6.CodeTactics",
+          "Xv6.CopyLemmas",
+          "Xv6.ReadiFrame",
+          "Xv6.KvmLemmas",
+          "Xv6.UPtLemmas",
+          "Xv6.UPtAllocLemmas",
+          "MachCSL.BvLemmas"
+        ]
+      },
+      "sample": {
+        "snapshot": ".lake/whole-function/UpstreamCopyout.lean",
+        "log": ".lake/whole-function/upstream-copyout.log",
+        "runtime_seconds": 24.367,
+        "cpu_seconds": 24.332,
+        "peak_MiB": 501.0
+      },
+      "timing_manifest": ".lake/whole-function/copyout-production-integration.json",
+      "manifest_sha256": "adebcbbabb490b9058533552b203c6a4dc87e0c88e0efaeee1256ad10620fc85",
+      "validated_service_seconds": 24.367,
+      "source_hash_and_revision_valid": true,
+      "source_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "production_consumers": [
+        "Xv6.AppLaws",
+        "Xv6.AppUnionLaws",
+        "Xv6.AppUnionProg",
+        "Xv6.BootChain",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkFileread",
+        "Xv6.LinkForkret",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkKexec",
+        "Xv6.LinkMain",
+        "Xv6.LinkNiAdequacy",
+        "Xv6.LinkPiperead",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysChroot",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSyscall",
+        "Xv6.LinkSystemAdequacyClosed",
+        "Xv6.LinkUInitUnion",
+        "Xv6.LinkUserretClosed",
+        "Xv6.LinkUsertrap",
+        "Xv6.NiAdequacy",
+        "Xv6.ProofCopyout",
+        "Xv6.SystemAdequacy",
+        "Xv6.SystemBootEra",
+        "Xv6.UnionBootAdequacy"
+      ],
+      "note": "Earlier capped standalone cached-import measurement, not a paired run. Historical graph comparison substitutes both old copy proof imports into the current source graph; not a full historical checkout. Downstream consumer costs are unmeasured."
+    }
+  },
+  "timings": {
+    "Experiments.SolverSurvey.BlockBridge": {
+      "seconds": 3.214,
+      "sha256": "141144cd4e597cd77ec7a6b2d27f5171fc6f192d32cadf01d9e745011d416cd1",
+      "manifest": "Experiments/SolverSurvey/check-results.json",
+      "log": ".lake/solver-survey/suite-BlockBridge.log",
+      "peak_mib": null,
+      "reported_peak": "254.4M (swap: 0B)"
+    },
+    "Experiments.SolverSurvey.BlockMachine": {
+      "seconds": 2.477,
+      "sha256": "d1f15a56f09b024a775a022536f4a02bf12dc6f9682d0678014c113db37f2867",
+      "manifest": "Experiments/SolverSurvey/check-results.json",
+      "log": ".lake/solver-survey/suite-BlockMachine.log",
+      "peak_mib": null,
+      "reported_peak": "241.3M (swap: 0B)"
+    },
+    "Experiments.SolverSurvey.BlockNormalize": {
+      "seconds": 2.006,
+      "sha256": "1940dad631be000386da1d7b067b80545d34a407dbe3ad73b553967ac4b2c240",
+      "manifest": "Experiments/SolverSurvey/check-results.json",
+      "log": ".lake/solver-survey/suite-BlockNormalize.log",
+      "peak_mib": null,
+      "reported_peak": "230.6M (swap: 0B)"
+    },
+    "Experiments.SolverSurvey.SmtSlice": {
+      "seconds": 2.949,
+      "sha256": "d1b3e727e5211767c3b239b14168dc0b465a6f7934c19fb42b78db4f0ba3396c",
+      "manifest": "Experiments/SolverSurvey/check-results.json",
+      "log": ".lake/solver-survey/suite-SmtSlice.log",
+      "peak_mib": null,
+      "reported_peak": "219.2M (swap: 0B)"
+    },
+    "Experiments.SolverSurvey.SolverCache": {
+      "seconds": 1.923,
+      "sha256": "6ac80a71ed19f8cf9845c5caf20fcc0f193ee3bdaffbdff9a7745763ce76f4a5",
+      "manifest": "Experiments/SolverSurvey/check-results.json",
+      "log": ".lake/solver-survey/suite-SolverCache.log",
+      "peak_mib": null,
+      "reported_peak": "173.3M (swap: 0B)"
+    },
+    "Experiments.WholeFunction.Binary": {
+      "seconds": 2.616,
+      "sha256": "ad8e6b18cdff6806ae01fffb1c33121af3f814121628cd4efd6eee9ac989043c",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-Binary.log",
+      "peak_mib": 235.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.BinaryCopy": {
+      "seconds": 39.495,
+      "sha256": "eb979dc5d58a92fe5cf291f5724cccb96ee250fdfa2af0bfd00d00d19b3d722a",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-BinaryCopy.log",
+      "peak_mib": 488.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.ControlFlow": {
+      "seconds": 2.003,
+      "sha256": "3ca88a250d32ead91ec4d48c998275278f2e319558208a63c528e34f4d7ca255",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-ControlFlow.log",
+      "peak_mib": 227.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyCallRegistry": {
+      "seconds": 3.408,
+      "sha256": "b01a973046f7dcf06dd26a95ca1738f23a0b4bed9a2c83a7563904c867a8c02d",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyCallRegistry.log",
+      "peak_mib": 253.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyCalls": {
+      "seconds": 3.294,
+      "sha256": "949d4d292204aef2b1dcebad430777657eade523c1d7a8087f574d4bee7632ea",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyCalls.log",
+      "peak_mib": 254.0,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyContracts": {
+      "seconds": 2.101,
+      "sha256": "a8d43aa7d82827dd0efb3499385295b602851893fec27fef0e42c01e7664d341",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyContracts.log",
+      "peak_mib": 225.5,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyControl": {
+      "seconds": 2.099,
+      "sha256": "4c1e65b564efd342ddde240f27802975de0f970a30de37a86ff03cba244870d9",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyControl.log",
+      "peak_mib": 227.1,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyEffects": {
+      "seconds": 2.235,
+      "sha256": "535148586dd1ae933b18c7fe90242716c72bb0abd6d4c47647434396bac81eea",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyEffects.log",
+      "peak_mib": 233.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyRuns": {
+      "seconds": 2.203,
+      "sha256": "78ac959f22b49cfcdc168ab5d9907b6243e6af61b091ecb6d10c5112b5bdb59b",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyRuns.log",
+      "peak_mib": 233.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinBlockFacts": {
+      "seconds": 3.063,
+      "sha256": "2de2dc92713a127a8f7d8f7998a7a009fd3ae4ae5ffb2395e4f460cfb240172f",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinBlockFacts.log",
+      "peak_mib": 229.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinBlocks": {
+      "seconds": 3.397,
+      "sha256": "6ddbce151f7bdd65ac329b059421fd25ca434ed6bd38697d4ac3bc4266292797",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinBlocks.log",
+      "peak_mib": 250.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinBoundary": {
+      "seconds": 2.678,
+      "sha256": "1afec58a9775b9fc3b55b74b792f5d94f34613764fe8c31b2d30ce9fa9131dcb",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinBoundary.log",
+      "peak_mib": 244.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinCallClosure": {
+      "seconds": 2.173,
+      "sha256": "6e62dd0c0c04462d50516c33feecdbf4c02cba58c013c17f759cd278c777191b",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinCallClosure.log",
+      "peak_mib": 226.2,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinCallFacts": {
+      "seconds": 2.897,
+      "sha256": "3e676cfed26472617ec30575e4148edd07989eef57a0b2c8d54234bad50f3e1b",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinCallFacts.log",
+      "peak_mib": 237.8,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinChunkFacts": {
+      "seconds": 2.464,
+      "sha256": "69a8f742877181d9433832d37476bad90db6908e87ddf65d673a2f061941d777",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinChunkFacts.log",
+      "peak_mib": 237.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinClosure": {
+      "seconds": 2.718,
+      "sha256": "41cf6de69068a59a04aa9c1c0f62459987aa3be960ca1c59ad5a40f2a73e883f",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinClosure.log",
+      "peak_mib": 232.2,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinComplete": {
+      "seconds": 2.04,
+      "sha256": "a03737ac0640729f5c27761be003089022ba93efa2ff8f4bc40354c530d41e49",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinComplete.log",
+      "peak_mib": 226.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinDispatch": {
+      "seconds": 6.114,
+      "sha256": "cc556b351b5554a7b66204608b4f939bf6fef49ce40f0cf9c6a90da4863c1388",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinDispatch.log",
+      "peak_mib": 353.8,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinEntry": {
+      "seconds": 3.152,
+      "sha256": "5e91ce5c5dc3b85e89fc406fe75f9d11f922e7e68a767bec4b08b4a029c42e15",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinEntry.log",
+      "peak_mib": 245.4,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinExit": {
+      "seconds": 2.413,
+      "sha256": "1dfb97b95707191c367303ab9cc46d3d7d2bf0c83602547e1032bc3f12cc7d63",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinExit.log",
+      "peak_mib": 234.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinInvariant": {
+      "seconds": 2.649,
+      "sha256": "78d361efd01be1f96f133d8b2c7e1de28cdd67f7dca6eacd1982bb7871a243e7",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinInvariant.log",
+      "peak_mib": 248.5,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinJoins": {
+      "seconds": 2.746,
+      "sha256": "f1dd8ca758d90757d38a04b4f7ac43b29237ff05e9c952305766ca56642ee377",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinJoins.log",
+      "peak_mib": 235.0,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinModel": {
+      "seconds": 1.973,
+      "sha256": "8c1c9ce47e6b9573ffeb30849026d0df867396d18590cddc6b799fea8463935d",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinModel.log",
+      "peak_mib": 227.7,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinPageFacts": {
+      "seconds": 3.012,
+      "sha256": "f789e3797ca5bd887008b65660ae3bdcb04e54dc5c46f83834e8a102376b7305",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinPageFacts.log",
+      "peak_mib": 237.4,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinPure": {
+      "seconds": 2.876,
+      "sha256": "33baf326f450614e70fc36b1e1e78c2fc6d0025e89a8a7ee94c777580628065e",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinPure.log",
+      "peak_mib": 233.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyinStart": {
+      "seconds": 3.346,
+      "sha256": "74206af92ac79ce28ce3c926f4e521f6caf10c1d71808b383f84a7c97c12b261",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyinStart.log",
+      "peak_mib": 253.2,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutBlockFacts": {
+      "seconds": 6.088,
+      "sha256": "151f023abc22a9231c9c054df26c5f0ba988abaf1e39dced63a7e92023bd7294",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutBlockFacts.log",
+      "peak_mib": 266.1,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutBlocks": {
+      "seconds": 5.701,
+      "sha256": "916917c5562c7de5c25a9a96f9ff90fe3446df01473b5674783b1d2b22cc8163",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutBlocks.log",
+      "peak_mib": 292.1,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutBoundary": {
+      "seconds": 2.725,
+      "sha256": "858997170e0ebcd73cd835cb9d21677efa8f411c79cb6d0920c8ce5661582adb",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutBoundary.log",
+      "peak_mib": 243.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutCallClosure": {
+      "seconds": 2.59,
+      "sha256": "2b97009648f291a8e3537686464a20d6d2d9e9988f5f2a4b04779edcfd7f41e9",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutCallClosure.log",
+      "peak_mib": 237.2,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutCallFacts": {
+      "seconds": 4.098,
+      "sha256": "08eb01e8851d389875806bc0cb1a958d147e2861cc3e1be8035eac516e4e29be",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutCallFacts.log",
+      "peak_mib": 255.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutCallRegistry": {
+      "seconds": 3.339,
+      "sha256": "3475a397d80aa30efc7da53c6f05ef510f056496c18de436fa16d1fa0985cca1",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutCallRegistry.log",
+      "peak_mib": 254.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutCalls": {
+      "seconds": 4.01,
+      "sha256": "2f3aa3f0986f3bee46315ada209804289c2293391969f1ddf28ae7cbdb2605e4",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutCalls.log",
+      "peak_mib": 250.8,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutClosure": {
+      "seconds": 2.441,
+      "sha256": "185a8c743498b4c467c264ca86de3058ccd57bdbc83b6128c943aef032ed8573",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutClosure.log",
+      "peak_mib": 226.1,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutComplete": {
+      "seconds": 2.211,
+      "sha256": "9c32d4c882cd4513482b5d19a3a78cb1e061d9d7cfc8a3f432f948ed5e3d28fb",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutComplete.log",
+      "peak_mib": 228.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutDispatch": {
+      "seconds": 2.797,
+      "sha256": "37c7e90f03195fde59fc1e157274acd92a20443e72a5b8020df684ce4ea8d434",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutDispatch.log",
+      "peak_mib": 228.7,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutEntry": {
+      "seconds": 3.033,
+      "sha256": "5661d5d7e20e812f19cb34b1dc24c15d24fa88f2ca0afd6bb98a836253439b74",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutEntry.log",
+      "peak_mib": 249.8,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutExit": {
+      "seconds": 2.395,
+      "sha256": "5fdfdb3986dde63d8fd757fee1b60f337d3eac13d613b502ca915196489cb9ab",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutExit.log",
+      "peak_mib": 238.0,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutFrame": {
+      "seconds": 11.309,
+      "sha256": "2d7df86a8486101109a58dbf8a47ca09cf1d5b900764faed48dcc4a2e29ccaec",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutFrame.log",
+      "peak_mib": 303.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutFrameDefs": {
+      "seconds": 1.92,
+      "sha256": "f1fea3af6220bb8925c7f5348f4b9de772810819f3ea9f0a40b5548f707682a8",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutFrameDefs.log",
+      "peak_mib": 223.8,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutInvariant": {
+      "seconds": 2.545,
+      "sha256": "0ff20fb98fe12d5e7f8f8360fef99ab55e939ed45e19f31212ebaa1eb198ac44",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutInvariant.log",
+      "peak_mib": 240.4,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutJoins": {
+      "seconds": 2.955,
+      "sha256": "4e9af1dbbab937a7db74dbc79373103973207cc67aeacffc3b1df28a9724c791",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutJoins.log",
+      "peak_mib": 233.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutModel": {
+      "seconds": 2.159,
+      "sha256": "8ca818216e5d1848212e5664077ff0adc4c53a8ea5b173d00ea57878c51e3caf",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutModel.log",
+      "peak_mib": 231.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutPageJoins": {
+      "seconds": 3.054,
+      "sha256": "7aed2521494b17092b86898fe782dc4bb9cfade855419c4e522a43b2c1f1a3cd",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutPageJoins.log",
+      "peak_mib": 233.8,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutPure": {
+      "seconds": 2.413,
+      "sha256": "e99992fb8d81a516f69cda3ec4e4b3535b1ffa2943b75da63c4d6d0b9eea35f6",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutPure.log",
+      "peak_mib": 229.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.CopyoutStart": {
+      "seconds": 2.053,
+      "sha256": "048190555412cddbc679fa1b31fc06202b70074b5e2f9052dfab493f3834c094",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-CopyoutStart.log",
+      "peak_mib": 224.2,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.FrameCompiler": {
+      "seconds": 3.368,
+      "sha256": "ed93387a435de44ebe0878ccab142c1541e5b26abf2868b4b9d01a160aaa39bb",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-FrameCompiler.log",
+      "peak_mib": 236.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelCalls": {
+      "seconds": 2.76,
+      "sha256": "4367710ea1538b5f2a26cf5d0fc8478b556d231e1a995c6692a123ffa4d1ce4d",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelCalls.log",
+      "peak_mib": 240.2,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelDecode": {
+      "seconds": 1.992,
+      "sha256": "4efc252c625063bb75d8bf59f681e696ef2c52bba67b53f59ed8b9ea89465da8",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelDecode.log",
+      "peak_mib": 226.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelDispatch": {
+      "seconds": 2.217,
+      "sha256": "093622066918b64309a8152653007bb7bed126beb61316a06839d3a5fc5b23c1",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelDispatch.log",
+      "peak_mib": 229.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelFull": {
+      "seconds": 2.757,
+      "sha256": "5f3c7af33c041754111b173e6b21dbcef5c993db81ffe768bbcadc4a830b15bf",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelFull.log",
+      "peak_mib": 244.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelGraph": {
+      "seconds": 2.329,
+      "sha256": "6aad3bceffc3267747464fbbab451b7d49e829e0b87ef524fb6434e43bccbdf5",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelGraph.log",
+      "peak_mib": 229.7,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelLinear": {
+      "seconds": 2.435,
+      "sha256": "6b67376ee484cc6ae246a03caf4058b59a117bec8399ba22642f61b0992e8925",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelLinear.log",
+      "peak_mib": 244.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelReg": {
+      "seconds": 2.65,
+      "sha256": "c51c37fa5a32205d9dd4f27219d7a4191f9b5510f81d95a4b81aa93bc7254a81",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelReg.log",
+      "peak_mib": 236.1,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelStackGraph": {
+      "seconds": 2.644,
+      "sha256": "0fe9f46ad42fa26f305212694127422edf327880991ce7e772b43e740257f9be",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelStackGraph.log",
+      "peak_mib": 242.7,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.KernelSymbolic": {
+      "seconds": 3.846,
+      "sha256": "cdffbdf0d8ba10542eee26529ba53f964633d0317461e25e799ec4594a8819dd",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-KernelSymbolic.log",
+      "peak_mib": 249.5,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.Residual": {
+      "seconds": 1.982,
+      "sha256": "c8ed3cf6466128419395f5daf8da5c89c175fb767e650bd44976245ccd2c867a",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-Residual.log",
+      "peak_mib": 229.6,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackActions": {
+      "seconds": 2.934,
+      "sha256": "21b850e33813eead618ddddcd89ba18e40a5ca6edc92ceb66fee71a1c3d14733",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackActions.log",
+      "peak_mib": 243.7,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackCells": {
+      "seconds": 2.116,
+      "sha256": "ae08f93fd97e72f5b637487f5581cc69a67a8ee732e85357555cd67a52290355",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackCells.log",
+      "peak_mib": 225.5,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackChecks": {
+      "seconds": 2.686,
+      "sha256": "10757f98d0b59c52ae10bc033900a06216ab91f87a47e29dd2e1e81d8e570839",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackChecks.log",
+      "peak_mib": 260.9,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackDecode": {
+      "seconds": 2.062,
+      "sha256": "795788f3f0d826c3ad4650d89f7473b587f47daf29ce23a4977388622242f6e2",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackDecode.log",
+      "peak_mib": 225.4,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackReturn": {
+      "seconds": 5.841,
+      "sha256": "0377e7558794830b0710c213234f370bfda074d2b1f08bf8012d7381d755c6a1",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackReturn.log",
+      "peak_mib": 273.3,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackShape": {
+      "seconds": 2.429,
+      "sha256": "51da66c96415e5d3b38d76ec60ec9df5470e7529fbc3e06bb87504b6e9f401f6",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackShape.log",
+      "peak_mib": 238.1,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackValueWp": {
+      "seconds": 2.9,
+      "sha256": "3a62bac40cb3f03bb3ef37ff0182c57877fa350b7704f398768c8bbf422163bd",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackValueWp.log",
+      "peak_mib": 260.4,
+      "reported_peak": null
+    },
+    "Experiments.WholeFunction.StackValues": {
+      "seconds": 3.775,
+      "sha256": "c4eb07a43911e12e312051afcaeea656964251fdf7437f314654b1e3a4994113",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-StackValues.log",
+      "peak_mib": 276.0,
+      "reported_peak": null
+    },
+    "Xv6.ProofCopyin": {
+      "seconds": 1.992,
+      "sha256": "7d42000a9043907493562680ab6f8ca99ad765fd76d48544a8ec3ae42da452c9",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-production-copyin.log",
+      "peak_mib": 219.6,
+      "reported_peak": null
+    },
+    "Xv6.ProofCopyout": {
+      "seconds": 1.907,
+      "sha256": "78f18f86c821fe10fa5ac840cb7e973e403fee9e9375734dfa1f3d34ba3b2084",
+      "manifest": "Experiments/WholeFunction/results.json",
+      "log": ".lake/whole-function/suite-production-copyout.log",
+      "peak_mib": 221.8,
+      "reported_peak": null
+    }
+  },
+  "source_graph": {
+    "Experiments.SolverSurvey.BlockAudit": {
+      "source": "Experiments/SolverSurvey/BlockAudit.lean",
+      "sha256": "e2b206c0bf79ce2c9d1f773692bf194b56045d59b711aeb8b4d6211e306dad42",
+      "imports": [
+        "Experiments.SolverSurvey.BlockChecks",
+        "Experiments.SolverSurvey.BlockMachine",
+        "Experiments.SolverSurvey.BlockPhase",
+        "Experiments.SolverSurvey.BlockBridge"
+      ]
+    },
+    "Experiments.SolverSurvey.BlockBridge": {
+      "source": "Experiments/SolverSurvey/BlockBridge.lean",
+      "sha256": "141144cd4e597cd77ec7a6b2d27f5171fc6f192d32cadf01d9e745011d416cd1",
+      "imports": [
+        "Experiments.SolverSurvey.BlockMachine",
+        "Experiments.SolverSurvey.SmtSlice"
+      ]
+    },
+    "Experiments.SolverSurvey.BlockChecks": {
+      "source": "Experiments/SolverSurvey/BlockChecks.lean",
+      "sha256": "843c38714fed908c0dd5375dbfc2db8a1fc6d02e522497e6bae02879a9f19ed1",
+      "imports": [
+        "Experiments.SolverSurvey.BlockNormalize"
+      ]
+    },
+    "Experiments.SolverSurvey.BlockMachine": {
+      "source": "Experiments/SolverSurvey/BlockMachine.lean",
+      "sha256": "d1f15a56f09b024a775a022536f4a02bf12dc6f9682d0678014c113db37f2867",
+      "imports": [
+        "Experiments.SolverSurvey.BlockNormalize"
+      ]
+    },
+    "Experiments.SolverSurvey.BlockNormalize": {
+      "source": "Experiments/SolverSurvey/BlockNormalize.lean",
+      "sha256": "1940dad631be000386da1d7b067b80545d34a407dbe3ad73b553967ac4b2c240",
+      "imports": [
+        "Experiments.WholeFunction.CopyinBlocks",
+        "Experiments.SolverSurvey.SmtSlice",
+        "Experiments.SolverSurvey.SolverCache"
+      ]
+    },
+    "Experiments.SolverSurvey.BlockPhase": {
+      "source": "Experiments/SolverSurvey/BlockPhase.lean",
+      "sha256": "fc3a8d11eb5a4454c5c1ee88dd15d5aec5343dffb0dbc965efe9bed26f7f179c",
+      "imports": [
+        "Experiments.SolverSurvey.BlockNormalize"
+      ]
+    },
+    "Experiments.SolverSurvey.BlockRejects": {
+      "source": "Experiments/SolverSurvey/BlockRejects.lean",
+      "sha256": "6e2b0d8ba1148d6f7f98d1142d1d620890cd2873587aa90e681afe8a89db80a2",
+      "imports": [
+        "Experiments.SolverSurvey.BlockMachine"
+      ]
+    },
+    "Experiments.SolverSurvey.SmtSlice": {
+      "source": "Experiments/SolverSurvey/SmtSlice.lean",
+      "sha256": "d1b3e727e5211767c3b239b14168dc0b465a6f7934c19fb42b78db4f0ba3396c",
+      "imports": [
+        "Lean"
+      ]
+    },
+    "Experiments.SolverSurvey.SolverCache": {
+      "source": "Experiments/SolverSurvey/SolverCache.lean",
+      "sha256": "6ac80a71ed19f8cf9845c5caf20fcc0f193ee3bdaffbdff9a7745763ce76f4a5",
+      "imports": [
+        "Lean.Elab.Tactic.BVDecide",
+        "Lean.Util.CollectFVars"
+      ]
+    },
+    "Experiments.WholeFunction.Binary": {
+      "source": "Experiments/WholeFunction/Binary.lean",
+      "sha256": "ad8e6b18cdff6806ae01fffb1c33121af3f814121628cd4efd6eee9ac989043c",
+      "imports": [
+        "Xv6.CodeTactics"
+      ]
+    },
+    "Experiments.WholeFunction.BinaryCopy": {
+      "source": "Experiments/WholeFunction/BinaryCopy.lean",
+      "sha256": "eb979dc5d58a92fe5cf291f5724cccb96ee250fdfa2af0bfd00d00d19b3d722a",
+      "imports": [
+        "Experiments.WholeFunction.Binary"
+      ]
+    },
+    "Experiments.WholeFunction.ControlFlow": {
+      "source": "Experiments/WholeFunction/ControlFlow.lean",
+      "sha256": "3ca88a250d32ead91ec4d48c998275278f2e319558208a63c528e34f4d7ca255",
+      "imports": [
+        "MachCSL.WpSmodeFrame"
+      ]
+    },
+    "Experiments.WholeFunction.CopyCallRegistry": {
+      "source": "Experiments/WholeFunction/CopyCallRegistry.lean",
+      "sha256": "b01a973046f7dcf06dd26a95ca1738f23a0b4bed9a2c83a7563904c867a8c02d",
+      "imports": [
+        "Experiments.WholeFunction.CopyCalls",
+        "Experiments.WholeFunction.CopyinModel",
+        "Experiments.WholeFunction.KernelCalls"
+      ]
+    },
+    "Experiments.WholeFunction.CopyCalls": {
+      "source": "Experiments/WholeFunction/CopyCalls.lean",
+      "sha256": "949d4d292204aef2b1dcebad430777657eade523c1d7a8087f574d4bee7632ea",
+      "imports": [
+        "Xv6.CopyLemmas",
+        "Xv6.UMemLemmas",
+        "Experiments.WholeFunction.CopyContracts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyContracts": {
+      "source": "Experiments/WholeFunction/CopyContracts.lean",
+      "sha256": "a8d43aa7d82827dd0efb3499385295b602851893fec27fef0e42c01e7664d341",
+      "imports": [
+        "Experiments.WholeFunction.CopyEffects",
+        "Xv6.SpecCopyin",
+        "Xv6.SpecCopyout",
+        "Xv6.SpecCopyinstr"
+      ]
+    },
+    "Experiments.WholeFunction.CopyControl": {
+      "source": "Experiments/WholeFunction/CopyControl.lean",
+      "sha256": "4c1e65b564efd342ddde240f27802975de0f970a30de37a86ff03cba244870d9",
+      "imports": [
+        "Experiments.WholeFunction.ControlFlow",
+        "Experiments.WholeFunction.CopyContracts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyEffects": {
+      "source": "Experiments/WholeFunction/CopyEffects.lean",
+      "sha256": "535148586dd1ae933b18c7fe90242716c72bb0abd6d4c47647434396bac81eea",
+      "imports": [
+        "Xv6.UMemLemmas"
+      ]
+    },
+    "Experiments.WholeFunction.CopyRuns": {
+      "source": "Experiments/WholeFunction/CopyRuns.lean",
+      "sha256": "78ac959f22b49cfcdc168ab5d9907b6243e6af61b091ecb6d10c5112b5bdb59b",
+      "imports": [
+        "Experiments.WholeFunction.CopyContracts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinBlockFacts": {
+      "source": "Experiments/WholeFunction/CopyinBlockFacts.lean",
+      "sha256": "2de2dc92713a127a8f7d8f7998a7a009fd3ae4ae5ffb2395e4f460cfb240172f",
+      "imports": [
+        "Experiments.WholeFunction.CopyinBlocks"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinBlocks": {
+      "source": "Experiments/WholeFunction/CopyinBlocks.lean",
+      "sha256": "6ddbce151f7bdd65ac329b059421fd25ca434ed6bd38697d4ac3bc4266292797",
+      "imports": [
+        "Experiments.WholeFunction.CopyinChunkFacts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinBoundary": {
+      "source": "Experiments/WholeFunction/CopyinBoundary.lean",
+      "sha256": "1afec58a9775b9fc3b55b74b792f5d94f34613764fe8c31b2d30ce9fa9131dcb",
+      "imports": [
+        "Experiments.WholeFunction.CopyinExit",
+        "Experiments.WholeFunction.CopyinEntry"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinCallClosure": {
+      "source": "Experiments/WholeFunction/CopyinCallClosure.lean",
+      "sha256": "6e62dd0c0c04462d50516c33feecdbf4c02cba58c013c17f759cd278c777191b",
+      "imports": [
+        "Experiments.WholeFunction.CopyinCallFacts",
+        "Experiments.WholeFunction.CopyinJoins"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinCallFacts": {
+      "source": "Experiments/WholeFunction/CopyinCallFacts.lean",
+      "sha256": "3e676cfed26472617ec30575e4148edd07989eef57a0b2c8d54234bad50f3e1b",
+      "imports": [
+        "Experiments.WholeFunction.CopyinClosure"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinChunkFacts": {
+      "source": "Experiments/WholeFunction/CopyinChunkFacts.lean",
+      "sha256": "69a8f742877181d9433832d37476bad90db6908e87ddf65d673a2f061941d777",
+      "imports": [
+        "Experiments.WholeFunction.CopyinInvariant"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinClosure": {
+      "source": "Experiments/WholeFunction/CopyinClosure.lean",
+      "sha256": "41cf6de69068a59a04aa9c1c0f62459987aa3be960ca1c59ad5a40f2a73e883f",
+      "imports": [
+        "Experiments.WholeFunction.CopyinInvariant",
+        "Experiments.WholeFunction.CopyinDispatch",
+        "Experiments.WholeFunction.CopyinExit",
+        "Experiments.WholeFunction.CopyinPageFacts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinComplete": {
+      "source": "Experiments/WholeFunction/CopyinComplete.lean",
+      "sha256": "a03737ac0640729f5c27761be003089022ba93efa2ff8f4bc40354c530d41e49",
+      "imports": [
+        "Experiments.WholeFunction.CopyinCallClosure",
+        "Experiments.WholeFunction.CopyinStart",
+        "Experiments.WholeFunction.CopyinBoundary"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinDispatch": {
+      "source": "Experiments/WholeFunction/CopyinDispatch.lean",
+      "sha256": "cc556b351b5554a7b66204608b4f939bf6fef49ce40f0cf9c6a90da4863c1388",
+      "imports": [
+        "Experiments.WholeFunction.CopyCallRegistry",
+        "Experiments.WholeFunction.KernelDispatch",
+        "Experiments.WholeFunction.BinaryCopy"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinEntry": {
+      "source": "Experiments/WholeFunction/CopyinEntry.lean",
+      "sha256": "5e91ce5c5dc3b85e89fc406fe75f9d11f922e7e68a767bec4b08b4a029c42e15",
+      "imports": [
+        "Experiments.WholeFunction.StackValueWp"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinExit": {
+      "source": "Experiments/WholeFunction/CopyinExit.lean",
+      "sha256": "1dfb97b95707191c367303ab9cc46d3d7d2bf0c83602547e1032bc3f12cc7d63",
+      "imports": [
+        "Experiments.WholeFunction.CopyinModel",
+        "Experiments.WholeFunction.KernelCalls",
+        "Experiments.WholeFunction.StackReturn"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinInvariant": {
+      "source": "Experiments/WholeFunction/CopyinInvariant.lean",
+      "sha256": "78d361efd01be1f96f133d8b2c7e1de28cdd67f7dca6eacd1982bb7871a243e7",
+      "imports": [
+        "Experiments.WholeFunction.CopyinModel",
+        "Experiments.WholeFunction.CopyinPure",
+        "Experiments.WholeFunction.KernelSymbolic",
+        "Experiments.WholeFunction.StackValueWp"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinJoins": {
+      "source": "Experiments/WholeFunction/CopyinJoins.lean",
+      "sha256": "f1dd8ca758d90757d38a04b4f7ac43b29237ff05e9c952305766ca56642ee377",
+      "imports": [
+        "Experiments.WholeFunction.CopyinClosure",
+        "Experiments.WholeFunction.CopyinBlockFacts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinModel": {
+      "source": "Experiments/WholeFunction/CopyinModel.lean",
+      "sha256": "8c1c9ce47e6b9573ffeb30849026d0df867396d18590cddc6b799fea8463935d",
+      "imports": [
+        "Experiments.WholeFunction.CopyControl",
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinPageFacts": {
+      "source": "Experiments/WholeFunction/CopyinPageFacts.lean",
+      "sha256": "f789e3797ca5bd887008b65660ae3bdcb04e54dc5c46f83834e8a102376b7305",
+      "imports": [
+        "Experiments.WholeFunction.CopyCallRegistry"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinPure": {
+      "source": "Experiments/WholeFunction/CopyinPure.lean",
+      "sha256": "33baf326f450614e70fc36b1e1e78c2fc6d0025e89a8a7ee94c777580628065e",
+      "imports": [
+        "Experiments.WholeFunction.CopyContracts",
+        "Xv6.CopyLemmas"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinRegistryClient": {
+      "source": "Experiments/WholeFunction/CopyinRegistryClient.lean",
+      "sha256": "4382b89128922eb592dcac1585d3af1188c3514c539b40f883a8381caf0ec910",
+      "imports": [
+        "Experiments.WholeFunction.KernelCallRegistry",
+        "Experiments.WholeFunction.CopyinCallClosure",
+        "Experiments.WholeFunction.CopyinStart",
+        "Experiments.WholeFunction.CopyinBoundary"
+      ]
+    },
+    "Experiments.WholeFunction.CopyinStart": {
+      "source": "Experiments/WholeFunction/CopyinStart.lean",
+      "sha256": "74206af92ac79ce28ce3c926f4e521f6caf10c1d71808b383f84a7c97c12b261",
+      "imports": [
+        "Experiments.WholeFunction.CopyinClosure"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutBlockFacts": {
+      "source": "Experiments/WholeFunction/CopyoutBlockFacts.lean",
+      "sha256": "151f023abc22a9231c9c054df26c5f0ba988abaf1e39dced63a7e92023bd7294",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutBlocks",
+        "Experiments.SolverSurvey.BlockBridge"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutBlocks": {
+      "source": "Experiments/WholeFunction/CopyoutBlocks.lean",
+      "sha256": "916917c5562c7de5c25a9a96f9ff90fe3446df01473b5674783b1d2b22cc8163",
+      "imports": [
+        "Experiments.WholeFunction.KernelSymbolic",
+        "Experiments.WholeFunction.BinaryCopy"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutBoundary": {
+      "source": "Experiments/WholeFunction/CopyoutBoundary.lean",
+      "sha256": "858997170e0ebcd73cd835cb9d21677efa8f411c79cb6d0920c8ce5661582adb",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutExit",
+        "Experiments.WholeFunction.CopyoutEntry"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutCallClosure": {
+      "source": "Experiments/WholeFunction/CopyoutCallClosure.lean",
+      "sha256": "2b97009648f291a8e3537686464a20d6d2d9e9988f5f2a4b04779edcfd7f41e9",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutCallFacts",
+        "Experiments.WholeFunction.CopyoutPageJoins"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutCallFacts": {
+      "source": "Experiments/WholeFunction/CopyoutCallFacts.lean",
+      "sha256": "08eb01e8851d389875806bc0cb1a958d147e2861cc3e1be8035eac516e4e29be",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutInvariant",
+        "Experiments.WholeFunction.CopyoutDispatch",
+        "Experiments.WholeFunction.CopyinPageFacts"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutCallRegistry": {
+      "source": "Experiments/WholeFunction/CopyoutCallRegistry.lean",
+      "sha256": "3475a397d80aa30efc7da53c6f05ef510f056496c18de436fa16d1fa0985cca1",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutCalls",
+        "Experiments.WholeFunction.CopyoutModel"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutCalls": {
+      "source": "Experiments/WholeFunction/CopyoutCalls.lean",
+      "sha256": "2f3aa3f0986f3bee46315ada209804289c2293391969f1ddf28ae7cbdb2605e4",
+      "imports": [
+        "Experiments.WholeFunction.CopyCallRegistry",
+        "Experiments.WholeFunction.BinaryCopy",
+        "Xv6.SpecWalk"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutChecks": {
+      "source": "Experiments/WholeFunction/CopyoutChecks.lean",
+      "sha256": "5f128e9075aa3a2395710000f893478d72f0eb173005cbe8e0865be13bf9477b",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutDispatch",
+        "Experiments.WholeFunction.CopyoutBlocks",
+        "Experiments.WholeFunction.CopyoutFrame"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutClosure": {
+      "source": "Experiments/WholeFunction/CopyoutClosure.lean",
+      "sha256": "185a8c743498b4c467c264ca86de3058ccd57bdbc83b6128c943aef032ed8573",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutCallFacts",
+        "Experiments.WholeFunction.CopyoutExit"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutComplete": {
+      "source": "Experiments/WholeFunction/CopyoutComplete.lean",
+      "sha256": "9c32d4c882cd4513482b5d19a3a78cb1e061d9d7cfc8a3f432f948ed5e3d28fb",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutClosure",
+        "Experiments.WholeFunction.CopyoutCallClosure",
+        "Experiments.WholeFunction.CopyoutStart",
+        "Experiments.WholeFunction.CopyoutBoundary"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutDispatch": {
+      "source": "Experiments/WholeFunction/CopyoutDispatch.lean",
+      "sha256": "37c7e90f03195fde59fc1e157274acd92a20443e72a5b8020df684ce4ea8d434",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutCallRegistry",
+        "Experiments.WholeFunction.KernelDispatch",
+        "Experiments.WholeFunction.BinaryCopy"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutEntry": {
+      "source": "Experiments/WholeFunction/CopyoutEntry.lean",
+      "sha256": "5661d5d7e20e812f19cb34b1dc24c15d24fa88f2ca0afd6bb98a836253439b74",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutFrame",
+        "Experiments.WholeFunction.CopyinEntry"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutExit": {
+      "source": "Experiments/WholeFunction/CopyoutExit.lean",
+      "sha256": "5fdfdb3986dde63d8fd757fee1b60f337d3eac13d613b502ca915196489cb9ab",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutModel",
+        "Experiments.WholeFunction.KernelCalls",
+        "Experiments.WholeFunction.CopyoutFrame",
+        "Xv6.SpecCopyout"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutFrame": {
+      "source": "Experiments/WholeFunction/CopyoutFrame.lean",
+      "sha256": "2d7df86a8486101109a58dbf8a47ca09cf1d5b900764faed48dcc4a2e29ccaec",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutFrameDefs"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutFrameDefs": {
+      "source": "Experiments/WholeFunction/CopyoutFrameDefs.lean",
+      "sha256": "f1fea3af6220bb8925c7f5348f4b9de772810819f3ea9f0a40b5548f707682a8",
+      "imports": [
+        "Experiments.WholeFunction.FrameCompiler"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutInvariant": {
+      "source": "Experiments/WholeFunction/CopyoutInvariant.lean",
+      "sha256": "0ff20fb98fe12d5e7f8f8360fef99ab55e939ed45e19f31212ebaa1eb198ac44",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutPure",
+        "Experiments.WholeFunction.CopyoutFrameDefs",
+        "Experiments.WholeFunction.Residual"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutJoins": {
+      "source": "Experiments/WholeFunction/CopyoutJoins.lean",
+      "sha256": "4e9af1dbbab937a7db74dbc79373103973207cc67aeacffc3b1df28a9724c791",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutInvariant",
+        "Experiments.WholeFunction.CopyoutBlockFacts",
+        "Experiments.WholeFunction.CopyoutCallRegistry"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutModel": {
+      "source": "Experiments/WholeFunction/CopyoutModel.lean",
+      "sha256": "8ca818216e5d1848212e5664077ff0adc4c53a8ea5b173d00ea57878c51e3caf",
+      "imports": [
+        "Experiments.WholeFunction.CopyRuns",
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutPageJoins": {
+      "source": "Experiments/WholeFunction/CopyoutPageJoins.lean",
+      "sha256": "7aed2521494b17092b86898fe782dc4bb9cfade855419c4e522a43b2c1f1a3cd",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutJoins"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutPure": {
+      "source": "Experiments/WholeFunction/CopyoutPure.lean",
+      "sha256": "e99992fb8d81a516f69cda3ec4e4b3535b1ffa2943b75da63c4d6d0b9eea35f6",
+      "imports": [
+        "Experiments.WholeFunction.CopyinPure",
+        "Experiments.WholeFunction.CopyoutModel"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutRegistryClient": {
+      "source": "Experiments/WholeFunction/CopyoutRegistryClient.lean",
+      "sha256": "c6a13c63d1c10629f71b3187c11ea3fa461c026fce2cf0c46ed3c366e3c68961",
+      "imports": [
+        "Experiments.WholeFunction.KernelCallRegistry",
+        "Experiments.WholeFunction.CopyoutCallClosure",
+        "Experiments.WholeFunction.CopyoutClosure",
+        "Experiments.WholeFunction.CopyoutStart",
+        "Experiments.WholeFunction.CopyoutBoundary"
+      ]
+    },
+    "Experiments.WholeFunction.CopyoutStart": {
+      "source": "Experiments/WholeFunction/CopyoutStart.lean",
+      "sha256": "048190555412cddbc679fa1b31fc06202b70074b5e2f9052dfab493f3834c094",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutJoins",
+        "Experiments.WholeFunction.CopyoutExit"
+      ]
+    },
+    "Experiments.WholeFunction.FrameCompiler": {
+      "source": "Experiments/WholeFunction/FrameCompiler.lean",
+      "sha256": "ed93387a435de44ebe0878ccab142c1541e5b26abf2868b4b9d01a160aaa39bb",
+      "imports": [
+        "Experiments.WholeFunction.StackReturn"
+      ]
+    },
+    "Experiments.WholeFunction.KernelAudit": {
+      "source": "Experiments/WholeFunction/KernelAudit.lean",
+      "sha256": "3e51c2b08edd572810a52159eea930c95915ec231d0798202743b5cd3888bb13",
+      "imports": [
+        "Experiments.WholeFunction.KernelChecks",
+        "Experiments.WholeFunction.KernelCycle",
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.KernelCallRegistry": {
+      "source": "Experiments/WholeFunction/KernelCallRegistry.lean",
+      "sha256": "675d20a98295c13b328a959809b18797a4c5d406faaf6e6c2b07aee0046241d2",
+      "imports": [
+        "Experiments.WholeFunction.KernelCallSites"
+      ]
+    },
+    "Experiments.WholeFunction.KernelCallSites": {
+      "source": "Experiments/WholeFunction/KernelCallSites.lean",
+      "sha256": "0f511e61f9bf10de91d4962e44826972234a5537f7b39087ee93be41f7b500a5",
+      "imports": [
+        "Experiments.WholeFunction.KernelDispatch"
+      ]
+    },
+    "Experiments.WholeFunction.KernelCalls": {
+      "source": "Experiments/WholeFunction/KernelCalls.lean",
+      "sha256": "4367710ea1538b5f2a26cf5d0fc8478b556d231e1a995c6692a123ffa4d1ce4d",
+      "imports": [
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.KernelChecks": {
+      "source": "Experiments/WholeFunction/KernelChecks.lean",
+      "sha256": "d646e08e16bf64a58d3c30725d10e61b9ab54eac0f2451c855c43a9871db598f",
+      "imports": [
+        "Experiments.WholeFunction.KernelGraph",
+        "Experiments.WholeFunction.BinaryCopy"
+      ]
+    },
+    "Experiments.WholeFunction.KernelCycle": {
+      "source": "Experiments/WholeFunction/KernelCycle.lean",
+      "sha256": "38628391ac7f54faf53d63f45468334044deb2d04a4505891d4251a0605671f1",
+      "imports": [
+        "Experiments.WholeFunction.KernelGraph"
+      ]
+    },
+    "Experiments.WholeFunction.KernelDecode": {
+      "source": "Experiments/WholeFunction/KernelDecode.lean",
+      "sha256": "4efc252c625063bb75d8bf59f681e696ef2c52bba67b53f59ed8b9ea89465da8",
+      "imports": [
+        "Experiments.WholeFunction.KernelReg"
+      ]
+    },
+    "Experiments.WholeFunction.KernelDispatch": {
+      "source": "Experiments/WholeFunction/KernelDispatch.lean",
+      "sha256": "093622066918b64309a8152653007bb7bed126beb61316a06839d3a5fc5b23c1",
+      "imports": [
+        "Experiments.WholeFunction.KernelFull"
+      ]
+    },
+    "Experiments.WholeFunction.KernelFull": {
+      "source": "Experiments/WholeFunction/KernelFull.lean",
+      "sha256": "5f3c7af33c041754111b173e6b21dbcef5c993db81ffe768bbcadc4a830b15bf",
+      "imports": [
+        "Experiments.WholeFunction.KernelCalls"
+      ]
+    },
+    "Experiments.WholeFunction.KernelGraph": {
+      "source": "Experiments/WholeFunction/KernelGraph.lean",
+      "sha256": "6aad3bceffc3267747464fbbab451b7d49e829e0b87ef524fb6434e43bccbdf5",
+      "imports": [
+        "Experiments.WholeFunction.KernelDecode"
+      ]
+    },
+    "Experiments.WholeFunction.KernelLinear": {
+      "source": "Experiments/WholeFunction/KernelLinear.lean",
+      "sha256": "6b67376ee484cc6ae246a03caf4058b59a117bec8399ba22642f61b0992e8925",
+      "imports": [
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.KernelReg": {
+      "source": "Experiments/WholeFunction/KernelReg.lean",
+      "sha256": "c51c37fa5a32205d9dd4f27219d7a4191f9b5510f81d95a4b81aa93bc7254a81",
+      "imports": [
+        "Experiments.WholeFunction.Binary",
+        "Experiments.WholeFunction.ControlFlow"
+      ]
+    },
+    "Experiments.WholeFunction.KernelStackGraph": {
+      "source": "Experiments/WholeFunction/KernelStackGraph.lean",
+      "sha256": "0fe9f46ad42fa26f305212694127422edf327880991ce7e772b43e740257f9be",
+      "imports": [
+        "Experiments.WholeFunction.KernelGraph",
+        "Experiments.WholeFunction.StackDecode"
+      ]
+    },
+    "Experiments.WholeFunction.KernelSymbolic": {
+      "source": "Experiments/WholeFunction/KernelSymbolic.lean",
+      "sha256": "cdffbdf0d8ba10542eee26529ba53f964633d0317461e25e799ec4594a8819dd",
+      "imports": [
+        "Experiments.WholeFunction.KernelStackGraph"
+      ]
+    },
+    "Experiments.WholeFunction.Residual": {
+      "source": "Experiments/WholeFunction/Residual.lean",
+      "sha256": "c8ed3cf6466128419395f5daf8da5c89c175fb767e650bd44976245ccd2c867a",
+      "imports": [
+        "Experiments.WholeFunction.KernelSymbolic"
+      ]
+    },
+    "Experiments.WholeFunction.StackActions": {
+      "source": "Experiments/WholeFunction/StackActions.lean",
+      "sha256": "21b850e33813eead618ddddcd89ba18e40a5ca6edc92ceb66fee71a1c3d14733",
+      "imports": [
+        "Experiments.WholeFunction.StackCells",
+        "Experiments.WholeFunction.ControlFlow",
+        "Experiments.WholeFunction.KernelReg"
+      ]
+    },
+    "Experiments.WholeFunction.StackCells": {
+      "source": "Experiments/WholeFunction/StackCells.lean",
+      "sha256": "ae08f93fd97e72f5b637487f5581cc69a67a8ee732e85357555cd67a52290355",
+      "imports": [
+        "Experiments.WholeFunction.Binary",
+        "MachCSL.WpSmodeFrame"
+      ]
+    },
+    "Experiments.WholeFunction.StackChecks": {
+      "source": "Experiments/WholeFunction/StackChecks.lean",
+      "sha256": "10757f98d0b59c52ae10bc033900a06216ab91f87a47e29dd2e1e81d8e570839",
+      "imports": [
+        "Experiments.WholeFunction.StackShape",
+        "Experiments.WholeFunction.KernelStackGraph",
+        "Experiments.WholeFunction.BinaryCopy"
+      ]
+    },
+    "Experiments.WholeFunction.StackDecode": {
+      "source": "Experiments/WholeFunction/StackDecode.lean",
+      "sha256": "795788f3f0d826c3ad4650d89f7473b587f47daf29ce23a4977388622242f6e2",
+      "imports": [
+        "Experiments.WholeFunction.StackActions"
+      ]
+    },
+    "Experiments.WholeFunction.StackReturn": {
+      "source": "Experiments/WholeFunction/StackReturn.lean",
+      "sha256": "0377e7558794830b0710c213234f370bfda074d2b1f08bf8012d7381d755c6a1",
+      "imports": [
+        "Experiments.WholeFunction.StackValueWp"
+      ]
+    },
+    "Experiments.WholeFunction.StackShape": {
+      "source": "Experiments/WholeFunction/StackShape.lean",
+      "sha256": "51da66c96415e5d3b38d76ec60ec9df5470e7529fbc3e06bb87504b6e9f401f6",
+      "imports": [
+        "Experiments.WholeFunction.StackDecode"
+      ]
+    },
+    "Experiments.WholeFunction.StackValueWp": {
+      "source": "Experiments/WholeFunction/StackValueWp.lean",
+      "sha256": "3a62bac40cb3f03bb3ef37ff0182c57877fa350b7704f398768c8bbf422163bd",
+      "imports": [
+        "Experiments.WholeFunction.KernelLinear",
+        "Experiments.WholeFunction.StackValues"
+      ]
+    },
+    "Experiments.WholeFunction.StackValues": {
+      "source": "Experiments/WholeFunction/StackValues.lean",
+      "sha256": "c4eb07a43911e12e312051afcaeea656964251fdf7437f314654b1e3a4994113",
+      "imports": [
+        "Experiments.WholeFunction.StackChecks"
+      ]
+    },
+    "Xv6.AppLaws": {
+      "source": "Xv6/AppLaws.lean",
+      "sha256": "e2298b437e82415c2c2bce79915adc0606281df465e0a90d0943f2aee77e4ca2",
+      "imports": [
+        "Xv6.SystemAdequacy"
+      ]
+    },
+    "Xv6.AppUnionLaws": {
+      "source": "Xv6/AppUnionLaws.lean",
+      "sha256": "92a1689d71a2a58ae366ee230ca899ba976169d84a4951c9ad1ad2a0db164d7e",
+      "imports": [
+        "Xv6.AppUnionProg",
+        "Xv6.UnionOutSeal",
+        "Xv6.UnionLinksSeal",
+        "Xv6.AppFileXfer",
+        "Xv6.AppLaws",
+        "Xv6.AppUnionPre"
+      ]
+    },
+    "Xv6.AppUnionProg": {
+      "source": "Xv6/AppUnionProg.lean",
+      "sha256": "dd58cf403d935d25b00ab01f8d58220eb5f7d127dbd65cebacdf05dcf193e2b0",
+      "imports": [
+        "Xv6.SystemBootEra",
+        "Xv6.AppUnionRec"
+      ]
+    },
+    "Xv6.BootChain": {
+      "source": "Xv6/BootChain.lean",
+      "sha256": "f271ef92c6ac6d954976555aa19040846124e4a9dd4523df4b49861d5fe30f9d",
+      "imports": [
+        "Xv6.BootCarveHart",
+        "Xv6.BootBridge",
+        "Xv6.LinkBoot",
+        "Xv6.LinkMain",
+        "Xv6.LinkMainSecondary",
+        "Xv6.BootPrimarySupply"
+      ]
+    },
+    "Xv6.LinkCopyin": {
+      "source": "Xv6/LinkCopyin.lean",
+      "sha256": "81bb6792382139ac4c0bb1cc464de6046f1623c36abbd9f6cdfa0fb446bc4837",
+      "imports": [
+        "Xv6.ProofCopyin",
+        "Xv6.LinkWalkaddr",
+        "Xv6.LinkVmfault",
+        "Xv6.LinkMemmove"
+      ]
+    },
+    "Xv6.LinkCopyout": {
+      "source": "Xv6/LinkCopyout.lean",
+      "sha256": "62b8ff9c2aa4fd55c1a002643ed4a43d41c200a7370996ca57a5c1f7e2f59906",
+      "imports": [
+        "Xv6.ProofCopyout",
+        "Xv6.LinkWalkaddr",
+        "Xv6.LinkVmfault",
+        "Xv6.LinkMemmove"
+      ]
+    },
+    "Xv6.LinkFileread": {
+      "source": "Xv6/LinkFileread.lean",
+      "sha256": "92a3b133a64d6042bf959d4c5ba235ab0b00469a521d2eb7a3f373ec676b11bc",
+      "imports": [
+        "Xv6.ProofFileread",
+        "Xv6.LinkIlock",
+        "Xv6.LinkReadi",
+        "Xv6.LinkIunlock",
+        "Xv6.LinkConsoleread",
+        "Xv6.LinkPiperead"
+      ]
+    },
+    "Xv6.LinkFilewrite": {
+      "source": "Xv6/LinkFilewrite.lean",
+      "sha256": "3a5481245ce3bf59681cb2d453f9c9941d999836985894336df60f354dbab9e6",
+      "imports": [
+        "Xv6.ProofFilewrite",
+        "Xv6.LinkIlock",
+        "Xv6.LinkWritei",
+        "Xv6.LinkIunlock",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkConsolewrite",
+        "Xv6.LinkPipewrite"
+      ]
+    },
+    "Xv6.LinkForkret": {
+      "source": "Xv6/LinkForkret.lean",
+      "sha256": "87f2172c65e687c4975e88741e90877d845fade54d9276fb305e29425a1fc4a5",
+      "imports": [
+        "Xv6.ProofForkret",
+        "Xv6.LinkFsinit",
+        "Xv6.LinkUserretClosed"
+      ]
+    },
+    "Xv6.LinkForkretParkPaid": {
+      "source": "Xv6/LinkForkretParkPaid.lean",
+      "sha256": "fbf7b904a946b4359191406de4356116809ec4d814153a946eb34fdc20413ca6",
+      "imports": [
+        "Xv6.LinkForkret",
+        "Xv6.ProofForkretPark"
+      ]
+    },
+    "Xv6.LinkKexec": {
+      "source": "Xv6/LinkKexec.lean",
+      "sha256": "650975c187c7abb07a424d234e7ff01a752d7a864af938cc77c5b84704182a45",
+      "imports": [
+        "Xv6.ProofKexec",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkNameiEra",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkProcPagetable",
+        "Xv6.LinkProcFreepagetable",
+        "Xv6.LinkFlags2perm",
+        "Xv6.LinkUvmalloc",
+        "Xv6.LinkUvmclear",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkSafestrcpySrc",
+        "Xv6.LinkUvmunmap",
+        "Xv6.LinkUvmfree",
+        "Xv6.LinkUvmcreate",
+        "Xv6.LinkFreewalk"
+      ]
+    },
+    "Xv6.LinkMain": {
+      "source": "Xv6/LinkMain.lean",
+      "sha256": "0c1df2c4eb1e0a3702db735168d3d8b16859fa17df16b704827420fdb0e7ad46",
+      "imports": [
+        "Xv6.ProofMain",
+        "Xv6.LinkConsoleinit",
+        "Xv6.LinkPrintkinit",
+        "Xv6.LinkKinit",
+        "Xv6.LinkFreerange",
+        "Xv6.LinkKvminit",
+        "Xv6.LinkKvmmake",
+        "Xv6.LinkKvmmap",
+        "Xv6.LinkProcMapstacks",
+        "Xv6.LinkKvminithart",
+        "Xv6.LinkProcinit",
+        "Xv6.LinkTrapinit",
+        "Xv6.LinkTrapinithart",
+        "Xv6.LinkPlicinit",
+        "Xv6.LinkPlicinithart",
+        "Xv6.LinkBinit",
+        "Xv6.LinkIinit",
+        "Xv6.LinkInitsleeplock",
+        "Xv6.LinkFileinit",
+        "Xv6.LinkVirtioDiskInit",
+        "Xv6.LinkUserinit",
+        "Xv6.LinkForkretParkPaid",
+        "Xv6.LinkScheduler"
+      ]
+    },
+    "Xv6.LinkNiAdequacy": {
+      "source": "Xv6/LinkNiAdequacy.lean",
+      "sha256": "8a2ede219045fe71154352600c168d7ad581a1214c396174cfca2565ca51e6ca",
+      "imports": [
+        "Xv6.NiAdequacy",
+        "Xv6.ProofUser"
+      ]
+    },
+    "Xv6.LinkPiperead": {
+      "source": "Xv6/LinkPiperead.lean",
+      "sha256": "c732f849798a668a50763b256f60769020bf1ec1683d006c015201212badeeb3",
+      "imports": [
+        "Xv6.ProofPiperead",
+        "Xv6.LinkWakeup",
+        "Xv6.LinkSleepPrepare",
+        "Xv6.LinkSleep",
+        "Xv6.LinkSched",
+        "Xv6.LinkKilled",
+        "Xv6.LinkCopyout"
+      ]
+    },
+    "Xv6.LinkPipewrite": {
+      "source": "Xv6/LinkPipewrite.lean",
+      "sha256": "9132869cf00e1200370667d825786caaba07bb978f2ada638ea6b0552dcf5a0a",
+      "imports": [
+        "Xv6.ProofPipewrite",
+        "Xv6.LinkWakeup",
+        "Xv6.LinkSleepPrepare",
+        "Xv6.LinkSleep",
+        "Xv6.LinkSched",
+        "Xv6.LinkKilled",
+        "Xv6.LinkCopyin"
+      ]
+    },
+    "Xv6.LinkSysChdir": {
+      "source": "Xv6/LinkSysChdir.lean",
+      "sha256": "f050183bf894743fa5cb123c47d8ccbc1e1363db95ddc10151a4672a4d713e8f",
+      "imports": [
+        "Xv6.ProofSysChdir",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkNameiEra",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkCopyout"
+      ]
+    },
+    "Xv6.LinkSysChroot": {
+      "source": "Xv6/LinkSysChroot.lean",
+      "sha256": "8508e6035602e1b81ecba05ee79c353883b303a54d11f417968ab5b7b9b1b958",
+      "imports": [
+        "Xv6.ProofSysChroot",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkNamei",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkCopyout"
+      ]
+    },
+    "Xv6.LinkSysExec": {
+      "source": "Xv6/LinkSysExec.lean",
+      "sha256": "19eb2165efe5c45863a2bc28286c321e44e431aefa6f09af2a3c8728b138cbe9",
+      "imports": [
+        "Xv6.ProofSysExec",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkArgaddr",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkCopyin",
+        "Xv6.LinkFetchaddr",
+        "Xv6.LinkKexec"
+      ]
+    },
+    "Xv6.LinkSysFstat": {
+      "source": "Xv6/LinkSysFstat.lean",
+      "sha256": "de951dd35a66d42672dc33219fe64f4dece76c9587e8c6392888cd626a31fdf3",
+      "imports": [
+        "Xv6.ProofSysFstat",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkArgint",
+        "Xv6.LinkArgaddr",
+        "Xv6.LinkArgfd",
+        "Xv6.LinkFilestat",
+        "Xv6.LinkCopyout"
+      ]
+    },
+    "Xv6.LinkSysLink": {
+      "source": "Xv6/LinkSysLink.lean",
+      "sha256": "9e03ad7018e29a294f75b37a12a71bd7a0897bce1e287998ec270393b740ff8f",
+      "imports": [
+        "Xv6.ProofSysLink",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkNamei",
+        "Xv6.LinkNameiparent",
+        "Xv6.LinkDirlink",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkCopyin"
+      ]
+    },
+    "Xv6.LinkSysMkdir": {
+      "source": "Xv6/LinkSysMkdir.lean",
+      "sha256": "f3045609d4e056021cb6226e47e9c30d91815a15d3b4984ef8ff9b2142e5a2a8",
+      "imports": [
+        "Xv6.ProofSysMkdir",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkCreate",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkCopyin"
+      ]
+    },
+    "Xv6.LinkSysMknod": {
+      "source": "Xv6/LinkSysMknod.lean",
+      "sha256": "75a49c26f5d87818c8d25b4b0d364675d44f5284f9ce9f6c79a411d1fa8a6b96",
+      "imports": [
+        "Xv6.ProofSysMknod",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkArgint",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkCreate",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkCopyin"
+      ]
+    },
+    "Xv6.LinkSysOpen": {
+      "source": "Xv6/LinkSysOpen.lean",
+      "sha256": "32bfa97cfba5b0915f429f94640a55b4f9a77be7d84478fe9e80201b8a3b9276",
+      "imports": [
+        "Xv6.ProofSysOpen",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkArgint",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkNameiEra",
+        "Xv6.LinkFileclose",
+        "Xv6.LinkFilealloc",
+        "Xv6.LinkFdalloc",
+        "Xv6.LinkCreate",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkCopyin"
+      ]
+    },
+    "Xv6.LinkSysRead": {
+      "source": "Xv6/LinkSysRead.lean",
+      "sha256": "bad8d3597eebf7bdf194650e8ef762eb3faf18d1f3efe712ad1286cf8ec4953c",
+      "imports": [
+        "Xv6.ProofSysRead",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkArgint",
+        "Xv6.LinkArgaddr",
+        "Xv6.LinkArgfd",
+        "Xv6.LinkFileread"
+      ]
+    },
+    "Xv6.LinkSysUnlink": {
+      "source": "Xv6/LinkSysUnlink.lean",
+      "sha256": "1373e60935f990163e52666082853ec53e76613bc7261e2ad180e56c8029b6fe",
+      "imports": [
+        "Xv6.ProofSysUnlink",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkFetchstr",
+        "Xv6.LinkCopyinstr",
+        "Xv6.LinkStrlen",
+        "Xv6.LinkArgstr",
+        "Xv6.LinkBeginOp",
+        "Xv6.LinkNparWrapEra",
+        "Xv6.LinkWritei",
+        "Xv6.LinkEndOp",
+        "Xv6.LinkCopyout",
+        "Xv6.LinkCopyin"
+      ]
+    },
+    "Xv6.LinkSysWrite": {
+      "source": "Xv6/LinkSysWrite.lean",
+      "sha256": "04c0f46568aafc36002970db547891c276f91290d517e8f959bf957e7dbb032b",
+      "imports": [
+        "Xv6.ProofSysWrite",
+        "Xv6.LinkArgraw",
+        "Xv6.LinkArgint",
+        "Xv6.LinkArgaddr",
+        "Xv6.LinkArgfd",
+        "Xv6.LinkFilewrite"
+      ]
+    },
+    "Xv6.LinkSyscall": {
+      "source": "Xv6/LinkSyscall.lean",
+      "sha256": "b6466ec1c5ce9e748967f43971d05ea62fadf2fa4240548787e9c6db475f1acb",
+      "imports": [
+        "Xv6.ProofSyscall",
+        "Xv6.LinkUvmdealloc",
+        "Xv6.LinkUvmcopy",
+        "Xv6.LinkInitlock",
+        "Xv6.LinkPipealloc",
+        "Xv6.LinkFreeproc",
+        "Xv6.LinkAllocproc",
+        "Xv6.LinkSafestrcpy",
+        "Xv6.LinkKfork",
+        "Xv6.LinkKwait",
+        "Xv6.LinkKkill",
+        "Xv6.LinkGrowproc",
+        "Xv6.LinkSysFork",
+        "Xv6.LinkSysExit",
+        "Xv6.LinkSysWait",
+        "Xv6.LinkSysPipe",
+        "Xv6.LinkSysRead",
+        "Xv6.LinkSysKill",
+        "Xv6.LinkSysExec",
+        "Xv6.LinkSysFstat",
+        "Xv6.LinkSysChdir",
+        "Xv6.LinkSysDup",
+        "Xv6.LinkSysGetpid",
+        "Xv6.LinkSysSbrk",
+        "Xv6.LinkSysPause",
+        "Xv6.LinkSysUptime",
+        "Xv6.LinkSysOpen",
+        "Xv6.LinkSysWrite",
+        "Xv6.LinkSysMknod",
+        "Xv6.LinkSysUnlink",
+        "Xv6.LinkSysLink",
+        "Xv6.LinkSysMkdir",
+        "Xv6.LinkSysClose",
+        "Xv6.LinkSysSync",
+        "Xv6.LinkSysSeccomp",
+        "Xv6.LinkSysChroot"
+      ]
+    },
+    "Xv6.LinkSystemAdequacyClosed": {
+      "source": "Xv6/LinkSystemAdequacyClosed.lean",
+      "sha256": "45d198871e6556f43926fea9fd54fc1b4d4b1569ec328f5ce7df845b6e10d10d",
+      "imports": [
+        "Xv6.SystemAdequacy",
+        "Xv6.ProofUser"
+      ]
+    },
+    "Xv6.LinkUInitUnion": {
+      "source": "Xv6/LinkUInitUnion.lean",
+      "sha256": "16ea8ebf4ced4deba7cc6512ff7413e7195ffc7fadc7e6decae45c421c8d94ab",
+      "imports": [
+        "Xv6.UInitUnionBoot",
+        "Xv6.LinkShFprintf",
+        "Xv6.LinkShMain",
+        "Xv6.LinkShMalloc",
+        "Xv6.UshmSbrkHolds",
+        "Xv6.InitPrintfLink",
+        "Xv6.UnionBootAdequacy",
+        "Xv6.UnionAdmDemo",
+        "Xv6.ProofUser"
+      ]
+    },
+    "Xv6.LinkUserretClosed": {
+      "source": "Xv6/LinkUserretClosed.lean",
+      "sha256": "da77bd26bc4316282759981d45dbb1fbf98804cff071b442346fb70893f9c94e",
+      "imports": [
+        "Xv6.ProofUserretClosed",
+        "Xv6.LinkUserret",
+        "Xv6.LinkUservec",
+        "Xv6.LinkUsertrap"
+      ]
+    },
+    "Xv6.LinkUsertrap": {
+      "source": "Xv6/LinkUsertrap.lean",
+      "sha256": "b4cfd437a9c5457b188d33da42e6f3768ce7445ead785210e2723058c81e28c2",
+      "imports": [
+        "Xv6.ProofUsertrap",
+        "Xv6.LinkSetkilled",
+        "Xv6.LinkYield",
+        "Xv6.LinkPrepareReturn",
+        "Xv6.LinkKernelvec",
+        "Xv6.LinkKerneltrap",
+        "Xv6.LinkSyscall"
+      ]
+    },
+    "Xv6.NiAdequacy": {
+      "source": "Xv6/NiAdequacy.lean",
+      "sha256": "4fdb7444dd22d707949ac615bcc8ff73a10f82fe1320a6260bde8b873f7034f3",
+      "imports": [
+        "Xv6.NiTrace",
+        "Xv6.AppLaws"
+      ]
+    },
+    "Xv6.ProofCopyin": {
+      "source": "Xv6/ProofCopyin.lean",
+      "sha256": "7d42000a9043907493562680ab6f8ca99ad765fd76d48544a8ec3ae42da452c9",
+      "imports": [
+        "Experiments.WholeFunction.CopyinComplete"
+      ]
+    },
+    "Xv6.ProofCopyout": {
+      "source": "Xv6/ProofCopyout.lean",
+      "sha256": "78f18f86c821fe10fa5ac840cb7e973e403fee9e9375734dfa1f3d34ba3b2084",
+      "imports": [
+        "Experiments.WholeFunction.CopyoutComplete"
+      ]
+    },
+    "Xv6.SystemAdequacy": {
+      "source": "Xv6/SystemAdequacy.lean",
+      "sha256": "006b0f5bfa07dd291c101700bd0492b26e148abb706b034c36df2943cb1f54bc",
+      "imports": [
+        "Xv6.SystemBootEra",
+        "Xv6.UexecExecMint",
+        "Xv6.LinkUexecWp",
+        "Xv6.FsImgBoot",
+        "Xv6.Xv6GF"
+      ]
+    },
+    "Xv6.SystemBootEra": {
+      "source": "Xv6/SystemBootEra.lean",
+      "sha256": "5abf4aaa50443da76da46c00d6b4e854973bd3330a2f0bc511d8e911393bf905",
+      "imports": [
+        "Xv6.BootShared",
+        "Xv6.SystemSlot",
+        "Xv6.BootChain"
+      ]
+    },
+    "Xv6.UnionBootAdequacy": {
+      "source": "Xv6/UnionBootAdequacy.lean",
+      "sha256": "8ac876cabd570cc59e7ad5aa45cb63dd1ff707852f1b5894ebf63b241730cedc",
+      "imports": [
+        "Xv6.AppUnionLaws",
+        "Xv6.UnionGF"
+      ]
+    }
+  },
+  "source_graph_sha256": "9b426109066346a03f124d0235ef9e5282a300858a464d4bf3078307e7bb02f9",
+  "sources_unchanged_during_analysis": true
+}

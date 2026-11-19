@@ -1,0 +1,38 @@
+{
+  "revision": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+  "original_file": "Xv6/ReadiDefs.lean",
+  "original_file_sha256": "037889fec3ba706f80423eaff0b1b2bca319046f937109da5ebd611d52e73c9f",
+  "original_theorem_source": "theorem rd_hold_win (\u03b3b : BcacheNames) (V : BioView GF) (kk : Nat) (pidv dev bno : BitVec 32)\n    (bs bsd : List (BitVec 8)) (o m : Nat) (ho : o + m \u2264 BSIZE) :\n    bufHold0 (GF := GF) \u03b3b V kk pidv dev bno bs bsd \u22a2\n      iprop(\u231cbs.length = BSIZE\u231d \u2217\n        byteBuf (bnode kk + (88#64 + BitVec.ofNat 64 o)) (DFrac.own 1) ((bs.drop o).take m) \u2217\n        (byteBuf (bnode kk + (88#64 + BitVec.ofNat 64 o)) (DFrac.own 1) ((bs.drop o).take m) -\u2217\n          bufHold0 \u03b3b V kk pidv dev bno bs bsd)) := by\n  have ea : bnode kk + (88#64 + BitVec.ofNat 64 o) = aBufData (bnode kk) + BitVec.ofNat 64 o := by\n    unfold aBufData bOffData; rw [BitVec.add_assoc]\n  rw [ea]\n  iintro H\n  icases dsHold_swap \u03b3b V kk pidv dev bno bs bsd $$ H with \u27e8Hown, Hback\u27e9\n  unfold bufOwn\n  icases Hown with \u27e8%hlen, Hb, Hd, Hby\u27e9\n  icases UMemL.byteBuf_split_td (aBufData (bnode kk)) (DFrac.own 1) bs o m (by omega) $$ Hby\n    with \u27e8H1, H2, H3\u27e9\n  isplitl []\n  \u00b7 ipureintro; exact hlen\n  iframe H2\n  iintro H2\n  ihave Hby := UMemL.byteBuf_join_td (aBufData (bnode kk)) (DFrac.own 1) bs ((bs.drop o).take m)\n    o m (by omega) (by simp only [List.length_take, List.length_drop]; omega) $$ [H1 H2 H3]\n  case' _ => iframe\n  have e : bs.take o ++ ((bs.drop o).take m ++ bs.drop (o + m)) = bs := by\n    rw [\u2190 List.drop_drop, List.take_append_drop, List.take_append_drop]\n  rw [e]\n  iapply Hback $$ %bs\n  iframe Hb Hd Hby\n  ipureintro; exact hlen",
+  "extracted_source_sha256": "bb701d3d1d2ecbd515967bf6ea23f4560bbe2497fa57fb2109f20c1577b18cf4",
+  "contract_source_sha256": "9e1b9ad8e7ecf62bfd995b0a8222d98666b7ad3f24b8b8581b8663432245de53",
+  "scope": "Independent exact-original rd_hold_win statement with original minimal typeclass assumptions, no original boundary proof import; focused check, not performance comparison.",
+  "source_hashes": {
+    "Experiments/ResourcePlanner/Rules.lean": "cd36d70a4c086f1ad7ac3b8f2287d6e6eec49c8f32e67720c55958e67962fea8",
+    "Experiments/ResourcePlanner/Planner.lean": "197efb53846551b83b52786833d1c03b4eda212985bf69644549b43cc422ee30",
+    "Experiments/ResourcePlanner/Actual.lean": "3bdd137d984b6edfea334153fe1d586d6da0f590439a3d84067d6fe23b5907c6"
+  },
+  "initial_failure": {
+    "log": ".lake/resource-planner/root-readi-contract.log",
+    "reason": "Accidental extra LogG assumption; rejected."
+  },
+  "checks": [
+    {
+      "log": ".lake/resource-planner/root-original-readi.log",
+      "sha256": "be376408122b0d77f681b66f8e1f3e00ed0351a2e2ad147f3ffc1d38e5448a1b",
+      "service_seconds": 2.134,
+      "passed": true
+    },
+    {
+      "log": ".lake/resource-planner/minimal-contract-recheck.log",
+      "sha256": "eb1e7ec072818c6dac4662962ecf1be59c7211414f1fdcbfe16c8e552d3c1592",
+      "service_seconds": 2.291,
+      "passed": true
+    }
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "passed": true
+}

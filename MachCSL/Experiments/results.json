@@ -1,0 +1,442 @@
+{
+  "baseline": "c2a08aa60",
+  "scope": "Freshen the focused experiment and compare it with the requisiteness commit.\nAll checks are serial, single-worker and capped at 4 GiB. Other imports remain\ncached; these numbers are not whole-xv6 build measurements.\n",
+  "lean_threads": 1,
+  "wrapper_sha256": "c14f631ad20939a89bf27a216365ee202ca85a350787db7e3ebc11ef3313c83a",
+  "validation": [
+    {
+      "module": "Experiments.Layout",
+      "sha256": "3f571f094b270bbf702c34b70dfc5c6748e6a715fd3a489bdceed668ef6cf83b",
+      "metrics": {
+        "wall_s": 1.703,
+        "cpu_s": 1.699,
+        "peak_mib": 209.5,
+        "log": ".lake/focused-experiments/Experiments.Layout.log"
+      }
+    },
+    {
+      "module": "Experiments.LayoutResources",
+      "sha256": "bc5e304d34f31d9399f4d28f006cdda04450ce96c151b445678db05a2bcb2fa8",
+      "metrics": {
+        "wall_s": 1.932,
+        "cpu_s": 1.931,
+        "peak_mib": 222.9,
+        "log": ".lake/focused-experiments/Experiments.LayoutResources.log"
+      }
+    },
+    {
+      "module": "Xv6.DinodeEnc",
+      "sha256": "26d01e13a68c84c435315968d4e15c5e52ab5b2a6311be3fc907fbbbe95b6680",
+      "metrics": {
+        "wall_s": 2.9,
+        "cpu_s": 2.927,
+        "peak_mib": 239.4,
+        "log": ".lake/focused-experiments/Xv6.DinodeEnc.log"
+      }
+    },
+    {
+      "module": "Xv6.DirentEnc",
+      "sha256": "acf1aeb1a03c16a365266c39f3d394994c1416fba54deb0e066faf074e8c7b76",
+      "metrics": {
+        "wall_s": 3.548,
+        "cpu_s": 3.552,
+        "peak_mib": 261.4,
+        "log": ".lake/focused-experiments/Xv6.DirentEnc.log"
+      }
+    },
+    {
+      "module": "Xv6.DinodeSlot",
+      "sha256": "ceb164731800fa20129cc7dab19da6d52808a59f65bdbe685312487127e35804",
+      "metrics": {
+        "wall_s": 4.266,
+        "cpu_s": 4.28,
+        "peak_mib": 253.2,
+        "log": ".lake/focused-experiments/Xv6.DinodeSlot.log"
+      }
+    },
+    {
+      "module": "Experiments.LayoutChecks",
+      "sha256": "87888d4781f9fddfacaa0a7bb365933cc4c0bb2eaeae6bd970e4a90af24bb518",
+      "metrics": {
+        "wall_s": 2.342,
+        "cpu_s": 2.343,
+        "peak_mib": 229.4,
+        "log": ".lake/focused-experiments/Experiments.LayoutChecks.log"
+      }
+    },
+    {
+      "module": "Requisiteness.Axioms",
+      "sha256": "45749b84f0095988f91b76c5939e8d550eb49216c523104b6bb825b38208a62a",
+      "metrics": {
+        "wall_s": 1.764,
+        "cpu_s": 1.763,
+        "peak_mib": 217.4,
+        "log": ".lake/focused-experiments/Requisiteness.Axioms.log"
+      }
+    },
+    {
+      "module": "Requisiteness.Coherence",
+      "sha256": "24dfc6037259e9ddc71dbeff2feca4cce27c0664529cc3e6af81c8dbb080eb6a",
+      "metrics": {
+        "wall_s": 3.149,
+        "cpu_s": 3.168,
+        "peak_mib": 245.1,
+        "log": ".lake/focused-experiments/Requisiteness.Coherence.log"
+      }
+    },
+    {
+      "module": "Xv6.IupdateSteps",
+      "sha256": "994d66e380029dbc37bdb5c6d81e24f2348b0fa16732d27912708387944f7663",
+      "metrics": {
+        "wall_s": 3.402,
+        "cpu_s": 3.408,
+        "peak_mib": 244.0,
+        "log": ".lake/focused-experiments/Xv6.IupdateSteps.log"
+      }
+    },
+    {
+      "module": "Xv6.DirlookupParts",
+      "sha256": "3c2fd82b45a1d6597c73ef43ce2156802722ffa4023046d50251352e9cc26a4b",
+      "metrics": {
+        "wall_s": 7.446,
+        "cpu_s": 7.468,
+        "peak_mib": 353.8,
+        "log": ".lake/focused-experiments/Xv6.DirlookupParts.log"
+      }
+    },
+    {
+      "module": "Xv6.IlockBlk",
+      "sha256": "e576c99a51283f57c6829f681127a453d8d2e37644c0af6cfb302bcec8856ca2",
+      "metrics": {
+        "wall_s": 2.38,
+        "cpu_s": 2.384,
+        "peak_mib": 234.0,
+        "log": ".lake/focused-experiments/Xv6.IlockBlk.log"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "module": "Xv6.DinodeEnc",
+      "statements_unchanged": [
+        "Xv6.dinodeBytes_type",
+        "Xv6.dinodeBytes_major",
+        "Xv6.dinodeBytes_minor",
+        "Xv6.dinodeBytes_nlink",
+        "Xv6.dinodeBytes_size",
+        "Xv6.dinodeBytes_addrs"
+      ],
+      "axioms": {
+        "original": {
+          "Xv6.dinodeBytes_type": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_major": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_minor": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_nlink": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_size": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_addrs": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        "current": {
+          "Xv6.dinodeBytes_type": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_major": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_minor": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_nlink": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_size": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.dinodeBytes_addrs": [
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      },
+      "source_sha256": {
+        "original": "b0b202fe70f56e064de05badfe61d1a6abafd3689616bcac3dbc768f96f34371",
+        "current": "26d01e13a68c84c435315968d4e15c5e52ab5b2a6311be3fc907fbbbe95b6680"
+      },
+      "lines": {
+        "original": 289,
+        "current": 267
+      },
+      "samples": {
+        "original": [
+          {
+            "wall_s": 2.494,
+            "cpu_s": 2.505,
+            "peak_mib": 226.5,
+            "log": ".lake/focused-experiments/Xv6.DinodeEnc-original-0.log"
+          },
+          {
+            "wall_s": 2.445,
+            "cpu_s": 2.458,
+            "peak_mib": 228.7,
+            "log": ".lake/focused-experiments/Xv6.DinodeEnc-original-1.log"
+          },
+          {
+            "wall_s": 2.492,
+            "cpu_s": 2.505,
+            "peak_mib": 226.4,
+            "log": ".lake/focused-experiments/Xv6.DinodeEnc-original-2.log"
+          }
+        ],
+        "current": [
+          {
+            "wall_s": 2.796,
+            "cpu_s": 2.815,
+            "peak_mib": 230.4,
+            "log": ".lake/focused-experiments/Xv6.DinodeEnc-current-0.log"
+          },
+          {
+            "wall_s": 2.784,
+            "cpu_s": 2.802,
+            "peak_mib": 233.2,
+            "log": ".lake/focused-experiments/Xv6.DinodeEnc-current-1.log"
+          },
+          {
+            "wall_s": 2.838,
+            "cpu_s": 2.858,
+            "peak_mib": 229.1,
+            "log": ".lake/focused-experiments/Xv6.DinodeEnc-current-2.log"
+          }
+        ]
+      },
+      "median": {
+        "original": {
+          "wall_s": 2.492,
+          "cpu_s": 2.505,
+          "peak_mib": 226.5
+        },
+        "current": {
+          "wall_s": 2.796,
+          "cpu_s": 2.815,
+          "peak_mib": 230.4
+        }
+      }
+    },
+    {
+      "module": "Xv6.DirentEnc",
+      "statements_unchanged": [
+        "Xv6.direntBytes_inum",
+        "Xv6.direntBytes_name"
+      ],
+      "axioms": {
+        "original": {
+          "Xv6.direntBytes_inum": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.direntBytes_name": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        "current": {
+          "Xv6.direntBytes_inum": [
+            "Quot.sound",
+            "propext"
+          ],
+          "Xv6.direntBytes_name": [
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      },
+      "source_sha256": {
+        "original": "d97ef82945dd1b9be122c03afdf551e3c0a5bf457a18ed1611684d63c935c13b",
+        "current": "acf1aeb1a03c16a365266c39f3d394994c1416fba54deb0e066faf074e8c7b76"
+      },
+      "lines": {
+        "original": 654,
+        "current": 650
+      },
+      "samples": {
+        "original": [
+          {
+            "wall_s": 3.409,
+            "cpu_s": 3.424,
+            "peak_mib": 247.7,
+            "log": ".lake/focused-experiments/Xv6.DirentEnc-original-0.log"
+          },
+          {
+            "wall_s": 3.565,
+            "cpu_s": 3.577,
+            "peak_mib": 247.6,
+            "log": ".lake/focused-experiments/Xv6.DirentEnc-original-1.log"
+          },
+          {
+            "wall_s": 3.567,
+            "cpu_s": 3.579,
+            "peak_mib": 248.4,
+            "log": ".lake/focused-experiments/Xv6.DirentEnc-original-2.log"
+          }
+        ],
+        "current": [
+          {
+            "wall_s": 3.404,
+            "cpu_s": 3.418,
+            "peak_mib": 247.9,
+            "log": ".lake/focused-experiments/Xv6.DirentEnc-current-0.log"
+          },
+          {
+            "wall_s": 3.516,
+            "cpu_s": 3.527,
+            "peak_mib": 247.9,
+            "log": ".lake/focused-experiments/Xv6.DirentEnc-current-1.log"
+          },
+          {
+            "wall_s": 3.489,
+            "cpu_s": 3.511,
+            "peak_mib": 247.3,
+            "log": ".lake/focused-experiments/Xv6.DirentEnc-current-2.log"
+          }
+        ]
+      },
+      "median": {
+        "original": {
+          "wall_s": 3.565,
+          "cpu_s": 3.577,
+          "peak_mib": 247.7
+        },
+        "current": {
+          "wall_s": 3.489,
+          "cpu_s": 3.511,
+          "peak_mib": 247.9
+        }
+      }
+    },
+    {
+      "module": "Xv6.DinodeSlot",
+      "statements_unchanged": [
+        "Xv6.dislot_bytes"
+      ],
+      "axioms": {
+        "original": {
+          "Xv6.dislot_bytes": [
+            "Classical.choice",
+            "MachCSL.bytesToWord4_wordToBytes4._native.bv_decide.ax_1_7",
+            "MachCSL.kLeaf_rw_ppn_inj._native.bv_decide.ax_1_5",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_11",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_16",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_21",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_6",
+            "MachCSL.paOf_add2._native.bv_decide.ax_1_5",
+            "MachCSL.paOf_add4._native.bv_decide.ax_1_5",
+            "MachCSL.vpnOf_add2._native.bv_decide.ax_1_5",
+            "MachCSL.vpnOf_add4._native.bv_decide.ax_1_5",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        "current": {
+          "Xv6.dislot_bytes": [
+            "Classical.choice",
+            "MachCSL.bytesToWord4_wordToBytes4._native.bv_decide.ax_1_7",
+            "MachCSL.kLeaf_rw_ppn_inj._native.bv_decide.ax_1_5",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_11",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_16",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_21",
+            "MachCSL.nthByte_bytesToWord4._native.bv_decide.ax_1_6",
+            "MachCSL.paOf_add2._native.bv_decide.ax_1_5",
+            "MachCSL.paOf_add4._native.bv_decide.ax_1_5",
+            "MachCSL.vpnOf_add2._native.bv_decide.ax_1_5",
+            "MachCSL.vpnOf_add4._native.bv_decide.ax_1_5",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      },
+      "source_sha256": {
+        "original": "04015e210caa82bf744a7bf3bc2f6ae6884935baf47f511f405f311705cad805",
+        "current": "ceb164731800fa20129cc7dab19da6d52808a59f65bdbe685312487127e35804"
+      },
+      "lines": {
+        "original": 631,
+        "current": 599
+      },
+      "samples": {
+        "original": [
+          {
+            "wall_s": 4.468,
+            "cpu_s": 4.495,
+            "peak_mib": 257.7,
+            "log": ".lake/focused-experiments/Xv6.DinodeSlot-original-0.log"
+          },
+          {
+            "wall_s": 4.501,
+            "cpu_s": 4.53,
+            "peak_mib": 257.1,
+            "log": ".lake/focused-experiments/Xv6.DinodeSlot-original-1.log"
+          },
+          {
+            "wall_s": 4.456,
+            "cpu_s": 4.482,
+            "peak_mib": 257.5,
+            "log": ".lake/focused-experiments/Xv6.DinodeSlot-original-2.log"
+          }
+        ],
+        "current": [
+          {
+            "wall_s": 4.197,
+            "cpu_s": 4.222,
+            "peak_mib": 251.2,
+            "log": ".lake/focused-experiments/Xv6.DinodeSlot-current-0.log"
+          },
+          {
+            "wall_s": 4.303,
+            "cpu_s": 4.33,
+            "peak_mib": 251.7,
+            "log": ".lake/focused-experiments/Xv6.DinodeSlot-current-1.log"
+          },
+          {
+            "wall_s": 4.145,
+            "cpu_s": 4.167,
+            "peak_mib": 251.1,
+            "log": ".lake/focused-experiments/Xv6.DinodeSlot-current-2.log"
+          }
+        ]
+      },
+      "median": {
+        "original": {
+          "wall_s": 4.468,
+          "cpu_s": 4.495,
+          "peak_mib": 257.5
+        },
+        "current": {
+          "wall_s": 4.197,
+          "cpu_s": 4.222,
+          "peak_mib": 251.2
+        }
+      }
+    }
+  ]
+}

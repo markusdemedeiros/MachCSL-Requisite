@@ -1,0 +1,42 @@
+[
+  {
+    "source": "Xv6/UkGrepLoopFrame.lean",
+    "sha256": "ed512d4f52b9b625e71c27b99847184fda7da47465ba5df2e830912fb0f8d9c9",
+    "exit_code": 0,
+    "log": ".lake/solver-survey/production-grep-frame.log",
+    "service_runtime": "17.884s",
+    "peak": "420.7M (swap: 0B)"
+  },
+  {
+    "source": "Xv6/UkGrepLoopHead.lean",
+    "sha256": "c112d147c5008e64e6b8718178d81d1213ddcea5e3964f89e47d399570cee62c",
+    "exit_code": 0,
+    "log": ".lake/solver-survey/production-UkGrepLoopHead.log",
+    "service_runtime": "5.994s",
+    "peak": "301.5M (swap: 0B)"
+  },
+  {
+    "source": "Xv6/UkGrepLoopStep.lean",
+    "sha256": "3d0b639497581298e0b1680444ae9209144c6ef5f0a6d70d2de87b45c475d4c8",
+    "exit_code": 0,
+    "log": ".lake/solver-survey/production-UkGrepLoopStep.log",
+    "service_runtime": "9.255s",
+    "peak": "387.6M (swap: 0B)"
+  },
+  {
+    "source": "Xv6/UkGrepLoopPost.lean",
+    "sha256": "7b8aba6aec8ca413767665d2744d8e97ac88703d13e04d3fc4f516269c416104",
+    "exit_code": 0,
+    "log": ".lake/solver-survey/production-UkGrepLoopPost.log",
+    "service_runtime": "5.471s",
+    "peak": "301.2M (swap: 0B)"
+  },
+  {
+    "source": "Xv6/ProofGrepGrep.lean",
+    "sha256": "cf1c5613983bc2782c22c8a58be4bc38a2006317203bc1426b30a273625a2e5e",
+    "exit_code": 0,
+    "log": ".lake/solver-survey/production-ProofGrepGrep.log",
+    "service_runtime": "3.257s",
+    "peak": "251M (swap: 0B)"
+  }
+]

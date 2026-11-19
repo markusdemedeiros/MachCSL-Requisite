@@ -1,0 +1,128 @@
+{
+  "purpose": "Checked string clients before generated affine invariant integration into experimental STRLEN; production exports unchanged.",
+  "git_head": "818a8b6a6d38d128130fa0aa7e0c0505d6850feb",
+  "snapshot": ".lake/whole-function/pre-affine-strlen",
+  "sources": [
+    {
+      "source": "Experiments/WholeFunction/StrlenAxioms.lean",
+      "sha256": "30f328c29e4e1161da5a2434a0613d81761c59407105c8a5608b02849553cf0f",
+      "lines": 38,
+      "bytes": 1968
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenBinary.lean",
+      "sha256": "247c49b3b1721665e12228807e6db6d4512fd7c8f2aee1dd43088e5bca12858b",
+      "lines": 36,
+      "bytes": 1975
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenBlocks.lean",
+      "sha256": "529942d03be26e59b7feba001c6b6addb14b97ece09ff99b6046bd27174ae98c",
+      "lines": 61,
+      "bytes": 3225
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenCompile.lean",
+      "sha256": "ec37de67a791a697ea05bb20a5cf476b5e962bc11230edbbf0554aacd3def1cb",
+      "lines": 52,
+      "bytes": 3019
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenComplete.lean",
+      "sha256": "8fe25b98959328ee20023be9e7eed7e678b41e345c09fbb9501dcbca195d4321",
+      "lines": 88,
+      "bytes": 4182
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenFacts.lean",
+      "sha256": "9cc4e202f4c244356af8d7fe0479c9754d1e7bd8a36c27f0983bcf817b3807f9",
+      "lines": 62,
+      "bytes": 2724
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenFrame.lean",
+      "sha256": "6a00df0b917662ecb4256e07c14abd9d61d99b366bcf3c8a19394891acf6c5ad",
+      "lines": 43,
+      "bytes": 2091
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenFrameDefs.lean",
+      "sha256": "2c1e2941f5d720c465ebe9c935871bd1cdc29dc729adc10780e51bea09187d20",
+      "lines": 31,
+      "bytes": 1153
+    },
+    {
+      "source": "Experiments/WholeFunction/StrlenModel.lean",
+      "sha256": "3afcae0f35a9ae8a114a0e90e63a25c2085784937e2b3f4f86c88076464e52b1",
+      "lines": 114,
+      "bytes": 4454
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyAudit.lean",
+      "sha256": "649eacb27545dfe57c098973ada02d126ae8c9bac04b5fd942ddfc5bc043794c",
+      "lines": 32,
+      "bytes": 1712
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyBinary.lean",
+      "sha256": "f83be6afb2f989c6078d3d14cd5ed3229b2e5eeb6863a5d3c9c3970b5936da94",
+      "lines": 44,
+      "bytes": 2756
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyCompile.lean",
+      "sha256": "ec9e3ecc49f8f7b21606fa971235b9399012a130b412ef2add5eab7f3aa3659b",
+      "lines": 111,
+      "bytes": 6239
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyComplete.lean",
+      "sha256": "6b0c35bff748842ce782382d4b3d5065f32410738ef248faaa369f8036d0b84a",
+      "lines": 88,
+      "bytes": 4463
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyCopy.lean",
+      "sha256": "f91da262f1e291a068921c5aee768ba58c3d915065cac83ebaa312525e4578b8",
+      "lines": 91,
+      "bytes": 4835
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyFacts.lean",
+      "sha256": "e38b78977812914d6ba42e3109213ddfe6ca988aba34f140c2bec7a1ab9bed22",
+      "lines": 200,
+      "bytes": 9266
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyFrame.lean",
+      "sha256": "2716c563606c5bdc38b3e19acdc628cc3372eb47fab9e572ca0ea9f1a1c41677",
+      "lines": 43,
+      "bytes": 2097
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyFrameDefs.lean",
+      "sha256": "83b57ec40f230aa073ad87b049ee03b4b31d85e35b70598908fa25a98301a838",
+      "lines": 31,
+      "bytes": 1159
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyModel.lean",
+      "sha256": "3f7bbc5d230124960ec96fe789e9db93913d22b466131f3b907639f1735f5030",
+      "lines": 164,
+      "bytes": 7342
+    },
+    {
+      "source": "Experiments/WholeFunction/StrncpyPad.lean",
+      "sha256": "c97150ce99ca7c58f4a87b120c0512a88f49c13925be6a8c3a07e7dca9a1d743",
+      "lines": 43,
+      "bytes": 2228
+    }
+  ],
+  "strlen_lines": 525,
+  "authored_scan_relations": [
+    "arg: regs10=base",
+    "cursor: regs15=base+ofNat j+1",
+    "previous: regs13=base+ofNat j"
+  ],
+  "discovery_constraint": "The three handwritten equations and old loop_good are not inputs to affine discovery. Only actual decoded traces, ABI anchor, semantic index, and generated candidate data may be used."
+}

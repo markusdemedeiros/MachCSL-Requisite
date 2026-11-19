@@ -1,0 +1,60 @@
+name = "machcsl"
+defaultTargets = ["MachCSL", "Xv6"]
+
+# iris-lean lives in the `Iris/` subdirectory of the upstream monorepo.
+[[require]]
+name = "iris"
+git = "https://github.com/leanprover-community/iris-lean"
+rev = "0d5f252bf74ffccef7cad8ac99dcdecb1113b94a"
+subDir = "Iris"
+
+# lean-sail with the free-monad concurrency interface (see vendor/lean-sail/README.md).
+[[require]]
+name = "Sail"
+path = "vendor/lean-sail"
+
+# The Sail RISC-V model compiled to Lean (generated; see tools/regen_sail_model.sh).
+[[require]]
+name = "Lean_RV64D"
+path = "model/Lean_RV64D"
+
+# `linter.unusedVariables` / `linter.unusedSectionVars` are off tree-wide:
+# a Spec statement names its preconditions for the reader (and after Rocq)
+# though the declaration itself never mentions them, and the section
+# variables of the instance-heavy sections are included by design.  (They
+# used to be switched off file by file.)  The other linters stay on, so a
+# warning in the build log is worth reading.
+# v4.34 compatibility (the three libraries below):
+# * `maxRecDepth = 8192` (default 512): the proof-mode steps now recurse deeper than 512
+#   (e.g. `k_norm_goal` on a 40-hypothesis context), though not without bound.
+# * `backward.isDefEq.respectTransparency(.types) = false`: v4.34 no longer bumps transparency to
+#   `.default` for implicit arguments and metavariable types in `isDefEq`; these proofs rely on it
+#   (`DevSt (.uart i)` against `UartState`, `BitVec xlen` against `BitVec 64`, `Decidable`
+#   instances left behind by `simp`, side conditions `simp` discharges by unfolding, ...).
+#   (As raw `-D` flags: the one option's name is a prefix of the other's, which TOML cannot key.)
+[[lean_lib]]
+name = "MachCSL"
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, linter.unusedVariables = false, linter.unusedSectionVars = false, maxRecDepth = 8192 }
+moreLeanArgs = ["-Dbackward.isDefEq.respectTransparency=false", "-Dbackward.isDefEq.respectTransparency.types=false"]
+
+[[lean_lib]]
+name = "Experiments"
+globs = ["Experiments.+"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, linter.unusedVariables = false, linter.unusedSectionVars = false, maxRecDepth = 8192 }
+moreLeanArgs = ["-Dbackward.isDefEq.respectTransparency=false", "-Dbackward.isDefEq.respectTransparency.types=false"]
+
+# The xv6 kernel proofs, kept separate from the MachCSL framework.
+[[lean_lib]]
+name = "Xv6"
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, linter.unusedVariables = false, linter.unusedSectionVars = false, maxRecDepth = 8192 }
+moreLeanArgs = ["-Dbackward.isDefEq.respectTransparency=false", "-Dbackward.isDefEq.respectTransparency.types=false"]
+
+# The device-conformance suite (vtest-lean/): the machine model re-checked
+# against behaviours captured from QEMU.  NOT a default target: a red test is
+# a finding about the model and must not break the proof build
+# (`make vtest-check`; see tools/vtest/README.md).
+[[lean_lib]]
+name = "Vtest"
+srcDir = "vtest-lean"
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, linter.unusedVariables = false, linter.unusedSectionVars = false, maxRecDepth = 8192 }
+moreLeanArgs = ["-Dbackward.isDefEq.respectTransparency=false", "-Dbackward.isDefEq.respectTransparency.types=false"]
